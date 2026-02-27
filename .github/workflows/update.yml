@@ -14,9 +14,9 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5 # Upgraded to v5 for better caching
         with:
-          python-version: '3.9'
+          python-version: '3.x'  # The '.x' tells GitHub to use the latest stable release
 
       - name: Install dependencies
         run: pip install requests
