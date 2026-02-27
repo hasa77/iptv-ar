@@ -1,0 +1,99 @@
+name: IPTV Middleware
+
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Install Python deps
+        run: pip install requests lxml
+
+      - name: Download IPTV playlist
+        run: curl -L https://iptv-org.github.io/iptv/languages/ara.m3u -o raw.m3u
+
+      - name: Download Arabic EPG
+        run: curl -L https://raw.githubusercontent.com/MuazT/EPG-Guide/master/ArabicEPG.xml -o raw.xml
+
+      - name: Process playlist and EPG
+        run: |
+          python << 'EOF'
+          import requests
+          import re
+          from lxml import etree
+
+          # Load playlist
+          with open("raw.m3u", "r", encoding="utf-8", errors="ignore") as f:
+              lines = f.readlines()
+
+          cleaned = []
+          kept_ids = set()
+          i = 0
+
+          while i < len(lines):
+              line = lines[i]
+              if line.startswith("#EXTINF"):
+                  info = line
+                  url = lines[i+1].strip()
+
+                  # Keep only News and Sports
+                  if 'group-title="News"' in info or 'group-title="Sports"' in info:
+
+                      # Remove Iran and Afghanistan by URL
+                      if '/ir.' in url or '/af.' in url:
+                          i += 2
+                          continue
+
+                      # Dead stream detection
+                      try:
+                          r = requests.head(url, timeout=5, allow_redirects=True)
+                          if r.status_code >= 400:
+                              i += 2
+                              continue
+                      except:
+                          i += 2
+                          continue
+
+                      cleaned.append(info)
+                      cleaned.append(url + "\n")
+
+                      match = re.search(r'tvg-id="([^"]+)"', info)
+                      if match:
+                          kept_ids.add(match.group(1))
+
+                  i += 2
+              else:
+                  i += 1
+
+          with open("arabic-clean.m3u", "w", encoding="utf-8") as f:
+              f.writelines(cleaned)
+
+          # Trim XMLTV
+          tree = etree.parse("raw.xml")
+          root = tree.getroot()
+
+          for channel in list(root.findall("channel")):
+              if channel.attrib.get("id") not in kept_ids:
+                  root.remove(channel)
+
+          for programme in list(root.findall("programme")):
+              if programme.attrib.get("channel") not in kept_ids:
+                  root.remove(programme)
+
+          tree.write("arabic-epg-clean.xml", encoding="utf-8", xml_declaration=True)
+          EOF
+
+      - name: Commit results
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add arabic-clean.m3u arabic-epg-clean.xml
+          git commit -m "Auto update IPTV middleware" || echo "No changes"
+          git push
