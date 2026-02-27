@@ -18,7 +18,10 @@ AR_KEYWORDS = (
 )
 
 # Protect against the "Argentina Leak" and Radio
-EXCLUDE_WORDS = ('radio', 'fm', 'chaine', 'distro.tv', 'argentina', 'colombia', 'telefe', 'eltrece')
+EXCLUDE_WORDS = ('radio', 'fm', 'chaine', 'distro.tv', 'argentina', 'colombia', 'telefe', 'eltrece',
+                 'kurd', 'kurdistan', 'rudaw', 'waar', # Lowercase for better matching
+    'mbc 1', 'mbc 1 usa'                  # Redundant MBC feeds (keeping only Masr)
+                )
 
 def main():
     print(f"Filter started: {datetime.now()}")
