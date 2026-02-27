@@ -1,12 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<tv generator-info-name="Gemini-Filter-V2"><channel id="Al.Majd.Holy.Quran.ae">
+<tv generator-info-name="Gemini-MaxMatch-2026"><channel id="Al.Majd.Holy.Quran.ae">
     <display-name lang="en">Al Majd Holy Quran</display-name>
     <icon src="https://www.sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images1/ecl-162715.png" />
     <icon src="https://www.sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images1/ecl-162715.png" />
-    <url>http://www.sat.tv</url>
-  </channel>
-  <channel id="Makkah.TV.ae">
-    <display-name lang="en">Makkah TV</display-name>
     <url>http://www.sat.tv</url>
   </channel>
   <channel id="2M.Monde.ae">
@@ -19,6 +15,12 @@
     <display-name lang="en">iFilm Arabic</display-name>
     <icon src="https://www.sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images1/ecl-503.png" />
     <icon src="https://www.sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images1/ecl-503.png" />
+    <url>http://www.sat.tv</url>
+  </channel>
+  <channel id="Palestine.HD.ae">
+    <display-name lang="en">Palestine HD</display-name>
+    <icon src="https://www.sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images1/ecl-6196.png" />
+    <icon src="https://www.sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images1/ecl-6196.png" />
     <url>http://www.sat.tv</url>
   </channel>
   <channel id="Asil.TV.ae">
@@ -3176,6 +3178,1167 @@
     <category lang="en">Movie</category>
     <category lang="en">Romance</category>
     <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6199.svg" />
+  </programme>
+  <programme start="20260227030000 +0000" stop="20260227033000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2450527.jpg" />
+  </programme>
+  <programme start="20260227033000 +0000" stop="20260227040000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">People and Power</title>
+    <desc lang="en">. Pervasive and permanent, Forever Chemicals have poisoned the planet. We meet those fighting to hold someone to account. Samah El Shahat.</desc>
+    <date>2025</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2184184.jpg" />
+  </programme>
+  <programme start="20260227040000 +0000" stop="20260227043000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2450527.jpg" />
+  </programme>
+  <programme start="20260227043000 +0000" stop="20260227050000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">The Stream</title>
+    <desc lang="en">, Episode 13. Today on The Stream: Bad Bunny as a case study in global relevance and diaspora power.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2689036.jpg" />
+  </programme>
+  <programme start="20260227050000 +0000" stop="20260227053000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2450527.jpg" />
+  </programme>
+  <programme start="20260227053000 +0000" stop="20260227060000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Inside Story</title>
+    <desc lang="en">. Beyond the headlines to the heart of the news of the day. Al Jazeera gets the Inside Story from some of the best minds from around the globe.</desc>
+    <date>1250</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Episode</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2663347.jpg" />
+  </programme>
+  <programme start="20260227060000 +0000" stop="20260227063000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2450527.jpg" />
+  </programme>
+  <programme start="20260227063000 +0000" stop="20260227070000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Business of War</title>
+    <desc lang="en">, Episode 1. Hind Hassan explores the US weapons industry - the largest of them all – tracing its impacts on American democracy and beyond.</desc>
+    <date>2025</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2046147.jpg" />
+  </programme>
+  <programme start="20260227070000 +0000" stop="20260227073000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2450527.jpg" />
+  </programme>
+  <programme start="20260227073000 +0000" stop="20260227080000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Making Peace</title>
+    <desc lang="en">, Episode 6. In post-peace Colombia, ex-FARC fighters confess as victims confront them seeking justice and reconciliation. Dan Shapiro, Mahbouba Seraj, William Ury, Gabrielle Rifkind.</desc>
+    <date>2026</date>
+    <category lang="en">Documentary</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2654371.jpg" />
+  </programme>
+  <programme start="20260227080000 +0000" stop="20260227083000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2450527.jpg" />
+  </programme>
+  <programme start="20260227083000 +0000" stop="20260227090000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Talk to Al Jazeera</title>
+    <desc lang="en">. As nuclear tensions rise and diplomacy stalls, the IAEA chief discusses global risk and his bid to lead a faltering UN.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Season</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2689034.jpg" />
+  </programme>
+  <programme start="20260227090000 +0000" stop="20260227093000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2450527.jpg" />
+  </programme>
+  <programme start="20260227093000 +0000" stop="20260227100000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">101 East</title>
+    <desc lang="en">. 101 East meets the doctors traveling on a medical train, bringing critical health services to Kazakhstan's most remote communities across the country. Drew Ambrose, Steve Chao, Mary Ann Jolley, Karishma Vyas, Yaara Bou Melhem, Aela Callan, Chan Tau Chou, Mellissa Fung, Trevor Bormann, Teymoor Nabili, Fauziah Ibrahim.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2663352.jpg" />
+  </programme>
+  <programme start="20260227100000 +0000" stop="20260227110000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Newshour</title>
+    <desc lang="en">. Up-to-date news and analysis from around the world.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Season</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2666752.jpg" />
+  </programme>
+  <programme start="20260227110000 +0000" stop="20260227113000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2450527.jpg" />
+  </programme>
+  <programme start="20260227113000 +0000" stop="20260227120000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Inside Story</title>
+    <desc lang="en">. Beyond the headlines to the heart of the news of the day. Al Jazeera gets the Inside Story from some of the best minds from around the globe.</desc>
+    <date>1250</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Episode</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2663347.jpg" />
+  </programme>
+  <programme start="20260227120000 +0000" stop="20260227130000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Head to Head</title>
+    <desc lang="en">. Mehdi Hasan goes Head to Head with former Venezuelan opposition envoy Vanessa Neumann on U.S.-backed regime change and the future of Venezuelan democracy.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Season</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2663350.jpg" />
+  </programme>
+  <programme start="20260227130000 +0000" stop="20260227140000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Newshour</title>
+    <desc lang="en">. Up-to-date news and analysis from around the world.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Season</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2666752.jpg" />
+  </programme>
+  <programme start="20260227140000 +0000" stop="20260227143000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2450527.jpg" />
+  </programme>
+  <programme start="20260227143000 +0000" stop="20260227150000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">The Stream</title>
+    <desc lang="en">, Episode 13. Today on The Stream: Bad Bunny as a case study in global relevance and diaspora power.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2689036.jpg" />
+  </programme>
+  <programme start="20260227150000 +0000" stop="20260227160000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Newshour</title>
+    <desc lang="en">. Up-to-date news and analysis from around the world.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Season</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2666752.jpg" />
+  </programme>
+  <programme start="20260227160000 +0000" stop="20260227163000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2450527.jpg" />
+  </programme>
+  <programme start="20260227163000 +0000" stop="20260227170000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Witness</title>
+    <desc lang="en">. In war-torn Ukraine, a family weighs the dangers of leaving their makeshift bunker for the promise of freedom outside.</desc>
+    <date>2024</date>
+    <category lang="en">Documentary</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2651452.jpg" />
+  </programme>
+  <programme start="20260227170000 +0000" stop="20260227173000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2450527.jpg" />
+  </programme>
+  <programme start="20260227173000 +0000" stop="20260227180000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Inside Story</title>
+    <desc lang="en">. Beyond the headlines to the heart of the news of the day. Al Jazeera gets the Inside Story from some of the best minds from around the globe.</desc>
+    <date>1251</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Episode</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2663347.jpg" />
+  </programme>
+  <programme start="20260227180000 +0000" stop="20260227190000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Newshour</title>
+    <desc lang="en">. Up-to-date news and analysis from around the world.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Season</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2666752.jpg" />
+  </programme>
+  <programme start="20260227190000 +0000" stop="20260227193000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2450527.jpg" />
+  </programme>
+  <programme start="20260227193000 +0000" stop="20260227200000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">War Hotels</title>
+    <desc lang="en">. Fascinating war stories from the Caravelle Hotel, a famous media hub in old Saigon and a vital vantage point for journalists reporting the Vietnam war decades.</desc>
+    <date>2021</date>
+    <category lang="en">Documentary</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2085865.jpg" />
+  </programme>
+  <programme start="20260227200000 +0000" stop="20260227210000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Al Jazeera World</title>
+    <desc lang="en">, Episode 399. In Cuba under a continuing U.S. economic blockade, mechanics and inventors breathe new life into old machines in order to survive at a time of scarcity.</desc>
+    <date>2026</date>
+    <category lang="en">Documentary</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2663343.jpg" />
+  </programme>
+  <programme start="20260227210000 +0000" stop="20260227220000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Newshour</title>
+    <desc lang="en">. Up-to-date news and analysis from around the world.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Season</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2666752.jpg" />
+  </programme>
+  <programme start="20260227220000 +0000" stop="20260227223000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2450527.jpg" />
+  </programme>
+  <programme start="20260227223000 +0000" stop="20260227230000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Counting the Cost</title>
+    <desc lang="en">, Episode 9. Is Trump's economic policy faltering or is American protectionism under strain.</desc>
+    <date>2026</date>
+    <category lang="en">Documentary</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2699529.jpg" />
+  </programme>
+  <programme start="20260227230000 +0000" stop="20260227233000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2450527.jpg" />
+  </programme>
+  <programme start="20260227233000 +0000" stop="20260228000000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Inside Story</title>
+    <desc lang="en">. Beyond the headlines to the heart of the news of the day. Al Jazeera gets the Inside Story from some of the best minds from around the globe.</desc>
+    <date>1251</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Episode</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2663347.jpg" />
+  </programme>
+  <programme start="20260228000000 +0000" stop="20260228010000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Newshour</title>
+    <desc lang="en">. Up-to-date news and analysis from around the world.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Season</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2666752.jpg" />
+  </programme>
+  <programme start="20260228010000 +0000" stop="20260228020000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Head to Head</title>
+    <desc lang="en">. Mehdi Hasan goes Head to Head with former Venezuelan opposition envoy Vanessa Neumann on U.S.-backed regime change and the future of Venezuelan democracy.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Season</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2663350.jpg" />
+  </programme>
+  <programme start="20260228020000 +0000" stop="20260228023000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2450527.jpg" />
+  </programme>
+  <programme start="20260228023000 +0000" stop="20260228030000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Making Peace</title>
+    <desc lang="en">, Episode 6. In post-peace Colombia, ex-FARC fighters confess as victims confront them seeking justice and reconciliation. Dan Shapiro, Mahbouba Seraj, William Ury, Gabrielle Rifkind.</desc>
+    <date>2026</date>
+    <category lang="en">Documentary</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2654371.jpg" />
+  </programme>
+  <programme start="20260228030000 +0000" stop="20260228033000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2450527.jpg" />
+  </programme>
+  <programme start="20260228033000 +0000" stop="20260228040000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">101 East</title>
+    <desc lang="en">. 101 East meets the doctors traveling on a medical train, bringing critical health services to Kazakhstan's most remote communities across the country. Drew Ambrose, Steve Chao, Mary Ann Jolley, Karishma Vyas, Yaara Bou Melhem, Aela Callan, Chan Tau Chou, Mellissa Fung, Trevor Bormann, Teymoor Nabili, Fauziah Ibrahim.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2663352.jpg" />
+  </programme>
+  <programme start="20260228040000 +0000" stop="20260228043000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2450527.jpg" />
+  </programme>
+  <programme start="20260228043000 +0000" stop="20260228050000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">War Hotels</title>
+    <desc lang="en">. Fascinating war stories from the Caravelle Hotel, a famous media hub in old Saigon and a vital vantage point for journalists reporting the Vietnam war decades.</desc>
+    <date>2021</date>
+    <category lang="en">Documentary</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2085865.jpg" />
+  </programme>
+  <programme start="20260228050000 +0000" stop="20260228053000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2450527.jpg" />
+  </programme>
+  <programme start="20260228053000 +0000" stop="20260228060000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Inside Story</title>
+    <desc lang="en">. Beyond the headlines to the heart of the news of the day. Al Jazeera gets the Inside Story from some of the best minds from around the globe.</desc>
+    <date>1251</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Episode</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2663347.jpg" />
+  </programme>
+  <programme start="20260228060000 +0000" stop="20260228063000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2450527.jpg" />
+  </programme>
+  <programme start="20260228063000 +0000" stop="20260228070000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Witness</title>
+    <desc lang="en">. In war-torn Ukraine, a family weighs the dangers of leaving their makeshift bunker for the promise of freedom outside.</desc>
+    <date>2024</date>
+    <category lang="en">Documentary</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2651452.jpg" />
+  </programme>
+  <programme start="20260228070000 +0000" stop="20260228073000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2450527.jpg" />
+  </programme>
+  <programme start="20260228073000 +0000" stop="20260228080000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">People and Power</title>
+    <desc lang="en">. Pervasive and permanent, Forever Chemicals have poisoned the planet. We meet those fighting to hold someone to account. Samah El Shahat.</desc>
+    <date>2025</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2184184.jpg" />
+  </programme>
+  <programme start="20260228080000 +0000" stop="20260228083000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2450527.jpg" />
+  </programme>
+  <programme start="20260228083000 +0000" stop="20260228090000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">The Stream</title>
+    <desc lang="en">, Episode 13. Today on The Stream: Bad Bunny as a case study in global relevance and diaspora power.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2689036.jpg" />
+  </programme>
+  <programme start="20260228090000 +0000" stop="20260228093000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2450527.jpg" />
+  </programme>
+  <programme start="20260228093000 +0000" stop="20260228100000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Counting the Cost</title>
+    <desc lang="en">, Episode 9. Is Trump's economic policy faltering or is American protectionism under strain.</desc>
+    <date>2026</date>
+    <category lang="en">Documentary</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2699529.jpg" />
+  </programme>
+  <programme start="20260228100000 +0000" stop="20260228110000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Newshour</title>
+    <desc lang="en">. Up-to-date news and analysis from around the world.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Season</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2669705.jpg" />
+  </programme>
+  <programme start="20260228110000 +0000" stop="20260228113000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2450527.jpg" />
+  </programme>
+  <programme start="20260228113000 +0000" stop="20260228120000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Inside Story</title>
+    <desc lang="en">. Beyond the headlines to the heart of the news of the day. Al Jazeera gets the Inside Story from some of the best minds from around the globe.</desc>
+    <date>1251</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Episode</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2666755.jpg" />
+  </programme>
+  <programme start="20260228120000 +0000" stop="20260228130000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Al Jazeera World</title>
+    <desc lang="en">, Episode 399. In Cuba under a continuing U.S. economic blockade, mechanics and inventors breathe new life into old machines in order to survive at a time of scarcity.</desc>
+    <date>2026</date>
+    <category lang="en">Documentary</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2663343.jpg" />
+  </programme>
+  <programme start="20260228130000 +0000" stop="20260228140000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Newshour</title>
+    <desc lang="en">. Up-to-date news and analysis from around the world.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Season</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2669705.jpg" />
+  </programme>
+  <programme start="20260228140000 +0000" stop="20260228143000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2450527.jpg" />
+  </programme>
+  <programme start="20260228143000 +0000" stop="20260228150000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">War Hotels</title>
+    <desc lang="en">. Fascinating war stories from the Caravelle Hotel, a famous media hub in old Saigon and a vital vantage point for journalists reporting the Vietnam war decades.</desc>
+    <date>2021</date>
+    <category lang="en">Documentary</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2085865.jpg" />
+  </programme>
+  <programme start="20260228150000 +0000" stop="20260228160000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Newshour</title>
+    <desc lang="en">. Up-to-date news and analysis from around the world.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Season</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2669705.jpg" />
+  </programme>
+  <programme start="20260228160000 +0000" stop="20260228163000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2450527.jpg" />
+  </programme>
+  <programme start="20260228163000 +0000" stop="20260228170000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Making Peace</title>
+    <desc lang="en">, Episode 6. In post-peace Colombia, ex-FARC fighters confess as victims confront them seeking justice and reconciliation. Dan Shapiro, Mahbouba Seraj, William Ury, Gabrielle Rifkind.</desc>
+    <date>2026</date>
+    <category lang="en">Documentary</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2654371.jpg" />
+  </programme>
+  <programme start="20260228170000 +0000" stop="20260228173000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2450527.jpg" />
+  </programme>
+  <programme start="20260228173000 +0000" stop="20260228180000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Inside Story</title>
+    <desc lang="en">. Beyond the headlines to the heart of the news of the day. Al Jazeera gets the Inside Story from some of the best minds from around the globe.</desc>
+    <date>1252</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Episode</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2666755.jpg" />
+  </programme>
+  <programme start="20260228180000 +0000" stop="20260228190000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Newshour</title>
+    <desc lang="en">. Up-to-date news and analysis from around the world.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Season</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2669705.jpg" />
+  </programme>
+  <programme start="20260228190000 +0000" stop="20260228193000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2450527.jpg" />
+  </programme>
+  <programme start="20260228193000 +0000" stop="20260228200000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">The Listening Post</title>
+    <desc lang="en">, Episode 9. What is being reported by world media and how? Richard Gizbert guides you through the global news maze.</desc>
+    <date>2025</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2669710.jpg" />
+  </programme>
+  <programme start="20260228200000 +0000" stop="20260228210000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Witness</title>
+    <desc lang="en">. Inspirational and provocative stories providing a fresh and informative insight into the world's key events as they impact on the lives of ordinary people.</desc>
+    <date>2025</date>
+    <category lang="en">Documentary</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2651452.jpg" />
+  </programme>
+  <programme start="20260228210000 +0000" stop="20260228220000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Newshour</title>
+    <desc lang="en">. Up-to-date news and analysis from around the world.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Season</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2669705.jpg" />
+  </programme>
+  <programme start="20260228220000 +0000" stop="20260228223000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2450527.jpg" />
+  </programme>
+  <programme start="20260228223000 +0000" stop="20260228230000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">The Bottom Line</title>
+    <desc lang="en">, Episode 9. Matt Duss, former foreign policy adviser to Sen. Bernie Sanders, on the latest developments in U.S. policy on Palestine.</desc>
+    <date>2024</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2669712.jpg" />
+  </programme>
+  <programme start="20260228230000 +0000" stop="20260228233000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2450527.jpg" />
+  </programme>
+  <programme start="20260228233000 +0000" stop="20260301000000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Inside Story</title>
+    <desc lang="en">. Beyond the headlines to the heart of the news of the day. Al Jazeera gets the Inside Story from some of the best minds from around the globe.</desc>
+    <date>1252</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Episode</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2666755.jpg" />
+  </programme>
+  <programme start="20260301000000 +0000" stop="20260301010000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Newshour</title>
+    <desc lang="en">. Up-to-date news and analysis from around the world.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Season</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2669705.jpg" />
+  </programme>
+  <programme start="20260301010000 +0000" stop="20260301020000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Al Jazeera World</title>
+    <desc lang="en">, Episode 399. In Cuba under a continuing U.S. economic blockade, mechanics and inventors breathe new life into old machines in order to survive at a time of scarcity.</desc>
+    <date>2026</date>
+    <category lang="en">Documentary</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2663343.jpg" />
+  </programme>
+  <programme start="20260301020000 +0000" stop="20260301023000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2450527.jpg" />
+  </programme>
+  <programme start="20260301023000 +0000" stop="20260301030000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">The Stream</title>
+    <desc lang="en">, Episode 13. Today on The Stream: Bad Bunny as a case study in global relevance and diaspora power.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2689036.jpg" />
+  </programme>
+  <programme start="20260301030000 +0000" stop="20260301033000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2450527.jpg" />
+  </programme>
+  <programme start="20260301033000 +0000" stop="20260301040000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Counting the Cost</title>
+    <desc lang="en">, Episode 9. Is Trump's economic policy faltering or is American protectionism under strain.</desc>
+    <date>2026</date>
+    <category lang="en">Documentary</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2699529.jpg" />
+  </programme>
+  <programme start="20260301040000 +0000" stop="20260301043000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2450527.jpg" />
+  </programme>
+  <programme start="20260301043000 +0000" stop="20260301050000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">The Listening Post</title>
+    <desc lang="en">, Episode 9. What is being reported by world media and how? Richard Gizbert guides you through the global news maze.</desc>
+    <date>2025</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2669710.jpg" />
+  </programme>
+  <programme start="20260301050000 +0000" stop="20260301053000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2450527.jpg" />
+  </programme>
+  <programme start="20260301053000 +0000" stop="20260301060000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Inside Story</title>
+    <desc lang="en">. Beyond the headlines to the heart of the news of the day. Al Jazeera gets the Inside Story from some of the best minds from around the globe.</desc>
+    <date>1252</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Episode</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images4/epg-2666755.jpg" />
+  </programme>
+  <programme start="20260301060000 +0000" stop="20260301063000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260301063000 +0000" stop="20260301070000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Making Peace</title>
+    <desc lang="en">, Episode 6. In post-peace Colombia, ex-FARC fighters confess as victims confront them seeking justice and reconciliation. Dan Shapiro, Mahbouba Seraj, William Ury, Gabrielle Rifkind.</desc>
+    <date>2026</date>
+    <category lang="en">Documentary</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6195.svg" />
+  </programme>
+  <programme start="20260301070000 +0000" stop="20260301073000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260301073000 +0000" stop="20260301080000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">101 East</title>
+    <desc lang="en">. 101 East meets the doctors traveling on a medical train, bringing critical health services to Kazakhstan's most remote communities across the country. Drew Ambrose, Steve Chao, Mary Ann Jolley, Karishma Vyas, Yaara Bou Melhem, Aela Callan, Chan Tau Chou, Mellissa Fung, Trevor Bormann, Teymoor Nabili, Fauziah Ibrahim.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260301080000 +0000" stop="20260301083000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260301083000 +0000" stop="20260301090000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">War Hotels</title>
+    <desc lang="en">. Fascinating war stories from the Caravelle Hotel, a famous media hub in old Saigon and a vital vantage point for journalists reporting the Vietnam war decades.</desc>
+    <date>2021</date>
+    <category lang="en">Documentary</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6195.svg" />
+  </programme>
+  <programme start="20260301090000 +0000" stop="20260301093000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260301093000 +0000" stop="20260301100000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">The Bottom Line</title>
+    <desc lang="en">, Episode 9. Matt Duss, former foreign policy adviser to Sen. Bernie Sanders, on the latest developments in U.S. policy on Palestine.</desc>
+    <date>2024</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260301100000 +0000" stop="20260301110000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Newshour</title>
+    <desc lang="en">. Up-to-date news and analysis from around the world.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Season</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260301110000 +0000" stop="20260301113000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260301113000 +0000" stop="20260301120000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Inside Story</title>
+    <desc lang="en">. Beyond the headlines to the heart of the news of the day. Al Jazeera gets the Inside Story from some of the best minds from around the globe.</desc>
+    <date>1252</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Episode</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260301120000 +0000" stop="20260301130000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Witness</title>
+    <desc lang="en">. Inspirational and provocative stories providing a fresh and informative insight into the world's key events as they impact on the lives of ordinary people.</desc>
+    <date>2025</date>
+    <category lang="en">Documentary</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6195.svg" />
+  </programme>
+  <programme start="20260301130000 +0000" stop="20260301140000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Newshour</title>
+    <desc lang="en">. Up-to-date news and analysis from around the world.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Season</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260301140000 +0000" stop="20260301143000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260301143000 +0000" stop="20260301150000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">The Listening Post</title>
+    <desc lang="en">, Episode 9. What is being reported by world media and how? Richard Gizbert guides you through the global news maze.</desc>
+    <date>2025</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260301150000 +0000" stop="20260301160000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Newshour</title>
+    <desc lang="en">. Up-to-date news and analysis from around the world.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Season</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260301160000 +0000" stop="20260301163000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260301163000 +0000" stop="20260301170000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">People and Power</title>
+    <desc lang="en">. Pervasive and permanent, Forever Chemicals have poisoned the planet. We meet those fighting to hold someone to account. Samah El Shahat.</desc>
+    <date>2025</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260301170000 +0000" stop="20260301173000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260301173000 +0000" stop="20260301180000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Inside Story</title>
+    <desc lang="en">. Beyond the headlines to the heart of the news of the day. Al Jazeera gets the Inside Story from some of the best minds from around the globe.</desc>
+    <date>1253</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Episode</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260301180000 +0000" stop="20260301190000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Newshour</title>
+    <desc lang="en">. Up-to-date news and analysis from around the world.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Season</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260301190000 +0000" stop="20260301193000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260301193000 +0000" stop="20260301200000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Talk to Al Jazeera</title>
+    <desc lang="en">. AI can clone your voice. But who controls it? ElevenLabs CEO on power, trust and the future of voice technology.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Episode 457</category>
+    <category lang="en">Season</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260301200000 +0000" stop="20260301210000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Head to Head</title>
+    <desc lang="en">. Mehdi Hasan goes Head to Head with former Venezuelan opposition envoy Vanessa Neumann on U.S.-backed regime change and the future of Venezuelan democracy.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Season</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260301210000 +0000" stop="20260301220000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Newshour</title>
+    <desc lang="en">. Up-to-date news and analysis from around the world.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Season</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260301220000 +0000" stop="20260301223000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260301223000 +0000" stop="20260301230000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Business of War</title>
+    <desc lang="en">, Episode 2. Hind Hassan examines the prospect of a new nuclear arms race, the companies helping to fuel it, and the dangers it poses to us all.</desc>
+    <date>2025</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260301230000 +0000" stop="20260301233000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260301233000 +0000" stop="20260302000000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Inside Story</title>
+    <desc lang="en">. Beyond the headlines to the heart of the news of the day. Al Jazeera gets the Inside Story from some of the best minds from around the globe.</desc>
+    <date>1253</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Episode</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260302000000 +0000" stop="20260302010000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Newshour</title>
+    <desc lang="en">. Up-to-date news and analysis from around the world.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Season</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260302010000 +0000" stop="20260302020000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Witness</title>
+    <desc lang="en">. Inspirational and provocative stories providing a fresh and informative insight into the world's key events as they impact on the lives of ordinary people.</desc>
+    <date>2025</date>
+    <category lang="en">Documentary</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6195.svg" />
+  </programme>
+  <programme start="20260302020000 +0000" stop="20260302023000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260302023000 +0000" stop="20260302030000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">War Hotels</title>
+    <desc lang="en">. Fascinating war stories from the Caravelle Hotel, a famous media hub in old Saigon and a vital vantage point for journalists reporting the Vietnam war decades.</desc>
+    <date>2021</date>
+    <category lang="en">Documentary</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6195.svg" />
+  </programme>
+  <programme start="20260302030000 +0000" stop="20260302033000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260302033000 +0000" stop="20260302040000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">The Bottom Line</title>
+    <desc lang="en">, Episode 9. Matt Duss, former foreign policy adviser to Sen. Bernie Sanders, on the latest developments in U.S. policy on Palestine.</desc>
+    <date>2024</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260302040000 +0000" stop="20260302043000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260302043000 +0000" stop="20260302050000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Talk to Al Jazeera</title>
+    <desc lang="en">. AI can clone your voice. But who controls it? ElevenLabs CEO on power, trust and the future of voice technology.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Episode 457</category>
+    <category lang="en">Season</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260302050000 +0000" stop="20260302053000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260302053000 +0000" stop="20260302060000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Inside Story</title>
+    <desc lang="en">. Beyond the headlines to the heart of the news of the day. Al Jazeera gets the Inside Story from some of the best minds from around the globe.</desc>
+    <date>1253</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Episode</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260302060000 +0000" stop="20260302063000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260302063000 +0000" stop="20260302070000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">People and Power</title>
+    <desc lang="en">. Pervasive and permanent, Forever Chemicals have poisoned the planet. We meet those fighting to hold someone to account. Samah El Shahat.</desc>
+    <date>2025</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260302070000 +0000" stop="20260302073000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260302073000 +0000" stop="20260302080000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Counting the Cost</title>
+    <desc lang="en">, Episode 9. Is Trump's economic policy faltering or is American protectionism under strain.</desc>
+    <date>2026</date>
+    <category lang="en">Documentary</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6195.svg" />
+  </programme>
+  <programme start="20260302080000 +0000" stop="20260302083000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260302083000 +0000" stop="20260302090000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">The Listening Post</title>
+    <desc lang="en">, Episode 9. What is being reported by world media and how? Richard Gizbert guides you through the global news maze.</desc>
+    <date>2025</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260302090000 +0000" stop="20260302093000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260302093000 +0000" stop="20260302100000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Business of War</title>
+    <desc lang="en">, Episode 2. Hind Hassan examines the prospect of a new nuclear arms race, the companies helping to fuel it, and the dangers it poses to us all.</desc>
+    <date>2025</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260302100000 +0000" stop="20260302110000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Newshour</title>
+    <desc lang="en">. Up-to-date news and analysis from around the world.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Season</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260302110000 +0000" stop="20260302113000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260302113000 +0000" stop="20260302120000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Inside Story</title>
+    <desc lang="en">. Beyond the headlines to the heart of the news of the day. Al Jazeera gets the Inside Story from some of the best minds from around the globe.</desc>
+    <date>1253</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Episode</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260302120000 +0000" stop="20260302130000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Head to Head</title>
+    <desc lang="en">. Mehdi Hasan goes Head to Head with former Venezuelan opposition envoy Vanessa Neumann on U.S.-backed regime change and the future of Venezuelan democracy.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Season</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260302130000 +0000" stop="20260302140000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Newshour</title>
+    <desc lang="en">. Up-to-date news and analysis from around the world.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Season</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260302140000 +0000" stop="20260302143000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260302143000 +0000" stop="20260302150000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Talk to Al Jazeera</title>
+    <desc lang="en">. AI can clone your voice. But who controls it? ElevenLabs CEO on power, trust and the future of voice technology.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Episode 457</category>
+    <category lang="en">Season</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260302150000 +0000" stop="20260302160000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Newshour</title>
+    <desc lang="en">. Up-to-date news and analysis from around the world.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Season</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260302160000 +0000" stop="20260302163000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260302163000 +0000" stop="20260302170000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">101 East</title>
+    <desc lang="en">. 101 East meets the doctors traveling on a medical train, bringing critical health services to Kazakhstan's most remote communities across the country. Drew Ambrose, Steve Chao, Mary Ann Jolley, Karishma Vyas, Yaara Bou Melhem, Aela Callan, Chan Tau Chou, Mellissa Fung, Trevor Bormann, Teymoor Nabili, Fauziah Ibrahim.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260302170000 +0000" stop="20260302173000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260302173000 +0000" stop="20260302180000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Inside Story</title>
+    <desc lang="en">. Beyond the headlines to the heart of the news of the day. Al Jazeera gets the Inside Story from some of the best minds from around the globe.</desc>
+    <date>1254</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Episode</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260302180000 +0000" stop="20260302190000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Newshour</title>
+    <desc lang="en">. Up-to-date news and analysis from around the world.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Season</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260302190000 +0000" stop="20260302193000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260302193000 +0000" stop="20260302200000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">The Stream</title>
+    <desc lang="en">, Episode 14. The Stream is where Al Jazeera's audience becomes a global community.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260302200000 +0000" stop="20260302210000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Al Jazeera World</title>
+    <desc lang="en">, Episode 399. In Cuba under a continuing U.S. economic blockade, mechanics and inventors breathe new life into old machines in order to survive at a time of scarcity.</desc>
+    <date>2026</date>
+    <category lang="en">Documentary</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6195.svg" />
+  </programme>
+  <programme start="20260302210000 +0000" stop="20260302220000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Newshour</title>
+    <desc lang="en">. Up-to-date news and analysis from around the world.</desc>
+    <date>2026</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Season</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260302220000 +0000" stop="20260302223000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260302223000 +0000" stop="20260302230000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Witness</title>
+    <desc lang="en">. Inspirational and provocative stories providing a fresh and informative insight into the world's key events as they impact on the lives of ordinary people.</desc>
+    <date>2025</date>
+    <category lang="en">Documentary</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6195.svg" />
+  </programme>
+  <programme start="20260302230000 +0000" stop="20260302233000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">News Live</title>
+    <desc lang="en">. Get the latest news every evening about what is happening around the globe.</desc>
+    <date>2022</date>
+    <category lang="en">News</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
+  </programme>
+  <programme start="20260302233000 +0000" stop="20260303000000 +0000" channel="Palestine.HD.ae">
+    <title lang="en">Inside Story</title>
+    <desc lang="en">. Beyond the headlines to the heart of the news of the day. Al Jazeera gets the Inside Story from some of the best minds from around the globe.</desc>
+    <date>1254</date>
+    <category lang="en">News</category>
+    <category lang="en">2026</category>
+    <category lang="en">Episode</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/no-img.svg" />
   </programme>
   <programme start="20260227000000 +0000" stop="20260227003000 +0000" channel="Asil.TV.ae">
     <title lang="en">My Heart Is Rest Assured</title>
