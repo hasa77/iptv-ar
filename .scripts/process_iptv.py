@@ -1,130 +1,103 @@
-HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/119.0.0.0'}
-BLACKLIST = r"Iran|Afghanistan|Persian|Farsi|Pashto|Tajikistan|Kurd|Kurdish|K24|Rudaw|NRT|Waala|Kurdsat"
+import requests
+import re
+import os
+import gzip
+import xml.etree.ElementTree as ET
+from datetime import datetime
 
-def normalize(text):
-    """Helper to make matching easier: lowercase and remove symbols."""
+# Configuration
+M3U_URL = "https://iptv-org.github.io/iptv/languages/ara.m3u"
+# Using the 1.6GB file as a secondary source, and adding the dedicated Arabic one if possible
+EPG_URL = "https://epgshare01.online/epgshare01/epg_ripper_ALL_SOURCES1.xml.gz"
+
+def clean_name(text):
+    """Normalize text for better matching"""
     if not text: return ""
-    return re.sub(r'[^a-z0-0]', '', text.lower())
+    text = text.lower()
+    # Remove HD, SD, Arabic, and country codes in brackets
+    text = re.sub(r'\(.*?\)|\[.*?\]|hd|sd|fhd|4k|arabic|uae', '', text)
+    return re.sub(r'[^a-z0-9]', '', text)
 
 def main():
-session = requests.Session()
-session.headers.update(HEADERS)
-print(f"Update started at: {datetime.now()}")
+    session = requests.Session()
+    print(f"Sync started: {datetime.now()}")
 
-    # 1. Process M3U & Identify which channels we need
-    # 1. Process M3U
-keep_ids = set()
-    keep_names = set()
-    keep_names_norm = set()
-try:
-        print("Fetching and filtering M3U...")
-r = session.get(M3U_URL, timeout=30)
-        r.raise_for_status()
-lines = r.text.splitlines()
+    # 1. Map M3U Channels
+    m3u_targets = {}
+    r = session.get(M3U_URL)
+    lines = r.text.splitlines()
+    current_info = None
+    for line in lines:
+        if line.startswith("#EXTINF"):
+            name = line.split(',')[-1].strip()
+            norm = clean_name(name)
+            current_info = {"line": line, "norm": norm, "name": name}
+        elif line.startswith("http") and current_info:
+            m3u_targets[current_info['norm']] = current_info
+            m3u_targets[current_info['norm']]['url'] = line
+            current_info = None
+
+    # 2. Process EPG
+    print("Processing 1.6GB EPG...")
+    response = session.get(EPG_URL, stream=True)
+    
+    new_root = ET.Element("tv", {"generator": "Gemini-Final-V4"})
+    matched_epg_ids = set()
+    final_m3u = ["#EXTM3U"]
+    
+    # Track which M3U channels actually got an EPG match
+    m3u_matched_norms = set()
+
+    with gzip.open(response.raw, 'rb') as gz:
+        context = ET.iterparse(gz, events=('end',))
+        for event, elem in context:
+            if elem.tag == 'channel':
+                epg_id = elem.get('id')
+                # Check all display names in EPG
+                found_match = False
+                for dn in elem.findall('display-name'):
+                    epg_norm = clean_name(dn.text)
+                    if epg_norm in m3u_targets:
+                        found_match = True
+                        m3u_matched_norms.add(epg_norm)
+                        # Link this EPG ID to our M3U target
+                        m3u_targets[epg_norm]['epg_id'] = epg_id
+                        break
+                
+                if found_match:
+                    new_root.append(elem)
+                    matched_epg_ids.add(epg_id)
+                else:
+                    elem.clear()
+
+            elif elem.tag == 'programme':
+                chan_id = elem.get('channel')
+                if chan_id in matched_epg_ids:
+                    new_root.append(elem)
+                else:
+                    elem.clear()
+
+    # 3. Build Final M3U (Injecting the correct tvg-id)
+    for norm, data in m3u_targets.items():
+        info_line = data['line']
+        if 'epg_id' in data:
+            # Replace existing tvg-id with the one we found in the big EPG
+            if 'tvg-id="' in info_line:
+                info_line = re.sub(r'tvg-id="[^"]*"', f'tvg-id="{data["epg_id"]}"', info_line)
+            else:
+                info_line = info_line.replace('#EXTINF:-1 ', f'#EXTINF:-1 tvg-id="{data["epg_id"]}" ')
         
-curated = ["#EXTM3U"]
-current_info = None
+        final_m3u.append(info_line)
+        final_m3u.append(data['url'])
 
-for line in lines:
-if line.startswith("#EXTINF"):
-if not re.search(BLACKLIST, line, re.IGNORECASE):
-current_info = line
-                    # Grab ID
-                    # Get ID
-id_match = re.search(r'tvg-id="([^"]+)"', line)
-if id_match: keep_ids.add(id_match.group(1))
-                    # Grab Name (everything after the last comma)
-                    name_parts = line.split(',')
-                    if len(name_parts) > 1: keep_names.add(name_parts[-1].strip())
-                    # Get Name and Normalize it
-                    name_match = line.split(',')[-1].strip()
-                    keep_names_norm.add(normalize(name_match))
-else:
-current_info = None
-elif line.startswith("http") and current_info:
-@@ -47,52 +49,51 @@ def main():
-
-with open("curated-live.m3u", "w", encoding='utf-8') as f:
-f.write("\n".join(curated))
-        print(f"M3U Saved. Channels: {len(curated)//2}")
-        print(f"M3U Processed. Filtered to {len(keep_ids)} potential IDs.")
-except Exception as e:
-print(f"M3U Error: {e}")
-
-    # 2. Download, Stream, and Filter the Giant EPG
-    # 2. Filter EPG
-try:
-        print("Downloading massive EPG... this takes time...")
-        print("Downloading EPG stream...")
-response = session.get(EPG_URL, timeout=600, stream=True)
-
-if response.status_code == 200:
-            print("Filtering 1.6GB EPG into a smaller file...")
-            
-            # Using gzip to decompress the stream on the fly
-            new_root = ET.Element("tv", {"generator-info-name": "Gemini-Filter"})
-            # We need to track which IDs we actually found in the <channel> tags
-            found_ids = set()
-
-with gzip.open(response.raw, 'rb') as gz:
-                # We build a new smaller XML structure
-                new_root = ET.Element("tv", {"generator-info-name": "Gemini-Filter"})
-                
-                # iterparse is memory efficient
-                context = ET.iterparse(gz, events=('end',))
-                # Event 'start' is needed to prevent some elements from being cleared too early
-                context = ET.iterparse(gz, events=('start', 'end'))
-
-for event, elem in context:
-                    if elem.tag == 'channel':
-                        channel_id = elem.get('id')
-                        # Check if display-name matches any of our kept channel names
-                        disp_name = elem.findtext('display-name')
-                        if channel_id in keep_ids or disp_name in keep_names:
-                            new_root.append(elem)
-                        else:
-                            elem.clear() # Free memory
-                    if event == 'end':
-                        if elem.tag == 'channel':
-                            chan_id = elem.get('id')
-                            disp_name = elem.findtext('display-name')
-
-                    elif elem.tag == 'programme':
-                        if elem.get('channel') in keep_ids:
-                            new_root.append(elem)
-                        else:
-                            elem.clear() # Free memory
-                
-                # Save final tiny XML
-                tree = ET.ElementTree(new_root)
-                tree.write("arabic-epg-clean.xml", encoding="utf-8", xml_declaration=True)
-                
-                final_size = os.path.getsize("arabic-epg-clean.xml") / (1024 * 1024)
-                print(f"EPG Saved. Filtered Size: {final_size:.2f} MB")
-        else:
-            print(f"EPG Download failed. Status: {response.status_code}")
-                            # Match if ID matches OR normalized name matches
-                            if chan_id in keep_ids or normalize(disp_name) in keep_names_norm:
-                                new_root.append(elem)
-                                found_ids.add(chan_id)
-                            else:
-                                elem.clear()
-
-                        elif elem.tag == 'programme':
-                            prog_chan_id = elem.get('channel')
-                            if prog_chan_id in found_ids or prog_chan_id in keep_ids:
-                                new_root.append(elem)
-                            else:
-                                elem.clear()
-
-            # Save the file
-            tree = ET.ElementTree(new_root)
-            tree.write("arabic-epg-clean.xml", encoding="utf-8", xml_declaration=True)
-            print(f"EPG Saved. Size: {os.path.getsize('arabic-epg-clean.xml') / 1024 / 1024:.2f} MB")
-            
-except Exception as e:
-        print(f"EPG Filtering Error: {e}")
-        print(f"EPG Error: {e}")
+    # Save Results
+    with open("curated-live.m3u", "w", encoding="utf-8") as f:
+        f.write("\n".join(final_m3u))
+    
+    tree = ET.ElementTree(new_root)
+    tree.write("arabic-epg-clean.xml", encoding="utf-8", xml_declaration=True)
+    
+    print(f"Matched {len(m3u_matched_norms)} out of {len(m3u_targets)} M3U channels.")
 
 if __name__ == "__main__":
-main()
+    main()
