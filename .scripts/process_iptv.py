@@ -1,5 +1,6 @@
 import requests
 import re
+import os
 from datetime import datetime
 
 # Configuration
@@ -8,10 +9,12 @@ EPG_URL = "https://iptv-org.github.io/epg/guides/ar.xml"
 HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) VLC/3.0.18'}
 BLACKLIST = r"Iran|Afghanistan|Persian|Farsi|Pashto|Tajikistan|Kurd|Kurdish|K24|Rudaw|NRT|Waala|Kurdsat"
 
+# Get the root directory (one level up from .scripts/)
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 def main():
     session = requests.Session()
     session.headers.update(HEADERS)
-
     print(f"Update started at: {datetime.now()}")
 
     # 1. Process M3U
@@ -28,13 +31,13 @@ def main():
             if line.startswith("#EXTINF"):
                 current_info = line if not re.search(BLACKLIST, line, re.IGNORECASE) else None
             elif line.startswith("http") and current_info:
-                # Basic check - if you want it faster, remove the session.get check here
                 curated.append(current_info)
                 curated.append(line)
 
-        with open("curated-live.m3u", "w", encoding='utf-8') as f:
+        output_path = os.path.join(ROOT_DIR, "curated-live.m3u")
+        with open(output_path, "w", encoding='utf-8') as f:
             f.write("\n".join(curated))
-        print(f"M3U Saved. Channels: {len(curated)//2}")
+        print(f"M3U Saved to {output_path}. Channels: {len(curated)//2}")
     except Exception as e:
         print(f"M3U Error: {e}")
 
@@ -43,11 +46,10 @@ def main():
         print("Fetching EPG...")
         epg_r = session.get(EPG_URL, timeout=30)
         if epg_r.status_code == 200 and b"xml" in epg_r.content[:200]:
-            # We add a hidden timestamp at the end so Git always sees a change
-            content = epg_r.content + f"\n".encode()
-            with open("arabic-epg-clean.xml", "wb") as f:
-                f.write(content)
-            print("EPG Saved successfully.")
+            epg_path = os.path.join(ROOT_DIR, "arabic-epg-clean.xml")
+            with open(epg_path, "wb") as f:
+                f.write(epg_r.content)
+            print(f"EPG Saved successfully to {epg_path}.")
         else:
             print(f"EPG Source returned invalid data: {epg_r.status_code}")
     except Exception as e:
