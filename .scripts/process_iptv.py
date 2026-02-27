@@ -8,7 +8,7 @@ from datetime import datetime
 # Configuration
 M3U_URL = "https://iptv-org.github.io/iptv/languages/ara.m3u"
 # Using the specific Arabic guide from EPGShare01
-EPG_URL = "https://epgshare01.online/epgshare01/epg_ripper_ARABIC1.xml.gz"
+EPG_URL = "https://epgshare01.online/epgshare01/epg_ripper_ALL_SOURCES1.xml.gz"
 HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36'}
 BLACKLIST = r"Iran|Afghanistan|Persian|Farsi|Pashto|Tajikistan|Kurd|Kurdish|K24|Rudaw|NRT|Waala|Kurdsat"
 
