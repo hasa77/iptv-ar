@@ -42,22 +42,21 @@ def main():
     # 2. Process EPG
     try:
         print(f"Fetching EPG from: {EPG_URL}")
-        epg_r = session.get(EPG_URL, timeout=60)
+        # Increased timeout to 120 seconds for large EPG files
+        epg_r = session.get(EPG_URL, timeout=120)
         
-        # Check if we actually got XML data
-        if epg_r.status_code == 200 and (b"xml" in epg_r.content[:200] or b"tv" in epg_r.content[:200]):
+        if epg_r.status_code == 200 and len(epg_r.content) > 1000:
             with open("arabic-epg-clean.xml", "wb") as f:
                 f.write(epg_r.content)
-            print("EPG Saved successfully.")
+            print(f"EPG Saved. Size: {len(epg_r.content) / 1024:.2f} KB")
         else:
-            print(f"EPG Source error. Status: {epg_r.status_code}. Data starts with: {epg_r.content[:50]}")
-            # Create a blank valid XML so the Git command doesn't crash
-            with open("arabic-epg-clean.xml", "w") as f:
-                f.write('<?xml version="1.0" encoding="UTF-8"?><tv></tv>')
+            print(f"EPG Download failed or too small. Status: {epg_r.status_code}")
+            # Only create dummy if the file doesn't exist at all
+            if not os.path.exists("arabic-epg-clean.xml"):
+                with open("arabic-epg-clean.xml", "w") as f:
+                    f.write('<?xml version="1.0" encoding="UTF-8"?><tv></tv>')
     except Exception as e:
         print(f"EPG Error: {e}")
-        with open("arabic-epg-clean.xml", "w") as f:
-            f.write('<?xml version="1.0" encoding="UTF-8"?><tv></tv>')
 
 if __name__ == "__main__":
     main()
