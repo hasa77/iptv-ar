@@ -187,7 +187,7 @@ https://liveeu-gcp.alkassdigital.net/alkass6-p/main.m3u8
 https://liveeu-gcp.alkassdigital.net/alkass3-p/main.m3u8
 #EXTINF:-1 tvg-id="AlkassTwo.qa@SD" tvg-logo="https://i.imgur.com/8w61kFX.png" group-title="Sports",Alkass Two (1080p)
 https://liveeu-gcp.alkassdigital.net/alkass2-p/main.m3u8
-#EXTINF:-1 tvg-id="AlKawtharTV.ir@SD" tvg-logo="https://i.imgur.com/x4zUmY1.png" group-title="Culture;Religious",AlKawthar
+#EXTINF:-1 tvg-id="Al.Kawthar.TV.ae" tvg-logo="https://i.imgur.com/x4zUmY1.png" group-title="Culture;Religious",AlKawthar
 https://lenz.splus.ir/PLTV/88888888/224/3221226158/index.m3u8
 #EXTINF:-1 tvg-id="AlkhuzamaRadio.sa@SD" tvg-logo="https://shahid.mbc.net/mediaObject/61010cbc-91c5-4ce1-94a4-ed40adadb97b" group-title="Undefined",Alkhuzama Radio (1080p)
 https://live.kwikmotion.com/sbrksakhuzamaradiolive/srpkhuzama/playlist.m3u8
@@ -233,7 +233,7 @@ https://5aafcc5de91f1.streamlock.net/atfal1.com/atfal2/playlist.m3u8
 https://stream.atvsat.com/atvsatlive/smil:atvsatlive.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="BabAlHara.sa@SD" tvg-logo="https://i.imgur.com/QtlnZbq.png" group-title="Series",Bab Al Hara (1080p)
 https://shls-live-enc.edgenextcdn.net/out/v1/948c54279b594944adde578c95f1d7d1/index.m3u8
-#EXTINF:-1 tvg-id="BABY.FIRST.ph" tvg-logo="https://i.imgur.com/WxLHBwu.png" group-title="Kids",BabyFirst
+#EXTINF:-1 tvg-id="BabyFirst.TV.us2" tvg-logo="https://i.imgur.com/WxLHBwu.png" group-title="Kids",BabyFirst
 https://streams2.sofast.tv/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/c8d16110-566c-4e95-a1df-55d175e9e201/manifest.m3u8
 #EXTINF:-1 tvg-id="BahrainInternational.bh@SD" tvg-logo="https://i.imgur.com/t6Lmntr.png" group-title="General",Bahrain International (720p) [Not 24/7]
 https://5c7b683162943.streamlock.net/live/ngrp:bahraininternational_all/playlist.m3u8
@@ -335,7 +335,7 @@ https://playlist.fasttvcdn.com/pl/dlkqw1ftuvuuzkcb4pxdcg/Iqraafasttv1/playlist.m
 https://playlist.fasttvcdn.com/pl/dlkqw1ftuvuuzkcb4pxdcg/Iqraafasttv3/playlist.m3u8
 #EXTINF:-1 tvg-id="IqraaQuran.sa@SD" tvg-logo="https://i.imgur.com/HPVsIa4.png" group-title="Religious",Iqraa Quran (1080p)
 https://playlist.fasttvcdn.com/pl/dlkqw1ftuvuuzkcb4pxdcg/Iqraafasttv2/playlist.m3u8
-#EXTINF:-1 tvg-id="IraqFuture.iq@SD" tvg-logo="https://i.imgur.com/Z7woTe5.png" group-title="General",Iraq Future
+#EXTINF:-1 tvg-id="Iraq.Future.TV.ae" tvg-logo="https://i.imgur.com/Z7woTe5.png" group-title="General",Iraq Future
 https://viewmedia7219.bozztv.com/wmedia/viewmedia100/web_040/Stream/playlist.m3u8
 #EXTINF:-1 tvg-id="JawharaTV.tn@SD" tvg-logo="https://i.imgur.com/mRSQ5bP.png" group-title="Music",Jawhara TV (720p) [Not 24/7]
 http://streaming.toutech.net:1935/live/mp4:jawharafm.sdp/playlist.m3u8
@@ -391,7 +391,7 @@ https://5a8308add0b31.streamlock.net/logoschannel.com/logostv.smil/playlist.m3u8
 https://go5lm6a6dawb-hls-live.5centscdn.com/lwarabic/53132d996b4263ec0d7b602292c46eaf.sdp/playlist.m3u8
 #EXTINF:-1 tvg-id="LanaTV.lb@SD" tvg-logo="https://i.imgur.com/xPoycVY.png" group-title="General",LTV (360p)
 https://p-ltv.akamaized.net/ltv/ltv.m3u8
-#EXTINF:-1 tvg-id="Mонголын.Мэдээ.mn" tvg-logo="https://i.imgur.com/Ho8N310.png" group-title="Music",M+
+#EXTINF:-1 tvg-id="M+.distro" tvg-logo="https://i.imgur.com/Ho8N310.png" group-title="Music",M+
 https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/m-plus/master.m3u8?ads.vf=6otIjpqWKPe
 #EXTINF:-1 tvg-id="Majid.ae@HD" tvg-logo="https://i.imgur.com/TzOKMMy.png" group-title="Kids",Majid (1080p)
 https://admn-live-cdn-lb.starzplayarabia.com/out/v1/admn_tv_enc/majid/majid_hls_nd/index.m3u8
@@ -635,7 +635,7 @@ https://cdn-globecast.akamaized.net/live/eds/sudan_tv/hls_roku/index.m3u8
 https://live.syriaone.tv/live/syriaone.m3u8
 #EXTINF:-1 tvg-id="SyriaTV.sy@SD" tvg-logo="https://i.imgur.com/FjuVuXF.jpeg" group-title="News",Syria TV (1080p)
 https://live.kwikmotion.com/syriatvlive/syriatv.smil/playlist_dvr.m3u8
-#EXTINF:-1 tvg-id="TahaTV.lb@SD" tvg-logo="https://i.imgur.com/hdsrxvX.png" group-title="Kids",Taha TV
+#EXTINF:-1 tvg-id="Taha.ae" tvg-logo="https://i.imgur.com/hdsrxvX.png" group-title="Kids",Taha TV
 https://media1.livaat.com/static/TAHA_TV/playlist.m3u8
 #EXTINF:-1 tvg-id="TanasuhTV.ly@HD" tvg-logo="https://i.imgur.com/iBAhM2v.png" group-title="General",Tanasuh TV (1080p)
 https://kilolink.pulsarstarsolutions.com/live/smil:tanasuhtv.smil/manifest.m3u8
