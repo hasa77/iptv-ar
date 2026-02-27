@@ -11,17 +11,18 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4 # Upgraded to v4
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 1 # Only download the latest commit (faster)
+          fetch-depth: 1
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
-          cache: 'pip' # Speeds up subsequent runs
+          python-version: '3.x' # Always uses the latest stable Python 3 release
 
       - name: Install dependencies
         run: pip install requests
@@ -33,7 +34,6 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          # Only commit if there are actual changes in the data
           git add arabic-epg.xml.gz
           git commit -m "Update Arabic EPG: $(date -u +'%Y-%m-%d %H:%M:%S') UTC" || exit 0
           git push origin main
