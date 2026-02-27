@@ -20,7 +20,8 @@ AR_KEYWORDS = ('mbc', 'bein', 'osn', 'rotana', 'alkass', 'aljazeera', 'arabic', 
 # STRICT REJECTION LIST (Now includes specific countries and redundant MBC)
 EXCLUDE_WORDS = (
     'radio', 'fm', 'chaine', 'distro.tv', 'argentina', 'colombia', 'telefe', 'eltrece', 
-    'kurd', 'kurdistan', 'rudaw', 'waar', 'duhok',      # Kurdish
+    'kurd', 'kurdistan', 'rudaw', 'waar', 'duhok', 
+    'rojava', 'sterk', 'ronahi',                       # Added specific Kurdish channel names
     'mbc 1', 'mbc 1 usa',                               # Redundant (Keep only MBC 1 Masr)
     'morocco', 'maroc', 'maghreb', '2m',                # Morocco
     'tunisia', 'tunisie', 'ttv', 'hannibal',            # Tunisia
