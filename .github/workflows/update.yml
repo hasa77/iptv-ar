@@ -31,6 +31,8 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add -A  # This adds ALL changed and new files automatically
-          git commit -m "Auto-update: $(date)" || exit 0
+          # Remove the old uncompressed file if it exists to avoid confusion
+          rm -f arabic-epg-clean.xml 
+          git add arabic-epg.xml.gz
+          git commit -m "Auto-update EPG: $(date)" || exit 0
           git push origin main
