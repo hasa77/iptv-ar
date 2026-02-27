@@ -1,1 +1,42 @@
-<?xml version="1.0" encoding="UTF-8"?><tv></tv>
+<?xml version='1.0' encoding='utf-8'?>
+<tv generator-info-name="Gemini-Filter"><channel id="2M.Monde.ae">
+    <display-name lang="en">2M Monde</display-name>
+    <icon src="https://www.sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images1/ecl-122571.png" />
+    <icon src="https://www.sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images1/ecl-122571.png" />
+    <url>http://www.sat.tv</url>
+  </channel>
+  <channel id="iFilm.Arabic.ae">
+    <display-name lang="en">iFilm Arabic</display-name>
+    <icon src="https://www.sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images1/ecl-503.png" />
+    <icon src="https://www.sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images1/ecl-503.png" />
+    <url>http://www.sat.tv</url>
+  </channel>
+  <channel id="Asil.TV.ae">
+    <display-name lang="en">Asil TV</display-name>
+    <icon src="https://www.sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images1/ecl-223139.png" />
+    <icon src="https://www.sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images1/ecl-223139.png" />
+    <url>http://www.sat.tv</url>
+  </channel>
+  <channel id="2M.Monde.ch">
+    <icon src="https://services.sg101.prd.sctv.ch/content/images/tv/channel/5b308d63-9a23-4d11-bf0f-0a48890a549a_W90.png" />
+    <icon src="https://services.sg101.prd.sctv.ch/content/images/tv/channel/5b308d63-9a23-4d11-bf0f-0a48890a549a_W90.png" />
+    <url>http://www.tv.blue.ch</url>
+    <display-name lang="de">2M Monde</display-name>
+  </channel>
+  <channel id="PNC.Drama.distro">
+    <url>http://www.distro.tv</url>
+    <display-name lang="en">PNC Drama</display-name>
+  </channel>
+  <channel id="Rotana.Aflam+.distro">
+    <url>http://www.distro.tv</url>
+    <display-name lang="en">Rotana Aflam+</display-name>
+  </channel>
+  <channel id="M+.distro">
+    <url>http://www.distro.tv</url>
+    <display-name lang="en">M+</display-name>
+  </channel>
+  <channel id="Rotana.Aflam+.fr">
+    <url>http://www.tv.sfr.fr</url>
+    <display-name lang="fr">Rotana Aflam+</display-name>
+  </channel>
+  </tv>
