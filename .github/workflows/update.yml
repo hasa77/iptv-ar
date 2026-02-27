@@ -4,19 +4,24 @@ on:
     - cron: '0 0 * * *'
   workflow_dispatch:
 
+concurrency:
+  group: epg-update
+  cancel-in-progress: true
+
 jobs:
   update:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4 # Upgraded to v4
+        with:
+          fetch-depth: 1 # Only download the latest commit (faster)
 
       - name: Set up Python
-        uses: actions/setup-python@v5 # Upgraded to v5 for better caching
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.x'  # The '.x' tells GitHub to use the latest stable release
+          python-version: '3.11'
+          cache: 'pip' # Speeds up subsequent runs
 
       - name: Install dependencies
         run: pip install requests
@@ -24,15 +29,11 @@ jobs:
       - name: Run filter script
         run: python .scripts/process_iptv.py
 
-      - name: Debug - List Files
-        run: ls -R  # This will show us exactly where the files are being created
-
       - name: Commit and Push
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          # Remove the old uncompressed file if it exists to avoid confusion
-          rm -f arabic-epg-clean.xml 
+          # Only commit if there are actual changes in the data
           git add arabic-epg.xml.gz
-          git commit -m "Auto-update EPG: $(date)" || exit 0
+          git commit -m "Update Arabic EPG: $(date -u +'%Y-%m-%d %H:%M:%S') UTC" || exit 0
           git push origin main
