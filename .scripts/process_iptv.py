@@ -3,7 +3,7 @@ import re
 
 # Configuration
 M3U_URL = "https://iptv-org.github.io/iptv/languages/ara.m3u"
-EPG_URL = "https://raw.githubusercontent.com/iptv-org/epg/master/arabic.xml"
+EPG_URL = "https://iptv-org.github.io/epg/guides/ar/beiner-ar.xml"
 HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
 
 # Keywords to exclude (Iran, Afghanistan, etc.)
