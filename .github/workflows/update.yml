@@ -31,7 +31,6 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git pull origin main --rebase  # Ensure we have the latest before pushing
-          git add curated-live.m3u arabic-epg-clean.xml
-          git commit -m "Auto-update: $(date)" || echo "No changes to commit"
+          git add -A  # This adds ALL changed and new files automatically
+          git commit -m "Auto-update: $(date)" || exit 0
           git push origin main
