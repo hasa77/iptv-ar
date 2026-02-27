@@ -5,12 +5,11 @@ from datetime import datetime
 
 # Configuration
 M3U_URL = "https://iptv-org.github.io/iptv/languages/ara.m3u"
+# Switching to the main broad Arabic EPG source
 EPG_URL = "https://iptv-org.github.io/epg/guides/ar.xml"
-HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) VLC/3.0.18'}
+# Using a standard Chrome User-Agent to prevent 403 blocks
+HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36'}
 BLACKLIST = r"Iran|Afghanistan|Persian|Farsi|Pashto|Tajikistan|Kurd|Kurdish|K24|Rudaw|NRT|Waala|Kurdsat"
-
-# Get the root directory (one level up from .scripts/)
-ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def main():
     session = requests.Session()
@@ -19,8 +18,8 @@ def main():
 
     # 1. Process M3U
     try:
-        print("Fetching M3U...")
-        r = session.get(M3U_URL, timeout=20)
+        print(f"Fetching M3U from: {M3U_URL}")
+        r = session.get(M3U_URL, timeout=30)
         r.raise_for_status()
         lines = r.text.splitlines()
         
@@ -34,26 +33,31 @@ def main():
                 curated.append(current_info)
                 curated.append(line)
 
-        output_path = os.path.join(ROOT_DIR, "curated-live.m3u")
-        with open(output_path, "w", encoding='utf-8') as f:
+        with open("curated-live.m3u", "w", encoding='utf-8') as f:
             f.write("\n".join(curated))
-        print(f"M3U Saved to {output_path}. Channels: {len(curated)//2}")
+        print(f"M3U Saved. Channels: {len(curated)//2}")
     except Exception as e:
         print(f"M3U Error: {e}")
 
     # 2. Process EPG
     try:
-        print("Fetching EPG...")
-        epg_r = session.get(EPG_URL, timeout=30)
-        if epg_r.status_code == 200 and b"xml" in epg_r.content[:200]:
-            epg_path = os.path.join(ROOT_DIR, "arabic-epg-clean.xml")
-            with open(epg_path, "wb") as f:
+        print(f"Fetching EPG from: {EPG_URL}")
+        epg_r = session.get(EPG_URL, timeout=60)
+        
+        # Check if we actually got XML data
+        if epg_r.status_code == 200 and (b"xml" in epg_r.content[:200] or b"tv" in epg_r.content[:200]):
+            with open("arabic-epg-clean.xml", "wb") as f:
                 f.write(epg_r.content)
-            print(f"EPG Saved successfully to {epg_path}.")
+            print("EPG Saved successfully.")
         else:
-            print(f"EPG Source returned invalid data: {epg_r.status_code}")
+            print(f"EPG Source error. Status: {epg_r.status_code}. Data starts with: {epg_r.content[:50]}")
+            # Create a blank valid XML so the Git command doesn't crash
+            with open("arabic-epg-clean.xml", "w") as f:
+                f.write('<?xml version="1.0" encoding="UTF-8"?><tv></tv>')
     except Exception as e:
         print(f"EPG Error: {e}")
+        with open("arabic-epg-clean.xml", "w") as f:
+            f.write('<?xml version="1.0" encoding="UTF-8"?><tv></tv>')
 
 if __name__ == "__main__":
     main()
