@@ -1,16 +1,14 @@
 name: Update Arabic IPTV
-
 on:
   schedule:
-    - cron: '0 0 * * *'   # runs daily at midnight UTC
-  workflow_dispatch:
+    - cron: '0 0 * * *' # Runs daily at midnight
+  workflow_dispatch: # Allows manual trigger
 
 jobs:
   update:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Set up Python
@@ -19,73 +17,15 @@ jobs:
           python-version: '3.x'
 
       - name: Install dependencies
+        run: pip install requests
+
+      - name: Run filter script
+        run: python scripts/process_iptv.py
+
+      - name: Commit and Push
         run: |
-          python -m pip install --upgrade pip
-          pip install requests
-
-      - name: Download curated M3U list
-        run: |
-          curl -L -o curated.m3u https://iptv-org.github.io/iptv/languages/ara.m3u
-
-      - name: Download latest Arabic EPG
-        run: |
-          curl -L -o raw.xml https://raw.githubusercontent.com/iptv-org/epg/master/arabic.xml
-
-      - name: Clean EPG XML (keep only curated channels)
-        run: |
-          python << 'EOF'
-            import xml.etree.ElementTree as ET
-
-            tree = ET.parse('raw.xml')
-            root = tree.getroot()
-
-            tvg_ids = set()
-            with open('curated.m3u', 'r', encoding='utf-8') as f:
-                for line in f:
-                    if 'tvg-id=' in line:
-                        tvg_id = line.split('tvg-id="')[1].split('"')[0]
-                        if not any(x in tvg_id.lower() for x in ['iran', 'afghan']):
-                            tvg_ids.add(tvg_id)
-
-            for channel in root.findall('channel'):
-                if channel.get('id') not in tvg_ids:
-                    root.remove(channel)
-
-            for programme in root.findall('programme'):
-                if programme.get('channel') not in tvg_ids:
-                    root.remove(programme)
-
-            tree.write('arabic-epg-clean.xml', encoding='utf-8', xml_declaration=True)
-          EOF
-
-      - name: Detect dead streams
-        run: |
-          python << 'EOF'
-            import requests
-
-            with open('curated.m3u', 'r', encoding='utf-8') as f:
-                lines = f.readlines()
-
-            valid_lines = []
-            for line in lines:
-                if line.startswith('http'):
-                    try:
-                        resp = requests.head(line, timeout=5)
-                        if resp.status_code == 200:
-                            valid_lines.append(line)
-                    except:
-                        continue
-                else:
-                    valid_lines.append(line)
-
-            with open('curated-live.m3u', 'w', encoding='utf-8') as f:
-                f.writelines(valid_lines)
-          EOF
-
-      - name: Commit updated files
-        run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "actions@github.com"
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
           git add curated-live.m3u arabic-epg-clean.xml
-          git commit -m "Update Arabic IPTV list and EPG" || echo "No changes to commit"
+          git commit -m "Auto-update: $(date)" || exit 0
           git push
