@@ -24,10 +24,14 @@ jobs:
       - name: Run filter script
         run: python .scripts/process_iptv.py
 
+      - name: Debug - List Files
+        run: ls -R  # This will show us exactly where the files are being created
+
       - name: Commit and Push
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          git pull origin main --rebase  # Ensure we have the latest before pushing
           git add curated-live.m3u arabic-epg-clean.xml
-          git commit -m "Auto-update: $(date)" || exit 0
-          git push
+          git commit -m "Auto-update: $(date)" || echo "No changes to commit"
+          git push origin main
