@@ -34,6 +34,6 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add arabic-epg.xml.gz
+          git add arabic-epg.xml.gz curated-live.m3u
           git commit -m "Update Arabic EPG: $(date -u +'%Y-%m-%d %H:%M:%S') UTC" || exit 0
           git push origin main
