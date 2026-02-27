@@ -28,6 +28,9 @@ EXCLUDE_WORDS = (
     'libya', 'libye', '218 tv',                         # Libya
     'iran', 'persian', 'farsi', 'gem tv',               # Iran
     'afghanistan', 'afghan', 'pashto', 'tolo'           # Afghanistan
+    'babyfirst',                                        # US English Kids
+    'eritrea', 'eri-tv',                                # Eritrea
+    'i24news'                                           # Israel-based news
 )
 
 def filter_m3u():
