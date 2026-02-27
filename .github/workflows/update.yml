@@ -1,8 +1,8 @@
-name: Update IPTV List & EPG with Logos
+name: Update Arabic IPTV
 
 on:
   schedule:
-    - cron: '0 3 * * *'  # Daily 03:00 UTC
+    - cron: '0 0 * * *'   # runs daily at midnight UTC
   workflow_dispatch:
 
 jobs:
@@ -10,147 +10,82 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: 3.11
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install requests lxml m3u8
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
 
-    - name: Download curated M3U
-      run: |
-        curl -L -o curated.m3u https://raw.githubusercontent.com/iptv-org/iptv/master/languages/ara.m3u
+      - name: Download curated M3U list
+        run: |
+          curl -L -o curated.m3u https://iptv-org.github.io/iptv/languages/ara.m3u
 
-    - name: Download official Arabic EPG
-      run: |
-        curl -L -A "Mozilla/5.0" -H "Accept: text/plain" https://raw.githubusercontent.com/iptv-org/epg/master/guides/arabic.xml -o raw.xml
+      - name: Download latest Arabic EPG
+        run: |
+          curl -L -o raw.xml https://raw.githubusercontent.com/iptv-org/epg/master/arabic.xml
 
-    - name: Clean EPG XML (keep only curated channels)
-      run: |
-        python << 'EOF'
-import xml.etree.ElementTree as ET
+      - name: Clean EPG XML (keep only curated channels)
+        run: |
+          python << 'EOF'
+            import xml.etree.ElementTree as ET
 
-tree = ET.parse('raw.xml')
-root = tree.getroot()
+            tree = ET.parse('raw.xml')
+            root = tree.getroot()
 
-tvg_ids = set()
-with open('curated.m3u', 'r', encoding='utf-8') as f:
-    for line in f:
-        if 'tvg-id=' in line:
-            tvg_id = line.split('tvg-id="')[1].split('"')[0]
-            if not any(x in tvg_id.lower() for x in ['iran', 'afghan']):
-                tvg_ids.add(tvg_id)
+            tvg_ids = set()
+            with open('curated.m3u', 'r', encoding='utf-8') as f:
+                for line in f:
+                    if 'tvg-id=' in line:
+                        tvg_id = line.split('tvg-id="')[1].split('"')[0]
+                        if not any(x in tvg_id.lower() for x in ['iran', 'afghan']):
+                            tvg_ids.add(tvg_id)
 
-for channel in root.findall('channel'):
-    if channel.get('id') not in tvg_ids:
-        root.remove(channel)
+            for channel in root.findall('channel'):
+                if channel.get('id') not in tvg_ids:
+                    root.remove(channel)
 
-for programme in root.findall('programme'):
-    if programme.get('channel') not in tvg_ids:
-        root.remove(programme)
+            for programme in root.findall('programme'):
+                if programme.get('channel') not in tvg_ids:
+                    root.remove(programme)
 
-tree.write('arabic-epg-clean.xml', encoding='utf-8', xml_declaration=True)
-EOF
+            tree.write('arabic-epg-clean.xml', encoding='utf-8', xml_declaration=True)
+          EOF
 
-    - name: Merge new channels from iptv-org
-      run: |
-        python << 'EOF'
-import requests
-import re
+      - name: Detect dead streams
+        run: |
+          python << 'EOF'
+            import requests
 
-# Load curated M3U
-with open('curated.m3u', 'r', encoding='utf-8') as f:
-    curated = f.read()
+            with open('curated.m3u', 'r', encoding='utf-8') as f:
+                lines = f.readlines()
 
-curated_ids = set(re.findall(r'tvg-id="([^"]+)"', curated))
+            valid_lines = []
+            for line in lines:
+                if line.startswith('http'):
+                    try:
+                        resp = requests.head(line, timeout=5)
+                        if resp.status_code == 200:
+                            valid_lines.append(line)
+                    except:
+                        continue
+                else:
+                    valid_lines.append(line)
 
-# Load iptv-org M3U
-m3u_master = requests.get("https://raw.githubusercontent.com/iptv-org/iptv/master/languages/ara.m3u").text
-new_lines = []
+            with open('curated-live.m3u', 'w', encoding='utf-8') as f:
+                f.writelines(valid_lines)
+          EOF
 
-for match in re.finditer(r'(#EXTINF:[^\n]*tvg-id="([^"]+)"[^\n]*\n[^\n]+)', m3u_master):
-    block, tvg_id = match.groups()
-    if tvg_id not in curated_ids and not any(x in tvg_id.lower() for x in ['iran', 'afghan']):
-        new_lines.append(block + '\n')
-
-# Append new channels
-with open('curated.m3u', 'a', encoding='utf-8') as f:
-    f.writelines(new_lines)
-EOF
-
-    - name: Match logos from iptv-org
-      run: |
-        python << 'EOF'
-import requests
-import re
-
-# Load iptv-org master list
-m3u_master = requests.get("https://raw.githubusercontent.com/iptv-org/iptv/master/languages/ara.m3u").text
-
-logo_dict = {}
-for match in re.finditer(r'#EXTINF:[^\n]*tvg-id="([^"]+)"[^\n]*tvg-logo="([^"]+)"', m3u_master):
-    tvg_id, logo = match.groups()
-    logo_dict[tvg_id] = logo
-
-# Update curated.m3u with logos
-with open('curated.m3u', 'r', encoding='utf-8') as f:
-    lines = f.readlines()
-
-new_lines = []
-for i in range(0, len(lines), 2):
-    info = lines[i].strip()
-    url = lines[i+1].strip() if i+1 < len(lines) else ''
-    if 'tvg-id=' in info:
-        tvg_id = info.split('tvg-id="')[1].split('"')[0]
-        if tvg_id in logo_dict:
-            info = re.sub(r'tvg-logo="[^"]*"', f'tvg-logo="{logo_dict[tvg_id]}"', info)
-            if 'tvg-logo=' not in info:
-                info = info.replace(',',' tvg-logo="'+logo_dict[tvg_id]+'",',1)
-    new_lines.append(info+'\n'+url+'\n')
-
-with open('curated.m3u', 'w', encoding='utf-8') as f:
-    f.writelines(new_lines)
-EOF
-
-    - name: Detect dead streams
-      run: |
-        python << 'EOF'
-import m3u8
-import requests
-
-def check_url(url):
-    try:
-        r = requests.head(url, timeout=5)
-        return r.status_code < 400
-    except:
-        return False
-
-with open('curated.m3u', 'r', encoding='utf-8') as f:
-    lines = f.readlines()
-
-new_lines = []
-for i in range(0, len(lines), 2):
-    info = lines[i].strip()
-    url = lines[i+1].strip() if i+1 < len(lines) else ''
-    if url and check_url(url):
-        new_lines.append(info + '\n' + url + '\n')
-    else:
-        print(f'Removed dead stream: {url}')
-
-with open('curated.m3u', 'w', encoding='utf-8') as f:
-    f.writelines(new_lines)
-EOF
-
-    - name: Commit updated files
-      run: |
-        git config --global user.email "actions@github.com"
-        git config --global user.name "github-actions"
-        git add curated.m3u arabic-epg-clean.xml
-        git commit -m "Update M3U & EPG with new channels and logos" || echo "No changes to commit"
-        git push
+      - name: Commit updated files
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add curated-live.m3u arabic-epg-clean.xml
+          git commit -m "Update Arabic IPTV list and EPG" || echo "No changes to commit"
+          git push
