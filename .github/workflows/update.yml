@@ -2,7 +2,7 @@ name: IPTV Middleware
 
 on:
   schedule:
-    - cron: '0 3 * * *'
+    - cron: '0 3 * * *'  # Runs daily at 03:00 UTC
   workflow_dispatch:
 
 jobs:
@@ -17,10 +17,11 @@ jobs:
         run: pip install requests lxml
 
       - name: Download IPTV playlist
-        run: curl -L https://iptv-org.github.io/iptv/languages/ara.m3u -o raw.m3u
+        run: |
+          curl -L -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" -e "https://iptv-org.github.io/" https://iptv-org.github.io/iptv/languages/ara.m3u -o raw.m3u
 
-      - name: Download Arabic EPG
-        run: curl -L https://raw.githubusercontent.com/MuazT/EPG-Guide/master/ArabicEPG.xml -o raw.xml
+      - name: Download Official Arabic EPG
+        run: curl -L https://raw.githubusercontent.com/iptv-org/epg/master/guides/arabic.xml -o raw.xml
 
       - name: Process playlist and EPG
         run: |
@@ -39,34 +40,37 @@ jobs:
 
           while i < len(lines):
               line = lines[i]
-              if line.startswith("#EXTINF"):
+              if line.startswith("#EXTINF") and i+1 < len(lines):
                   info = line
                   url = lines[i+1].strip()
 
-                  # Keep only News and Sports
-                  if 'group-title="News"' in info or 'group-title="Sports"' in info:
+                  # Remove Iran/Afghanistan channels
+                  if '/ir.' in url or '/af.' in url:
+                      i += 2
+                      continue
 
-                      # Remove Iran and Afghanistan by URL
-                      if '/ir.' in url or '/af.' in url:
+                  # Basic stream check using headers
+                  headers = {
+                      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0 Safari/537.36",
+                      "Referer": url
+                  }
+                  try:
+                      r = requests.get(url, headers=headers, timeout=5, stream=True)
+                      if r.status_code >= 400:
                           i += 2
                           continue
+                  except:
+                      i += 2
+                      continue
 
-                      # Dead stream detection
-                      try:
-                          r = requests.head(url, timeout=5, allow_redirects=True)
-                          if r.status_code >= 400:
-                              i += 2
-                              continue
-                      except:
-                          i += 2
-                          continue
+                  # Keep channel
+                  cleaned.append(info)
+                  cleaned.append(url + "\n")
 
-                      cleaned.append(info)
-                      cleaned.append(url + "\n")
-
-                      match = re.search(r'tvg-id="([^"]+)"', info)
-                      if match:
-                          kept_ids.add(match.group(1))
+                  # Save tvg-id
+                  match = re.search(r'tvg-id="([^"]+)"', info)
+                  if match:
+                      kept_ids.add(match.group(1))
 
                   i += 2
               else:
@@ -75,19 +79,25 @@ jobs:
           with open("arabic-clean.m3u", "w", encoding="utf-8") as f:
               f.writelines(cleaned)
 
-          # Trim XMLTV
-          tree = etree.parse("raw.xml")
-          root = tree.getroot()
+          # Trim XMLTV EPG
+          try:
+              tree = etree.parse("raw.xml")
+              root = tree.getroot()
 
-          for channel in list(root.findall("channel")):
-              if channel.attrib.get("id") not in kept_ids:
-                  root.remove(channel)
+              # Keep only channels we kept
+              for channel in list(root.findall("channel")):
+                  if channel.attrib.get("id") not in kept_ids:
+                      root.remove(channel)
 
-          for programme in list(root.findall("programme")):
-              if programme.attrib.get("channel") not in kept_ids:
-                  root.remove(programme)
+              # Keep only programmes of kept channels
+              for programme in list(root.findall("programme")):
+                  if programme.attrib.get("channel") not in kept_ids:
+                      root.remove(programme)
 
-          tree.write("arabic-epg-clean.xml", encoding="utf-8", xml_declaration=True)
+              tree.write("arabic-epg-clean.xml", encoding="utf-8", xml_declaration=True)
+          except Exception as e:
+              print("XML processing failed:", e)
+
           EOF
 
       - name: Commit results
