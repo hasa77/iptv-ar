@@ -31,6 +31,7 @@ EXCLUDE_WORDS = (
     'babyfirst',                                        # US English Kids
     'eritrea', 'eri-tv',                                # Eritrea
     'i24news'                                           # Israel-based news
+    'tchad', 'chad', 'turkmenistan', 'turkmen'          # Chad and Turkmenistan
 )
 
 def filter_m3u():
