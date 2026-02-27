@@ -1,13 +1,14 @@
 import requests
 import re
 import os
+import gzip
+import io
 from datetime import datetime
 
 # Configuration
 M3U_URL = "https://iptv-org.github.io/iptv/languages/ara.m3u"
-# Switching to the main broad Arabic EPG source
-EPG_URL = "https://iptv-org.github.io/epg/guides/ar/beiner-ar.xml"
-# Using a standard Chrome User-Agent to prevent 403 blocks
+# Using the specific Arabic guide from EPGShare01
+EPG_URL = "https://epgshare01.online/epgshare01/epg_ripper_ARABIC1.xml.gz"
 HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36'}
 BLACKLIST = r"Iran|Afghanistan|Persian|Farsi|Pashto|Tajikistan|Kurd|Kurdish|K24|Rudaw|NRT|Waala|Kurdsat"
 
@@ -39,19 +40,25 @@ def main():
     except Exception as e:
         print(f"M3U Error: {e}")
 
-    # 2. Process EPG
+    # 2. Process EPG (Updated with GZIP support)
     try:
         print(f"Fetching EPG from: {EPG_URL}")
-        # Increased timeout to 120 seconds for large EPG files
-        epg_r = session.get(EPG_URL, timeout=120)
+        epg_r = session.get(EPG_URL, timeout=180) # Large file, longer timeout
         
         if epg_r.status_code == 200 and len(epg_r.content) > 1000:
+            # Check if the content is gzipped
+            if EPG_URL.endswith(".gz"):
+                print("Decompressing GZIP file...")
+                with gzip.GzipFile(fileobj=io.BytesIO(epg_r.content)) as gz:
+                    xml_data = gz.read()
+            else:
+                xml_data = epg_r.content
+
             with open("arabic-epg-clean.xml", "wb") as f:
-                f.write(epg_r.content)
-            print(f"EPG Saved. Size: {len(epg_r.content) / 1024:.2f} KB")
+                f.write(xml_data)
+            print(f"EPG Saved. Final XML Size: {len(xml_data) / 1024 / 1024:.2f} MB")
         else:
-            print(f"EPG Download failed or too small. Status: {epg_r.status_code}")
-            # Only create dummy if the file doesn't exist at all
+            print(f"EPG Download failed. Status: {epg_r.status_code}")
             if not os.path.exists("arabic-epg-clean.xml"):
                 with open("arabic-epg-clean.xml", "w") as f:
                     f.write('<?xml version="1.0" encoding="UTF-8"?><tv></tv>')
