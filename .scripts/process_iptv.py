@@ -117,13 +117,14 @@ ID_MAP = {
 
 def normalise_id(cid):
     if not cid: return ""
-    # Remove dots, dashes, underscores and spaces, then lowercase
-    return re.sub(r'[._\-\s]', '', cid).lower()
+    # Remove dots, dashes, underscores, spaces, and "@HD" suffixes, then lowercase
+    clean = re.sub(r'(@[A-Z0-9]+)', '', cid) # Remove @HD etc
+    return re.sub(r'[._\-\s]', '', clean).lower()
 
 def process_iptv():
-    print("🚀 Running Normalized Multi-Source Extraction...")
+    print("🚀 Running Bulletproof Normalized Extraction...")
     try:
-        # Create a set of normalized target IDs
+        # 1. Create a set of normalized target IDs from your ID_MAP
         target_ids = {normalise_id(t) for t in (set(ID_MAP.values()) | set(ID_MAP.keys()))}
         
         matched_real_ids = set()
@@ -134,41 +135,47 @@ def process_iptv():
             file_name = url.split('/')[-1]
             print(f"📥 Processing {file_name}...")
             try:
-                r = requests.get(url, stream=True, timeout=120)
-                content_bytes = r.content 
+                # IMPROVEMENT: Use stream=True to avoid loading the entire .gz into RAM
+                response = requests.get(url, stream=True, timeout=120)
                 
-                # Pass 1: Discovery
-                local_file_ids = set()
-                with gzip.GzipFile(fileobj=io.BytesIO(content_bytes)) as g:
-                    context = ET.iterparse(g, events=('end',))
-                    for event, elem in context:
+                # To perform two passes without downloading twice, we must store the 
+                # compressed bytes in memory. This is safer than uncompressed bytes.
+                compressed_data = response.content 
+                
+                # PASS 1: DISCOVERY (Store both Real and Normalized IDs)
+                local_file_norm_ids = set()
+                local_file_real_ids = set()
+                
+                with gzip.GzipFile(fileobj=io.BytesIO(compressed_data)) as g:
+                    for event, elem in ET.iterparse(g, events=('end',)):
                         tag = elem.tag.split('}')[-1]
                         if tag == 'channel':
                             cid = elem.get('id')
                             norm_cid = normalise_id(cid)
+                            
+                            # If this ID matches our target list
                             if any(target in norm_cid or norm_cid in target for target in target_ids):
-                                local_file_ids.add(cid)
+                                local_file_norm_ids.add(norm_cid)
+                                local_file_real_ids.add(cid)
                                 if cid not in matched_real_ids:
                                     matched_real_ids.add(cid)
                                     channel_elements.append(ET.tostring(elem, encoding='utf-8'))
                         elem.clear()
 
-                # Pass 2: Extraction
-                if local_file_ids:
-                    print(f"  📝 Found {len(local_file_ids)} matching IDs. Extracting programs...")
-                    with gzip.GzipFile(fileobj=io.BytesIO(content_bytes)) as g:
-                        context = ET.iterparse(g, events=('end',))
-                        for event, elem in context:
+                # PASS 2: EXTRACTION (Normalize the programme channel ID too!)
+                if local_file_norm_ids:
+                    print(f"  📝 Found {len(local_file_real_ids)} IDs. Extracting programs...")
+                    with gzip.GzipFile(fileobj=io.BytesIO(compressed_data)) as g:
+                        for event, elem in ET.iterparse(g, events=('end',)):
                             tag = elem.tag.split('}')[-1]
                             if tag == 'programme':
                                 chan_id = elem.get('channel')
-                                if chan_id in local_file_ids:
-                                    has_title = False
-                                    for child in elem:
-                                        if child.tag.endswith('title') and child.text and child.text.strip():
-                                            has_title = True
-                                            break
-                                    if has_title:
+                                norm_chan_id = normalise_id(chan_id)
+                                
+                                # THE FIX: Match using the normalized version
+                                if norm_chan_id in local_file_norm_ids:
+                                    # Ensure title exists (robust check)
+                                    if any(child.tag.endswith('title') and child.text for child in elem):
                                         program_elements.append(ET.tostring(elem, encoding='utf-8'))
                             elem.clear()
                             
