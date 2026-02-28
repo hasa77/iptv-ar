@@ -4,7 +4,16 @@ import re
 M3U_URL = "https://iptv-org.github.io/iptv/languages/ara.m3u"
 EPG_URL = "https://iptv-org.github.io/epg/guides/ar/epgshare01.xml.gz"
 
-# YOUR STRICT REJECTION LIST
+# 1. Target Suffixes (Must have one of these)
+AR_SUFFIXES = ('.ae', '.dz', '.eg', '.iq', '.jo', '.kw', '.lb', '.ly', '.ma', 
+               '.om', '.ps', '.qa', '.sa', '.sd', '.sy', '.tn', '.ye', '.me', '.ar')
+
+# 2. Keywords to Keep (Force include if found)
+AR_KEYWORDS = ('mbc', 'bein', 'osn', 'rotana', 'alkass', 'aljazeera', 'arabic', 'nilesat', 
+               'sharjah', 'dubai', 'abu dhabi', 'alarabiya', 'hadath', 'cbc', 'dmc', 'on ent',
+               'royal', 'art ', 'ssc ', 'syria', 'iraq', 'lebanon', 'al jadeed', 'lbc')
+
+# 3. YOUR STRICT REJECTION LIST
 EXCLUDE_WORDS = (
     'radio', 'fm', 'chaine', 'distro.tv', 'argentina', 'colombia', 'telefe', 'eltrece', 
     'kurd', 'kurdistan', 'rudaw', 'waar', 'duhok',      # Kurdish
@@ -13,14 +22,14 @@ EXCLUDE_WORDS = (
     'tunisia', 'tunisie', 'ttv', 'hannibal',            # Tunisia
     'libya', 'libye', '218 tv',                         # Libya
     'iran', 'persian', 'farsi', 'gem tv',               # Iran
-    'afghanistan', 'afghan', 'pashto', 'tolo'           # Afghanistan
+    'afghanistan', 'afghan', 'pashto', 'tolo',           # Afghanistan
     'tchad', 'chad', 'turkmenistan', 'turkmen',         # Central Africa / Central Asia
     'babyfirst',                                        # US English Kids
     'eritrea', 'eri-tv',                                # Eritrea
     'i24news'                                           # Israel-based news
 )
 
-# YOUR DEDUPLICATED EPG MAPPING
+# 4. ID Mapping for TiviMate Guide Matching
 ID_MAP = {
     # Abu Dhabi Network
     'AbuDhabiSports1.ae': 'AD.Sports.1.HD.ae',
@@ -90,23 +99,24 @@ def process_iptv():
         
         for i in range(len(lines)):
             if lines[i].startswith("#EXTINF"):
-                line_content = lines[i].lower()
+                line_lower = lines[i].lower()
                 
-                # 1. Reject if it matches any excluded words
-                if any(word in line_content for word in EXCLUDE_WORDS):
-                    continue
+                # STAGE 1: Must match Suffix OR Keyword
+                is_arabic = any(s in line_lower for s in AR_SUFFIXES) or \
+                            any(k in line_lower for k in AR_KEYWORDS)
                 
-                # 2. Fix the ID for EPG matching
-                fixed_line = clean_line(lines[i])
+                # STAGE 2: Must NOT match Rejection List
+                is_rejected = any(w in line_lower for w in EXCLUDE_WORDS)
                 
-                if i + 1 < len(lines) and lines[i+1].startswith("http"):
-                    final_m3u.append(fixed_line)
-                    final_m3u.append(lines[i+1])
+                if is_arabic and not is_rejected:
+                    fixed_line = clean_line(lines[i])
+                    if i + 1 < len(lines) and lines[i+1].startswith("http"):
+                        final_m3u.append(fixed_line)
+                        final_m3u.append(lines[i+1])
         
         with open("curated-live.m3u", "w", encoding="utf-8") as f:
             f.write("\n".join(final_m3u))
             
-        # Download EPG
         r_epg = requests.get(EPG_URL)
         with open("arabic-epg.xml.gz", "wb") as f:
             f.write(r_epg.content)
