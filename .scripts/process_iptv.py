@@ -179,6 +179,7 @@ def process_iptv():
         channel_elements = []
 
         with gzip.GzipFile(fileobj=io.BytesIO(epg_bytes)) as g:
+            # We use 'start' and 'end' to ensure we capture the full element content
             context = ET.iterparse(g, events=('end',))
             for event, elem in context:
                 tag = elem.tag.split('}')[-1]
@@ -186,9 +187,11 @@ def process_iptv():
                     cid = elem.get('id')
                     if cid in wanted_ids or normalize(cid) in wanted_ids:
                         matched_real_ids.add(cid)
-                        # Create a clean copy of the channel element
+                        # Serialize the ENTIRE element
                         channel_elements.append(ET.tostring(elem, encoding='utf-8'))
                 elem.clear()
+
+        print(f"🔍 Found {len(matched_real_ids)} channels. Extracting programs with data...")
 
         # Pass 2: Extract Programs
         matched_ids_lower = {cid.lower(): cid for cid in matched_real_ids}
@@ -196,11 +199,11 @@ def process_iptv():
         with gzip.open("arabic-epg.xml.gz", "wb") as f_out:
             f_out.write(b'<?xml version="1.0" encoding="utf-8"?>\n<tv>\n')
             
-            # Write Channels
+            # 1. Write Channels
             for c in channel_elements:
                 f_out.write(c + b'\n')
             
-            # Write Programmes
+            # 2. Re-scan for programmes and preserve inner text
             with gzip.GzipFile(fileobj=io.BytesIO(epg_bytes)) as g:
                 context = ET.iterparse(g, events=('end',))
                 for event, elem in context:
@@ -208,8 +211,10 @@ def process_iptv():
                     if tag == 'programme':
                         chan_id = elem.get('channel')
                         if chan_id and (chan_id in matched_real_ids or chan_id.lower() in matched_ids_lower):
-                            # Ensure we capture the ENTIRE block including children text
+                            # This captures the <title>, <desc>, etc., inside the programme
                             f_out.write(ET.tostring(elem, encoding='utf-8') + b'\n')
+                    
+                    # VERY IMPORTANT: Only clear if we aren't currently inside a programme
                     elem.clear()
             
             f_out.write(b'</tv>')
