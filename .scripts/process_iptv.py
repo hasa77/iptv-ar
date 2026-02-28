@@ -6,11 +6,6 @@ import io
 
 M3U_URL = "https://iptv-org.github.io/iptv/languages/ara.m3u"
 EPG_SOURCES = [
-    "https://epgshare01.online/epgshare01/epg_ripper_AE1.xml.gz",
-    "https://epgshare01.online/epgshare01/epg_ripper_AR1.xml.gz",
-    "https://epgshare01.online/epgshare01/epg_ripper_EG1.xml.gz",
-    "https://epgshare01.online/epgshare01/epg_ripper_BEIN1.xml.gz",
-    "https://epgshare01.online/epgshare01/epg_ripper_ALJAZEERA1.xml.gz",
     "https://epgshare01.online/epgshare01/epg_ripper_ALL_SOURCES1.xml.gz"
 ]
 
@@ -122,74 +117,60 @@ def normalise_id(cid):
     return re.sub(r'[._\-\s]', '', clean).lower()
 
 def process_iptv():
-    print("🚀 Running Force-Text Extraction...")
+    print("🚀 Running High-Speed Stream Extraction (ALL_SOURCES)...")
     
-    # Gold Standard Map
-    REVERSE_MAP = {normalise_id(k): v for k, v in ID_MAP.items()}
-    keywords = ['mbc', 'dubai', 'abu', 'rotana', 'bein', 'ssc', 'sharjah', 'arab', 'aljazeera', 'on', 'drama']
+    # Use your ID_MAP values as the primary filter
+    target_ids = {normalise_id(t) for t in (set(ID_MAP.values()) | set(ID_MAP.keys()))}
     
     channel_elements = []
     program_elements = []
-    global_added_channels = set()
+    found_channel_ids = set()
 
     for url in EPG_SOURCES:
-        file_name = url.split('/')[-1]
-        print(f"📥 Processing {file_name}...")
+        print(f"📥 Streaming {url.split('/')[-1]}...")
         try:
-            r = requests.get(url, stream=True, timeout=120)
-            print("Status:", r.status_code)
-            print("Content-Type:", r.headers.get("Content-Type"))
-            print("Size:", len(r.content))
-            print("First 200 bytes:", r.content[:200])
-            
-            with gzip.GzipFile(fileobj=io.BytesIO(r.content)) as g:
-                context = ET.iterparse(g, events=('end',))
-                for event, elem in context:
+            # We use stream=True and pass r.raw directly to gzip to keep RAM usage near zero
+            r = requests.get(url, stream=True, timeout=300)
+            with gzip.GzipFile(fileobj=r.raw) as g:
+                # We iterate through the XML without ever loading the whole file
+                for event, elem in ET.iterparse(g, events=('end',)):
                     tag = elem.tag.split('}')[-1]
 
                     if tag == 'programme':
-                        raw_id = elem.get('channel')
-                        if not raw_id: 
-                            elem.clear()
-                            continue
-                        
-                        norm_id = normalise_id(raw_id)
-                        
-                        # Match logic
-                        if any(k in norm_id for k in keywords) or norm_id in REVERSE_MAP:
-                            # 1. Look for ANY child that is a title and has actual text
-                            found_text = None
-                            for child in elem:
-                                if child.tag.endswith('title') and child.text and len(child.text.strip()) > 0:
-                                    found_text = child.text
-                                    break
+                        chan_id = elem.get('channel')
+                        if chan_id:
+                            norm_id = normalise_id(chan_id)
                             
-                            if found_text:
-                                final_id = REVERSE_MAP.get(norm_id, raw_id)
-                                elem.set('channel', final_id)
-                                program_elements.append(ET.tostring(elem, encoding='utf-8'))
+                            # Match against your target list
+                            if any(target in norm_id for target in target_ids):
+                                # Look for title text
+                                title_node = next((c for c in elem if c.tag.endswith('title')), None)
+                                
+                                if title_node is not None and title_node.text:
+                                    # We found a valid program with text!
+                                    program_elements.append(ET.tostring(elem, encoding='utf-8'))
+                                    
+                                    if chan_id not in found_channel_ids:
+                                        found_channel_ids.add(chan_id)
+                                        c_xml = f'<channel id="{chan_id}"><display-name>{chan_id}</display-name></channel>'
+                                        channel_elements.append(c_xml.encode('utf-8'))
+                    
+                    # This is the most important line for 196MB files:
+                    elem.clear() 
 
-                                if final_id not in global_added_channels:
-                                    global_added_channels.add(final_id)
-                                    chan_xml = f'<channel id="{final_id}"><display-name>{final_id}</display-name></channel>'
-                                    channel_elements.append(chan_xml.encode('utf-8'))
-                            # Uncomment the line below if you want to see why it skips
-                            # else: print(f"    ⚠️ Found {raw_id} but title was empty.")
-
-                    elem.clear()
         except Exception as e:
-            print(f"  ⚠️ Error: {e}")
+            print(f"❌ Error during stream: {e}")
 
-    # Final Save logic
-    if not program_elements:
-        print("❌ STILL ZERO. The source files literally have no text in the <title> tags for these channels.")
-    else:
+    # Save logic
+    if program_elements:
         with gzip.open("arabic-epg.xml.gz", "wb") as f_out:
             f_out.write(b'<?xml version="1.0" encoding="utf-8"?>\n<tv>\n')
             for c in channel_elements: f_out.write(c + b'\n')
             for p in program_elements: f_out.write(p + b'\n')
             f_out.write(b'</tv>')
-        print(f"✅ Success! Saved {len(channel_elements)} channels with programs.")
+        print(f"✅ Success! Extracted {len(program_elements)} programs for {len(channel_elements)} channels.")
+    else:
+        print("❌ Still no programs found. The EPG provider may be having an outage for these channels.")
     
 if __name__ == "__main__":
     process_iptv()
