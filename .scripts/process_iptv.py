@@ -1,5 +1,8 @@
 import requests
 import re
+import gzip
+import xml.etree.ElementTree as ET
+import io
 
 M3U_URL = "https://iptv-org.github.io/iptv/languages/ara.m3u"
 EPG_URL = "https://epgshare01.online/epgshare01/epg_ripper_ALL_SOURCES1.xml.gz"
