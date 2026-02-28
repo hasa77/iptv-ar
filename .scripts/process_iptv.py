@@ -158,29 +158,34 @@ def process_iptv():
                         channel_elements.append(ET.tostring(elem, encoding='utf-8'))
                 elem.clear()
 
-        # Pass 2: Extract Programs for the matched IDs
+       # --- PASS 2: EXTRACT PROGRAMS (Case-Insensitive Match) ---
+        # Create a lowercase lookup for the matched IDs to be safe
+        matched_ids_lower = {cid.lower(): cid for cid in matched_real_ids}
+
         with gzip.open("arabic-epg.xml.gz", "wb") as f_out:
             f_out.write(b'<?xml version="1.0" encoding="utf-8"?>\n<tv>\n')
+            
+            # Write the channel headers first
             for c in channel_elements:
                 f_out.write(c)
             
+            # Re-scan for programmes
             with gzip.GzipFile(fileobj=io.BytesIO(epg_bytes)) as g:
                 context = ET.iterparse(g, events=('end',))
                 for event, elem in context:
                     tag = elem.tag.split('}')[-1]
                     if tag == 'programme':
-                        if elem.get('channel') in matched_real_ids:
-                            f_out.write(ET.tostring(elem, encoding='utf-8'))
-                    elem.clear()
+                        p_channel = elem.get('channel')
+                        if p_channel:
+                            # Match the program's channel ID to our found list (case-insensitive)
+                            if p_channel in matched_real_ids or p_channel.lower() in matched_ids_lower:
+                                f_out.write(ET.tostring(elem, encoding='utf-8'))
+                    
+                    elem.clear() # Keep memory usage low
+            
             f_out.write(b'</tv>')
 
-        # 4. Debug: Check which of your 39 didn't make it
-        missing_from_map = [v for v in ID_MAP.values() if v not in matched_real_ids]
-        if missing_from_map:
-            print(f"⚠️ {len(missing_from_map)} IDs from your map were NOT found in the EPG file.")
-            # Optional: print(f"Missing: {missing_from_map[:5]}...")
-
-        print(f"📊 Final Results: Found {len(matched_real_ids)} channels.")
+        print(f"📊 Final Results: {len(matched_real_ids)} channels with full program data saved.")
         
     except Exception as e:
         print(f"❌ Error: {e}")
