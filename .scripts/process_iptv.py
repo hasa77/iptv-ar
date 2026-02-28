@@ -83,9 +83,16 @@ ID_MAP = {
 }
 
 def clean_line(line):
+    # 1. First, strip @HD/@SD from the line just for mapping purposes
+    # This ensures "MBC1.ae@HD" becomes "MBC1.ae" so it matches your ID_MAP
+    line = re.sub(r'(@[A-Z0-9]+)', '', line)
+
+    # 2. Apply specific ID mapping
     for old_id, new_id in ID_MAP.items():
         if f'tvg-id="{old_id}"' in line:
             return line.replace(f'tvg-id="{old_id}"', f'tvg-id="{new_id}"')
+    
+    # 3. Generic fix for camelCase (e.g., DubaiZaman -> Dubai.Zaman)
     if 'tvg-id="' in line:
         line = re.sub(r'([a-z])([A-Z])', r'\1.\2', line)
     return line
