@@ -122,11 +122,11 @@ def normalise_id(cid):
     return re.sub(r'[._\-\s]', '', clean).lower()
 
 def process_iptv():
-    print("🚀 Running Final Remapped Extraction...")
+    print("🚀 Running Force-Text Extraction...")
     
-    # Create a Reverse Map: "Dubai.ae" (found in file) -> "Dubai.HD.ae" (TiviMate name)
+    # Gold Standard Map
     REVERSE_MAP = {normalise_id(k): v for k, v in ID_MAP.items()}
-    keywords = ['mbc', 'dubai', 'abu.dhabi', 'rotana', 'bein', 'ssc', 'sharjah', 'arab', 'aljazeera']
+    keywords = ['mbc', 'dubai', 'abu', 'rotana', 'bein', 'ssc', 'sharjah', 'arab', 'aljazeera', 'on', 'drama']
     
     channel_elements = []
     program_elements = []
@@ -138,50 +138,53 @@ def process_iptv():
         try:
             r = requests.get(url, stream=True, timeout=120)
             with gzip.GzipFile(fileobj=io.BytesIO(r.content)) as g:
-                # Use iterparse to save memory
                 context = ET.iterparse(g, events=('end',))
                 for event, elem in context:
                     tag = elem.tag.split('}')[-1]
 
                     if tag == 'programme':
                         raw_id = elem.get('channel')
-                        if not raw_id: continue
+                        if not raw_id: 
+                            elem.clear()
+                            continue
                         
                         norm_id = normalise_id(raw_id)
                         
-                        # 1. Match by keyword OR by your specific ID Map
+                        # Match logic
                         if any(k in norm_id for k in keywords) or norm_id in REVERSE_MAP:
+                            # 1. Look for ANY child that is a title and has actual text
+                            found_text = None
+                            for child in elem:
+                                if child.tag.endswith('title') and child.text and len(child.text.strip()) > 0:
+                                    found_text = child.text
+                                    break
                             
-                            # 2. Map the ID to your "Gold Standard" name
-                            final_id = REVERSE_MAP.get(norm_id, raw_id)
-                            elem.set('channel', final_id)
-
-                            # 3. CRITICAL: Check if the title actually has text
-                            # We search for any tag ending in 'title' to ignore namespaces
-                            title_elem = next((child for child in elem if child.tag.endswith('title')), None)
-                            
-                            if title_elem is not None and title_elem.text:
-                                # Save the program
+                            if found_text:
+                                final_id = REVERSE_MAP.get(norm_id, raw_id)
+                                elem.set('channel', final_id)
                                 program_elements.append(ET.tostring(elem, encoding='utf-8'))
 
-                                # 4. Create the channel header
                                 if final_id not in global_added_channels:
                                     global_added_channels.add(final_id)
                                     chan_xml = f'<channel id="{final_id}"><display-name>{final_id}</display-name></channel>'
                                     channel_elements.append(chan_xml.encode('utf-8'))
+                            # Uncomment the line below if you want to see why it skips
+                            # else: print(f"    ⚠️ Found {raw_id} but title was empty.")
 
-                    elem.clear() # Free memory
+                    elem.clear()
         except Exception as e:
             print(f"  ⚠️ Error: {e}")
 
-    # Save to file
-    with gzip.open("arabic-epg.xml.gz", "wb") as f_out:
-        f_out.write(b'<?xml version="1.0" encoding="utf-8"?>\n<tv>\n')
-        for c in channel_elements: f_out.write(c + b'\n')
-        for p in program_elements: f_out.write(p + b'\n')
-        f_out.write(b'</tv>')
-    
-    print(f"✅ Finished! Saved {len(channel_elements)} channels with ACTUAL text content.")
+    # Final Save logic
+    if not program_elements:
+        print("❌ STILL ZERO. The source files literally have no text in the <title> tags for these channels.")
+    else:
+        with gzip.open("arabic-epg.xml.gz", "wb") as f_out:
+            f_out.write(b'<?xml version="1.0" encoding="utf-8"?>\n<tv>\n')
+            for c in channel_elements: f_out.write(c + b'\n')
+            for p in program_elements: f_out.write(p + b'\n')
+            f_out.write(b'</tv>')
+        print(f"✅ Success! Saved {len(channel_elements)} channels with programs.")
     
 if __name__ == "__main__":
     process_iptv()
