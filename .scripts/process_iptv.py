@@ -98,8 +98,12 @@ def clean_line(line):
     return line
   
 def process_iptv():
-    print("🚀 Running Gold + Silver Logic (Map Priority + Search)...")
+    print("🚀 Running ID_MAP Priority Filter...")
     try:
+        # 1. Start with your Gold Standard: Every 'value' from your ID_MAP
+        # This ensures we are ALWAYS looking for these 39 IDs regardless of the M3U
+        wanted_ids = set(ID_MAP.values())
+        
         r = requests.get(M3U_URL, timeout=30)
         lines = r.text.splitlines()
         final_m3u = ["#EXTM3U"]
@@ -107,54 +111,49 @@ def process_iptv():
         def normalize(s):
             return re.sub(r'[^a-z0-9]', '', s.lower()) if s else ""
 
-        wanted_ids = set()
-        
+        # 2. Add extra IDs from the M3U that aren't in the map
         for i in range(len(lines)):
             if lines[i].startswith("#EXTINF"):
                 line_lower = lines[i].lower()
                 if (any(s in line_lower for s in AR_SUFFIXES) or any(k in line_lower for k in AR_KEYWORDS)) and not any(w in line_lower for w in EXCLUDE_WORDS):
                     
-                    # 1. Capture the original ID from the M3U
-                    id_match = re.search(r'tvg-id="([^"]+)"', lines[i])
-                    raw_id = id_match.group(1).split('@')[0] if id_match else ""
-                    
-                    # 2. Run your clean_line function (which applies the ID_MAP)
+                    # Apply your ID_MAP to the line
                     fixed_line = clean_line(lines[i])
-                    fixed_id_match = re.search(r'tvg-id="([^"]+)"', fixed_line)
-                    mapped_id = fixed_id_match.group(1).split('@')[0] if fixed_id_match else ""
-
-                    # 3. ADD TO SEARCH POOL
-                    if mapped_id: wanted_ids.add(mapped_id) # The Gold ID (Map)
-                    if raw_id: 
-                        wanted_ids.add(raw_id)              # The Original ID
-                        wanted_ids.add(normalize(raw_id))    # The Fuzzy ID
                     
+                    # Extract the ID from the fixed line
+                    id_match = re.search(r'tvg-id="([^"]+)"', fixed_line)
+                    if id_match:
+                        found_id = id_match.group(1).split('@')[0]
+                        wanted_ids.add(found_id)
+                        wanted_ids.add(normalize(found_id))
+
                     if i + 1 < len(lines) and lines[i+1].startswith("http"):
                         final_m3u.append(fixed_line)
                         final_m3u.append(lines[i+1])
 
-        print(f"✅ M3U Processed. Net size: {len(wanted_ids)} variants. Downloading EPG...")
-        
+        print(f"✅ Search list built. Total IDs to find: {len(wanted_ids)}")
+
+        # 3. EPG Processing
         response = requests.get(EPG_URL, timeout=120)
         epg_bytes = response.content
 
         matched_real_ids = set()
         channel_elements = []
 
-        # PASS 1: Find Channels using the "Net"
+        # Pass 1: Find Channels
         with gzip.GzipFile(fileobj=io.BytesIO(epg_bytes)) as g:
             context = ET.iterparse(g, events=('end',))
             for event, elem in context:
                 tag = elem.tag.split('}')[-1]
                 if tag == 'channel':
                     cid = elem.get('id')
-                    # Match against Map ID, Original ID, or Normalized ID
+                    # Check exact ID match or normalized match
                     if cid in wanted_ids or normalize(cid) in wanted_ids:
                         matched_real_ids.add(cid)
                         channel_elements.append(ET.tostring(elem, encoding='utf-8'))
                 elem.clear()
 
-        # PASS 2: Save to File
+        # Pass 2: Extract Programs
         with gzip.open("arabic-epg.xml.gz", "wb") as f_out:
             f_out.write(b'<?xml version="1.0" encoding="utf-8"?>\n<tv>\n')
             for c in channel_elements:
@@ -170,7 +169,7 @@ def process_iptv():
                     elem.clear()
             f_out.write(b'</tv>')
 
-        print(f"📊 Final Results: Found {len(matched_real_ids)} channels.")
+        print(f"📊 Results: Found {len(matched_real_ids)} channels.")
         
     except Exception as e:
         print(f"❌ Error: {e}")
