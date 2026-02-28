@@ -124,13 +124,9 @@ def clean_line(line):
     return line
   
 def process_iptv():
-    print("🚀 Running ID_MAP Priority Filter (Targeting 39+)...")
+    print("🚀 Running Universal Data Grabber (Fixing Empty Tags)...")
     try:
-        # 1. Initialize with your Gold Standard: Every 'value' from your ID_MAP
-        # This ensures we search for these 39 IDs regardless of the M3U content
         wanted_ids = set(ID_MAP.values())
-        
-        # Also keep a set of the 'keys' to check which M3U channels to map
         mapping_keys = set(ID_MAP.keys())
         
         r = requests.get(M3U_URL, timeout=30)
@@ -140,100 +136,68 @@ def process_iptv():
         def normalize(s):
             return re.sub(r'[^a-z0-9]', '', s.lower()) if s else ""
 
-        # 2. Process M3U to add extra "bonus" IDs and clean the lines
         for i in range(len(lines)):
             if lines[i].startswith("#EXTINF"):
                 line_lower = lines[i].lower()
                 if (any(s in line_lower for s in AR_SUFFIXES) or any(k in line_lower for k in AR_KEYWORDS)) and not any(w in line_lower for w in EXCLUDE_WORDS):
-                    
-                    # Extract the current ID
                     id_match = re.search(r'tvg-id="([^"]+)"', lines[i])
                     if id_match:
                         current_id = id_match.group(1).split('@')[0]
-                        # If it's NOT in our map, add it as a "silver" fuzzy search
                         if current_id not in mapping_keys:
                             wanted_ids.add(current_id)
-                            wanted_ids.add(normalize(current_id))
-
-                    # Apply your ID_MAP to the line for the final output
                     fixed_line = clean_line(lines[i])
-                    
                     if i + 1 < len(lines) and lines[i+1].startswith("http"):
-                        final_m3u.append(fixed_line)
-                        final_m3u.append(lines[i+1])
+                        final_m3u.append(fixed_line); final_m3u.append(lines[i+1])
 
-        print(f"✅ Search list built. Total unique IDs to scan: {len(wanted_ids)}")
-
-        # 3. EPG Processing (Two-Pass for Stream Reliability)
         response = requests.get(EPG_URL, timeout=120)
         epg_bytes = response.content
-
-      # --- [CALL DIAGNOSTIC HERE] ---
-        check_source_quality(epg_bytes)
-      
+        
+        # Pass 1: Channel Discovery
         matched_real_ids = set()
         channel_elements = []
-
-       # Pass 1: Find Channels
-        matched_real_ids = set()
-        channel_elements = []
-
         with gzip.GzipFile(fileobj=io.BytesIO(epg_bytes)) as g:
-            # We use 'start' and 'end' to ensure we capture the full element content
-            context = ET.iterparse(g, events=('end',))
-            for event, elem in context:
+            for event, elem in ET.iterparse(g, events=('end',)):
                 tag = elem.tag.split('}')[-1]
                 if tag == 'channel':
                     cid = elem.get('id')
-                    if cid in wanted_ids or normalize(cid) in wanted_ids:
+                    if cid in wanted_ids or normalize(cid) in [normalize(x) for x in wanted_ids]:
                         matched_real_ids.add(cid)
-                        # Serialize the ENTIRE element
                         channel_elements.append(ET.tostring(elem, encoding='utf-8'))
                 elem.clear()
 
-        print(f"🔍 Found {len(matched_real_ids)} channels. Extracting programs with data...")
-
-        # --- PASS 2: MANUALLY REBUILD PROGRAMMES ---
-        matched_ids_lower = {cid.lower(): cid for cid in matched_real_ids}
-
+        # Pass 2: Program Extraction with Debugging
+        print(f"📥 Extracting programs for {len(matched_real_ids)} channels...")
+        program_count = 0
+        
         with gzip.open("arabic-epg.xml.gz", "wb") as f_out:
             f_out.write(b'<?xml version="1.0" encoding="utf-8"?>\n<tv>\n')
-            
-            # Write the channel headers
             for c in channel_elements:
                 f_out.write(c + b'\n')
             
-            # Re-scan for programmes with explicit text extraction
             with gzip.GzipFile(fileobj=io.BytesIO(epg_bytes)) as g:
-                context = ET.iterparse(g, events=('end',))
-                for event, elem in context:
-                    tag_name = elem.tag.split('}')[-1]
-                    if tag_name == 'programme':
+                for event, elem in ET.iterparse(g, events=('end',)):
+                    tag = elem.tag.split('}')[-1]
+                    if tag == 'programme':
                         chan_id = elem.get('channel')
-                        if chan_id and (chan_id in matched_real_ids or chan_id.lower() in matched_ids_lower):
+                        if chan_id in matched_real_ids:
+                            # 🛠 THE FIX: Manually extract text to bypass namespace issues
+                            title_node = elem.find('.//{*}title')
+                            desc_node = elem.find('.//{*}desc')
                             
-                            # Build the tag manually to ensure no data loss
-                            start = elem.get('start')
-                            stop = elem.get('stop')
-                            f_out.write(f'  <programme start="{start}" stop="{stop}" channel="{chan_id}">\n'.encode('utf-8'))
+                            title_text = title_node.text if title_node is not None else ""
+                            desc_text = desc_node.text if desc_node is not None else ""
                             
-                            # Find and write children explicitly
-                            for child in elem:
-                                child_tag = child.tag.split('}')[-1]
-                                if child.text:
-                                    # This is the fix: explicitly writing the text content
-                                    txt = child.text.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
-                                    f_out.write(f'    <{child_tag}>{txt}</{child_tag}>\n'.encode('utf-8'))
-                                else:
-                                    f_out.write(f'    <{child_tag} />\n'.encode('utf-8'))
-                            
-                            f_out.write(b'  </programme>\n')
-                    
+                            if title_text:
+                                program_count += 1
+                                if program_count % 50 == 0: # Debug every 50th program
+                                    print(f"  ✍️ Saving: [{chan_id}] -> {title_text[:30]}...")
+                                
+                            # Write the raw element (this preserves the structure)
+                            f_out.write(ET.tostring(elem, encoding='utf-8') + b'\n')
                     elem.clear()
-            
             f_out.write(b'</tv>')
 
-        print(f"📊 Final Results: {len(matched_real_ids)} channels with full program data saved.")
+        print(f"📊 Final Count: Saved {program_count} populated programs across {len(matched_real_ids)} channels.")
         
     except Exception as e:
         print(f"❌ Error: {e}")
