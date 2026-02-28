@@ -98,86 +98,75 @@ def clean_line(line):
     return line
   
 def process_iptv():
-    print("🚀 Starting Aggressive Fuzzy Filter...")
+    print("🚀 Running Super Matcher (ID + Name Fallback)...")
     try:
         r = requests.get(M3U_URL, timeout=30)
         lines = r.text.splitlines()
         final_m3u = ["#EXTM3U"]
         
-        # We will store a "normalized" version of your IDs to match against EPG
         def normalize(s):
-            return re.sub(r'[^a-z0-9]', '', s.lower())
+            return re.sub(r'[^a-z0-9]', '', s.lower()) if s else ""
 
-        wanted_normalized = {}
+        # Use a dictionary for fast lookup: normalized_key -> original_id
+        wanted_patterns = {}
         
         for i in range(len(lines)):
             if lines[i].startswith("#EXTINF"):
                 line_lower = lines[i].lower()
                 if (any(s in line_lower for s in AR_SUFFIXES) or any(k in line_lower for k in AR_KEYWORDS)) and not any(w in line_lower for w in EXCLUDE_WORDS):
                     
+                    # Capture ID
                     id_match = re.search(r'tvg-id="([^"]+)"', lines[i])
                     if id_match:
                         raw_id = id_match.group(1).split('@')[0]
-                        wanted_normalized[normalize(raw_id)] = raw_id
+                        wanted_patterns[normalize(raw_id)] = raw_id
+
+                    # Capture Display Name from M3U (text after comma)
+                    m3u_name = lines[i].split(',')[-1].strip()
+                    wanted_patterns[normalize(m3u_name)] = m3u_name
 
                     fixed_line = clean_line(lines[i])
-                    fixed_id_match = re.search(r'tvg-id="([^"]+)"', fixed_line)
-                    if fixed_id_match:
-                        mapped_id = fixed_id_match.group(1).split('@')[0]
-                        wanted_normalized[normalize(mapped_id)] = mapped_id
-
                     if i + 1 < len(lines) and lines[i+1].startswith("http"):
                         final_m3u.append(fixed_line)
                         final_m3u.append(lines[i+1])
         
-        print(f"✅ M3U Filtered. Looking for {len(wanted_normalized)} channel patterns.")
+        with open("curated-live.m3u", "w", encoding="utf-8") as f:
+            f.write("\n".join(final_m3u))
 
-        print(f"📥 Downloading EPG...")
+        print(f"✅ M3U Filtered. Patterns: {len(wanted_patterns)}. Downloading EPG...")
         response = requests.get(EPG_URL, stream=True, timeout=120)
         
-        # Map to store which EPG IDs we actually found
         matched_epg_ids = set()
-        found_channels_xml = []
-
-        with gzip.GzipFile(fileobj=io.BytesIO(response.content)) as g:
-            context = ET.iterparse(g, events=('end',))
-            for event, elem in context:
-                tag_name = elem.tag.split('}')[-1]
-                
-                if tag_name == 'channel':
-                    cid = elem.get('id')
-                    norm_cid = normalize(cid)
-                    if norm_cid in wanted_normalized:
-                        matched_epg_ids.add(cid)
-                        found_channels_xml.append(ET.tostring(elem, encoding='utf-8'))
-                
-                elif tag_name == 'programme':
-                    # Only keep programs for channels we already matched
-                    if elem.get('channel') in matched_epg_ids:
-                        # We will write these in the next step
-                        pass 
-                elem.clear()
-
-        # Re-run for programmes (Streaming twice to keep memory low)
-        print(f"⚡ Writing matched data to file...")
+        
+        # We process in ONE pass to ensure we don't lose the stream
         with gzip.open("arabic-epg.xml.gz", "wb") as f_out:
             f_out.write(b'<?xml version="1.0" encoding="utf-8"?>\n<tv>\n')
-            for c_xml in found_channels_xml:
-                f_out.write(c_xml)
             
-            # Second pass for programmes
+            # Using BytesIO to make the stream seekable/readable once
             with gzip.GzipFile(fileobj=io.BytesIO(response.content)) as g:
                 context = ET.iterparse(g, events=('end',))
                 for event, elem in context:
                     tag_name = elem.tag.split('}')[-1]
-                    if tag_name == 'programme':
-                        pid = elem.get('channel')
-                        if pid in matched_epg_ids:
+                    
+                    if tag_name == 'channel':
+                        cid = elem.get('id')
+                        cname = elem.findtext('display-name') or ""
+                        
+                        # Match against Normalized ID OR Normalized Name
+                        if normalize(cid) in wanted_patterns or normalize(cname) in wanted_patterns:
+                            matched_epg_ids.add(cid)
                             f_out.write(ET.tostring(elem, encoding='utf-8'))
+                    
+                    elif tag_name == 'programme':
+                        # If this program belongs to a channel we just matched
+                        if elem.get('channel') in matched_epg_ids:
+                            f_out.write(ET.tostring(elem, encoding='utf-8'))
+                    
                     elem.clear()
+            
             f_out.write(b'</tv>')
 
-        print(f"📊 Results: Matched {len(matched_epg_ids)} channels perfectly.")
+        print(f"📊 Final Count: Matched {len(matched_epg_ids)} channels.")
         
     except Exception as e:
         print(f"❌ Error: {e}")
