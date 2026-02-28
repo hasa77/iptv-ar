@@ -98,11 +98,14 @@ def clean_line(line):
     return line
   
 def process_iptv():
-    print("🚀 Running ID_MAP Priority Filter...")
+    print("🚀 Running ID_MAP Priority Filter (Targeting 39+)...")
     try:
-        # 1. Start with your Gold Standard: Every 'value' from your ID_MAP
-        # This ensures we are ALWAYS looking for these 39 IDs regardless of the M3U
+        # 1. Initialize with your Gold Standard: Every 'value' from your ID_MAP
+        # This ensures we search for these 39 IDs regardless of the M3U content
         wanted_ids = set(ID_MAP.values())
+        
+        # Also keep a set of the 'keys' to check which M3U channels to map
+        mapping_keys = set(ID_MAP.keys())
         
         r = requests.get(M3U_URL, timeout=30)
         lines = r.text.splitlines()
@@ -111,29 +114,31 @@ def process_iptv():
         def normalize(s):
             return re.sub(r'[^a-z0-9]', '', s.lower()) if s else ""
 
-        # 2. Add extra IDs from the M3U that aren't in the map
+        # 2. Process M3U to add extra "bonus" IDs and clean the lines
         for i in range(len(lines)):
             if lines[i].startswith("#EXTINF"):
                 line_lower = lines[i].lower()
                 if (any(s in line_lower for s in AR_SUFFIXES) or any(k in line_lower for k in AR_KEYWORDS)) and not any(w in line_lower for w in EXCLUDE_WORDS):
                     
-                    # Apply your ID_MAP to the line
+                    # Extract the current ID
+                    id_match = re.search(r'tvg-id="([^"]+)"', lines[i])
+                    if id_match:
+                        current_id = id_match.group(1).split('@')[0]
+                        # If it's NOT in our map, add it as a "silver" fuzzy search
+                        if current_id not in mapping_keys:
+                            wanted_ids.add(current_id)
+                            wanted_ids.add(normalize(current_id))
+
+                    # Apply your ID_MAP to the line for the final output
                     fixed_line = clean_line(lines[i])
                     
-                    # Extract the ID from the fixed line
-                    id_match = re.search(r'tvg-id="([^"]+)"', fixed_line)
-                    if id_match:
-                        found_id = id_match.group(1).split('@')[0]
-                        wanted_ids.add(found_id)
-                        wanted_ids.add(normalize(found_id))
-
                     if i + 1 < len(lines) and lines[i+1].startswith("http"):
                         final_m3u.append(fixed_line)
                         final_m3u.append(lines[i+1])
 
-        print(f"✅ Search list built. Total IDs to find: {len(wanted_ids)}")
+        print(f"✅ Search list built. Total unique IDs to scan: {len(wanted_ids)}")
 
-        # 3. EPG Processing
+        # 3. EPG Processing (Two-Pass for Stream Reliability)
         response = requests.get(EPG_URL, timeout=120)
         epg_bytes = response.content
 
@@ -147,13 +152,13 @@ def process_iptv():
                 tag = elem.tag.split('}')[-1]
                 if tag == 'channel':
                     cid = elem.get('id')
-                    # Check exact ID match or normalized match
+                    # Match against exact ID_MAP values or M3U variants
                     if cid in wanted_ids or normalize(cid) in wanted_ids:
                         matched_real_ids.add(cid)
                         channel_elements.append(ET.tostring(elem, encoding='utf-8'))
                 elem.clear()
 
-        # Pass 2: Extract Programs
+        # Pass 2: Extract Programs for the matched IDs
         with gzip.open("arabic-epg.xml.gz", "wb") as f_out:
             f_out.write(b'<?xml version="1.0" encoding="utf-8"?>\n<tv>\n')
             for c in channel_elements:
@@ -169,7 +174,13 @@ def process_iptv():
                     elem.clear()
             f_out.write(b'</tv>')
 
-        print(f"📊 Results: Found {len(matched_real_ids)} channels.")
+        # 4. Debug: Check which of your 39 didn't make it
+        missing_from_map = [v for v in ID_MAP.values() if v not in matched_real_ids]
+        if missing_from_map:
+            print(f"⚠️ {len(missing_from_map)} IDs from your map were NOT found in the EPG file.")
+            # Optional: print(f"Missing: {missing_from_map[:5]}...")
+
+        print(f"📊 Final Results: Found {len(matched_real_ids)} channels.")
         
     except Exception as e:
         print(f"❌ Error: {e}")
