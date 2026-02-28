@@ -111,22 +111,28 @@ def process_iptv():
                 line_lower = lines[i].lower()
                 if (any(s in line_lower for s in AR_SUFFIXES) or any(k in line_lower for k in AR_KEYWORDS)) and not any(w in line_lower for w in EXCLUDE_WORDS):
                     
-                    # Extract ID from original line
+                    # --- HYBRID ID EXTRACTION START ---
+                    # 1. Capture the Original ID (and strip @HD/@SD)
                     id_match = re.search(r'tvg-id="([^"]+)"', lines[i])
                     if id_match:
-                        kept_ids.add(id_match.group(1))
+                        raw_id = id_match.group(1).split('@')[0]
+                        kept_ids.add(raw_id) 
 
+                    # 2. Get the Fixed Line/ID from your clean_line function
                     fixed_line = clean_line(lines[i])
+                    
+                    # 3. Capture the Mapped ID as well (and strip @HD/@SD)
+                    id_match_fixed = re.search(r'tvg-id="([^"]+)"', fixed_line)
+                    if id_match_fixed:
+                        clean_mapped_id = id_match_fixed.group(1).split('@')[0]
+                        kept_ids.add(clean_mapped_id)
+                    # --- HYBRID ID EXTRACTION END ---
+
                     if i + 1 < len(lines) and lines[i+1].startswith("http"):
                         final_m3u.append(fixed_line)
                         final_m3u.append(lines[i+1])
-                        
-                        # Extract ID from fixed line (the one TiviMate sees)
-                        id_match_fixed = re.search(r'tvg-id="([^"]+)"', fixed_line)
-                        if id_match_fixed:
-                            kept_ids.add(id_match_fixed.group(1))
         
-        print(f"✅ M3U Filtered. Sample of IDs we are looking for: {list(kept_ids)[:5]}")
+        print(f"✅ M3U Filtered. Looking for {len(kept_ids)} unique ID variants.")
 
         # 2. EPG STREAMING WITH DEBUG
         print(f"📥 Downloading EPG...")
@@ -140,7 +146,6 @@ def process_iptv():
             f_out.write(b'<?xml version="1.0" encoding="utf-8"?>\n<tv>\n')
             
             with gzip.GzipFile(fileobj=io.BytesIO(response.content)) as g:
-                # Using 'start' event to catch attributes earlier
                 context = ET.iterparse(g, events=('start', 'end'))
                 
                 for event, elem in context:
@@ -149,7 +154,6 @@ def process_iptv():
                     if event == 'start':
                         if tag_name == 'channel':
                             cid = elem.get('id')
-                            # DEBUG: Print the first 20 IDs found in the big file to see their format
                             if debug_count < 20:
                                 print(f"🔍 EPG Source ID Example: {cid}")
                                 debug_count += 1
@@ -176,6 +180,6 @@ def process_iptv():
     except Exception as e:
         print(f"❌ Error: {e}")
         exit(1)
-
+      
 if __name__ == "__main__":
     process_iptv()
