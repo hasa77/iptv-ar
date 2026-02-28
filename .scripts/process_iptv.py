@@ -93,7 +93,7 @@ def clean_line(line):
 def process_iptv():
     print("🚀 Running High-Speed Filter & EPG Sync...")
     try:
-        # 1. M3U FILTERING (Keep your existing logic here)
+        # 1. M3U FILTERING
         r = requests.get(M3U_URL, timeout=30)
         lines = r.text.splitlines()
         final_m3u = ["#EXTM3U"]
@@ -103,13 +103,22 @@ def process_iptv():
             if lines[i].startswith("#EXTINF"):
                 line_lower = lines[i].lower()
                 if (any(s in line_lower for s in AR_SUFFIXES) or any(k in line_lower for k in AR_KEYWORDS)) and not any(w in line_lower for w in EXCLUDE_WORDS):
+                    
+                    # Store ORIGINAL ID before cleaning
+                    original_id_match = re.search(r'tvg-id="([^"]+)"', lines[i])
+                    if original_id_match:
+                        kept_ids.add(original_id_match.group(1))
+
                     fixed_line = clean_line(lines[i])
+                    
                     if i + 1 < len(lines) and lines[i+1].startswith("http"):
                         final_m3u.append(fixed_line)
                         final_m3u.append(lines[i+1])
-                        id_match = re.search(r'tvg-id="([^"]+)"', fixed_line)
-                        if id_match:
-                            kept_ids.add(id_match.group(1))
+                        
+                        # Store CLEANED ID after mapping
+                        clean_id_match = re.search(r'tvg-id="([^"]+)"', fixed_line)
+                        if clean_id_match:
+                            kept_ids.add(clean_id_match.group(1))
         
         with open("curated-live.m3u", "w", encoding="utf-8") as f:
             f.write("\n".join(final_m3u))
@@ -119,20 +128,17 @@ def process_iptv():
         r_epg = requests.get(EPG_URL, stream=True, timeout=120)
         r_epg.raise_for_status()
 
-        print(f"⚡ Streaming Filter for {len(kept_ids)} channels...")
+        print(f"⚡ Streaming Filter checking for {len(kept_ids)} possible ID matches...")
         
-        # We write directly to the compressed file as we read
         with gzip.open("arabic-epg.xml.gz", "wb") as f_out:
-            # Start the XML file manually
             f_out.write(b'<?xml version="1.0" encoding="utf-8"?>\n')
             f_out.write(b'<!DOCTYPE tv SYSTEM "xmltv.dtd">\n')
             f_out.write(b'<tv>\n')
 
-            # Stream the input file
             with gzip.GzipFile(fileobj=io.BytesIO(r_epg.content)) as g:
+                # We use 'start' and 'end' to better handle memory
                 context = ET.iterparse(g, events=('end',))
                 for event, elem in context:
-                    # Only keep the tags we want that match our kept_ids
                     if elem.tag == 'channel':
                         if elem.get('id') in kept_ids:
                             f_out.write(ET.tostring(elem, encoding='utf-8'))
@@ -140,12 +146,11 @@ def process_iptv():
                         if elem.get('channel') in kept_ids:
                             f_out.write(ET.tostring(elem, encoding='utf-8'))
                     
-                    # CRITICAL: Clear the element from memory after writing
                     elem.clear()
                 
             f_out.write(b'</tv>')
 
-        print(f"✅ Finished! M3U and EPG are perfectly synced.")
+        print(f"✅ Finished! M3U and EPG synced with {len(kept_ids)} ID variants.")
     except Exception as e:
         print(f"❌ Error: {e}")
         exit(1)
