@@ -131,59 +131,64 @@ def clean_line(line):
     return line
   
 def process_iptv():
-    print("🚀 Starting Multi-Pass Fuzzy Hunt...")
+    print("🚀 Running ID-Neutral Extraction...")
     try:
-        # Step 1: Define our targets
+        # Define targets from your ID_MAP
         target_ids = set(ID_MAP.values()) | set(ID_MAP.keys())
+        
         matched_real_ids = set()
         channel_elements = []
         program_elements = []
 
-        # Step 2: Pass 1 - Find all valid Channel IDs across ALL sources
         for url in EPG_SOURCES:
-            print(f"🔍 Pass 1: Finding IDs in {url.split('/')[-1]}...")
+            print(f"📥 Processing {url.split('/')[-1]}...")
             try:
                 r = requests.get(url, timeout=60)
-                # Keep the bytes in memory for Pass 2 so we don't download twice
-                content = r.content 
+                content = r.content
+                
+                # Pass 1: Find every ID in this file that matches our needs
+                local_file_ids = set()
                 with gzip.GzipFile(fileobj=io.BytesIO(content)) as g:
                     for event, elem in ET.iterparse(g, events=('end',)):
                         tag = elem.tag.split('}')[-1]
                         if tag == 'channel':
                             cid = elem.get('id')
-                            if any(t.lower() in cid.lower() or cid.lower() in t.lower() for t in target_ids):
+                            # Check if this ID is something we want
+                            if cid and any(t.lower() in cid.lower() or cid.lower() in t.lower() for t in target_ids):
+                                local_file_ids.add(cid)
                                 if cid not in matched_real_ids:
                                     matched_real_ids.add(cid)
                                     channel_elements.append(ET.tostring(elem, encoding='utf-8'))
                         elem.clear()
-                
-                # Step 3: Pass 2 - Now that we know the IDs, grab the programs from the SAME file
-                print(f"  📥 Pass 2: Extracting programs for {len(matched_real_ids)} channels...")
-                with gzip.GzipFile(fileobj=io.BytesIO(content)) as g:
-                    for event, elem in ET.iterparse(g, events=('end',)):
-                        tag = elem.tag.split('}')[-1]
-                        if tag == 'programme':
-                            cid = elem.get('channel')
-                            if cid in matched_real_ids:
-                                # Ensure it has a title
-                                title_node = elem.find('.//{*}title')
-                                if title_node is not None and title_node.text:
-                                    program_elements.append(ET.tostring(elem, encoding='utf-8'))
-                        elem.clear()
-            except Exception as e:
-                print(f"  ⚠️ Error processing {url}: {e}")
 
-        # Step 4: Final Save
+                # Pass 2: Grab programs for ANY ID we found in Pass 1
+                if local_file_ids:
+                    print(f"  📝 Extracting data for {len(local_file_ids)} IDs found in this file...")
+                    with gzip.GzipFile(fileobj=io.BytesIO(content)) as g:
+                        for event, elem in ET.iterparse(g, events=('end',)):
+                            tag = elem.tag.split('}')[-1]
+                            if tag == 'programme':
+                                chan_id = elem.get('channel')
+                                # The Fix: Match against the IDs found specifically in this file
+                                if chan_id in local_file_ids:
+                                    title_node = elem.find('.//{*}title')
+                                    if title_node is not None and title_node.text:
+                                        program_elements.append(ET.tostring(elem, encoding='utf-8'))
+                            elem.clear()
+            except Exception as e:
+                print(f"  ⚠️ Skip {url.split('/')[-1]}: {e}")
+
+        # Final Save
         with gzip.open("arabic-epg.xml.gz", "wb") as f_out:
             f_out.write(b'<?xml version="1.0" encoding="utf-8"?>\n<tv>\n')
             for c in channel_elements: f_out.write(c + b'\n')
             for p in program_elements: f_out.write(p + b'\n')
             f_out.write(b'</tv>')
 
-        print(f"📊 Success! Saved {len(channel_elements)} channels and {len(program_elements)} programs.")
+        print(f"📊 Final Count: {len(channel_elements)} channels and {len(program_elements)} programs saved.")
 
     except Exception as e:
-        print(f"❌ Critical Error: {e}")
+        print(f"❌ Error: {e}")
         
 if __name__ == "__main__":
     process_iptv()
