@@ -123,7 +123,11 @@ def normalise_id(cid):
     return re.sub(r'[._\-\s]', '', clean).lower()
 
 def process_iptv():
-    print("🚀 Running Multi-Format Robust Extraction...")
+    print("🚀 Running Multi-Format Robust Extraction with Strict Mapping...")
+    
+    # --- PREPARE THE MAP ---
+    # This creates a lookup for normalized name -> Pretty Name (from your ID_MAP)
+    REVERSE_MAP = {normalise_id(k): v for k, v in ID_MAP.items()}
     
     target_ids = {normalise_id(t) for t in (set(ID_MAP.values()) | set(ID_MAP.keys()))}
     keywords = ['mbc', 'dubai', 'abu', 'rotana', 'bein', 'ssc', 'sharjah', 'arab', 'aljazeera']
@@ -137,31 +141,33 @@ def process_iptv():
         print(f"📥 Processing {file_name}...")
         try:
             r = requests.get(url, stream=True, timeout=120)
-            content = r.content # Download fully to check format
+            content = r.content
             
-            # --- AUTO-DETECT COMPRESSION ---
-            if content.startswith(b'\x1f\x8b'): # Gzip Magic Bytes
+            if content.startswith(b'\x1f\x8b'):
                 f = gzip.GzipFile(fileobj=io.BytesIO(content))
             else:
-                f = io.BytesIO(content) # Treat as plain XML
+                f = io.BytesIO(content)
             
-            # --- ROBUST PARSING ---
             context = ET.iterparse(f, events=('start', 'end'))
-            current_program = None
             
             for event, elem in context:
                 tag = elem.tag.split('}')[-1]
-                
-                if event == 'start' and tag == 'programme':
-                    current_program = elem
                 
                 if event == 'end' and tag == 'programme':
                     chan_id = elem.get('channel')
                     if chan_id:
                         norm_id = normalise_id(chan_id)
                         
-                        # Match logic
-                        if any(k in norm_id for k in keywords) or norm_id in target_ids:
+                        # --- 1. MAPPING LOGIC ---
+                        # Priority 1: Exact Match in your ID_MAP
+                        # Priority 2: Keyword match (keeps original name)
+                        final_id = None
+                        if norm_id in REVERSE_MAP:
+                            final_id = REVERSE_MAP[norm_id]
+                        elif any(k in norm_id for k in keywords):
+                            final_id = chan_id
+                        
+                        if final_id:
                             # Verify if any child (title) has text
                             has_text = False
                             for child in elem:
@@ -170,11 +176,17 @@ def process_iptv():
                                     break
                             
                             if has_text:
+                                # --- 2. UPDATE ELEMENT ID ---
+                                # We overwrite the channel attribute so it matches your M3U
+                                elem.set('channel', final_id)
+                                
                                 program_elements.append(ET.tostring(elem, encoding='utf-8'))
-                                if chan_id not in global_added_channels:
-                                    global_added_channels.add(chan_id)
-                                    chan_xml = f'<channel id="{chan_id}"><display-name>{chan_id}</display-name></channel>'
+                                
+                                if final_id not in global_added_channels:
+                                    global_added_channels.add(final_id)
+                                    chan_xml = f'<channel id="{final_id}"><display-name>{final_id}</display-name></channel>'
                                     channel_elements.append(chan_xml.encode('utf-8'))
+                                    
                     elem.clear()
 
         except Exception as e:
@@ -187,9 +199,9 @@ def process_iptv():
             for c in channel_elements: f_out.write(c + b'\n')
             for p in program_elements: f_out.write(p + b'\n')
             f_out.write(b'</tv>')
-        print(f"✅ Success! Saved {len(program_elements)} programs.")
+        print(f"✅ Success! Saved {len(program_elements)} programs for {len(global_added_channels)} mapped channels.")
     else:
-        print("❌ Still zero. This confirms the sources are currently empty for your keywords.")
+        print("❌ Still zero. Check if keywords or ID_MAP normalization is too strict.")
         
 if __name__ == "__main__":
     process_iptv()
