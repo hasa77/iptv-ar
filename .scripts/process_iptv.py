@@ -2,7 +2,7 @@ import requests
 import re
 
 M3U_URL = "https://iptv-org.github.io/iptv/languages/ara.m3u"
-EPG_URL = "https://iptv-org.github.io/epg/guides/ar/epgshare01.xml.gz"
+EPG_URL = "EPG_URL = "https://epgshare01.online/epgshare01/epg_ripper_ALL_SOURCES1.xml.gz""
 
 # 1. Target Suffixes (Must have one of these)
 AR_SUFFIXES = ('.ae', '.dz', '.eg', '.iq', '.jo', '.kw', '.lb', '.ly', '.ma', 
