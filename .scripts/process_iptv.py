@@ -122,74 +122,63 @@ def normalise_id(cid):
     return re.sub(r'[._\-\s]', '', clean).lower()
 
 def process_iptv():
-    print("🚀 Running Bulletproof Normalized Extraction...")
+    print("🚀 Running Reverse-Discovery Extraction...")
     try:
-        # 1. Create a set of normalized target IDs from your ID_MAP
-        target_ids = {normalise_id(t) for t in (set(ID_MAP.values()) | set(ID_MAP.keys()))}
+        # Step 1: Target normalized IDs from your map
+        target_norm_ids = {normalise_id(t) for t in (set(ID_MAP.values()) | set(ID_MAP.keys()))}
         
-        matched_real_ids = set()
         channel_elements = []
         program_elements = []
+        global_added_channels = set() # To prevent duplicate channel headers
 
         for url in EPG_SOURCES:
             file_name = url.split('/')[-1]
             print(f"📥 Processing {file_name}...")
             try:
-                # IMPROVEMENT: Use stream=True to avoid loading the entire .gz into RAM
-                response = requests.get(url, stream=True, timeout=120)
+                # Stream the download
+                r = requests.get(url, stream=True, timeout=120)
                 
-                # To perform two passes without downloading twice, we must store the 
-                # compressed bytes in memory. This is safer than uncompressed bytes.
-                compressed_data = response.content 
-                
-                # PASS 1: DISCOVERY (Store both Real and Normalized IDs)
-                local_file_norm_ids = set()
-                local_file_real_ids = set()
-                
-                with gzip.GzipFile(fileobj=io.BytesIO(compressed_data)) as g:
-                    for event, elem in ET.iterparse(g, events=('end',)):
+                # Single Pass logic
+                with gzip.GzipFile(fileobj=io.BytesIO(r.content)) as g:
+                    context = ET.iterparse(g, events=('end',))
+                    for event, elem in context:
                         tag = elem.tag.split('}')[-1]
-                        if tag == 'channel':
-                            cid = elem.get('id')
-                            norm_cid = normalise_id(cid)
-                            
-                            # If this ID matches our target list
-                            if any(target in norm_cid or norm_cid in target for target in target_ids):
-                                local_file_norm_ids.add(norm_cid)
-                                local_file_real_ids.add(cid)
-                                if cid not in matched_real_ids:
-                                    matched_real_ids.add(cid)
-                                    channel_elements.append(ET.tostring(elem, encoding='utf-8'))
-                        elem.clear()
 
-                # PASS 2: EXTRACTION (Normalize the programme channel ID too!)
-                if local_file_norm_ids:
-                    print(f"  📝 Found {len(local_file_real_ids)} IDs. Extracting programs...")
-                    with gzip.GzipFile(fileobj=io.BytesIO(compressed_data)) as g:
-                        for event, elem in ET.iterparse(g, events=('end',)):
-                            tag = elem.tag.split('}')[-1]
-                            if tag == 'programme':
-                                chan_id = elem.get('channel')
-                                norm_chan_id = normalise_id(chan_id)
+                        if tag == 'programme':
+                            chan_id = elem.get('channel')
+                            norm_chan_id = normalise_id(chan_id)
+
+                            # If this program's channel matches our target list
+                            if any(target in norm_chan_id or norm_chan_id in target for target in target_norm_ids):
                                 
-                                # THE FIX: Match using the normalized version
-                                if norm_chan_id in local_file_norm_ids:
-                                    # Ensure title exists (robust check)
-                                    if any(child.tag.endswith('title') and child.text for child in elem):
-                                        program_elements.append(ET.tostring(elem, encoding='utf-8'))
-                            elem.clear()
+                                # 1. Capture the program
+                                # Ensure it's not empty/has a title
+                                if any(child.tag.endswith('title') and child.text for child in elem):
+                                    program_elements.append(ET.tostring(elem, encoding='utf-8'))
+
+                                    # 2. Create the channel header if we haven't yet
+                                    if chan_id not in global_added_channels:
+                                        global_added_channels.add(chan_id)
+                                        # Use a proper XML structure for the dummy channel
+                                        chan_xml = f'<channel id="{chan_id}"><display-name>{chan_id}</display-name></channel>'
+                                        channel_elements.append(chan_xml.encode('utf-8'))
+
+                        # Clear memory as we go
+                        elem.clear()
                             
             except Exception as e:
-                print(f"  ⚠️ Skip {file_name}: {e}")
+                print(f"  ⚠️ Error in {file_name}: {e}")
 
         # Final Save
-        with gzip.open("arabic-epg.xml.gz", "wb") as f_out:
-            f_out.write(b'<?xml version="1.0" encoding="utf-8"?>\n<tv>\n')
-            for c in channel_elements: f_out.write(c + b'\n')
-            for p in program_elements: f_out.write(p + b'\n')
-            f_out.write(b'</tv>')
-
-        print(f"📊 Final Count: {len(channel_elements)} channels and {len(program_elements)} programs saved.")
+        if not program_elements:
+            print("❌ Critical: Still found 0 programs. This suggests the source XMLs might use different tags or the 'target_ids' are too restrictive.")
+        else:
+            with gzip.open("arabic-epg.xml.gz", "wb") as f_out:
+                f_out.write(b'<?xml version="1.0" encoding="utf-8"?>\n<tv>\n')
+                for c in channel_elements: f_out.write(c + b'\n')
+                for p in program_elements: f_out.write(p + b'\n')
+                f_out.write(b'</tv>')
+            print(f"✅ Success! Saved {len(channel_elements)} channels and {len(program_elements)} programs.")
 
     except Exception as e:
         print(f"❌ Error: {e}")
