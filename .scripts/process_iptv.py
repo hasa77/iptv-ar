@@ -115,68 +115,65 @@ ID_MAP = {
     'SharjahQuran.ae': 'Sharjah.Quran.TV.ae'
 }
 
-def clean_line(line):
-    # 1. First, strip @HD/@SD from the line just for mapping purposes
-    # This ensures "MBC1.ae@HD" becomes "MBC1.ae" so it matches your ID_MAP
-    line = re.sub(r'(@[A-Z0-9]+)', '', line)
+def normalise_id(cid):
+    if not cid: return ""
+    # Remove dots, dashes, underscores and spaces, then lowercase
+    return re.sub(r'[._\-\s]', '', cid).lower()
 
-    # 2. Apply specific ID mapping
-    for old_id, new_id in ID_MAP.items():
-        if f'tvg-id="{old_id}"' in line:
-            return line.replace(f'tvg-id="{old_id}"', f'tvg-id="{new_id}"')
-    
-    # 3. Generic fix for camelCase (e.g., DubaiZaman -> Dubai.Zaman)
-    if 'tvg-id="' in line:
-        line = re.sub(r'([a-z])([A-Z])', r'\1.\2', line)
-    return line
-  
 def process_iptv():
-    print("🚀 Running ID-Neutral Extraction...")
+    print("🚀 Running Normalized Multi-Source Extraction...")
     try:
-        # Define targets from your ID_MAP
-        target_ids = set(ID_MAP.values()) | set(ID_MAP.keys())
+        # Create a set of normalized target IDs
+        target_ids = {normalise_id(t) for t in (set(ID_MAP.values()) | set(ID_MAP.keys()))}
         
         matched_real_ids = set()
         channel_elements = []
         program_elements = []
 
         for url in EPG_SOURCES:
-            print(f"📥 Processing {url.split('/')[-1]}...")
+            file_name = url.split('/')[-1]
+            print(f"📥 Processing {file_name}...")
             try:
-                r = requests.get(url, timeout=60)
-                content = r.content
+                r = requests.get(url, stream=True, timeout=120)
+                content_bytes = r.content 
                 
-                # Pass 1: Find every ID in this file that matches our needs
+                # Pass 1: Discovery
                 local_file_ids = set()
-                with gzip.GzipFile(fileobj=io.BytesIO(content)) as g:
-                    for event, elem in ET.iterparse(g, events=('end',)):
+                with gzip.GzipFile(fileobj=io.BytesIO(content_bytes)) as g:
+                    context = ET.iterparse(g, events=('end',))
+                    for event, elem in context:
                         tag = elem.tag.split('}')[-1]
                         if tag == 'channel':
                             cid = elem.get('id')
-                            # Check if this ID is something we want
-                            if cid and any(t.lower() in cid.lower() or cid.lower() in t.lower() for t in target_ids):
+                            norm_cid = normalise_id(cid)
+                            if any(target in norm_cid or norm_cid in target for target in target_ids):
                                 local_file_ids.add(cid)
                                 if cid not in matched_real_ids:
                                     matched_real_ids.add(cid)
                                     channel_elements.append(ET.tostring(elem, encoding='utf-8'))
                         elem.clear()
 
-                # Pass 2: Grab programs for ANY ID we found in Pass 1
+                # Pass 2: Extraction
                 if local_file_ids:
-                    print(f"  📝 Extracting data for {len(local_file_ids)} IDs found in this file...")
-                    with gzip.GzipFile(fileobj=io.BytesIO(content)) as g:
-                        for event, elem in ET.iterparse(g, events=('end',)):
+                    print(f"  📝 Found {len(local_file_ids)} matching IDs. Extracting programs...")
+                    with gzip.GzipFile(fileobj=io.BytesIO(content_bytes)) as g:
+                        context = ET.iterparse(g, events=('end',))
+                        for event, elem in context:
                             tag = elem.tag.split('}')[-1]
                             if tag == 'programme':
                                 chan_id = elem.get('channel')
-                                # The Fix: Match against the IDs found specifically in this file
                                 if chan_id in local_file_ids:
-                                    title_node = elem.find('.//{*}title')
-                                    if title_node is not None and title_node.text:
+                                    has_title = False
+                                    for child in elem:
+                                        if child.tag.endswith('title') and child.text and child.text.strip():
+                                            has_title = True
+                                            break
+                                    if has_title:
                                         program_elements.append(ET.tostring(elem, encoding='utf-8'))
                             elem.clear()
+                            
             except Exception as e:
-                print(f"  ⚠️ Skip {url.split('/')[-1]}: {e}")
+                print(f"  ⚠️ Skip {file_name}: {e}")
 
         # Final Save
         with gzip.open("arabic-epg.xml.gz", "wb") as f_out:
@@ -189,6 +186,6 @@ def process_iptv():
 
     except Exception as e:
         print(f"❌ Error: {e}")
-        
+
 if __name__ == "__main__":
     process_iptv()
