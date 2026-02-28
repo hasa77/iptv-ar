@@ -174,43 +174,43 @@ def process_iptv():
         matched_real_ids = set()
         channel_elements = []
 
-        # Pass 1: Find Channels
+       # Pass 1: Find Channels
+        matched_real_ids = set()
+        channel_elements = []
+
         with gzip.GzipFile(fileobj=io.BytesIO(epg_bytes)) as g:
             context = ET.iterparse(g, events=('end',))
             for event, elem in context:
                 tag = elem.tag.split('}')[-1]
                 if tag == 'channel':
                     cid = elem.get('id')
-                    # Match against exact ID_MAP values or M3U variants
                     if cid in wanted_ids or normalize(cid) in wanted_ids:
                         matched_real_ids.add(cid)
+                        # Create a clean copy of the channel element
                         channel_elements.append(ET.tostring(elem, encoding='utf-8'))
                 elem.clear()
 
-       # --- PASS 2: EXTRACT PROGRAMS (Case-Insensitive Match) ---
-        # Create a lowercase lookup for the matched IDs to be safe
+        # Pass 2: Extract Programs
         matched_ids_lower = {cid.lower(): cid for cid in matched_real_ids}
 
         with gzip.open("arabic-epg.xml.gz", "wb") as f_out:
             f_out.write(b'<?xml version="1.0" encoding="utf-8"?>\n<tv>\n')
             
-            # Write the channel headers first
+            # Write Channels
             for c in channel_elements:
-                f_out.write(c)
+                f_out.write(c + b'\n')
             
-            # Re-scan for programmes
+            # Write Programmes
             with gzip.GzipFile(fileobj=io.BytesIO(epg_bytes)) as g:
                 context = ET.iterparse(g, events=('end',))
                 for event, elem in context:
                     tag = elem.tag.split('}')[-1]
                     if tag == 'programme':
-                        p_channel = elem.get('channel')
-                        if p_channel:
-                            # Match the program's channel ID to our found list (case-insensitive)
-                            if p_channel in matched_real_ids or p_channel.lower() in matched_ids_lower:
-                                f_out.write(ET.tostring(elem, encoding='utf-8'))
-                    
-                    elem.clear() # Keep memory usage low
+                        chan_id = elem.get('channel')
+                        if chan_id and (chan_id in matched_real_ids or chan_id.lower() in matched_ids_lower):
+                            # Ensure we capture the ENTIRE block including children text
+                            f_out.write(ET.tostring(elem, encoding='utf-8') + b'\n')
+                    elem.clear()
             
             f_out.write(b'</tv>')
 
