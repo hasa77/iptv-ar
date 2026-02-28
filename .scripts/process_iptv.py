@@ -80,12 +80,9 @@ ID_MAP = {
 }
 
 def clean_line(line):
-    # Apply specific ID mapping first
     for old_id, new_id in ID_MAP.items():
         if f'tvg-id="{old_id}"' in line:
             return line.replace(f'tvg-id="{old_id}"', f'tvg-id="{new_id}"')
-    
-    # Generic fix for camelCase names (e.g., DubaiZaman -> Dubai.Zaman)
     if 'tvg-id="' in line:
         line = re.sub(r'([a-z])([A-Z])', r'\1.\2', line)
     return line
@@ -97,15 +94,14 @@ def process_iptv():
         lines = r.text.splitlines()
         final_m3u = ["#EXTM3U"]
         
+        # Track which IDs we actually kept for the EPG filter
+        kept_ids = set()
+        
         for i in range(len(lines)):
             if lines[i].startswith("#EXTINF"):
                 line_lower = lines[i].lower()
-                
-                # STAGE 1: Must match Suffix OR Keyword
                 is_arabic = any(s in line_lower for s in AR_SUFFIXES) or \
                             any(k in line_lower for k in AR_KEYWORDS)
-                
-                # STAGE 2: Must NOT match Rejection List
                 is_rejected = any(w in line_lower for w in EXCLUDE_WORDS)
                 
                 if is_arabic and not is_rejected:
@@ -113,19 +109,40 @@ def process_iptv():
                     if i + 1 < len(lines) and lines[i+1].startswith("http"):
                         final_m3u.append(fixed_line)
                         final_m3u.append(lines[i+1])
+                        
+                        # Extract the ID (after mapping) to use for EPG filtering
+                        id_match = re.search(r'tvg-id="([^"]+)"', fixed_line)
+                        if id_match:
+                            kept_ids.add(id_match.group(1))
         
         with open("curated-live.m3u", "w", encoding="utf-8") as f:
             f.write("\n".join(final_m3u))
             
-        # Download and Save EPG with robust stream handling
-        print(f"📥 Downloading EPG from {EPG_URL}...")
-        with requests.get(EPG_URL, stream=True, timeout=60) as r_epg:
-            r_epg.raise_for_status() 
-            with open("arabic-epg.xml.gz", "wb") as f:
-                for chunk in r_epg.iter_content(chunk_size=8192):
-                    f.write(chunk)
+        print(f"📥 Downloading Global EPG...")
+        r_epg = requests.get(EPG_URL, timeout=60)
+        r_epg.raise_for_status()
+        
+        print(f"⚙️ Filtering EPG for {len(kept_ids)} channels...")
+        # Decompress in memory, filter, and re-compress
+        with gzip.GzipFile(fileobj=io.BytesIO(r_epg.content)) as g:
+            tree = ET.parse(g)
+            root = tree.getroot()
             
-        print(f"✅ Finished! Saved {len(final_m3u)//2} channels.")
+            # Remove channel elements not in our list
+            for channel in root.findall('channel'):
+                if channel.get('id') not in kept_ids:
+                    root.remove(channel)
+            
+            # Remove programme elements not in our list
+            for programme in root.findall('programme'):
+                if programme.get('channel') not in kept_ids:
+                    root.remove(programme)
+            
+            # Save the filtered XML as a compressed .gz file
+            with gzip.open("arabic-epg.xml.gz", "wb") as f_out:
+                tree.write(f_out, encoding="utf-8", xml_declaration=True)
+
+        print(f"✅ Finished! Saved {len(final_m3u)//2} channels and filtered EPG.")
     except Exception as e:
         print(f"❌ Error: {e}")
         exit(1)
