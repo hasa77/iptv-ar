@@ -98,7 +98,7 @@ def clean_line(line):
     return line
   
 def process_iptv():
-    print("🚀 Running Super Matcher (ID + Name Fallback)...")
+    print("🚀 Running Bulletproof Two-Pass Filter...")
     try:
         r = requests.get(M3U_URL, timeout=30)
         lines = r.text.splitlines()
@@ -107,23 +107,19 @@ def process_iptv():
         def normalize(s):
             return re.sub(r'[^a-z0-9]', '', s.lower()) if s else ""
 
-        # Use a dictionary for fast lookup: normalized_key -> original_id
-        wanted_patterns = {}
-        
+        wanted_patterns = set()
         for i in range(len(lines)):
             if lines[i].startswith("#EXTINF"):
                 line_lower = lines[i].lower()
                 if (any(s in line_lower for s in AR_SUFFIXES) or any(k in line_lower for k in AR_KEYWORDS)) and not any(w in line_lower for w in EXCLUDE_WORDS):
-                    
-                    # Capture ID
+                    # Add ID
                     id_match = re.search(r'tvg-id="([^"]+)"', lines[i])
                     if id_match:
-                        raw_id = id_match.group(1).split('@')[0]
-                        wanted_patterns[normalize(raw_id)] = raw_id
-
-                    # Capture Display Name from M3U (text after comma)
-                    m3u_name = lines[i].split(',')[-1].strip()
-                    wanted_patterns[normalize(m3u_name)] = m3u_name
+                        wanted_patterns.add(normalize(id_match.group(1).split('@')[0]))
+                    # Add Name
+                    name_parts = lines[i].split(',')
+                    if len(name_parts) > 1:
+                        wanted_patterns.add(normalize(name_parts[-1]))
 
                     fixed_line = clean_line(lines[i])
                     if i + 1 < len(lines) and lines[i+1].startswith("http"):
@@ -133,40 +129,45 @@ def process_iptv():
         with open("curated-live.m3u", "w", encoding="utf-8") as f:
             f.write("\n".join(final_m3u))
 
-        print(f"✅ M3U Filtered. Patterns: {len(wanted_patterns)}. Downloading EPG...")
-        response = requests.get(EPG_URL, stream=True, timeout=120)
-        
-        matched_epg_ids = set()
-        
-        # We process in ONE pass to ensure we don't lose the stream
+        print(f"✅ M3U Saved. Downloading EPG...")
+        response = requests.get(EPG_URL, timeout=120)
+        epg_data = response.content # Store in memory so we can read twice
+
+        matched_ids = set()
+        channels_xml_to_write = []
+
+        # --- PASS 1: FIND CHANNELS ---
+        with gzip.GzipFile(fileobj=io.BytesIO(epg_data)) as g:
+            context = ET.iterparse(g, events=('end',))
+            for event, elem in context:
+                tag_name = elem.tag.split('}')[-1]
+                if tag_name == 'channel':
+                    cid = elem.get('id')
+                    cname = elem.findtext('display-name') or ""
+                    if normalize(cid) in wanted_patterns or normalize(cname) in wanted_patterns:
+                        matched_ids.add(cid)
+                        channels_xml_to_write.append(ET.tostring(elem, encoding='utf-8'))
+                elem.clear()
+
+        print(f"🔍 Found {len(matched_ids)} matching channels. Now extracting programs...")
+
+        # --- PASS 2: EXTRACT PROGRAMS ---
         with gzip.open("arabic-epg.xml.gz", "wb") as f_out:
             f_out.write(b'<?xml version="1.0" encoding="utf-8"?>\n<tv>\n')
+            for c_xml in channels_xml_to_write:
+                f_out.write(c_xml)
             
-            # Using BytesIO to make the stream seekable/readable once
-            with gzip.GzipFile(fileobj=io.BytesIO(response.content)) as g:
+            with gzip.GzipFile(fileobj=io.BytesIO(epg_data)) as g:
                 context = ET.iterparse(g, events=('end',))
                 for event, elem in context:
                     tag_name = elem.tag.split('}')[-1]
-                    
-                    if tag_name == 'channel':
-                        cid = elem.get('id')
-                        cname = elem.findtext('display-name') or ""
-                        
-                        # Match against Normalized ID OR Normalized Name
-                        if normalize(cid) in wanted_patterns or normalize(cname) in wanted_patterns:
-                            matched_epg_ids.add(cid)
+                    if tag_name == 'programme':
+                        if elem.get('channel') in matched_ids:
                             f_out.write(ET.tostring(elem, encoding='utf-8'))
-                    
-                    elif tag_name == 'programme':
-                        # If this program belongs to a channel we just matched
-                        if elem.get('channel') in matched_epg_ids:
-                            f_out.write(ET.tostring(elem, encoding='utf-8'))
-                    
                     elem.clear()
-            
             f_out.write(b'</tv>')
 
-        print(f"📊 Final Count: Matched {len(matched_epg_ids)} channels.")
+        print(f"📊 Final Count: Matched {len(matched_ids)} channels.")
         
     except Exception as e:
         print(f"❌ Error: {e}")
