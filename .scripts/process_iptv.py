@@ -91,61 +91,61 @@ def clean_line(line):
     return line
 
 def process_iptv():
-    print("🚀 Running Combined Filter & EPG Sync...")
+    print("🚀 Running High-Speed Filter & EPG Sync...")
     try:
+        # 1. M3U FILTERING (Keep your existing logic here)
         r = requests.get(M3U_URL, timeout=30)
         lines = r.text.splitlines()
         final_m3u = ["#EXTM3U"]
-        
-        # Track which IDs we actually kept for the EPG filter
         kept_ids = set()
         
         for i in range(len(lines)):
             if lines[i].startswith("#EXTINF"):
                 line_lower = lines[i].lower()
-                is_arabic = any(s in line_lower for s in AR_SUFFIXES) or \
-                            any(k in line_lower for k in AR_KEYWORDS)
-                is_rejected = any(w in line_lower for w in EXCLUDE_WORDS)
-                
-                if is_arabic and not is_rejected:
+                if (any(s in line_lower for s in AR_SUFFIXES) or any(k in line_lower for k in AR_KEYWORDS)) and not any(w in line_lower for w in EXCLUDE_WORDS):
                     fixed_line = clean_line(lines[i])
                     if i + 1 < len(lines) and lines[i+1].startswith("http"):
                         final_m3u.append(fixed_line)
                         final_m3u.append(lines[i+1])
-                        
-                        # Extract the ID (after mapping) to use for EPG filtering
                         id_match = re.search(r'tvg-id="([^"]+)"', fixed_line)
                         if id_match:
                             kept_ids.add(id_match.group(1))
         
         with open("curated-live.m3u", "w", encoding="utf-8") as f:
             f.write("\n".join(final_m3u))
-            
-        print(f"📥 Downloading Global EPG...")
-        r_epg = requests.get(EPG_URL, timeout=60)
-        r_epg.raise_for_status()
-        
-        print(f"⚙️ Filtering EPG for {len(kept_ids)} channels...")
-        # Decompress in memory, filter, and re-compress
-        with gzip.GzipFile(fileobj=io.BytesIO(r_epg.content)) as g:
-            tree = ET.parse(g)
-            root = tree.getroot()
-            
-            # Remove channel elements not in our list
-            for channel in root.findall('channel'):
-                if channel.get('id') not in kept_ids:
-                    root.remove(channel)
-            
-            # Remove programme elements not in our list
-            for programme in root.findall('programme'):
-                if programme.get('channel') not in kept_ids:
-                    root.remove(programme)
-            
-            # Save the filtered XML as a compressed .gz file
-            with gzip.open("arabic-epg.xml.gz", "wb") as f_out:
-                tree.write(f_out, encoding="utf-8", xml_declaration=True)
 
-        print(f"✅ Finished! Saved {len(final_m3u)//2} channels and filtered EPG.")
+        # 2. HIGH-SPEED EPG STREAMING
+        print(f"📥 Downloading Global EPG...")
+        r_epg = requests.get(EPG_URL, stream=True, timeout=120)
+        r_epg.raise_for_status()
+
+        print(f"⚡ Streaming Filter for {len(kept_ids)} channels...")
+        
+        # We write directly to the compressed file as we read
+        with gzip.open("arabic-epg.xml.gz", "wb") as f_out:
+            # Start the XML file manually
+            f_out.write(b'<?xml version="1.0" encoding="utf-8"?>\n')
+            f_out.write(b'<!DOCTYPE tv SYSTEM "xmltv.dtd">\n')
+            f_out.write(b'<tv>\n')
+
+            # Stream the input file
+            with gzip.GzipFile(fileobj=io.BytesIO(r_epg.content)) as g:
+                context = ET.iterparse(g, events=('end',))
+                for event, elem in context:
+                    # Only keep the tags we want that match our kept_ids
+                    if elem.tag == 'channel':
+                        if elem.get('id') in kept_ids:
+                            f_out.write(ET.tostring(elem, encoding='utf-8'))
+                    elif elem.tag == 'programme':
+                        if elem.get('channel') in kept_ids:
+                            f_out.write(ET.tostring(elem, encoding='utf-8'))
+                    
+                    # CRITICAL: Clear the element from memory after writing
+                    elem.clear()
+                
+            f_out.write(b'</tv>')
+
+        print(f"✅ Finished! M3U and EPG are perfectly synced.")
     except Exception as e:
         print(f"❌ Error: {e}")
         exit(1)
