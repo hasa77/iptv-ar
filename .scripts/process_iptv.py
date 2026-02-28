@@ -6,7 +6,6 @@ EPG_URL = "https://iptv-org.github.io/epg/guides/ar/epgshare01.xml.gz"
 
 EXCLUDE_WORDS = ('radio', 'fm', 'chaine', 'distro.tv', 'kurd', 'kurdistan', 'tchad')
 
-# COMPREHENSIVE MAP: Based on your uploaded file contents
 ID_MAP = {
     # Abu Dhabi Network
     'AbuDhabiSports1.ae': 'AD.Sports.1.HD.ae',
@@ -14,7 +13,6 @@ ID_MAP = {
     'AbuDhabiEmirates.ae': 'Abu.Dhabi.HD.ae',
     'AbuDhabiTV.ae': 'Abu.Dhabi.HD.ae',
     'YasTV.ae': 'Yas.TV.HD.ae',
-    
     # Dubai Network
     'DubaiTV.ae': 'Dubai.HD.ae',
     'DubaiSports1.ae': 'Dubai.Sports.1.HD.ae',
@@ -25,20 +23,17 @@ ID_MAP = {
     'DubaiZaman.ae': 'Dubai.Zaman.ae',
     'NoorDubaiTV.ae': 'Noor.DubaiTV.ae',
     'OneTv.ae': 'One.Tv.ae',
-    
     # MBC Network
     'MBC1.ae': 'MBC.1.ae',
     'MBC2.ae': 'MBC.2.ae',
     'MBCMasr.eg': 'MBC.Masr.HD.ae',
     'MBCMasr2.eg': 'MBC.Masr.2.HD.ae',
-    
     # Rotana Network
     'RotanaCinema.sa': 'Rotana.Cinema.KSA.ae',
     'RotanaCinemaEgypt.eg': 'Rotana.Cinema.Egypt.ae',
     'RotanaDrama.sa': 'Rotana.Drama.ae',
     'RotanaClassic.sa': 'Rotana.Classic.ae',
     'RotanaKhalijia.sa': 'Rotana.Khalijia.ae',
-    
     # Saudi & Sports Specific
     'KSA-Sports-1.sa': 'KSA.sports.1.ae',
     'KSA-Sports-2.sa': 'KSA.sports.2.HD.ae',
@@ -46,7 +41,6 @@ ID_MAP = {
     'OnTimeSports2.eg': 'On.Time.Sport.2.HD.ae',
     'SharjahSports.ae': 'Sharjah.Sports.HD.ae',
     'JordanTV.jo': 'Jordan.TV.HD.ae',
-    
     # News & International
     'AlArabiya.net': 'Al.Arabiya.HD.ae',
     'AlHadath.net': 'Al.Hadath.ae',
@@ -55,7 +49,6 @@ ID_MAP = {
     'France24Arabic.fr': 'France.24.Arabic.ae',
     'RTArabic.ru': 'RT.Arabic.HD.ae',
     'SaudiEkhbariya.sa': 'Saudi.Al.Ekhbariya.HD.ae',
-    
     # Religious
     'SaudiQuran.sa': 'Saudi.Quran.TV.HD.ae',
     'SaudiSunnah.sa': 'Saudi.Sunna.TV.HD.ae',
@@ -63,13 +56,9 @@ ID_MAP = {
 }
 
 def clean_line(line):
-    # Auto-fix dots for any channel not in the map
-    # Example: SaudiEkhbariya -> Saudi.Ekhbariya
     for old_id, new_id in ID_MAP.items():
         if f'tvg-id="{old_id}"' in line:
             return line.replace(f'tvg-id="{old_id}"', f'tvg-id="{new_id}"')
-    
-    # Generic fix: Add dots between camelCase words
     if 'tvg-id="' in line:
         line = re.sub(r'([a-z])([A-Z])', r'\1.\2', line)
     return line
@@ -92,12 +81,13 @@ def process_iptv():
         with open("curated-live.m3u", "w", encoding="utf-8") as f:
             f.write("\n".join(final_m3u))
             
-        r_epg = requests.get(EPG_URL)
+        r_epg = requests.get(EPG_URL, timeout=30)
         with open("arabic-epg.xml.gz", "wb") as f:
             f.write(r_epg.content)
-        print("✅ Success! Mapping expanded.")
+        print("✅ Success! M3U and EPG updated.")
     except Exception as e:
         print(f"❌ Error: {e}")
+        exit(1) # Force the GitHub Action to show a failure if the script fails
 
 if __name__ == "__main__":
     process_iptv()
