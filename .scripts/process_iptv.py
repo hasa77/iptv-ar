@@ -4,8 +4,23 @@ import re
 M3U_URL = "https://iptv-org.github.io/iptv/languages/ara.m3u"
 EPG_URL = "https://iptv-org.github.io/epg/guides/ar/epgshare01.xml.gz"
 
-EXCLUDE_WORDS = ('radio', 'fm', 'chaine', 'distro.tv', 'kurd', 'kurdistan', 'tchad')
+# YOUR STRICT REJECTION LIST
+EXCLUDE_WORDS = (
+    'radio', 'fm', 'chaine', 'distro.tv', 'argentina', 'colombia', 'telefe', 'eltrece', 
+    'kurd', 'kurdistan', 'rudaw', 'waar', 'duhok',      # Kurdish
+    'mbc 1', 'mbc 1 usa',                               # Redundant (Keep only MBC 1 Masr)
+    'morocco', 'maroc', 'maghreb', '2m',                # Morocco
+    'tunisia', 'tunisie', 'ttv', 'hannibal',            # Tunisia
+    'libya', 'libye', '218 tv',                         # Libya
+    'iran', 'persian', 'farsi', 'gem tv',               # Iran
+    'afghanistan', 'afghan', 'pashto', 'tolo'           # Afghanistan
+    'tchad', 'chad', 'turkmenistan', 'turkmen',         # Central Africa / Central Asia
+    'babyfirst',                                        # US English Kids
+    'eritrea', 'eri-tv',                                # Eritrea
+    'i24news'                                           # Israel-based news
+)
 
+# YOUR DEDUPLICATED EPG MAPPING
 ID_MAP = {
     # Abu Dhabi Network
     'AbuDhabiSports1.ae': 'AD.Sports.1.HD.ae',
@@ -56,15 +71,18 @@ ID_MAP = {
 }
 
 def clean_line(line):
+    # Apply specific ID mapping first
     for old_id, new_id in ID_MAP.items():
         if f'tvg-id="{old_id}"' in line:
             return line.replace(f'tvg-id="{old_id}"', f'tvg-id="{new_id}"')
+    
+    # Generic fix for camelCase names (e.g., DubaiZaman -> Dubai.Zaman)
     if 'tvg-id="' in line:
         line = re.sub(r'([a-z])([A-Z])', r'\1.\2', line)
     return line
 
 def process_iptv():
-    print("🚀 Starting M3U to EPG Synchronization...")
+    print("🚀 Running Combined Filter & EPG Sync...")
     try:
         r = requests.get(M3U_URL, timeout=30)
         lines = r.text.splitlines()
@@ -72,22 +90,31 @@ def process_iptv():
         
         for i in range(len(lines)):
             if lines[i].startswith("#EXTINF"):
-                if not any(word in lines[i].lower() for word in EXCLUDE_WORDS):
-                    fixed_line = clean_line(lines[i])
-                    if i + 1 < len(lines) and lines[i+1].startswith("http"):
-                        final_m3u.append(fixed_line)
-                        final_m3u.append(lines[i+1])
+                line_content = lines[i].lower()
+                
+                # 1. Reject if it matches any excluded words
+                if any(word in line_content for word in EXCLUDE_WORDS):
+                    continue
+                
+                # 2. Fix the ID for EPG matching
+                fixed_line = clean_line(lines[i])
+                
+                if i + 1 < len(lines) and lines[i+1].startswith("http"):
+                    final_m3u.append(fixed_line)
+                    final_m3u.append(lines[i+1])
         
         with open("curated-live.m3u", "w", encoding="utf-8") as f:
             f.write("\n".join(final_m3u))
             
-        r_epg = requests.get(EPG_URL, timeout=30)
+        # Download EPG
+        r_epg = requests.get(EPG_URL)
         with open("arabic-epg.xml.gz", "wb") as f:
             f.write(r_epg.content)
-        print("✅ Success! M3U and EPG updated.")
+            
+        print(f"✅ Finished! Saved {len(final_m3u)//2} channels.")
     except Exception as e:
         print(f"❌ Error: {e}")
-        exit(1) # Force the GitHub Action to show a failure if the script fails
+        exit(1)
 
 if __name__ == "__main__":
     process_iptv()
