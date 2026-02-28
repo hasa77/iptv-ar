@@ -98,86 +98,82 @@ def clean_line(line):
     return line
   
 def process_iptv():
-    print("🚀 Starting Aggressive Fuzzy Filter...")
+    print("🚀 Starting Deep Scan (ID + Name Match)...")
     try:
         r = requests.get(M3U_URL, timeout=30)
         lines = r.text.splitlines()
         final_m3u = ["#EXTM3U"]
         
-        # We will store a "normalized" version of your IDs to match against EPG
         def normalize(s):
-            return re.sub(r'[^a-z0-9]', '', s.lower())
+            return re.sub(r'[^a-z0-9]', '', s.lower()) if s else ""
 
-        wanted_normalized = {}
+        wanted_ids = set()
+        wanted_names = set() # New: Track the actual names of the channels
         
         for i in range(len(lines)):
             if lines[i].startswith("#EXTINF"):
                 line_lower = lines[i].lower()
                 if (any(s in line_lower for s in AR_SUFFIXES) or any(k in line_lower for k in AR_KEYWORDS)) and not any(w in line_lower for w in EXCLUDE_WORDS):
                     
+                    # 1. Grab IDs
                     id_match = re.search(r'tvg-id="([^"]+)"', lines[i])
                     if id_match:
                         raw_id = id_match.group(1).split('@')[0]
-                        wanted_normalized[normalize(raw_id)] = raw_id
+                        wanted_ids.add(normalize(raw_id))
+
+                    # 2. Grab the Channel Name (the text after the last comma)
+                    name_match = lines[i].split(',')[-1].strip()
+                    if name_match:
+                        wanted_names.add(normalize(name_match))
 
                     fixed_line = clean_line(lines[i])
-                    fixed_id_match = re.search(r'tvg-id="([^"]+)"', fixed_line)
-                    if fixed_id_match:
-                        mapped_id = fixed_id_match.group(1).split('@')[0]
-                        wanted_normalized[normalize(mapped_id)] = mapped_id
-
                     if i + 1 < len(lines) and lines[i+1].startswith("http"):
                         final_m3u.append(fixed_line)
                         final_m3u.append(lines[i+1])
         
-        print(f"✅ M3U Filtered. Looking for {len(wanted_normalized)} channel patterns.")
+        print(f"✅ M3U Scanned. Looking for {len(wanted_ids)} IDs and {len(wanted_names)} Name patterns.")
 
         print(f"📥 Downloading EPG...")
         response = requests.get(EPG_URL, stream=True, timeout=120)
+        content = response.content # Load once for two passes
         
-        # Map to store which EPG IDs we actually found
         matched_epg_ids = set()
-        found_channels_xml = []
 
-        with gzip.GzipFile(fileobj=io.BytesIO(response.content)) as g:
+        # PASS 1: Find Channels by ID OR Name
+        with gzip.GzipFile(fileobj=io.BytesIO(content)) as g:
             context = ET.iterparse(g, events=('end',))
             for event, elem in context:
                 tag_name = elem.tag.split('}')[-1]
-                
                 if tag_name == 'channel':
                     cid = elem.get('id')
-                    norm_cid = normalize(cid)
-                    if norm_cid in wanted_normalized:
+                    # Check ID match
+                    if normalize(cid) in wanted_ids:
                         matched_epg_ids.add(cid)
-                        found_channels_xml.append(ET.tostring(elem, encoding='utf-8'))
-                
-                elif tag_name == 'programme':
-                    # Only keep programs for channels we already matched
-                    if elem.get('channel') in matched_epg_ids:
-                        # We will write these in the next step
-                        pass 
+                    else:
+                        # Check Display Name match
+                        for dn in elem.findall('display-name'):
+                            if normalize(dn.text) in wanted_names:
+                                matched_epg_ids.add(cid)
+                                break
                 elem.clear()
 
-        # Re-run for programmes (Streaming twice to keep memory low)
-        print(f"⚡ Writing matched data to file...")
+        # PASS 2: Write matched data
+        print(f"⚡ Saving matches to file...")
         with gzip.open("arabic-epg.xml.gz", "wb") as f_out:
             f_out.write(b'<?xml version="1.0" encoding="utf-8"?>\n<tv>\n')
-            for c_xml in found_channels_xml:
-                f_out.write(c_xml)
             
-            # Second pass for programmes
-            with gzip.GzipFile(fileobj=io.BytesIO(response.content)) as g:
+            with gzip.GzipFile(fileobj=io.BytesIO(content)) as g:
                 context = ET.iterparse(g, events=('end',))
                 for event, elem in context:
                     tag_name = elem.tag.split('}')[-1]
-                    if tag_name == 'programme':
-                        pid = elem.get('channel')
-                        if pid in matched_epg_ids:
-                            f_out.write(ET.tostring(elem, encoding='utf-8'))
+                    if tag_name == 'channel' and elem.get('id') in matched_epg_ids:
+                        f_out.write(ET.tostring(elem, encoding='utf-8'))
+                    elif tag_name == 'programme' and elem.get('channel') in matched_epg_ids:
+                        f_out.write(ET.tostring(elem, encoding='utf-8'))
                     elem.clear()
             f_out.write(b'</tv>')
 
-        print(f"📊 Results: Matched {len(matched_epg_ids)} channels perfectly.")
+        print(f"📊 Final Results: Found {len(matched_epg_ids)} channels.")
         
     except Exception as e:
         print(f"❌ Error: {e}")
