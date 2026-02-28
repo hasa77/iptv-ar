@@ -6,7 +6,13 @@ import io
 
 M3U_URL = "https://iptv-org.github.io/iptv/languages/ara.m3u"
 EPG_SOURCES = [
-    "https://epgshare01.online/epgshare01/epg_ripper_ALL_SOURCES1.xml.gz"
+    "https://epgshare01.online/epgshare01/epg_ripper_ALL_SOURCES1.xml.gz",
+    "https://iptv-epg.org/files/epg-eg.xml",
+    "https://iptv-epg.org/files/epg-lb.xml",
+    "https://iptv-epg.org/files/epg-sa.xml",
+    "https://iptv-epg.org/files/epg-ae.xml",
+    "https://iptv-epg.org/files/epg-gb.xml",
+    "https://iptv-epg.org/files/epg-us.xml"
 ]
 
 # --- [DIAGNOSTIC FUNCTION] ---
