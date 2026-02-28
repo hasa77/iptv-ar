@@ -89,9 +89,9 @@ def clean_line(line):
     if 'tvg-id="' in line:
         line = re.sub(r'([a-z])([A-Z])', r'\1.\2', line)
     return line
-
+  
 def process_iptv():
-    print("🚀 Starting Bulletproof Filter...")
+    print("🚀 Starting Diagnostic Filter...")
     try:
         # 1. M3U FILTERING
         r = requests.get(M3U_URL, timeout=30)
@@ -103,55 +103,71 @@ def process_iptv():
             if lines[i].startswith("#EXTINF"):
                 line_lower = lines[i].lower()
                 if (any(s in line_lower for s in AR_SUFFIXES) or any(k in line_lower for k in AR_KEYWORDS)) and not any(w in line_lower for w in EXCLUDE_WORDS):
-                    # Catch the ID before and after cleaning
-                    match_before = re.search(r'tvg-id="([^"]+)"', lines[i])
-                    if match_before: kept_ids.add(match_before.group(1))
+                    
+                    # Extract ID from original line
+                    id_match = re.search(r'tvg-id="([^"]+)"', lines[i])
+                    if id_match:
+                        kept_ids.add(id_match.group(1))
 
                     fixed_line = clean_line(lines[i])
-                    
                     if i + 1 < len(lines) and lines[i+1].startswith("http"):
                         final_m3u.append(fixed_line)
                         final_m3u.append(lines[i+1])
-                        match_after = re.search(r'tvg-id="([^"]+)"', fixed_line)
-                        if match_after: kept_ids.add(match_after.group(1))
+                        
+                        # Extract ID from fixed line (the one TiviMate sees)
+                        id_match_fixed = re.search(r'tvg-id="([^"]+)"', fixed_line)
+                        if id_match_fixed:
+                            kept_ids.add(id_match_fixed.group(1))
         
-        with open("curated-live.m3u", "w", encoding="utf-8") as f:
-            f.write("\n".join(final_m3u))
-        print(f"✅ M3U Saved. Looking for {len(kept_ids)} channel IDs in EPG.")
+        print(f"✅ M3U Filtered. Sample of IDs we are looking for: {list(kept_ids)[:5]}")
 
-        # 2. THE FIX: Tag-Agnostic Streaming
-        print(f"📥 Downloading & Streaming EPG...")
+        # 2. EPG STREAMING WITH DEBUG
+        print(f"📥 Downloading EPG...")
         response = requests.get(EPG_URL, stream=True, timeout=120)
         
+        found_channels = 0
+        found_programmes = 0
+        debug_count = 0
+
         with gzip.open("arabic-epg.xml.gz", "wb") as f_out:
             f_out.write(b'<?xml version="1.0" encoding="utf-8"?>\n<tv>\n')
             
-            # Open the gzipped stream
             with gzip.GzipFile(fileobj=io.BytesIO(response.content)) as g:
-                context = ET.iterparse(g, events=('end',))
-                count = 0
+                # Using 'start' event to catch attributes earlier
+                context = ET.iterparse(g, events=('start', 'end'))
+                
                 for event, elem in context:
-                    # Remove namespace (the {uri} part) if it exists
-                    tag_name = elem.tag.split('}')[-1] 
+                    tag_name = elem.tag.split('}')[-1]
                     
-                    if tag_name == 'channel':
-                        chan_id = elem.get('id')
-                        if chan_id in kept_ids:
+                    if event == 'start':
+                        if tag_name == 'channel':
+                            cid = elem.get('id')
+                            # DEBUG: Print the first 20 IDs found in the big file to see their format
+                            if debug_count < 20:
+                                print(f"🔍 EPG Source ID Example: {cid}")
+                                debug_count += 1
+                                
+                            if cid in kept_ids:
+                                found_channels += 1
+                        
+                        elif tag_name == 'programme':
+                            if elem.get('channel') in kept_ids:
+                                found_programmes += 1
+
+                    if event == 'end':
+                        if tag_name == 'channel' and elem.get('id') in kept_ids:
                             f_out.write(ET.tostring(elem, encoding='utf-8'))
-                            count += 1
-                    elif tag_name == 'programme':
-                        prog_id = elem.get('channel')
-                        if prog_id in kept_ids:
+                        elif tag_name == 'programme' and elem.get('channel') in kept_ids:
                             f_out.write(ET.tostring(elem, encoding='utf-8'))
-                    
-                    elem.clear() # Keep memory low
+                        
+                        elem.clear()
             
             f_out.write(b'</tv>')
         
-        print(f"✅ Finished! Found data for {count} channels.")
+        print(f"📊 Results: Found {found_channels} channels and {found_programmes} programmes.")
         
     except Exception as e:
-        print(f"❌ Critical Error: {e}")
+        print(f"❌ Error: {e}")
         exit(1)
 
 if __name__ == "__main__":
