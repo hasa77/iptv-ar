@@ -10,7 +10,8 @@ EPG_SOURCES = [
     "https://epgshare01.online/epgshare01/epg_ripper_AR1.xml.gz",
     "https://epgshare01.online/epgshare01/epg_ripper_EG1.xml.gz",
     "https://epgshare01.online/epgshare01/epg_ripper_BEIN1.xml.gz",
-    "https://epgshare01.online/epgshare01/epg_ripper_ALJAZEERA1.xml.gz"
+    "https://epgshare01.online/epgshare01/epg_ripper_ALJAZEERA1.xml.gz",
+    "https://epgshare01.online/epgshare01/epg_ripper_ALL_SOURCES1.xml.gz"
 ]
 
 # --- [DIAGNOSTIC FUNCTION] ---
@@ -130,67 +131,54 @@ def clean_line(line):
     return line
   
 def process_iptv():
-    print("🚀 Starting Multi-Source EPG Hunt...")
+    print("🚀 Starting Fuzzy Multi-Source Hunt...")
     try:
-        wanted_ids = set(ID_MAP.values())
-        mapping_keys = set(ID_MAP.keys())
+        # We want to match anything in our ID_MAP values OR keys
+        target_ids = set(ID_MAP.values()) | set(ID_MAP.keys())
         
-        # --- PART 1: M3U Processing (same as before) ---
-        r = requests.get(M3U_URL, timeout=30)
-        lines = r.text.splitlines()
-        # ... [Logic to build wanted_ids from M3U] ...
-
-        # --- PART 2: MULTI-SOURCE EPG EXTRACTION ---
         matched_real_ids = set()
         channel_elements = []
         program_elements = []
 
         for url in EPG_SOURCES:
-            file_name = url.split('/')[-1]
-            print(f"📥 Scanning {file_name}...")
+            print(f"📥 Scanning {url.split('/')[-1]}...")
             try:
-                response = requests.get(url, timeout=60)
-                with gzip.GzipFile(fileobj=io.BytesIO(response.content)) as g:
-                    # Use 'end' event for reliable data capture
+                r = requests.get(url, timeout=60)
+                with gzip.GzipFile(fileobj=io.BytesIO(r.content)) as g:
                     context = ET.iterparse(g, events=('end',))
                     for event, elem in context:
                         tag = elem.tag.split('}')[-1]
                         
-                        # 1. Capture Channel Definitions
                         if tag == 'channel':
                             cid = elem.get('id')
-                            if cid in wanted_ids and cid not in matched_real_ids:
-                                matched_real_ids.add(cid)
-                                channel_elements.append(ET.tostring(elem, encoding='utf-8'))
+                            # FUZZY MATCH: If the EPG ID is in our list OR our list is in the EPG ID
+                            if any(target.lower() in cid.lower() or cid.lower() in target.lower() for target in target_ids):
+                                if cid not in matched_real_ids:
+                                    print(f"  ✅ Matched Channel: {cid}")
+                                    matched_real_ids.add(cid)
+                                    channel_elements.append(ET.tostring(elem, encoding='utf-8'))
                         
-                        # 2. Capture Programs ONLY if they have Title data
                         elif tag == 'programme':
                             cid = elem.get('channel')
-                            if cid in wanted_ids:
-                                # Use wildcard search for title to bypass namespace issues
+                            if cid in matched_real_ids:
                                 title_node = elem.find('.//{*}title')
                                 if title_node is not None and title_node.text:
                                     program_elements.append(ET.tostring(elem, encoding='utf-8'))
-                        
-                        elem.clear() # Keep memory usage low
+                        elem.clear()
             except Exception as e:
-                print(f"  ⚠️ Failed to process {file_name}: {e}")
+                print(f"  ⚠️ Error in {url.split('/')[-1]}: {e}")
 
-        # --- PART 3: SAVE FINAL MERGED FILE ---
-        print(f"💾 Merging {len(program_elements)} programs for {len(matched_real_ids)} channels...")
-        
+        # Final Save
         with gzip.open("arabic-epg.xml.gz", "wb") as f_out:
             f_out.write(b'<?xml version="1.0" encoding="utf-8"?>\n<tv>\n')
-            for c in channel_elements:
-                f_out.write(c + b'\n')
-            for p in program_elements:
-                f_out.write(p + b'\n')
+            for c in channel_elements: f_out.write(c + b'\n')
+            for p in program_elements: f_out.write(p + b'\n')
             f_out.write(b'</tv>')
 
-        print(f"✅ Success! File saved as arabic-epg.xml.gz")
+        print(f"📊 Final: {len(matched_real_ids)} channels, {len(program_elements)} programs.")
 
     except Exception as e:
-        print(f"❌ Error: {e}")
-      
+        print(f"❌ Critical Error: {e}")
+        
 if __name__ == "__main__":
     process_iptv()
