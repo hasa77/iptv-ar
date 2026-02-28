@@ -7,6 +7,32 @@ import io
 M3U_URL = "https://iptv-org.github.io/iptv/languages/ara.m3u"
 EPG_URL = "https://epgshare01.online/epgshare01/epg_ripper_ALL_SOURCES1.xml.gz"
 
+# --- [DIAGNOSTIC FUNCTION] ---
+def check_source_quality(epg_bytes):
+    print("🔍 Diagnostic: Checking if source EPG actually contains data...")
+    try:
+        with gzip.GzipFile(fileobj=io.BytesIO(epg_bytes)) as g:
+            context = ET.iterparse(g, events=('end',))
+            title_count = 0
+            desc_count = 0
+            for event, elem in context:
+                tag = elem.tag.split('}')[-1]
+                if tag == 'title' and elem.text and len(elem.text.strip()) > 0:
+                    title_count += 1
+                if tag == 'desc' and elem.text and len(elem.text.strip()) > 0:
+                    desc_count += 1
+                
+                # If we find at least 5 populated titles, the source is likely fine
+                if title_count > 5:
+                    print(f"✅ Source looks GOOD. Found populated titles and descriptions.")
+                    return True
+                elem.clear()
+        print("❌ Source Alert: Scanned EPG and found NO text inside <title> or <desc> tags.")
+        return False
+    except Exception as e:
+        print(f"⚠️ Diagnostic failed: {e}")
+        return False
+
 # 1. Target Suffixes (Must have one of these)
 AR_SUFFIXES = ('.ae', '.dz', '.eg', '.iq', '.jo', '.kw', '.lb', '.ly', '.ma', 
                '.om', '.ps', '.qa', '.sa', '.sd', '.sy', '.tn', '.ye', '.me', '.ar')
@@ -142,6 +168,9 @@ def process_iptv():
         response = requests.get(EPG_URL, timeout=120)
         epg_bytes = response.content
 
+      # --- [CALL DIAGNOSTIC HERE] ---
+        check_source_quality(epg_bytes)
+      
         matched_real_ids = set()
         channel_elements = []
 
