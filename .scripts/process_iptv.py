@@ -137,6 +137,11 @@ def process_iptv():
         print(f"📥 Processing {file_name}...")
         try:
             r = requests.get(url, stream=True, timeout=120)
+            print("Status:", r.status_code)
+            print("Content-Type:", r.headers.get("Content-Type"))
+            print("Size:", len(r.content))
+            print("First 200 bytes:", r.content[:200])
+            
             with gzip.GzipFile(fileobj=io.BytesIO(r.content)) as g:
                 context = ET.iterparse(g, events=('end',))
                 for event, elem in context:
