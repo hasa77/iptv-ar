@@ -91,7 +91,7 @@ def clean_line(line):
     return line
 
 def process_iptv():
-    print("🚀 Running High-Speed Filter & EPG Sync...")
+    print("🚀 Starting Bulletproof Filter...")
     try:
         # 1. M3U FILTERING
         r = requests.get(M3U_URL, timeout=30)
@@ -103,56 +103,55 @@ def process_iptv():
             if lines[i].startswith("#EXTINF"):
                 line_lower = lines[i].lower()
                 if (any(s in line_lower for s in AR_SUFFIXES) or any(k in line_lower for k in AR_KEYWORDS)) and not any(w in line_lower for w in EXCLUDE_WORDS):
-                    
-                    # Store ORIGINAL ID before cleaning
-                    original_id_match = re.search(r'tvg-id="([^"]+)"', lines[i])
-                    if original_id_match:
-                        kept_ids.add(original_id_match.group(1))
+                    # Catch the ID before and after cleaning
+                    match_before = re.search(r'tvg-id="([^"]+)"', lines[i])
+                    if match_before: kept_ids.add(match_before.group(1))
 
                     fixed_line = clean_line(lines[i])
                     
                     if i + 1 < len(lines) and lines[i+1].startswith("http"):
                         final_m3u.append(fixed_line)
                         final_m3u.append(lines[i+1])
-                        
-                        # Store CLEANED ID after mapping
-                        clean_id_match = re.search(r'tvg-id="([^"]+)"', fixed_line)
-                        if clean_id_match:
-                            kept_ids.add(clean_id_match.group(1))
+                        match_after = re.search(r'tvg-id="([^"]+)"', fixed_line)
+                        if match_after: kept_ids.add(match_after.group(1))
         
         with open("curated-live.m3u", "w", encoding="utf-8") as f:
             f.write("\n".join(final_m3u))
+        print(f"✅ M3U Saved. Looking for {len(kept_ids)} channel IDs in EPG.")
 
-        # 2. HIGH-SPEED EPG STREAMING
-        print(f"📥 Downloading Global EPG...")
-        r_epg = requests.get(EPG_URL, stream=True, timeout=120)
-        r_epg.raise_for_status()
-
-        print(f"⚡ Streaming Filter checking for {len(kept_ids)} possible ID matches...")
+        # 2. THE FIX: Tag-Agnostic Streaming
+        print(f"📥 Downloading & Streaming EPG...")
+        response = requests.get(EPG_URL, stream=True, timeout=120)
         
         with gzip.open("arabic-epg.xml.gz", "wb") as f_out:
-            f_out.write(b'<?xml version="1.0" encoding="utf-8"?>\n')
-            f_out.write(b'<!DOCTYPE tv SYSTEM "xmltv.dtd">\n')
-            f_out.write(b'<tv>\n')
-
-            with gzip.GzipFile(fileobj=io.BytesIO(r_epg.content)) as g:
-                # We use 'start' and 'end' to better handle memory
+            f_out.write(b'<?xml version="1.0" encoding="utf-8"?>\n<tv>\n')
+            
+            # Open the gzipped stream
+            with gzip.GzipFile(fileobj=io.BytesIO(response.content)) as g:
                 context = ET.iterparse(g, events=('end',))
+                count = 0
                 for event, elem in context:
-                    if elem.tag == 'channel':
-                        if elem.get('id') in kept_ids:
+                    # Remove namespace (the {uri} part) if it exists
+                    tag_name = elem.tag.split('}')[-1] 
+                    
+                    if tag_name == 'channel':
+                        chan_id = elem.get('id')
+                        if chan_id in kept_ids:
                             f_out.write(ET.tostring(elem, encoding='utf-8'))
-                    elif elem.tag == 'programme':
-                        if elem.get('channel') in kept_ids:
+                            count += 1
+                    elif tag_name == 'programme':
+                        prog_id = elem.get('channel')
+                        if prog_id in kept_ids:
                             f_out.write(ET.tostring(elem, encoding='utf-8'))
                     
-                    elem.clear()
-                
+                    elem.clear() # Keep memory low
+            
             f_out.write(b'</tv>')
-
-        print(f"✅ Finished! M3U and EPG synced with {len(kept_ids)} ID variants.")
+        
+        print(f"✅ Finished! Found data for {count} channels.")
+        
     except Exception as e:
-        print(f"❌ Error: {e}")
+        print(f"❌ Critical Error: {e}")
         exit(1)
 
 if __name__ == "__main__":
