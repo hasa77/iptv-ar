@@ -122,23 +122,25 @@ def normalise_id(cid):
     return re.sub(r'[._\-\s]', '', clean).lower()
 
 def process_iptv():
-    print("🚀 Running Reverse-Discovery Extraction...")
+    print("🚀 Running Diagnostic Wildcard Hunt...")
     try:
-        # Step 1: Target normalized IDs from your map
-        target_norm_ids = {normalise_id(t) for t in (set(ID_MAP.values()) | set(ID_MAP.keys()))}
+        # Step 1: Use raw keywords for maximum reach
+        # We will match if ANY of these words are in the channel ID
+        keywords = ['mbc', 'dubai', 'abu.dhabi', 'rotana', 'bein', 'ssc', 'sharjah', 'arab']
         
         channel_elements = []
         program_elements = []
-        global_added_channels = set() # To prevent duplicate channel headers
+        global_added_channels = set()
 
         for url in EPG_SOURCES:
             file_name = url.split('/')[-1]
             print(f"📥 Processing {file_name}...")
             try:
-                # Stream the download
                 r = requests.get(url, stream=True, timeout=120)
                 
-                # Single Pass logic
+                # DIAGNOSTIC: Let's see what IDs actually look like in this file
+                sample_count = 0
+                
                 with gzip.GzipFile(fileobj=io.BytesIO(r.content)) as g:
                     context = ET.iterparse(g, events=('end',))
                     for event, elem in context:
@@ -146,24 +148,26 @@ def process_iptv():
 
                         if tag == 'programme':
                             chan_id = elem.get('channel')
-                            norm_chan_id = normalise_id(chan_id)
+                            
+                            # DEBUG: Print the first 5 IDs we find to see their format
+                            if sample_count < 5:
+                                print(f"  🔍 Seen ID in file: '{chan_id}'")
+                                sample_count += 1
 
-                            # If this program's channel matches our target list
-                            if any(target in norm_chan_id or norm_chan_id in target for target in target_norm_ids):
-                                
-                                # 1. Capture the program
-                                # Ensure it's not empty/has a title
-                                if any(child.tag.endswith('title') and child.text for child in elem):
+                            if chan_id:
+                                low_id = chan_id.lower()
+                                # WILDCARD MATCH: Does it contain any of our keywords?
+                                if any(k in low_id for k in keywords):
+                                    
+                                    # Capture the program
                                     program_elements.append(ET.tostring(elem, encoding='utf-8'))
 
-                                    # 2. Create the channel header if we haven't yet
+                                    # Create the channel header
                                     if chan_id not in global_added_channels:
                                         global_added_channels.add(chan_id)
-                                        # Use a proper XML structure for the dummy channel
                                         chan_xml = f'<channel id="{chan_id}"><display-name>{chan_id}</display-name></channel>'
                                         channel_elements.append(chan_xml.encode('utf-8'))
 
-                        # Clear memory as we go
                         elem.clear()
                             
             except Exception as e:
@@ -171,7 +175,7 @@ def process_iptv():
 
         # Final Save
         if not program_elements:
-            print("❌ Critical: Still found 0 programs. This suggests the source XMLs might use different tags or the 'target_ids' are too restrictive.")
+            print("❌ STILL ZERO. This means the keywords don't exist in these files.")
         else:
             with gzip.open("arabic-epg.xml.gz", "wb") as f_out:
                 f_out.write(b'<?xml version="1.0" encoding="utf-8"?>\n<tv>\n')
