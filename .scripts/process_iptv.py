@@ -117,9 +117,13 @@ def process_iptv():
         with open("curated-live.m3u", "w", encoding="utf-8") as f:
             f.write("\n".join(final_m3u))
             
-        r_epg = requests.get(EPG_URL)
-        with open("arabic-epg.xml.gz", "wb") as f:
-            f.write(r_epg.content)
+        # Download and Save EPG with robust stream handling
+        print(f"📥 Downloading EPG from {EPG_URL}...")
+        with requests.get(EPG_URL, stream=True, timeout=60) as r_epg:
+            r_epg.raise_for_status() 
+            with open("arabic-epg.xml.gz", "wb") as f:
+                for chunk in r_epg.iter_content(chunk_size=8192):
+                    f.write(chunk)
             
         print(f"✅ Finished! Saved {len(final_m3u)//2} channels.")
     except Exception as e:
