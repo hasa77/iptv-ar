@@ -123,7 +123,7 @@ def normalise_id(cid):
     return re.sub(r'[._\-\s]', '', clean).lower()
 
 def process_iptv():
-    print("🚀 Running Absolute Filter (Blocking Regional Clones)...")
+    print("🚀 Running Case-Insensitive Absolute Filter...")
     REVERSE_MAP = {normalise_id(k): v for k, v in ID_MAP.items()}
     channel_elements = []
     program_elements = []
@@ -135,7 +135,6 @@ def process_iptv():
         try:
             r = requests.get(url, stream=True, timeout=120)
             content = r.content
-            # Fixed syntax error in compression check
             f = gzip.GzipFile(fileobj=io.BytesIO(content)) if content.startswith(b'\x1f\x8b') else io.BytesIO(content)
             
             context = ET.iterparse(f, events=('start', 'end'))
@@ -145,24 +144,26 @@ def process_iptv():
                 if event == 'end' and tag == 'programme':
                     chan_id = elem.get('channel')
                     if chan_id:
-                        norm_id = normalise_id(chan_id)
+                        # FORCE LOWERCASE FOR ALL CHECKS
+                        norm_id = chan_id.lower()
+                        clean_id = normalise_id(chan_id)
                         
-                        # --- 1. THE ABSOLUTE BLOCK LIST ---
-                        if any(ex in norm_id for ex in EXCLUDE_WORDS) or \
-                           any(norm_id.endswith(sfx) for sfx in FORBIDDEN_SUFFIXES) or \
+                        # --- 1. THE ABSOLUTE BLOCK LIST (Now Case-Insensitive) ---
+                        if any(norm_id.endswith(sfx) for sfx in FORBIDDEN_SUFFIXES) or \
+                           any(ex in norm_id for ex in EXCLUDE_WORDS) or \
                            '.tr' in norm_id:
                             elem.clear()
                             continue
 
-                        # --- 2. THE MATCHING LOGIC ---
+                        # --- 2. MATCHING LOGIC ---
                         final_id = None
                         is_generic_match = False
 
-                        if norm_id in REVERSE_MAP:
-                            final_id = REVERSE_MAP[norm_id]
-                        elif any(k in norm_id for k in STRONG_AR_KEYWORDS):
+                        if clean_id in REVERSE_MAP:
+                            final_id = REVERSE_MAP[clean_id]
+                        elif any(k in clean_id for k in STRONG_AR_KEYWORDS):
                             final_id = chan_id
-                        elif any(k in norm_id for k in GENERIC_AR_KEYWORDS):
+                        elif any(k in clean_id for k in GENERIC_AR_KEYWORDS):
                             if any(suffix in norm_id for suffix in AR_SUFFIXES):
                                 final_id = chan_id
                                 is_generic_match = True
@@ -173,7 +174,7 @@ def process_iptv():
                             
                             for child in elem:
                                 if child.tag.endswith('title'):
-                                    lang = child.get('lang', '').lower()
+                                    lang = (child.get('lang') or '').lower()
                                     if lang in ['tr', 'tur', 'per', 'fas', 'kur', 'hi', 'kor']:
                                         is_forbidden_lang = True
                                         break
