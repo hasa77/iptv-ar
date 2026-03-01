@@ -15,12 +15,25 @@ EPG_SOURCES = [
     "https://iptv-epg.org/files/epg-us.xml"
 ]
 
+# 1. Make sure FORBIDDEN_SUFFIXES are all lowercase
 # Suffixes that indicate the channel is definitely NOT the Arabic version
 FORBIDDEN_SUFFIXES = (
     '.hk', '.kr', '.dk', '.fi', '.no', '.se', '.be', '.es', '.fr', 
-    '.ca', '.ca2', '.gr', '.de', ".dk", '.cz', '.cy', '.ch', '.it', '.us', 
+    '.ca', '.ca2', '.gr', '.de', ".dk", '.cz', '.cy', '.ch', '.it', '.us', '.bb',
     '.distro', '.us_locals1', '.pluto'
 )
+
+# 2. Inside loop, normalize the ID to lowercase
+for event, elem in context:
+    chan_id = elem.get('channel')
+    if chan_id:
+        # FORCE TO LOWERCASE HERE
+        norm_id = chan_id.lower() 
+        
+        # Now the checks will work regardless of if the ID is .DK or .dk
+        if any(norm_id.endswith(sfx) for sfx in FORBIDDEN_SUFFIXES):
+            elem.clear()
+            continue
 
 AR_SUFFIXES = ('.ae', '.dz', '.eg', '.iq', '.jo', '.kw', '.lb', '.ly', '.ma', 
                '.om', '.ps', '.qa', '.sa', '.sd', '.sy', '.tn', '.ye', '.me', '.ar')
