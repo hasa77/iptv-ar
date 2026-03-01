@@ -128,7 +128,6 @@ def normalise_id(cid):
 
 def process_iptv():
     print("🚀 Running Aggressive Mapper...")
-    # This creates a list of normalized keys for your map
     REVERSE_MAP = {normalise_id(k): v for k, v in ID_MAP.items()}
     
     channel_elements = []
@@ -150,16 +149,12 @@ def process_iptv():
                 if event == 'end' and tag == 'programme':
                     chan_id = elem.get('channel')
                     if chan_id:
-                        norm_id = normalise_id(chan_id) # e.g., 'dubaitv'
+                        norm_id = normalise_id(chan_id)
                         
                         # --- 1. THE MAP CHECK (PRIORITY) ---
                         final_id = None
-                        
-                        # Direct Map Match
                         if norm_id in REVERSE_MAP:
                             final_id = REVERSE_MAP[norm_id]
-                        
-                        # Partial Map Match (if 'dubai' is in 'dubaitvhd')
                         else:
                             for map_key, m3u_id in REVERSE_MAP.items():
                                 if map_key in norm_id or norm_id in map_key:
@@ -168,8 +163,9 @@ def process_iptv():
 
                         # --- 2. APPLY TO XML IF FOUND ---
                         if final_id:
-                            # Keep only if it's not a regional clone we hate
-                            if not any(chan_id.lower().endswith(sfx) for sfx in FORBIDDEN_SUFFIXES):
+                            if not any(chan_id.lower().endswith(sfx) for sfx in FORBIDDEN_SUFFIXES) and \
+                               not any(ex in norm_id for ex in EXCLUDE_WORDS):
+                                
                                 elem.set('channel', final_id)
                                 program_elements.append(ET.tostring(elem, encoding='utf-8'))
                                 
@@ -178,6 +174,8 @@ def process_iptv():
                                     chan_xml = f'<channel id="{final_id}"><display-name>{final_id}</display-name></channel>'
                                     channel_elements.append(chan_xml.encode('utf-8'))
                     elem.clear()
+        except Exception as e:
+            print(f"  ⚠️ Skipping {file_name}: {e}")
 
     if program_elements:
         with open("arabic-epg.xml", "wb") as f_out:
