@@ -123,10 +123,9 @@ def normalise_id(cid):
     return re.sub(r'[._\-\s]', '', clean).lower()
 
 def process_iptv():
-    print("🚀 Running Multi-Format Robust Extraction with Strict Mapping...")
+    print("🚀 Running Multi-Format Robust Extraction with Strict Mapping & Language Filtering...")
     
     # --- PREPARE THE MAP ---
-    # This creates a lookup for normalized name -> Pretty Name (from your ID_MAP)
     REVERSE_MAP = {normalise_id(k): v for k, v in ID_MAP.items()}
     
     target_ids = {normalise_id(t) for t in (set(ID_MAP.values()) | set(ID_MAP.keys()))}
@@ -158,28 +157,49 @@ def process_iptv():
                     if chan_id:
                         norm_id = normalise_id(chan_id)
                         
-                        # --- 1. MAPPING LOGIC ---
-                        # Priority 1: Exact Match in your ID_MAP
-                        # Priority 2: Keyword match (keeps original name)
+                        # --- 1. THE EXCLUSION SHIELD ---
+                        # Skip if ID contains Turkish/Kurdish keywords or .tr suffix
+                        if any(ex in norm_id for ex in EXCLUDE_WORDS) or '.tr' in norm_id:
+                            elem.clear()
+                            continue
+
+                        # --- 2. MAPPING & KEYWORD LOGIC ---
                         final_id = None
                         if norm_id in REVERSE_MAP:
                             final_id = REVERSE_MAP[norm_id]
                         elif any(k in norm_id for k in keywords):
+                            # Filter out false positives for short keywords like 'on'
+                            if 'on' in norm_id and not any(x in norm_id for x in ['ontime', 'on.ent', 'on-ent']):
+                                if len(norm_id) > 5: # Skip things like 'action' or 'cartoon'
+                                    elem.clear()
+                                    continue
                             final_id = chan_id
                         
                         if final_id:
-                            # Verify if any child (title) has text
+                            # --- 3. LANGUAGE ATTRIBUTE CHECK ---
+                            # Inspect the title tag for lang="tr" (Turkish) or other non-Arabic tags
+                            is_forbidden_lang = False
                             has_text = False
+                            
                             for child in elem:
-                                if child.tag.endswith('title') and child.text and len(child.text.strip()) > 0:
-                                    has_text = True
-                                    break
+                                if child.tag.endswith('title'):
+                                    # Check for Turkish/Persian/Kurdish language tags
+                                    lang = child.get('lang', '').lower()
+                                    if lang in ['tr', 'tur', 'per', 'fas', 'kur']:
+                                        is_forbidden_lang = True
+                                        break
+                                    
+                                    # Ensure the title actually has text
+                                    if child.text and len(child.text.strip()) > 0:
+                                        has_text = True
+                            
+                            if is_forbidden_lang:
+                                elem.clear()
+                                continue
                             
                             if has_text:
-                                # --- 2. UPDATE ELEMENT ID ---
-                                # We overwrite the channel attribute so it matches your M3U
+                                # --- 4. UPDATE ELEMENT ID & SAVE ---
                                 elem.set('channel', final_id)
-                                
                                 program_elements.append(ET.tostring(elem, encoding='utf-8'))
                                 
                                 if final_id not in global_added_channels:
@@ -199,9 +219,9 @@ def process_iptv():
             for c in channel_elements: f_out.write(c + b'\n')
             for p in program_elements: f_out.write(p + b'\n')
             f_out.write(b'</tv>')
-        print(f"✅ Success! Saved {len(program_elements)} programs for {len(global_added_channels)} mapped channels.")
+        print(f"✅ Success! Saved {len(program_elements)} programs for {len(global_added_channels)} channels.")
     else:
-        print("❌ Still zero. Check if keywords or ID_MAP normalization is too strict.")
+        print("❌ Still zero. Check filters.")
         
 if __name__ == "__main__":
     process_iptv()
