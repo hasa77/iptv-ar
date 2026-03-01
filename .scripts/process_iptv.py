@@ -130,8 +130,8 @@ def normalise_id(cid):
 def get_allowed_ids():
     """Reads the local M3U to see what IDs TiviMate actually wants."""
     allowed = set()
-    if os.path.exists(M3U_FILE):
-        with open(M3U_FILE, 'r', encoding='utf-8') as f:
+    if os.path.exists(M3U_URL):
+        with open(M3U_URL, 'r', encoding='utf-8') as f:
             for line in f:
                 if 'tvg-id="' in line:
                     id_val = line.split('tvg-id="')[1].split('"')[0]
