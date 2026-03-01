@@ -17,6 +17,7 @@
 <channel id="YasTV.ae@HD"><display-name>YasTV.ae@HD</display-name></channel>
 <channel id="SharjahSports.ae@SD"><display-name>SharjahSports.ae@SD</display-name></channel>
 <channel id="AlMajdHolyQuran.sa@SD"><display-name>AlMajdHolyQuran.sa@SD</display-name></channel>
+<channel id="MBC.Iraq.iq"><display-name>MBC.Iraq.iq</display-name></channel>
 <channel id="AlMasriyah.eg@SD"><display-name>AlMasriyah.eg@SD</display-name></channel>
 <channel id="AlGhadTV.eg@SD"><display-name>AlGhadTV.eg@SD</display-name></channel>
 <channel id="FujairahTV.ae@SD"><display-name>FujairahTV.ae@SD</display-name></channel>
@@ -16792,6 +16793,1189 @@
     <category lang="en">Children</category>
     <category lang="en">Comedy</category>
     <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6191.svg" />
+  </programme>
+  
+<programme start="20260301001500 +0000" stop="20260301010000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Spark</title>
+    <desc lang="en">A mysterious young woman enters a household ruled by three rival wives and outdated customs, sparking a chain of events that ignites a full-blown family war and exposes long-hidden secrets. Bakr Khalid, Sulaf Jalil.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Thriller</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E11</episode-num>
+  </programme>
+  
+<programme start="20260301010000 +0000" stop="20260301014500 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Release</title>
+    <desc lang="en">Wrongly accused of murdering his wife, Abbas Al Rayes is sentenced to fifteen years in prison. After his release, Abbas is consumed by a thirst for revenge and a desire for salvation. Amr Saad, Hatem Salah.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Thriller</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E10</episode-num>
+  </programme>
+  
+<programme start="20260301014500 +0000" stop="20260301023000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Our Preacher</title>
+    <desc lang="en">In a remote village, Gaber becomes a revered figure after claiming to be the long awaited preacher. Yet as the villagers place their faith in him, he lives in constant fear of exposure, haunted by an inner voice reminding him he is a fraud. Tim Hassan, Mona Wassef.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Thriller</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E11</episode-num>
+  </programme>
+  
+<programme start="20260301023000 +0000" stop="20260301031500 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Hide And Seek</title>
+    <desc lang="en">In the 1970s, Wedad, a blind mother, struggles as her daughters try to take advantage of her vulnerability, exposing deep family conflicts, societal pressures, and the traditions and norms of their community. Huda Hussien, Mahmoud Boushehri.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Drama</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E11</episode-num>
+  </programme>
+  
+<programme start="20260301031500 +0000" stop="20260301041500 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Our Breakfast Is Unique</title>
+    <desc lang="en">Chef Omar Al Watban presents a variety of Ramadan Iftar recipes every day, clearly and simply explaining the ingredients and preparation steps for viewers. Omar Al Watban.</desc>
+    <date>2026</date>
+    <category lang="en">Cooking</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6193.svg" />
+    <episode-num system="onscreen">E11</episode-num>
+  </programme>
+  
+<programme start="20260301041500 +0000" stop="20260301051500 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Win The Millions</title>
+    <desc lang="en">Game Offering a great opportunity to win some cash by getting on the phone and answering questions.</desc>
+    <category lang="en">Show</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images1/epg-1627987.jpg" />
+    <episode-num system="onscreen">E11</episode-num>
+  </programme>
+  
+<programme start="20260301051500 +0000" stop="20260301054500 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Ramez and The Ultimate Level</title>
+    <desc lang="en">Ramez Galal returns with a new set of pranks for Ramadan this year, where he hosts a group of entertainment and sports stars to put them through difficult challenges that test their composure. Ramez Galal.</desc>
+    <date>2026</date>
+    <category lang="en">Show</category>
+    <category lang="en">Action</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6204.svg" />
+    <episode-num system="onscreen">E9</episode-num>
+  </programme>
+  
+<programme start="20260301054500 +0000" stop="20260301061500 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Sweet And Sour</title>
+    <desc lang="en">Returning with a new season that shows the daily lives of Iraqis in a satirical and comedic perspective, highlighting family and social issues, everyday contradictions that people face in every home, and funny situations that reflect societal inconsistencies. Ehsan Dadosh, Ali Jaber.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Comedy</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E11</episode-num>
+  </programme>
+  
+<programme start="20260301061500 +0000" stop="20260301070000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Release</title>
+    <desc lang="en">Wrongly accused of murdering his wife, Abbas Al Rayes is sentenced to fifteen years in prison. After his release, Abbas is consumed by a thirst for revenge and a desire for salvation. Amr Saad, Hatem Salah.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Thriller</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E10</episode-num>
+  </programme>
+  
+<programme start="20260301070000 +0000" stop="20260301074500 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Our Preacher</title>
+    <desc lang="en">In a remote village, Gaber becomes a revered figure after claiming to be the long awaited preacher. Yet as the villagers place their faith in him, he lives in constant fear of exposure, haunted by an inner voice reminding him he is a fraud. Tim Hassan, Mona Wassef.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Thriller</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E11</episode-num>
+  </programme>
+  
+<programme start="20260301074500 +0000" stop="20260301084500 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Hide And Seek</title>
+    <desc lang="en">In the 1970s, Wedad, a blind mother, struggles as her daughters try to take advantage of her vulnerability, exposing deep family conflicts, societal pressures, and the traditions and norms of their community. Huda Hussien, Mahmoud Boushehri.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Drama</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E11</episode-num>
+  </programme>
+  
+<programme start="20260301084500 +0000" stop="20260301093000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Hamdiya</title>
+    <desc lang="en">The poor girl Hamdiya lives a difficult life, especially after her mother's death and her father's remarriage. Between her social circumstances and her arduous work, Hamdiya is reeling. Life finally grants her a unique and unparalleled love, but it will not end her suffering. Rowaida Shahin, Jawad Al Shakarchi.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Drama</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E11</episode-num>
+  </programme>
+  
+<programme start="20260301093000 +0000" stop="20260301103000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Spark</title>
+    <desc lang="en">A mysterious young woman enters a household ruled by three rival wives and outdated customs, sparking a chain of events that ignites a full-blown family war and exposes long-hidden secrets. Bakr Khalid, Sulaf Jalil.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Thriller</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E11</episode-num>
+  </programme>
+  
+<programme start="20260301103000 +0000" stop="20260301110000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Among Our Families</title>
+    <desc lang="en">Show Correspondants venture into the streets of Iraq to showcase the country's culture, taking the viewers on a journey through its cities and rural regions. Haider Abd Thamer, Haider Abu Al Abbas, Tariq Ziyad, Muhammad Hasnawi, Ali Zamil, Haider Abed Thamer.</desc>
+    <category lang="en">Entertainment</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images1/epg-446334.jpg" />
+    <episode-num system="onscreen">E11</episode-num>
+  </programme>
+  
+<programme start="20260301110000 +0000" stop="20260301113000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Sweet And Sour</title>
+    <desc lang="en">Returning with a new season that shows the daily lives of Iraqis in a satirical and comedic perspective, highlighting family and social issues, everyday contradictions that people face in every home, and funny situations that reflect societal inconsistencies. Ehsan Dadosh, Ali Jaber.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Comedy</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E11</episode-num>
+  </programme>
+  
+<programme start="20260301113000 +0000" stop="20260301120000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Ramez and The Ultimate Level</title>
+    <desc lang="en">Ramez Galal returns with a new set of pranks for Ramadan this year, where he hosts a group of entertainment and sports stars to put them through difficult challenges that test their composure. Ramez Galal.</desc>
+    <date>2026</date>
+    <category lang="en">Show</category>
+    <category lang="en">Action</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6204.svg" />
+    <episode-num system="onscreen">E9</episode-num>
+  </programme>
+  
+<programme start="20260301120000 +0000" stop="20260301130000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Win The Millions</title>
+    <desc lang="en">Game Offering a great opportunity to win some cash by getting on the phone and answering questions.</desc>
+    <category lang="en">Show</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images1/epg-1627987.jpg" />
+    <episode-num system="onscreen">E11</episode-num>
+  </programme>
+  
+<programme start="20260301130000 +0000" stop="20260301140000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Our Breakfast Is Unique</title>
+    <desc lang="en">Chef Omar Al Watban presents a variety of Ramadan Iftar recipes every day, clearly and simply explaining the ingredients and preparation steps for viewers. Omar Al Watban.</desc>
+    <date>2026</date>
+    <category lang="en">Cooking</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6193.svg" />
+    <episode-num system="onscreen">E12</episode-num>
+  </programme>
+  
+<programme start="20260301140000 +0000" stop="20260301150000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Hamdiya</title>
+    <desc lang="en">The poor girl Hamdiya lives a difficult life, especially after her mother's death and her father's remarriage. Between her social circumstances and her arduous work, Hamdiya is reeling. Life finally grants her a unique and unparalleled love, but it will not end her suffering. Rowaida Shahin, Jawad Al Shakarchi.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Drama</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E11</episode-num>
+  </programme>
+  
+<programme start="20260301150000 +0000" stop="20260301153000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Among Our Families</title>
+    <desc lang="en">Show Correspondants venture into the streets of Iraq to showcase the country's culture, taking the viewers on a journey through its cities and rural regions. Haider Abd Thamer, Haider Abu Al Abbas, Tariq Ziyad, Muhammad Hasnawi, Ali Zamil, Haider Abed Thamer.</desc>
+    <category lang="en">Entertainment</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images1/epg-446334.jpg" />
+    <episode-num system="onscreen">E12</episode-num>
+  </programme>
+  
+<programme start="20260301153000 +0000" stop="20260301160000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Sweet And Sour</title>
+    <desc lang="en">Returning with a new season that shows the daily lives of Iraqis in a satirical and comedic perspective, highlighting family and social issues, everyday contradictions that people face in every home, and funny situations that reflect societal inconsistencies. Ehsan Dadosh, Ali Jaber.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Comedy</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E12</episode-num>
+  </programme>
+  
+<programme start="20260301160000 +0000" stop="20260301170000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Spark</title>
+    <desc lang="en">A mysterious young woman enters a household ruled by three rival wives and outdated customs, sparking a chain of events that ignites a full-blown family war and exposes long-hidden secrets. Bakr Khalid, Sulaf Jalil.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Thriller</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E12</episode-num>
+  </programme>
+  
+<programme start="20260301170000 +0000" stop="20260301180000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Our Preacher</title>
+    <desc lang="en">In a remote village, Gaber becomes a revered figure after claiming to be the long awaited preacher. Yet as the villagers place their faith in him, he lives in constant fear of exposure, haunted by an inner voice reminding him he is a fraud. Tim Hassan, Mona Wassef.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Thriller</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E12</episode-num>
+  </programme>
+  
+<programme start="20260301180000 +0000" stop="20260301190000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Hide And Seek</title>
+    <desc lang="en">In the 1970s, Wedad, a blind mother, struggles as her daughters try to take advantage of her vulnerability, exposing deep family conflicts, societal pressures, and the traditions and norms of their community. Huda Hussien, Mahmoud Boushehri.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Drama</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E12</episode-num>
+  </programme>
+  
+<programme start="20260301190000 +0000" stop="20260301200000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Hamdiya</title>
+    <desc lang="en">The poor girl Hamdiya lives a difficult life, especially after her mother's death and her father's remarriage. Between her social circumstances and her arduous work, Hamdiya is reeling. Life finally grants her a unique and unparalleled love, but it will not end her suffering. Rowaida Shahin, Jawad Al Shakarchi.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Drama</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E12</episode-num>
+  </programme>
+  
+<programme start="20260301200000 +0000" stop="20260301210000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Release</title>
+    <desc lang="en">Wrongly accused of murdering his wife, Abbas Al Rayes is sentenced to fifteen years in prison. After his release, Abbas is consumed by a thirst for revenge and a desire for salvation. Amr Saad, Hatem Salah.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Thriller</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E11</episode-num>
+  </programme>
+  
+<programme start="20260301210000 +0000" stop="20260301220000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Win The Millions</title>
+    <desc lang="en">Game Offering a great opportunity to win some cash by getting on the phone and answering questions.</desc>
+    <category lang="en">Show</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images1/epg-1626646.jpg" />
+    <episode-num system="onscreen">E12</episode-num>
+  </programme>
+  
+<programme start="20260301220000 +0000" stop="20260301223000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Ramez and The Ultimate Level</title>
+    <desc lang="en">Ramez Galal returns with a new set of pranks for Ramadan this year, where he hosts a group of entertainment and sports stars to put them through difficult challenges that test their composure. Ramez Galal.</desc>
+    <date>2026</date>
+    <category lang="en">Show</category>
+    <category lang="en">Action</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6204.svg" />
+    <episode-num system="onscreen">E10</episode-num>
+  </programme>
+  
+<programme start="20260301223000 +0000" stop="20260301230000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Among Our Families</title>
+    <desc lang="en">Show Correspondants venture into the streets of Iraq to showcase the country's culture, taking the viewers on a journey through its cities and rural regions. Haider Abd Thamer, Haider Abu Al Abbas, Tariq Ziyad, Muhammad Hasnawi, Ali Zamil, Haider Abed Thamer.</desc>
+    <category lang="en">Entertainment</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images1/epg-467728.jpg" />
+    <episode-num system="onscreen">E12</episode-num>
+  </programme>
+  
+<programme start="20260301230000 +0000" stop="20260301233000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Sweet And Sour</title>
+    <desc lang="en">Returning with a new season that shows the daily lives of Iraqis in a satirical and comedic perspective, highlighting family and social issues, everyday contradictions that people face in every home, and funny situations that reflect societal inconsistencies. Ehsan Dadosh, Ali Jaber.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Comedy</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E12</episode-num>
+  </programme>
+  
+<programme start="20260301233000 +0000" stop="20260302001500 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Hamdiya</title>
+    <desc lang="en">The poor girl Hamdiya lives a difficult life, especially after her mother's death and her father's remarriage. Between her social circumstances and her arduous work, Hamdiya is reeling. Life finally grants her a unique and unparalleled love, but it will not end her suffering. Rowaida Shahin, Jawad Al Shakarchi.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Drama</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E12</episode-num>
+  </programme>
+  
+<programme start="20260302001500 +0000" stop="20260302010000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Spark</title>
+    <desc lang="en">A mysterious young woman enters a household ruled by three rival wives and outdated customs, sparking a chain of events that ignites a full-blown family war and exposes long-hidden secrets. Bakr Khalid, Sulaf Jalil.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Thriller</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E12</episode-num>
+  </programme>
+  
+<programme start="20260302010000 +0000" stop="20260302014500 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Release</title>
+    <desc lang="en">Wrongly accused of murdering his wife, Abbas Al Rayes is sentenced to fifteen years in prison. After his release, Abbas is consumed by a thirst for revenge and a desire for salvation. Amr Saad, Hatem Salah.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Thriller</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E11</episode-num>
+  </programme>
+  
+<programme start="20260302014500 +0000" stop="20260302023000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Our Preacher</title>
+    <desc lang="en">In a remote village, Gaber becomes a revered figure after claiming to be the long awaited preacher. Yet as the villagers place their faith in him, he lives in constant fear of exposure, haunted by an inner voice reminding him he is a fraud. Tim Hassan, Mona Wassef.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Thriller</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E12</episode-num>
+  </programme>
+  
+<programme start="20260302023000 +0000" stop="20260302031500 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Hide And Seek</title>
+    <desc lang="en">In the 1970s, Wedad, a blind mother, struggles as her daughters try to take advantage of her vulnerability, exposing deep family conflicts, societal pressures, and the traditions and norms of their community. Huda Hussien, Mahmoud Boushehri.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Drama</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E12</episode-num>
+  </programme>
+  
+<programme start="20260302031500 +0000" stop="20260302041500 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Our Breakfast Is Unique</title>
+    <desc lang="en">Chef Omar Al Watban presents a variety of Ramadan Iftar recipes every day, clearly and simply explaining the ingredients and preparation steps for viewers. Omar Al Watban.</desc>
+    <date>2026</date>
+    <category lang="en">Cooking</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6193.svg" />
+    <episode-num system="onscreen">E12</episode-num>
+  </programme>
+  
+<programme start="20260302041500 +0000" stop="20260302051500 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Win The Millions</title>
+    <desc lang="en">Game Offering a great opportunity to win some cash by getting on the phone and answering questions.</desc>
+    <category lang="en">Show</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images1/epg-1626646.jpg" />
+    <episode-num system="onscreen">E12</episode-num>
+  </programme>
+  
+<programme start="20260302051500 +0000" stop="20260302054500 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Ramez and The Ultimate Level</title>
+    <desc lang="en">Ramez Galal returns with a new set of pranks for Ramadan this year, where he hosts a group of entertainment and sports stars to put them through difficult challenges that test their composure. Ramez Galal.</desc>
+    <date>2026</date>
+    <category lang="en">Show</category>
+    <category lang="en">Action</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6204.svg" />
+    <episode-num system="onscreen">E10</episode-num>
+  </programme>
+  
+<programme start="20260302054500 +0000" stop="20260302061500 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Sweet And Sour</title>
+    <desc lang="en">Returning with a new season that shows the daily lives of Iraqis in a satirical and comedic perspective, highlighting family and social issues, everyday contradictions that people face in every home, and funny situations that reflect societal inconsistencies. Ehsan Dadosh, Ali Jaber.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Comedy</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E12</episode-num>
+  </programme>
+  
+<programme start="20260302061500 +0000" stop="20260302070000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Release</title>
+    <desc lang="en">Wrongly accused of murdering his wife, Abbas Al Rayes is sentenced to fifteen years in prison. After his release, Abbas is consumed by a thirst for revenge and a desire for salvation. Amr Saad, Hatem Salah.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Thriller</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E11</episode-num>
+  </programme>
+  
+<programme start="20260302070000 +0000" stop="20260302074500 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Our Preacher</title>
+    <desc lang="en">In a remote village, Gaber becomes a revered figure after claiming to be the long awaited preacher. Yet as the villagers place their faith in him, he lives in constant fear of exposure, haunted by an inner voice reminding him he is a fraud. Tim Hassan, Mona Wassef.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Thriller</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E12</episode-num>
+  </programme>
+  
+<programme start="20260302074500 +0000" stop="20260302084500 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Hide And Seek</title>
+    <desc lang="en">In the 1970s, Wedad, a blind mother, struggles as her daughters try to take advantage of her vulnerability, exposing deep family conflicts, societal pressures, and the traditions and norms of their community. Huda Hussien, Mahmoud Boushehri.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Drama</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E12</episode-num>
+  </programme>
+  
+<programme start="20260302084500 +0000" stop="20260302093000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Hamdiya</title>
+    <desc lang="en">The poor girl Hamdiya lives a difficult life, especially after her mother's death and her father's remarriage. Between her social circumstances and her arduous work, Hamdiya is reeling. Life finally grants her a unique and unparalleled love, but it will not end her suffering. Rowaida Shahin, Jawad Al Shakarchi.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Drama</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E12</episode-num>
+  </programme>
+  
+<programme start="20260302093000 +0000" stop="20260302103000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Spark</title>
+    <desc lang="en">A mysterious young woman enters a household ruled by three rival wives and outdated customs, sparking a chain of events that ignites a full-blown family war and exposes long-hidden secrets. Bakr Khalid, Sulaf Jalil.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Thriller</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E12</episode-num>
+  </programme>
+  
+<programme start="20260302103000 +0000" stop="20260302110000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Among Our Families</title>
+    <desc lang="en">Show Correspondants venture into the streets of Iraq to showcase the country's culture, taking the viewers on a journey through its cities and rural regions. Haider Abd Thamer, Haider Abu Al Abbas, Tariq Ziyad, Muhammad Hasnawi, Ali Zamil, Haider Abed Thamer.</desc>
+    <category lang="en">Entertainment</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images1/epg-467728.jpg" />
+    <episode-num system="onscreen">E12</episode-num>
+  </programme>
+  
+<programme start="20260302110000 +0000" stop="20260302113000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Sweet And Sour</title>
+    <desc lang="en">Returning with a new season that shows the daily lives of Iraqis in a satirical and comedic perspective, highlighting family and social issues, everyday contradictions that people face in every home, and funny situations that reflect societal inconsistencies. Ehsan Dadosh, Ali Jaber.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Comedy</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E12</episode-num>
+  </programme>
+  
+<programme start="20260302113000 +0000" stop="20260302120000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Ramez and The Ultimate Level</title>
+    <desc lang="en">Ramez Galal returns with a new set of pranks for Ramadan this year, where he hosts a group of entertainment and sports stars to put them through difficult challenges that test their composure. Ramez Galal.</desc>
+    <date>2026</date>
+    <category lang="en">Show</category>
+    <category lang="en">Action</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6204.svg" />
+    <episode-num system="onscreen">E10</episode-num>
+  </programme>
+  
+<programme start="20260302120000 +0000" stop="20260302130000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Win The Millions</title>
+    <desc lang="en">Game Offering a great opportunity to win some cash by getting on the phone and answering questions.</desc>
+    <category lang="en">Show</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images1/epg-1626646.jpg" />
+    <episode-num system="onscreen">E12</episode-num>
+  </programme>
+  
+<programme start="20260302130000 +0000" stop="20260302140000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Our Breakfast Is Unique</title>
+    <desc lang="en">Chef Omar Al Watban presents a variety of Ramadan Iftar recipes every day, clearly and simply explaining the ingredients and preparation steps for viewers. Omar Al Watban.</desc>
+    <date>2026</date>
+    <category lang="en">Cooking</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6193.svg" />
+    <episode-num system="onscreen">E13</episode-num>
+  </programme>
+  
+<programme start="20260302140000 +0000" stop="20260302150000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Hamdiya</title>
+    <desc lang="en">The poor girl Hamdiya lives a difficult life, especially after her mother's death and her father's remarriage. Between her social circumstances and her arduous work, Hamdiya is reeling. Life finally grants her a unique and unparalleled love, but it will not end her suffering. Rowaida Shahin, Jawad Al Shakarchi.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Drama</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E12</episode-num>
+  </programme>
+  
+<programme start="20260302150000 +0000" stop="20260302153000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Among Our Families</title>
+    <desc lang="en">Show Correspondants venture into the streets of Iraq to showcase the country's culture, taking the viewers on a journey through its cities and rural regions. Haider Abd Thamer, Haider Abu Al Abbas, Tariq Ziyad, Muhammad Hasnawi, Ali Zamil, Haider Abed Thamer.</desc>
+    <category lang="en">Entertainment</category>
+    <icon src="https://sat.tv/wp-content/themes/twentytwenty-child/data_lineups/nilesat/images1/epg-467728.jpg" />
+    <episode-num system="onscreen">E13</episode-num>
+  </programme>
+  
+<programme start="20260302153000 +0000" stop="20260302160000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Sweet And Sour</title>
+    <desc lang="en">Returning with a new season that shows the daily lives of Iraqis in a satirical and comedic perspective, highlighting family and social issues, everyday contradictions that people face in every home, and funny situations that reflect societal inconsistencies. Ehsan Dadosh, Ali Jaber.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Comedy</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E13</episode-num>
+  </programme>
+  
+<programme start="20260302160000 +0000" stop="20260302170000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Spark</title>
+    <desc lang="en">A mysterious young woman enters a household ruled by three rival wives and outdated customs, sparking a chain of events that ignites a full-blown family war and exposes long-hidden secrets. Bakr Khalid, Sulaf Jalil.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Thriller</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E13</episode-num>
+  </programme>
+  
+<programme start="20260302170000 +0000" stop="20260302180000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Our Preacher</title>
+    <desc lang="en">In a remote village, Gaber becomes a revered figure after claiming to be the long awaited preacher. Yet as the villagers place their faith in him, he lives in constant fear of exposure, haunted by an inner voice reminding him he is a fraud. Tim Hassan, Mona Wassef.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Thriller</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E13</episode-num>
+  </programme>
+  
+<programme start="20260302180000 +0000" stop="20260302190000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Hide And Seek</title>
+    <desc lang="en">In the 1970s, Wedad, a blind mother, struggles as her daughters try to take advantage of her vulnerability, exposing deep family conflicts, societal pressures, and the traditions and norms of their community. Huda Hussien, Mahmoud Boushehri.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Drama</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E13</episode-num>
+  </programme>
+  
+<programme start="20260302190000 +0000" stop="20260302200000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Hamdiya</title>
+    <desc lang="en">The poor girl Hamdiya lives a difficult life, especially after her mother's death and her father's remarriage. Between her social circumstances and her arduous work, Hamdiya is reeling. Life finally grants her a unique and unparalleled love, but it will not end her suffering. Rowaida Shahin, Jawad Al Shakarchi.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Drama</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E13</episode-num>
+  </programme>
+  
+<programme start="20260302200000 +0000" stop="20260302210000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Release</title>
+    <desc lang="en">Wrongly accused of murdering his wife, Abbas Al Rayes is sentenced to fifteen years in prison. After his release, Abbas is consumed by a thirst for revenge and a desire for salvation. Amr Saad, Hatem Salah.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Thriller</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E12</episode-num>
+  </programme>
+  
+<programme start="20260302210000 +0000" stop="20260302220000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Win The Millions</title>
+    <desc lang="en">Game Offering a great opportunity to win some cash by getting on the phone and answering questions.</desc>
+    <category lang="en">Show</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6204.svg" />
+    <episode-num system="onscreen">E13</episode-num>
+  </programme>
+  
+<programme start="20260302220000 +0000" stop="20260302223000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Ramez and The Ultimate Level</title>
+    <desc lang="en">Ramez Galal returns with a new set of pranks for Ramadan this year, where he hosts a group of entertainment and sports stars to put them through difficult challenges that test their composure. Ramez Galal.</desc>
+    <date>2026</date>
+    <category lang="en">Show</category>
+    <category lang="en">Action</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6204.svg" />
+    <episode-num system="onscreen">E11</episode-num>
+  </programme>
+  
+<programme start="20260302223000 +0000" stop="20260302230000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Among Our Families</title>
+    <desc lang="en">Show Correspondants venture into the streets of Iraq to showcase the country's culture, taking the viewers on a journey through its cities and rural regions. Haider Abd Thamer, Haider Abu Al Abbas, Tariq Ziyad, Muhammad Hasnawi, Ali Zamil, Haider Abed Thamer.</desc>
+    <category lang="en">Entertainment</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6196.svg" />
+    <episode-num system="onscreen">E13</episode-num>
+  </programme>
+  
+<programme start="20260302230000 +0000" stop="20260302233000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Sweet And Sour</title>
+    <desc lang="en">Returning with a new season that shows the daily lives of Iraqis in a satirical and comedic perspective, highlighting family and social issues, everyday contradictions that people face in every home, and funny situations that reflect societal inconsistencies. Ehsan Dadosh, Ali Jaber.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Comedy</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E13</episode-num>
+  </programme>
+  
+<programme start="20260302233000 +0000" stop="20260303001500 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Hamdiya</title>
+    <desc lang="en">The poor girl Hamdiya lives a difficult life, especially after her mother's death and her father's remarriage. Between her social circumstances and her arduous work, Hamdiya is reeling. Life finally grants her a unique and unparalleled love, but it will not end her suffering. Rowaida Shahin, Jawad Al Shakarchi.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Drama</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E13</episode-num>
+  </programme>
+  
+<programme start="20260303001500 +0000" stop="20260303010000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Spark</title>
+    <desc lang="en">A mysterious young woman enters a household ruled by three rival wives and outdated customs, sparking a chain of events that ignites a full-blown family war and exposes long-hidden secrets. Bakr Khalid, Sulaf Jalil.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Thriller</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E13</episode-num>
+  </programme>
+<programme start="20260303010000 +0000" stop="20260303014500 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Release</title>
+    <desc lang="en">Wrongly accused of murdering his wife, Abbas Al Rayes is sentenced to fifteen years in prison. After his release, Abbas is consumed by a thirst for revenge and a desire for salvation. Amr Saad, Hatem Salah.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Thriller</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E12</episode-num>
+  </programme>
+  
+<programme start="20260303014500 +0000" stop="20260303023000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Our Preacher</title>
+    <desc lang="en">In a remote village, Gaber becomes a revered figure after claiming to be the long awaited preacher. Yet as the villagers place their faith in him, he lives in constant fear of exposure, haunted by an inner voice reminding him he is a fraud. Tim Hassan, Mona Wassef.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Thriller</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E13</episode-num>
+  </programme>
+  
+<programme start="20260303023000 +0000" stop="20260303031500 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Hide And Seek</title>
+    <desc lang="en">In the 1970s, Wedad, a blind mother, struggles as her daughters try to take advantage of her vulnerability, exposing deep family conflicts, societal pressures, and the traditions and norms of their community. Huda Hussien, Mahmoud Boushehri.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Drama</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E13</episode-num>
+  </programme>
+  
+<programme start="20260303031500 +0000" stop="20260303041500 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Our Breakfast Is Unique</title>
+    <desc lang="en">Chef Omar Al Watban presents a variety of Ramadan Iftar recipes every day, clearly and simply explaining the ingredients and preparation steps for viewers. Omar Al Watban.</desc>
+    <date>2026</date>
+    <category lang="en">Cooking</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6193.svg" />
+    <episode-num system="onscreen">E13</episode-num>
+  </programme>
+  
+<programme start="20260303041500 +0000" stop="20260303051500 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Win The Millions</title>
+    <desc lang="en">Game Offering a great opportunity to win some cash by getting on the phone and answering questions.</desc>
+    <category lang="en">Show</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6204.svg" />
+    <episode-num system="onscreen">E13</episode-num>
+  </programme>
+  
+<programme start="20260303051500 +0000" stop="20260303054500 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Ramez and The Ultimate Level</title>
+    <desc lang="en">Ramez Galal returns with a new set of pranks for Ramadan this year, where he hosts a group of entertainment and sports stars to put them through difficult challenges that test their composure. Ramez Galal.</desc>
+    <date>2026</date>
+    <category lang="en">Show</category>
+    <category lang="en">Action</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6204.svg" />
+    <episode-num system="onscreen">E11</episode-num>
+  </programme>
+  
+<programme start="20260303054500 +0000" stop="20260303061500 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Sweet And Sour</title>
+    <desc lang="en">Returning with a new season that shows the daily lives of Iraqis in a satirical and comedic perspective, highlighting family and social issues, everyday contradictions that people face in every home, and funny situations that reflect societal inconsistencies. Ehsan Dadosh, Ali Jaber.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Comedy</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E13</episode-num>
+  </programme>
+  
+<programme start="20260303061500 +0000" stop="20260303070000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Release</title>
+    <desc lang="en">Wrongly accused of murdering his wife, Abbas Al Rayes is sentenced to fifteen years in prison. After his release, Abbas is consumed by a thirst for revenge and a desire for salvation. Amr Saad, Hatem Salah.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Thriller</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E12</episode-num>
+  </programme>
+  
+<programme start="20260303070000 +0000" stop="20260303074500 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Our Preacher</title>
+    <desc lang="en">In a remote village, Gaber becomes a revered figure after claiming to be the long awaited preacher. Yet as the villagers place their faith in him, he lives in constant fear of exposure, haunted by an inner voice reminding him he is a fraud. Tim Hassan, Mona Wassef.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Thriller</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E13</episode-num>
+  </programme>
+  
+<programme start="20260303074500 +0000" stop="20260303084500 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Hide And Seek</title>
+    <desc lang="en">In the 1970s, Wedad, a blind mother, struggles as her daughters try to take advantage of her vulnerability, exposing deep family conflicts, societal pressures, and the traditions and norms of their community. Huda Hussien, Mahmoud Boushehri.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Drama</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E13</episode-num>
+  </programme>
+  
+<programme start="20260303084500 +0000" stop="20260303093000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Hamdiya</title>
+    <desc lang="en">The poor girl Hamdiya lives a difficult life, especially after her mother's death and her father's remarriage. Between her social circumstances and her arduous work, Hamdiya is reeling. Life finally grants her a unique and unparalleled love, but it will not end her suffering. Rowaida Shahin, Jawad Al Shakarchi.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Drama</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E13</episode-num>
+  </programme>
+  
+<programme start="20260303093000 +0000" stop="20260303103000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Spark</title>
+    <desc lang="en">A mysterious young woman enters a household ruled by three rival wives and outdated customs, sparking a chain of events that ignites a full-blown family war and exposes long-hidden secrets. Bakr Khalid, Sulaf Jalil.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Thriller</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E13</episode-num>
+  </programme>
+  
+<programme start="20260303103000 +0000" stop="20260303110000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Among Our Families</title>
+    <desc lang="en">Show Correspondants venture into the streets of Iraq to showcase the country's culture, taking the viewers on a journey through its cities and rural regions. Haider Abd Thamer, Haider Abu Al Abbas, Tariq Ziyad, Muhammad Hasnawi, Ali Zamil, Haider Abed Thamer.</desc>
+    <category lang="en">Entertainment</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6196.svg" />
+    <episode-num system="onscreen">E13</episode-num>
+  </programme>
+  
+<programme start="20260303110000 +0000" stop="20260303113000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Sweet And Sour</title>
+    <desc lang="en">Returning with a new season that shows the daily lives of Iraqis in a satirical and comedic perspective, highlighting family and social issues, everyday contradictions that people face in every home, and funny situations that reflect societal inconsistencies. Ehsan Dadosh, Ali Jaber.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Comedy</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E13</episode-num>
+  </programme>
+  
+<programme start="20260303113000 +0000" stop="20260303120000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Ramez and The Ultimate Level</title>
+    <desc lang="en">Ramez Galal returns with a new set of pranks for Ramadan this year, where he hosts a group of entertainment and sports stars to put them through difficult challenges that test their composure. Ramez Galal.</desc>
+    <date>2026</date>
+    <category lang="en">Show</category>
+    <category lang="en">Action</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6204.svg" />
+    <episode-num system="onscreen">E11</episode-num>
+  </programme>
+  
+<programme start="20260303120000 +0000" stop="20260303130000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Win The Millions</title>
+    <desc lang="en">Game Offering a great opportunity to win some cash by getting on the phone and answering questions.</desc>
+    <category lang="en">Show</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6204.svg" />
+    <episode-num system="onscreen">E13</episode-num>
+  </programme>
+  
+<programme start="20260303130000 +0000" stop="20260303140000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Our Breakfast Is Unique</title>
+    <desc lang="en">Chef Omar Al Watban presents a variety of Ramadan Iftar recipes every day, clearly and simply explaining the ingredients and preparation steps for viewers. Omar Al Watban.</desc>
+    <date>2026</date>
+    <category lang="en">Cooking</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6193.svg" />
+    <episode-num system="onscreen">E14</episode-num>
+  </programme>
+  
+<programme start="20260303140000 +0000" stop="20260303150000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Hamdiya</title>
+    <desc lang="en">The poor girl Hamdiya lives a difficult life, especially after her mother's death and her father's remarriage. Between her social circumstances and her arduous work, Hamdiya is reeling. Life finally grants her a unique and unparalleled love, but it will not end her suffering. Rowaida Shahin, Jawad Al Shakarchi.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Drama</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E13</episode-num>
+  </programme>
+  
+<programme start="20260303150000 +0000" stop="20260303153000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Among Our Families</title>
+    <desc lang="en">Show Correspondants venture into the streets of Iraq to showcase the country's culture, taking the viewers on a journey through its cities and rural regions. Haider Abd Thamer, Haider Abu Al Abbas, Tariq Ziyad, Muhammad Hasnawi, Ali Zamil, Haider Abed Thamer.</desc>
+    <category lang="en">Entertainment</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6196.svg" />
+    <episode-num system="onscreen">E14</episode-num>
+  </programme>
+  
+<programme start="20260303153000 +0000" stop="20260303160000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Sweet And Sour</title>
+    <desc lang="en">Returning with a new season that shows the daily lives of Iraqis in a satirical and comedic perspective, highlighting family and social issues, everyday contradictions that people face in every home, and funny situations that reflect societal inconsistencies. Ehsan Dadosh, Ali Jaber.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Comedy</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E14</episode-num>
+  </programme>
+  
+<programme start="20260303160000 +0000" stop="20260303170000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Spark</title>
+    <desc lang="en">A mysterious young woman enters a household ruled by three rival wives and outdated customs, sparking a chain of events that ignites a full-blown family war and exposes long-hidden secrets. Bakr Khalid, Sulaf Jalil.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Thriller</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E14</episode-num>
+  </programme>
+  
+<programme start="20260303170000 +0000" stop="20260303180000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Our Preacher</title>
+    <desc lang="en">In a remote village, Gaber becomes a revered figure after claiming to be the long awaited preacher. Yet as the villagers place their faith in him, he lives in constant fear of exposure, haunted by an inner voice reminding him he is a fraud. Tim Hassan, Mona Wassef.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Thriller</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E14</episode-num>
+  </programme>
+  
+<programme start="20260303180000 +0000" stop="20260303190000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Hide And Seek</title>
+    <desc lang="en">In the 1970s, Wedad, a blind mother, struggles as her daughters try to take advantage of her vulnerability, exposing deep family conflicts, societal pressures, and the traditions and norms of their community. Huda Hussien, Mahmoud Boushehri.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Drama</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E14</episode-num>
+  </programme>
+  
+<programme start="20260303190000 +0000" stop="20260303200000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Hamdiya</title>
+    <desc lang="en">The poor girl Hamdiya lives a difficult life, especially after her mother's death and her father's remarriage. Between her social circumstances and her arduous work, Hamdiya is reeling. Life finally grants her a unique and unparalleled love, but it will not end her suffering. Rowaida Shahin, Jawad Al Shakarchi.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Drama</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E14</episode-num>
+  </programme>
+  
+<programme start="20260303200000 +0000" stop="20260303210000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Release</title>
+    <desc lang="en">Wrongly accused of murdering his wife, Abbas Al Rayes is sentenced to fifteen years in prison. After his release, Abbas is consumed by a thirst for revenge and a desire for salvation. Amr Saad, Hatem Salah.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Thriller</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E13</episode-num>
+  </programme>
+  
+<programme start="20260303210000 +0000" stop="20260303220000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Win The Millions</title>
+    <desc lang="en">Game Offering a great opportunity to win some cash by getting on the phone and answering questions.</desc>
+    <category lang="en">Show</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6204.svg" />
+    <episode-num system="onscreen">E14</episode-num>
+  </programme>
+  
+<programme start="20260303220000 +0000" stop="20260303223000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Ramez and The Ultimate Level</title>
+    <desc lang="en">Ramez Galal returns with a new set of pranks for Ramadan this year, where he hosts a group of entertainment and sports stars to put them through difficult challenges that test their composure. Ramez Galal.</desc>
+    <date>2026</date>
+    <category lang="en">Show</category>
+    <category lang="en">Action</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6204.svg" />
+    <episode-num system="onscreen">E12</episode-num>
+  </programme>
+  
+<programme start="20260303223000 +0000" stop="20260303230000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Among Our Families</title>
+    <desc lang="en">Show Correspondants venture into the streets of Iraq to showcase the country's culture, taking the viewers on a journey through its cities and rural regions. Haider Abd Thamer, Haider Abu Al Abbas, Tariq Ziyad, Muhammad Hasnawi, Ali Zamil, Haider Abed Thamer.</desc>
+    <category lang="en">Entertainment</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6196.svg" />
+    <episode-num system="onscreen">E14</episode-num>
+  </programme>
+  
+<programme start="20260303230000 +0000" stop="20260303233000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Sweet And Sour</title>
+    <desc lang="en">Returning with a new season that shows the daily lives of Iraqis in a satirical and comedic perspective, highlighting family and social issues, everyday contradictions that people face in every home, and funny situations that reflect societal inconsistencies. Ehsan Dadosh, Ali Jaber.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Comedy</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E14</episode-num>
+  </programme>
+  
+<programme start="20260303233000 +0000" stop="20260304001500 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Hamdiya</title>
+    <desc lang="en">The poor girl Hamdiya lives a difficult life, especially after her mother's death and her father's remarriage. Between her social circumstances and her arduous work, Hamdiya is reeling. Life finally grants her a unique and unparalleled love, but it will not end her suffering. Rowaida Shahin, Jawad Al Shakarchi.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Drama</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E14</episode-num>
+  </programme>
+  
+<programme start="20260304001500 +0000" stop="20260304010000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Spark</title>
+    <desc lang="en">A mysterious young woman enters a household ruled by three rival wives and outdated customs, sparking a chain of events that ignites a full-blown family war and exposes long-hidden secrets. Bakr Khalid, Sulaf Jalil.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Thriller</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E14</episode-num>
+  </programme>
+  
+<programme start="20260304010000 +0000" stop="20260304014500 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Release</title>
+    <desc lang="en">Wrongly accused of murdering his wife, Abbas Al Rayes is sentenced to fifteen years in prison. After his release, Abbas is consumed by a thirst for revenge and a desire for salvation. Amr Saad, Hatem Salah.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Thriller</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E13</episode-num>
+  </programme>
+  
+<programme start="20260304014500 +0000" stop="20260304023000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Our Preacher</title>
+    <desc lang="en">In a remote village, Gaber becomes a revered figure after claiming to be the long awaited preacher. Yet as the villagers place their faith in him, he lives in constant fear of exposure, haunted by an inner voice reminding him he is a fraud. Tim Hassan, Mona Wassef.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Thriller</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E14</episode-num>
+  </programme>
+  
+<programme start="20260304023000 +0000" stop="20260304031500 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Hide And Seek</title>
+    <desc lang="en">In the 1970s, Wedad, a blind mother, struggles as her daughters try to take advantage of her vulnerability, exposing deep family conflicts, societal pressures, and the traditions and norms of their community. Huda Hussien, Mahmoud Boushehri.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Drama</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E14</episode-num>
+  </programme>
+  
+<programme start="20260304031500 +0000" stop="20260304041500 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Our Breakfast Is Unique</title>
+    <desc lang="en">Chef Omar Al Watban presents a variety of Ramadan Iftar recipes every day, clearly and simply explaining the ingredients and preparation steps for viewers. Omar Al Watban.</desc>
+    <date>2026</date>
+    <category lang="en">Cooking</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6193.svg" />
+    <episode-num system="onscreen">E14</episode-num>
+  </programme>
+  
+<programme start="20260304041500 +0000" stop="20260304051500 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Win The Millions</title>
+    <desc lang="en">Game Offering a great opportunity to win some cash by getting on the phone and answering questions.</desc>
+    <category lang="en">Show</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6204.svg" />
+    <episode-num system="onscreen">E14</episode-num>
+  </programme>
+  
+<programme start="20260304051500 +0000" stop="20260304054500 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Ramez and The Ultimate Level</title>
+    <desc lang="en">Ramez Galal returns with a new set of pranks for Ramadan this year, where he hosts a group of entertainment and sports stars to put them through difficult challenges that test their composure. Ramez Galal.</desc>
+    <date>2026</date>
+    <category lang="en">Show</category>
+    <category lang="en">Action</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6204.svg" />
+    <episode-num system="onscreen">E12</episode-num>
+  </programme>
+  
+<programme start="20260304054500 +0000" stop="20260304061500 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Sweet And Sour</title>
+    <desc lang="en">Returning with a new season that shows the daily lives of Iraqis in a satirical and comedic perspective, highlighting family and social issues, everyday contradictions that people face in every home, and funny situations that reflect societal inconsistencies. Ehsan Dadosh, Ali Jaber.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Comedy</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E14</episode-num>
+  </programme>
+  
+<programme start="20260304061500 +0000" stop="20260304070000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Release</title>
+    <desc lang="en">Wrongly accused of murdering his wife, Abbas Al Rayes is sentenced to fifteen years in prison. After his release, Abbas is consumed by a thirst for revenge and a desire for salvation. Amr Saad, Hatem Salah.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Thriller</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E13</episode-num>
+  </programme>
+  
+<programme start="20260304070000 +0000" stop="20260304074500 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Our Preacher</title>
+    <desc lang="en">In a remote village, Gaber becomes a revered figure after claiming to be the long awaited preacher. Yet as the villagers place their faith in him, he lives in constant fear of exposure, haunted by an inner voice reminding him he is a fraud. Tim Hassan, Mona Wassef.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Thriller</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E14</episode-num>
+  </programme>
+  
+<programme start="20260304074500 +0000" stop="20260304084500 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Hide And Seek</title>
+    <desc lang="en">In the 1970s, Wedad, a blind mother, struggles as her daughters try to take advantage of her vulnerability, exposing deep family conflicts, societal pressures, and the traditions and norms of their community. Huda Hussien, Mahmoud Boushehri.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Drama</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E14</episode-num>
+  </programme>
+  
+<programme start="20260304084500 +0000" stop="20260304093000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Hamdiya</title>
+    <desc lang="en">The poor girl Hamdiya lives a difficult life, especially after her mother's death and her father's remarriage. Between her social circumstances and her arduous work, Hamdiya is reeling. Life finally grants her a unique and unparalleled love, but it will not end her suffering. Rowaida Shahin, Jawad Al Shakarchi.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Drama</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E14</episode-num>
+  </programme>
+  
+<programme start="20260304093000 +0000" stop="20260304103000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Spark</title>
+    <desc lang="en">A mysterious young woman enters a household ruled by three rival wives and outdated customs, sparking a chain of events that ignites a full-blown family war and exposes long-hidden secrets. Bakr Khalid, Sulaf Jalil.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Thriller</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E14</episode-num>
+  </programme>
+  
+<programme start="20260304103000 +0000" stop="20260304110000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Among Our Families</title>
+    <desc lang="en">Show Correspondants venture into the streets of Iraq to showcase the country's culture, taking the viewers on a journey through its cities and rural regions. Haider Abd Thamer, Haider Abu Al Abbas, Tariq Ziyad, Muhammad Hasnawi, Ali Zamil, Haider Abed Thamer.</desc>
+    <category lang="en">Entertainment</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6196.svg" />
+    <episode-num system="onscreen">E14</episode-num>
+  </programme>
+  
+<programme start="20260304110000 +0000" stop="20260304113000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Sweet And Sour</title>
+    <desc lang="en">Returning with a new season that shows the daily lives of Iraqis in a satirical and comedic perspective, highlighting family and social issues, everyday contradictions that people face in every home, and funny situations that reflect societal inconsistencies. Ehsan Dadosh, Ali Jaber.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Comedy</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E14</episode-num>
+  </programme>
+  
+<programme start="20260304113000 +0000" stop="20260304120000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Ramez and The Ultimate Level</title>
+    <desc lang="en">Ramez Galal returns with a new set of pranks for Ramadan this year, where he hosts a group of entertainment and sports stars to put them through difficult challenges that test their composure. Ramez Galal.</desc>
+    <date>2026</date>
+    <category lang="en">Show</category>
+    <category lang="en">Action</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6204.svg" />
+    <episode-num system="onscreen">E12</episode-num>
+  </programme>
+  
+<programme start="20260304120000 +0000" stop="20260304130000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Win The Millions</title>
+    <desc lang="en">Game Offering a great opportunity to win some cash by getting on the phone and answering questions.</desc>
+    <category lang="en">Show</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6204.svg" />
+    <episode-num system="onscreen">E14</episode-num>
+  </programme>
+  
+<programme start="20260304130000 +0000" stop="20260304140000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Our Breakfast Is Unique</title>
+    <desc lang="en">Chef Omar Al Watban presents a variety of Ramadan Iftar recipes every day, clearly and simply explaining the ingredients and preparation steps for viewers. Omar Al Watban.</desc>
+    <date>2026</date>
+    <category lang="en">Cooking</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6193.svg" />
+    <episode-num system="onscreen">E15</episode-num>
+  </programme>
+  
+<programme start="20260304140000 +0000" stop="20260304150000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Hamdiya</title>
+    <desc lang="en">The poor girl Hamdiya lives a difficult life, especially after her mother's death and her father's remarriage. Between her social circumstances and her arduous work, Hamdiya is reeling. Life finally grants her a unique and unparalleled love, but it will not end her suffering. Rowaida Shahin, Jawad Al Shakarchi.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Drama</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E14</episode-num>
+  </programme>
+  
+<programme start="20260304150000 +0000" stop="20260304153000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Among Our Families</title>
+    <desc lang="en">Show Correspondants venture into the streets of Iraq to showcase the country's culture, taking the viewers on a journey through its cities and rural regions. Haider Abd Thamer, Haider Abu Al Abbas, Tariq Ziyad, Muhammad Hasnawi, Ali Zamil, Haider Abed Thamer.</desc>
+    <category lang="en">Entertainment</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6196.svg" />
+    <episode-num system="onscreen">E15</episode-num>
+  </programme>
+  
+<programme start="20260304153000 +0000" stop="20260304160000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Sweet And Sour</title>
+    <desc lang="en">Returning with a new season that shows the daily lives of Iraqis in a satirical and comedic perspective, highlighting family and social issues, everyday contradictions that people face in every home, and funny situations that reflect societal inconsistencies. Ehsan Dadosh, Ali Jaber.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Comedy</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E15</episode-num>
+  </programme>
+  
+<programme start="20260304160000 +0000" stop="20260304170000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Spark</title>
+    <desc lang="en">A mysterious young woman enters a household ruled by three rival wives and outdated customs, sparking a chain of events that ignites a full-blown family war and exposes long-hidden secrets. Bakr Khalid, Sulaf Jalil.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Thriller</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E15</episode-num>
+  </programme>
+  
+<programme start="20260304170000 +0000" stop="20260304180000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Our Preacher</title>
+    <desc lang="en">In a remote village, Gaber becomes a revered figure after claiming to be the long awaited preacher. Yet as the villagers place their faith in him, he lives in constant fear of exposure, haunted by an inner voice reminding him he is a fraud. Tim Hassan, Mona Wassef.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Thriller</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E15</episode-num>
+  </programme>
+  
+<programme start="20260304180000 +0000" stop="20260304190000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Hide And Seek</title>
+    <desc lang="en">In the 1970s, Wedad, a blind mother, struggles as her daughters try to take advantage of her vulnerability, exposing deep family conflicts, societal pressures, and the traditions and norms of their community. Huda Hussien, Mahmoud Boushehri.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Drama</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E15</episode-num>
+  </programme>
+  
+<programme start="20260304190000 +0000" stop="20260304200000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Hamdiya</title>
+    <desc lang="en">The poor girl Hamdiya lives a difficult life, especially after her mother's death and her father's remarriage. Between her social circumstances and her arduous work, Hamdiya is reeling. Life finally grants her a unique and unparalleled love, but it will not end her suffering. Rowaida Shahin, Jawad Al Shakarchi.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Drama</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E15</episode-num>
+  </programme>
+  
+<programme start="20260304200000 +0000" stop="20260304210000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Release</title>
+    <desc lang="en">Wrongly accused of murdering his wife, Abbas Al Rayes is sentenced to fifteen years in prison. After his release, Abbas is consumed by a thirst for revenge and a desire for salvation. Amr Saad, Hatem Salah.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Thriller</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E14</episode-num>
+  </programme>
+  
+<programme start="20260304210000 +0000" stop="20260304220000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Win The Millions</title>
+    <desc lang="en">Game Offering a great opportunity to win some cash by getting on the phone and answering questions.</desc>
+    <category lang="en">Show</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6204.svg" />
+    <episode-num system="onscreen">E15</episode-num>
+  </programme>
+  
+<programme start="20260304220000 +0000" stop="20260304223000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Ramez and The Ultimate Level</title>
+    <desc lang="en">Ramez Galal returns with a new set of pranks for Ramadan this year, where he hosts a group of entertainment and sports stars to put them through difficult challenges that test their composure. Ramez Galal.</desc>
+    <date>2026</date>
+    <category lang="en">Show</category>
+    <category lang="en">Action</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6204.svg" />
+    <episode-num system="onscreen">E13</episode-num>
+  </programme>
+  
+<programme start="20260304223000 +0000" stop="20260304230000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Among Our Families</title>
+    <desc lang="en">Show Correspondants venture into the streets of Iraq to showcase the country's culture, taking the viewers on a journey through its cities and rural regions. Haider Abd Thamer, Haider Abu Al Abbas, Tariq Ziyad, Muhammad Hasnawi, Ali Zamil, Haider Abed Thamer.</desc>
+    <category lang="en">Entertainment</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6196.svg" />
+    <episode-num system="onscreen">E15</episode-num>
+  </programme>
+  
+<programme start="20260304230000 +0000" stop="20260304233000 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Sweet And Sour</title>
+    <desc lang="en">Returning with a new season that shows the daily lives of Iraqis in a satirical and comedic perspective, highlighting family and social issues, everyday contradictions that people face in every home, and funny situations that reflect societal inconsistencies. Ehsan Dadosh, Ali Jaber.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Comedy</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E15</episode-num>
+  </programme>
+  
+<programme start="20260304233000 +0000" stop="20260305001500 +0000" channel="MBC.Iraq.iq">
+    <title lang="en">Hamdiya</title>
+    <desc lang="en">The poor girl Hamdiya lives a difficult life, especially after her mother's death and her father's remarriage. Between her social circumstances and her arduous work, Hamdiya is reeling. Life finally grants her a unique and unparalleled love, but it will not end her suffering. Rowaida Shahin, Jawad Al Shakarchi.</desc>
+    <date>2026</date>
+    <category lang="en">Series</category>
+    <category lang="en">Drama</category>
+    <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6203.svg" />
+    <episode-num system="onscreen">E15</episode-num>
   </programme>
   
 <programme start="20260301004500 +0000" stop="20260301020000 +0000" channel="AlMasriyah.eg@SD">
@@ -40144,6 +41328,895 @@
 <programme start="20250726233600 +0000" stop="20250727001500 +0000" channel="MBCBollywood.ae@SD">
     <title lang="ar">جدول البرامج غير متاح</title>
     <desc lang="ar">جدول البرامج غير متاح.</desc>
+  </programme>
+  
+<programme start="20250721003000 +0000" stop="20250721012500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">حيرة</title>
+    <desc lang="ar">S1 E18 في حكاية يتخللها الحب والانتقام، يتوجب على عاشقين مواجهة مجتمع قاسٍ، ووالد متسلط، عازم على منع زواجهما.</desc>
+  </programme>
+  
+<programme start="20250721012500 +0000" stop="20250721021000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">عائلتي تربح الموس</title>
+    <desc lang="ar">S4 E59 تتنافس عائلتين من خلال الإجابة على اسئلة معلومات عامة للفوز بجائزة مالية بقيمة عشرة ملايين دينار عراقي.</desc>
+  </programme>
+  
+<programme start="20250721021000 +0000" stop="20250721024800 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">مال القبان  موس</title>
+    <desc lang="ar">S1 E6 مال القبان  موس.</desc>
+  </programme>
+  
+<programme start="20250721024800 +0000" stop="20250721034000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">المداح: أسطورة العهد  موس</title>
+    <desc lang="ar">S5 E2 يتفاجأ المداح بهوية الشخص الذي أضرم النار حفل الزفاف، ويكتشف لاحقا امتلاكه قوة جديدة قد تغير مجرى الأحداث.</desc>
+  </programme>
+  
+<programme start="20250721034000 +0000" stop="20250721041500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">فريد  موس</title>
+    <desc lang="ar">S3 E389 لتلقين حفيده الطائش والمتهور درسا، يقرر كبير العائلة الغني هاليس آغا أن يزوجه بابنة عائلة من مسقط رأسه.</desc>
+  </programme>
+  
+<programme start="20250721041500 +0000" stop="20250721044500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">المدينة البعيدة  موس</title>
+    <desc lang="ar">S1 E24 تتجه علياء إلى القنصلية الكندية لاستخراج جواز سفر لابنها، وتتفاجأ لاحقا عندما تكتشف أنه تم اللحاق بها إلى إسطنبول.</desc>
+  </programme>
+  
+<programme start="20250721044500 +0000" stop="20250721052600 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">أمي  موس</title>
+    <desc lang="ar">S1 E52 تتعمق مشاعر لمار تجاه عامر، بينما تشهد علاقة مريم ومازن تطورا ملحوظا. من ناحية ثانية، تصبح مريم على استعداد لفعل أي شيء مندفعة باليأس على أمل العثور على ابنتها.</desc>
+  </programme>
+  
+<programme start="20250721052600 +0000" stop="20250721062000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">حيرة</title>
+    <desc lang="ar">S1 E18 في حكاية يتخللها الحب والانتقام، يتوجب على عاشقين مواجهة مجتمع قاسٍ، ووالد متسلط، عازم على منع زواجهما.</desc>
+  </programme>
+  
+<programme start="20250721062000 +0000" stop="20250721071000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">عائلتي تربح الموس</title>
+    <desc lang="ar">S4 E59 تتنافس عائلتين من خلال الإجابة على اسئلة معلومات عامة للفوز بجائزة مالية بقيمة عشرة ملايين دينار عراقي.</desc>
+  </programme>
+  
+<programme start="20250721071000 +0000" stop="20250721080000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">مال القبان  موس</title>
+    <desc lang="ar">S1 E6 مال القبان  موس.</desc>
+  </programme>
+  
+<programme start="20250721080000 +0000" stop="20250721090000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">المداح: أسطورة العهد  موس</title>
+    <desc lang="ar">S5 E2 يتفاجأ المداح بهوية الشخص الذي أضرم النار حفل الزفاف، ويكتشف لاحقا امتلاكه قوة جديدة قد تغير مجرى الأحداث.</desc>
+  </programme>
+  
+<programme start="20250721090000 +0000" stop="20250721093500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">فريد  موس</title>
+    <desc lang="ar">S3 E389 لتلقين حفيده الطائش والمتهور درسا، يقرر كبير العائلة الغني هاليس آغا أن يزوجه بابنة عائلة من مسقط رأسه.</desc>
+  </programme>
+  
+<programme start="20250721093500 +0000" stop="20250721101000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">المدينة البعيدة  موس</title>
+    <desc lang="ar">S1 E24 تتجه علياء إلى القنصلية الكندية لاستخراج جواز سفر لابنها، وتتفاجأ لاحقا عندما تكتشف أنه تم اللحاق بها إلى إسطنبول.</desc>
+  </programme>
+  
+<programme start="20250721101000 +0000" stop="20250721110000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">أمي  موس</title>
+    <desc lang="ar">S1 E52 تتعمق مشاعر لمار تجاه عامر، بينما تشهد علاقة مريم ومازن تطورا ملحوظا. من ناحية ثانية، تصبح مريم على استعداد لفعل أي شيء مندفعة باليأس على أمل العثور على ابنتها.</desc>
+  </programme>
+  
+<programme start="20250721110000 +0000" stop="20250721120000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">عائلتي تربح الموس</title>
+    <desc lang="ar">S4 E59 تتنافس عائلتين من خلال الإجابة على اسئلة معلومات عامة للفوز بجائزة مالية بقيمة عشرة ملايين دينار عراقي.</desc>
+  </programme>
+  
+<programme start="20250721120000 +0000" stop="20250721130500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">حيرة</title>
+    <desc lang="ar">S1 E18 في حكاية يتخللها الحب والانتقام، يتوجب على عاشقين مواجهة مجتمع قاسٍ، ووالد متسلط، عازم على منع زواجهما.</desc>
+  </programme>
+  
+<programme start="20250721130500 +0000" stop="20250721140000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">مال القبان  موس</title>
+    <desc lang="ar">S1 E7 مال القبان  موس.</desc>
+  </programme>
+  
+<programme start="20250721140000 +0000" stop="20250721150000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">المداح: أسطورة العهد  موس</title>
+    <desc lang="ar">S5 E3 بينما يواصل صابر بحثه عن حمزة، يكتشف أمرا لا يخطر على البال، ويجد نفسه لاحقا وجها لوجه أمام أحد خدام ست الحسن.</desc>
+  </programme>
+  
+<programme start="20250721150000 +0000" stop="20250721155500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">أمي  موس</title>
+    <desc lang="ar">S1 E53 تحاول نورة إصلاح صورتها في نظر ابنتها. تواصل مريم وسهام جهودهما الحثيثة للعثور على عبيد. أما فاطمة، فيبدو أنها على استعداد للتضحية بأعز ما تملك في سبيل حماية ابنتها.</desc>
+  </programme>
+  
+<programme start="20250721155500 +0000" stop="20250721163000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">فريد  موس</title>
+    <desc lang="ar">S3 E390 لتلقين حفيده الطائش والمتهور درسا، يقرر كبير العائلة الغني هاليس آغا أن يزوجه بابنة عائلة من مسقط رأسه.</desc>
+  </programme>
+  
+<programme start="20250721163000 +0000" stop="20250721170500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">المدينة البعيدة  موس</title>
+    <desc lang="ar">S1 E25 ترفض صداقات فكرة زواج جيهان من علياء وتطلب منها ترك المنزل. تصبح حياة علياء لاحقا على المحك.</desc>
+  </programme>
+  
+<programme start="20250721170500 +0000" stop="20250721180000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">عائلتي تربح  موس</title>
+    <desc lang="ar">S4 E88 تتنافس عائلتين من خلال الإجابة على اسئلة معلومات عامة للفوز بجائزة مالية بقيمة عشرة ملايين دينار عراقي.</desc>
+  </programme>
+  
+<programme start="20250721180000 +0000" stop="20250721190000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">حيرة</title>
+    <desc lang="ar">S1 E19 في حكاية يتخللها الحب والانتقام، يتوجب على عاشقين مواجهة مجتمع قاسٍ، ووالد متسلط، عازم على منع زواجهما.</desc>
+  </programme>
+  
+<programme start="20250721190000 +0000" stop="20250721201500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">Top Chef مش أي شيف  موس</title>
+    <desc lang="ar">S8 E1 ينطلق الموسم الثامن من البرنامج حيث يتوجب على كل متسابق تحضير طبق باستخدام أحد المنتجات المحلية.</desc>
+  </programme>
+  
+<programme start="20250721201500 +0000" stop="20250721210500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">عائلتي تربح  موس</title>
+    <desc lang="ar">S4 E88 تتنافس عائلتين من خلال الإجابة على اسئلة معلومات عامة للفوز بجائزة مالية بقيمة عشرة ملايين دينار عراقي.</desc>
+  </programme>
+  
+<programme start="20250721210500 +0000" stop="20250721214000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">فريد  موس</title>
+    <desc lang="ar">S3 E390 لتلقين حفيده الطائش والمتهور درسا، يقرر كبير العائلة الغني هاليس آغا أن يزوجه بابنة عائلة من مسقط رأسه.</desc>
+  </programme>
+  
+<programme start="20250721214000 +0000" stop="20250721221500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">المدينة البعيدة  موس</title>
+    <desc lang="ar">S1 E25 ترفض صداقات فكرة زواج جيهان من علياء وتطلب منها ترك المنزل. تصبح حياة علياء لاحقا على المحك.</desc>
+  </programme>
+  
+<programme start="20250721221500 +0000" stop="20250721225500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">مال القبان  موس</title>
+    <desc lang="ar">S1 E7 مال القبان  موس.</desc>
+  </programme>
+  
+<programme start="20250721225500 +0000" stop="20250721233900 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">المداح: أسطورة العهد  موس</title>
+    <desc lang="ar">S5 E3 بينما يواصل صابر بحثه عن حمزة، يكتشف أمرا لا يخطر على البال، ويجد نفسه لاحقا وجها لوجه أمام أحد خدام ست الحسن.</desc>
+  </programme>
+  
+<programme start="20250721233900 +0000" stop="20250722002500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">أمي  موس</title>
+    <desc lang="ar">S1 E53 تحاول نورة إصلاح صورتها في نظر ابنتها. تواصل مريم وسهام جهودهما الحثيثة للعثور على عبيد. أما فاطمة، فيبدو أنها على استعداد للتضحية بأعز ما تملك في سبيل حماية ابنتها.</desc>
+  </programme>
+  
+<programme start="20250722002500 +0000" stop="20250722012000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">حيرة</title>
+    <desc lang="ar">S1 E19 في حكاية يتخللها الحب والانتقام، يتوجب على عاشقين مواجهة مجتمع قاسٍ، ووالد متسلط، عازم على منع زواجهما.</desc>
+  </programme>
+  
+<programme start="20250722012000 +0000" stop="20250722020500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">عائلتي تربح  موس</title>
+    <desc lang="ar">S4 E88 تتنافس عائلتين من خلال الإجابة على اسئلة معلومات عامة للفوز بجائزة مالية بقيمة عشرة ملايين دينار عراقي.</desc>
+  </programme>
+  
+<programme start="20250722020500 +0000" stop="20250722025000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">مال القبان  موس</title>
+    <desc lang="ar">S1 E7 مال القبان  موس.</desc>
+  </programme>
+  
+<programme start="20250722025000 +0000" stop="20250722033400 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">المداح: أسطورة العهد  موس</title>
+    <desc lang="ar">S5 E3 بينما يواصل صابر بحثه عن حمزة، يكتشف أمرا لا يخطر على البال، ويجد نفسه لاحقا وجها لوجه أمام أحد خدام ست الحسن.</desc>
+  </programme>
+  
+<programme start="20250722033400 +0000" stop="20250722041000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">فريد  موس</title>
+    <desc lang="ar">S3 E390 لتلقين حفيده الطائش والمتهور درسا، يقرر كبير العائلة الغني هاليس آغا أن يزوجه بابنة عائلة من مسقط رأسه.</desc>
+  </programme>
+  
+<programme start="20250722041000 +0000" stop="20250722044500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">المدينة البعيدة  موس</title>
+    <desc lang="ar">S1 E25 ترفض صداقات فكرة زواج جيهان من علياء وتطلب منها ترك المنزل. تصبح حياة علياء لاحقا على المحك.</desc>
+  </programme>
+  
+<programme start="20250722044500 +0000" stop="20250722053000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">أمي  موس</title>
+    <desc lang="ar">S1 E53 تحاول نورة إصلاح صورتها في نظر ابنتها. تواصل مريم وسهام جهودهما الحثيثة للعثور على عبيد. أما فاطمة، فيبدو أنها على استعداد للتضحية بأعز ما تملك في سبيل حماية ابنتها.</desc>
+  </programme>
+  
+<programme start="20250722053000 +0000" stop="20250722062500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">حيرة</title>
+    <desc lang="ar">S1 E19 في حكاية يتخللها الحب والانتقام، يتوجب على عاشقين مواجهة مجتمع قاسٍ، ووالد متسلط، عازم على منع زواجهما.</desc>
+  </programme>
+  
+<programme start="20250722062500 +0000" stop="20250723060000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">جدول البرامج غير متاح</title>
+    <desc lang="ar">جدول البرامج غير متاح.</desc>
+  </programme>
+  
+<programme start="20250723060000 +0000" stop="20250723070000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">عائلتي تربح  موس</title>
+    <desc lang="ar">S4 E89 تتنافس عائلتين من خلال الإجابة على اسئلة معلومات عامة للفوز بجائزة مالية بقيمة عشرة ملايين دينار عراقي.</desc>
+  </programme>
+  
+<programme start="20250723070000 +0000" stop="20250723080000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">مال القبان  موس</title>
+    <desc lang="ar">S1 E8 مال القبان  موس.</desc>
+  </programme>
+  
+<programme start="20250723080000 +0000" stop="20250723090000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">المداح: أسطورة العهد  موس</title>
+    <desc lang="ar">S5 E4 يشارك حسن عائلته شكوكه حول تصرفات صابر بعد عودته، بينما يزداد الغموض حول المرض المنتشر في وهران. أما رحاب، فتعثر على كتاب للسحر في منزلها وتحاول أن تجد تفسيرا للأمر.</desc>
+  </programme>
+  
+<programme start="20250723090000 +0000" stop="20250723093000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">فريد  موس</title>
+    <desc lang="ar">S3 E391 لتلقين حفيده الطائش والمتهور درسا، يقرر كبير العائلة الغني هاليس آغا أن يزوجه بابنة عائلة من مسقط رأسه.</desc>
+  </programme>
+  
+<programme start="20250723093000 +0000" stop="20250723100000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">المدينة البعيدة  موس</title>
+    <desc lang="ar">S1 E26 تضع صداقات علياء في موقف خطير، بينما يسارع جيهان لإنقاذها بمساعدة من مينة.</desc>
+  </programme>
+  
+<programme start="20250723100000 +0000" stop="20250723110000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">أمي  موس</title>
+    <desc lang="ar">S1 E54 بانتظار مريم مفاجأة غير سارة، بينما تسابق الزمن للوصول إلى بسمة. أما الأخيرة، فتحاول مساعدة عبيد، الذي يبدو أنه يعيش أحلك أيامه.</desc>
+  </programme>
+  
+<programme start="20250723110000 +0000" stop="20250723120000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">عائلتي تربح  موس</title>
+    <desc lang="ar">S4 E89 تتنافس عائلتين من خلال الإجابة على اسئلة معلومات عامة للفوز بجائزة مالية بقيمة عشرة ملايين دينار عراقي.</desc>
+  </programme>
+  
+<programme start="20250723120000 +0000" stop="20250723130000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">حيرة</title>
+    <desc lang="ar">S1 E20 في حكاية يتخللها الحب والانتقام، يتوجب على عاشقين مواجهة مجتمع قاسٍ، ووالد متسلط، عازم على منع زواجهما.</desc>
+  </programme>
+  
+<programme start="20250723130000 +0000" stop="20250723140000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">مال القبان  موس</title>
+    <desc lang="ar">S1 E9 مال القبان  موس.</desc>
+  </programme>
+  
+<programme start="20250723140000 +0000" stop="20250723150000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">المداح: أسطورة العهد  موس</title>
+    <desc lang="ar">S5 E5 يستمر صابر في مهمته للبحث عن علاج للمرض الغامض، وسط محاولات نائلة لمنعه من كشف الحقيقة. لاحقا، يجد نفسه في مواجهة مرعبة مع الملك الأحمر أمام شجرة الدم.</desc>
+  </programme>
+  
+<programme start="20250723150000 +0000" stop="20250723160000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">أمي  موس</title>
+    <desc lang="ar">S1 E55 يطرق الحب باب قلب لمار، فيما تفجر رزان مفاجأة مدوية أمام مريم. أما عبيد الجريح واليائس، فتتملكه رغبة عارمة بالانتقام من الأخيرة.</desc>
+  </programme>
+  
+<programme start="20250723160000 +0000" stop="20250723163000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">فريد  موس</title>
+    <desc lang="ar">S3 E392 لتلقين حفيده الطائش والمتهور درسا، يقرر كبير العائلة الغني هاليس آغا أن يزوجه بابنة عائلة من مسقط رأسه.</desc>
+  </programme>
+  
+<programme start="20250723163000 +0000" stop="20250723170000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">المدينة البعيدة  موس</title>
+    <desc lang="ar">S1 E27 بينما تتعافى علياء من إصابتها، يقرر جيهان أن يخفي الحقيقة عنها. أما أجمل فيحاول الوصول إلى علياء.</desc>
+  </programme>
+  
+<programme start="20250723170000 +0000" stop="20250723180000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">عائلتي تربح الموس</title>
+    <desc lang="ar">S4 E21 تتنافس عائلتين من خلال الإجابة على اسئلة معلومات عامة للفوز بجائزة مالية بقيمة عشرة ملايين دينار عراقي.</desc>
+  </programme>
+  
+<programme start="20250723180000 +0000" stop="20250723190000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">حيرة</title>
+    <desc lang="ar">S1 E21 في حكاية يتخللها الحب والانتقام، يتوجب على عاشقين مواجهة مجتمع قاسٍ، ووالد متسلط، عازم على منع زواجهما.</desc>
+  </programme>
+  
+<programme start="20250723190000 +0000" stop="20250723200500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">Top Chef مش أي شيف  موس</title>
+    <desc lang="ar">S8 E3 ينطلق الموسم الثامن من البرنامج حيث يتوجب على كل متسابق تحضير طبق باستخدام أحد المنتجات المحلية.</desc>
+  </programme>
+  
+<programme start="20250723200500 +0000" stop="20250723210000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">عائلتي تربح الموس</title>
+    <desc lang="ar">S4 E21 تتنافس عائلتين من خلال الإجابة على اسئلة معلومات عامة للفوز بجائزة مالية بقيمة عشرة ملايين دينار عراقي.</desc>
+  </programme>
+  
+<programme start="20250723210000 +0000" stop="20250723213000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">فريد  موس</title>
+    <desc lang="ar">S3 E392 لتلقين حفيده الطائش والمتهور درسا، يقرر كبير العائلة الغني هاليس آغا أن يزوجه بابنة عائلة من مسقط رأسه.</desc>
+  </programme>
+  
+<programme start="20250723213000 +0000" stop="20250723220000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">المدينة البعيدة  موس</title>
+    <desc lang="ar">S1 E27 بينما تتعافى علياء من إصابتها، يقرر جيهان أن يخفي الحقيقة عنها. أما أجمل فيحاول الوصول إلى علياء.</desc>
+  </programme>
+  
+<programme start="20250723220000 +0000" stop="20250723224500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">مال القبان  موس</title>
+    <desc lang="ar">S1 E9 مال القبان  موس.</desc>
+  </programme>
+  
+<programme start="20250723224500 +0000" stop="20250723233000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">المداح: أسطورة العهد  موس</title>
+    <desc lang="ar">S5 E5 يستمر صابر في مهمته للبحث عن علاج للمرض الغامض، وسط محاولات نائلة لمنعه من كشف الحقيقة. لاحقا، يجد نفسه في مواجهة مرعبة مع الملك الأحمر أمام شجرة الدم.</desc>
+  </programme>
+  
+<programme start="20250723233000 +0000" stop="20250724001500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">أمي  موس</title>
+    <desc lang="ar">S1 E55 يطرق الحب باب قلب لمار، فيما تفجر رزان مفاجأة مدوية أمام مريم. أما عبيد الجريح واليائس، فتتملكه رغبة عارمة بالانتقام من الأخيرة.</desc>
+  </programme>
+  
+<programme start="20250724001500 +0000" stop="20250724010000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">حيرة</title>
+    <desc lang="ar">S1 E21 في حكاية يتخللها الحب والانتقام، يتوجب على عاشقين مواجهة مجتمع قاسٍ، ووالد متسلط، عازم على منع زواجهما.</desc>
+  </programme>
+  
+<programme start="20250724010000 +0000" stop="20250724020000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">عائلتي تربح الموس</title>
+    <desc lang="ar">S4 E21 تتنافس عائلتين من خلال الإجابة على اسئلة معلومات عامة للفوز بجائزة مالية بقيمة عشرة ملايين دينار عراقي.</desc>
+  </programme>
+  
+<programme start="20250724020000 +0000" stop="20250724024500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">مال القبان  موس</title>
+    <desc lang="ar">S1 E9 مال القبان  موس.</desc>
+  </programme>
+  
+<programme start="20250724024500 +0000" stop="20250724033000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">المداح: أسطورة العهد  موس</title>
+    <desc lang="ar">S5 E5 يستمر صابر في مهمته للبحث عن علاج للمرض الغامض، وسط محاولات نائلة لمنعه من كشف الحقيقة. لاحقا، يجد نفسه في مواجهة مرعبة مع الملك الأحمر أمام شجرة الدم.</desc>
+  </programme>
+  
+<programme start="20250724033000 +0000" stop="20250724040000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">فريد  موس</title>
+    <desc lang="ar">S3 E392 لتلقين حفيده الطائش والمتهور درسا، يقرر كبير العائلة الغني هاليس آغا أن يزوجه بابنة عائلة من مسقط رأسه.</desc>
+  </programme>
+  
+<programme start="20250724040000 +0000" stop="20250724043000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">المدينة البعيدة  موس</title>
+    <desc lang="ar">S1 E27 بينما تتعافى علياء من إصابتها، يقرر جيهان أن يخفي الحقيقة عنها. أما أجمل فيحاول الوصول إلى علياء.</desc>
+  </programme>
+<programme start="20250724043000 +0000" stop="20250724051500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">أمي  موس</title>
+    <desc lang="ar">S1 E55 يطرق الحب باب قلب لمار، فيما تفجر رزان مفاجأة مدوية أمام مريم. أما عبيد الجريح واليائس، فتتملكه رغبة عارمة بالانتقام من الأخيرة.</desc>
+  </programme>
+  
+<programme start="20250724051500 +0000" stop="20250724060000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">حيرة</title>
+    <desc lang="ar">S1 E21 في حكاية يتخللها الحب والانتقام، يتوجب على عاشقين مواجهة مجتمع قاسٍ، ووالد متسلط، عازم على منع زواجهما.</desc>
+  </programme>
+  
+<programme start="20250724060000 +0000" stop="20250724065400 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">عائلتي تربح الموس</title>
+    <desc lang="ar">S4 E21 تتنافس عائلتين من خلال الإجابة على اسئلة معلومات عامة للفوز بجائزة مالية بقيمة عشرة ملايين دينار عراقي.</desc>
+  </programme>
+  
+<programme start="20250724065400 +0000" stop="20250724070000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">جدول البرامج غير متاح</title>
+    <desc lang="ar">جدول البرامج غير متاح.</desc>
+  </programme>
+  
+<programme start="20250724070000 +0000" stop="20250724074200 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">مال القبان  موس</title>
+    <desc lang="ar">S1 E9 مال القبان  موس.</desc>
+  </programme>
+  
+<programme start="20250724074200 +0000" stop="20250724080000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">جدول البرامج غير متاح</title>
+    <desc lang="ar">جدول البرامج غير متاح.</desc>
+  </programme>
+  
+<programme start="20250724080000 +0000" stop="20250724084800 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">المداح: أسطورة العهد  موس</title>
+    <desc lang="ar">S5 E5 يستمر صابر في مهمته للبحث عن علاج للمرض الغامض، وسط محاولات نائلة لمنعه من كشف الحقيقة. لاحقا، يجد نفسه في مواجهة مرعبة مع الملك الأحمر أمام شجرة الدم.</desc>
+  </programme>
+  
+<programme start="20250724084800 +0000" stop="20250724090000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">جدول البرامج غير متاح</title>
+    <desc lang="ar">جدول البرامج غير متاح.</desc>
+  </programme>
+  
+<programme start="20250724090000 +0000" stop="20250724093000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">فريد  موس</title>
+    <desc lang="ar">S3 E392 لتلقين حفيده الطائش والمتهور درسا، يقرر كبير العائلة الغني هاليس آغا أن يزوجه بابنة عائلة من مسقط رأسه.</desc>
+  </programme>
+  
+<programme start="20250724093000 +0000" stop="20250724100000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">المدينة البعيدة  موس</title>
+    <desc lang="ar">S1 E27 بينما تتعافى علياء من إصابتها، يقرر جيهان أن يخفي الحقيقة عنها. أما أجمل فيحاول الوصول إلى علياء.</desc>
+  </programme>
+  
+<programme start="20250724100000 +0000" stop="20250724104600 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">أمي  موس</title>
+    <desc lang="ar">S1 E55 يطرق الحب باب قلب لمار، فيما تفجر رزان مفاجأة مدوية أمام مريم. أما عبيد الجريح واليائس، فتتملكه رغبة عارمة بالانتقام من الأخيرة.</desc>
+  </programme>
+  
+<programme start="20250724104600 +0000" stop="20250724110000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">جدول البرامج غير متاح</title>
+    <desc lang="ar">جدول البرامج غير متاح.</desc>
+  </programme>
+  
+<programme start="20250724110000 +0000" stop="20250724115400 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">عائلتي تربح الموس</title>
+    <desc lang="ar">S4 E21 تتنافس عائلتين من خلال الإجابة على اسئلة معلومات عامة للفوز بجائزة مالية بقيمة عشرة ملايين دينار عراقي.</desc>
+  </programme>
+  
+<programme start="20250724115400 +0000" stop="20250724120000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">جدول البرامج غير متاح</title>
+    <desc lang="ar">جدول البرامج غير متاح.</desc>
+  </programme>
+  
+<programme start="20250724120000 +0000" stop="20250724125500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">حيرة</title>
+    <desc lang="ar">S1 E21 في حكاية يتخللها الحب والانتقام، يتوجب على عاشقين مواجهة مجتمع قاسٍ، ووالد متسلط، عازم على منع زواجهما.</desc>
+  </programme>
+  
+<programme start="20250724125500 +0000" stop="20250724130000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">جدول البرامج غير متاح</title>
+    <desc lang="ar">جدول البرامج غير متاح.</desc>
+  </programme>
+  
+<programme start="20250724130000 +0000" stop="20250724134400 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">مال القبان  موس</title>
+    <desc lang="ar">S1 E10 مال القبان  موس.</desc>
+  </programme>
+  
+<programme start="20250724134400 +0000" stop="20250724140000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">جدول البرامج غير متاح</title>
+    <desc lang="ar">جدول البرامج غير متاح.</desc>
+  </programme>
+  
+<programme start="20250724140000 +0000" stop="20250724145000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">المداح: أسطورة العهد  موس</title>
+    <desc lang="ar">S5 E6 بعد أن تجمعهما مواجهة تحبس الأنفاس، يكشف الملك الأحمر أمام صابر عن نواياه الحقيقية. لاحقا، يتلقى فخري زيارة شيطانية من ست الحسن، التي تنوي تعطيل مساعي صابر بكل ما أوتيت من شر.</desc>
+  </programme>
+  
+<programme start="20250724145000 +0000" stop="20250724150000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">جدول البرامج غير متاح</title>
+    <desc lang="ar">جدول البرامج غير متاح.</desc>
+  </programme>
+  
+<programme start="20250724150000 +0000" stop="20250724154900 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">أمي  موس</title>
+    <desc lang="ar">S1 E56 بعد أن ينصب لها عبيد فخا جديدا، تصبح سهام في حالة نفسية سيئة. من ناحية أخرى، يزداد قلق فاطمة ونورة على مريم.</desc>
+  </programme>
+  
+<programme start="20250724154900 +0000" stop="20250724160000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">جدول البرامج غير متاح</title>
+    <desc lang="ar">جدول البرامج غير متاح.</desc>
+  </programme>
+  
+<programme start="20250724160000 +0000" stop="20250724163000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">فريد  موس</title>
+    <desc lang="ar">S3 E393 لتلقين حفيده الطائش والمتهور درسا، يقرر كبير العائلة الغني هاليس آغا أن يزوجه بابنة عائلة من مسقط رأسه.</desc>
+  </programme>
+  
+<programme start="20250724163000 +0000" stop="20250724170000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">المدينة البعيدة  موس</title>
+    <desc lang="ar">S1 E28 يمنع شاهين زيرين من التحدث إلى كايا. تهدد صداقات جيهان باتخاذ إجراءات قاسية بحقه في حال أراد الزواج من علياء.</desc>
+  </programme>
+  
+<programme start="20250724170000 +0000" stop="20250724175100 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">عائلتي تربح الموس</title>
+    <desc lang="ar">S4 E22 تتنافس عائلتين من خلال الإجابة على اسئلة معلومات عامة للفوز بجائزة مالية بقيمة عشرة ملايين دينار عراقي.</desc>
+  </programme>
+  
+<programme start="20250724175100 +0000" stop="20250724180000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">جدول البرامج غير متاح</title>
+    <desc lang="ar">جدول البرامج غير متاح.</desc>
+  </programme>
+  
+<programme start="20250724180000 +0000" stop="20250724190000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">حيرة</title>
+    <desc lang="ar">S1 E22 في حكاية يتخللها الحب والانتقام، يتوجب على عاشقين مواجهة مجتمع قاسٍ، ووالد متسلط، عازم على منع زواجهما.</desc>
+  </programme>
+  
+<programme start="20250724190000 +0000" stop="20250724200000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">Top Chef مش أي شيف  موس</title>
+    <desc lang="ar">S8 E4 ينطلق الموسم الثامن من البرنامج حيث يتوجب على كل متسابق تحضير طبق باستخدام أحد المنتجات المحلية.</desc>
+  </programme>
+  
+<programme start="20250724200000 +0000" stop="20250724205100 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">عائلتي تربح الموس</title>
+    <desc lang="ar">S4 E22 تتنافس عائلتين من خلال الإجابة على اسئلة معلومات عامة للفوز بجائزة مالية بقيمة عشرة ملايين دينار عراقي.</desc>
+  </programme>
+  
+<programme start="20250724205100 +0000" stop="20250724210000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">جدول البرامج غير متاح</title>
+    <desc lang="ar">جدول البرامج غير متاح.</desc>
+  </programme>
+  
+<programme start="20250724210000 +0000" stop="20250724213000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">فريد  موس</title>
+    <desc lang="ar">S3 E393 لتلقين حفيده الطائش والمتهور درسا، يقرر كبير العائلة الغني هاليس آغا أن يزوجه بابنة عائلة من مسقط رأسه.</desc>
+  </programme>
+  
+<programme start="20250724213000 +0000" stop="20250724220000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">المدينة البعيدة  موس</title>
+    <desc lang="ar">S1 E28 يمنع شاهين زيرين من التحدث إلى كايا. تهدد صداقات جيهان باتخاذ إجراءات قاسية بحقه في حال أراد الزواج من علياء.</desc>
+  </programme>
+  
+<programme start="20250724220000 +0000" stop="20250724224500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">مال القبان  موس</title>
+    <desc lang="ar">S1 E10 مال القبان  موس.</desc>
+  </programme>
+  
+<programme start="20250724224500 +0000" stop="20250724233000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">المداح: أسطورة العهد  موس</title>
+    <desc lang="ar">S5 E6 بعد أن تجمعهما مواجهة تحبس الأنفاس، يكشف الملك الأحمر أمام صابر عن نواياه الحقيقية. لاحقا، يتلقى فخري زيارة شيطانية من ست الحسن، التي تنوي تعطيل مساعي صابر بكل ما أوتيت من شر.</desc>
+  </programme>
+  
+<programme start="20250724233000 +0000" stop="20250725001500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">أمي  موس</title>
+    <desc lang="ar">S1 E56 بعد أن ينصب لها عبيد فخا جديدا، تصبح سهام في حالة نفسية سيئة. من ناحية أخرى، يزداد قلق فاطمة ونورة على مريم.</desc>
+  </programme>
+  
+<programme start="20250725001500 +0000" stop="20250725010000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">حيرة</title>
+    <desc lang="ar">S1 E22 في حكاية يتخللها الحب والانتقام، يتوجب على عاشقين مواجهة مجتمع قاسٍ، ووالد متسلط، عازم على منع زواجهما.</desc>
+  </programme>
+  
+<programme start="20250725010000 +0000" stop="20250725015100 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">عائلتي تربح الموس</title>
+    <desc lang="ar">S4 E22 تتنافس عائلتين من خلال الإجابة على اسئلة معلومات عامة للفوز بجائزة مالية بقيمة عشرة ملايين دينار عراقي.</desc>
+  </programme>
+  
+<programme start="20250725015100 +0000" stop="20250725020000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">جدول البرامج غير متاح</title>
+    <desc lang="ar">جدول البرامج غير متاح.</desc>
+  </programme>
+  
+<programme start="20250725020000 +0000" stop="20250725024500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">مال القبان  موس</title>
+    <desc lang="ar">S1 E10 مال القبان  موس.</desc>
+  </programme>
+  
+<programme start="20250725024500 +0000" stop="20250725033000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">المداح: أسطورة العهد  موس</title>
+    <desc lang="ar">S5 E6 بعد أن تجمعهما مواجهة تحبس الأنفاس، يكشف الملك الأحمر أمام صابر عن نواياه الحقيقية. لاحقا، يتلقى فخري زيارة شيطانية من ست الحسن، التي تنوي تعطيل مساعي صابر بكل ما أوتيت من شر.</desc>
+  </programme>
+  
+<programme start="20250725033000 +0000" stop="20250725040000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">فريد  موس</title>
+    <desc lang="ar">S3 E393 لتلقين حفيده الطائش والمتهور درسا، يقرر كبير العائلة الغني هاليس آغا أن يزوجه بابنة عائلة من مسقط رأسه.</desc>
+  </programme>
+  
+<programme start="20250725040000 +0000" stop="20250725043000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">المدينة البعيدة  موس</title>
+    <desc lang="ar">S1 E28 يمنع شاهين زيرين من التحدث إلى كايا. تهدد صداقات جيهان باتخاذ إجراءات قاسية بحقه في حال أراد الزواج من علياء.</desc>
+  </programme>
+  
+<programme start="20250725043000 +0000" stop="20250725051500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">أمي  موس</title>
+    <desc lang="ar">S1 E56 بعد أن ينصب لها عبيد فخا جديدا، تصبح سهام في حالة نفسية سيئة. من ناحية أخرى، يزداد قلق فاطمة ونورة على مريم.</desc>
+  </programme>
+  
+<programme start="20250725051500 +0000" stop="20250725060000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">حيرة</title>
+    <desc lang="ar">S1 E22 في حكاية يتخللها الحب والانتقام، يتوجب على عاشقين مواجهة مجتمع قاسٍ، ووالد متسلط، عازم على منع زواجهما.</desc>
+  </programme>
+  
+<programme start="20250725060000 +0000" stop="20250725065100 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">عائلتي تربح الموس</title>
+    <desc lang="ar">S4 E22 تتنافس عائلتين من خلال الإجابة على اسئلة معلومات عامة للفوز بجائزة مالية بقيمة عشرة ملايين دينار عراقي.</desc>
+  </programme>
+  
+<programme start="20250725065100 +0000" stop="20250725070000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">جدول البرامج غير متاح</title>
+    <desc lang="ar">جدول البرامج غير متاح.</desc>
+  </programme>
+  
+<programme start="20250725070000 +0000" stop="20250725074400 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">مال القبان  موس</title>
+    <desc lang="ar">S1 E10 مال القبان  موس.</desc>
+  </programme>
+  
+<programme start="20250725074400 +0000" stop="20250725080000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">جدول البرامج غير متاح</title>
+    <desc lang="ar">جدول البرامج غير متاح.</desc>
+  </programme>
+  
+<programme start="20250725080000 +0000" stop="20250725085000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">المداح: أسطورة العهد  موس</title>
+    <desc lang="ar">S5 E6 بعد أن تجمعهما مواجهة تحبس الأنفاس، يكشف الملك الأحمر أمام صابر عن نواياه الحقيقية. لاحقا، يتلقى فخري زيارة شيطانية من ست الحسن، التي تنوي تعطيل مساعي صابر بكل ما أوتيت من شر.</desc>
+  </programme>
+  
+<programme start="20250725085000 +0000" stop="20250725090000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">جدول البرامج غير متاح</title>
+    <desc lang="ar">جدول البرامج غير متاح.</desc>
+  </programme>
+  
+<programme start="20250725090000 +0000" stop="20250725093000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">بين أهلنا  موس</title>
+    <desc lang="ar">S7 E15 عقرة.</desc>
+  </programme>
+  
+<programme start="20250725093000 +0000" stop="20250725100000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">بين أهلنا  موس</title>
+    <desc lang="ar">S7 E16 الصويرة.</desc>
+  </programme>
+  
+<programme start="20250725100000 +0000" stop="20250725110000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">Top Chef مش أي شيف  موس</title>
+    <desc lang="ar">S8 E1 ينطلق الموسم الثامن من البرنامج حيث يتوجب على كل متسابق تحضير طبق باستخدام أحد المنتجات المحلية.</desc>
+  </programme>
+  
+<programme start="20250725110000 +0000" stop="20250725115100 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">عائلتي تربح الموس</title>
+    <desc lang="ar">S4 E22 تتنافس عائلتين من خلال الإجابة على اسئلة معلومات عامة للفوز بجائزة مالية بقيمة عشرة ملايين دينار عراقي.</desc>
+  </programme>
+  
+<programme start="20250725115100 +0000" stop="20250725120000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">جدول البرامج غير متاح</title>
+    <desc lang="ar">جدول البرامج غير متاح.</desc>
+  </programme>
+  
+<programme start="20250725120000 +0000" stop="20250725130000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">حيرة</title>
+    <desc lang="ar">S1 E22 في حكاية يتخللها الحب والانتقام، يتوجب على عاشقين مواجهة مجتمع قاسٍ، ووالد متسلط، عازم على منع زواجهما.</desc>
+  </programme>
+  
+<programme start="20250725130000 +0000" stop="20250725134500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">مال القبان  موس</title>
+    <desc lang="ar">S1 E11 مال القبان  موس.</desc>
+  </programme>
+  
+<programme start="20250725134500 +0000" stop="20250725140000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">جدول البرامج غير متاح</title>
+    <desc lang="ar">جدول البرامج غير متاح.</desc>
+  </programme>
+  
+<programme start="20250725140000 +0000" stop="20250725145000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">المداح: أسطورة العهد  موس</title>
+    <desc lang="ar">S5 E7 يقرر الملك الأحمر زيارة خضر ورائحة الموت تفوح منه، بينما يكتشف صابر عملا سحريا خطيرا في المقبرة يرتبط بفتاة غامضة.</desc>
+  </programme>
+  
+<programme start="20250725145000 +0000" stop="20250725150000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">جدول البرامج غير متاح</title>
+    <desc lang="ar">جدول البرامج غير متاح.</desc>
+  </programme>
+  
+<programme start="20250725150000 +0000" stop="20250725165500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">خارج على القانون</title>
+    <desc lang="ar">يشهد عمر على مقتل والده خلال عملية لمكافحة المخدرات ويتولى تربيته أحد أكبر زعماء العصابات، فقط ليصبح هو نفسه تاجر ممنوعات.</desc>
+  </programme>
+  
+<programme start="20250725165500 +0000" stop="20250725170000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">جدول البرامج غير متاح</title>
+    <desc lang="ar">جدول البرامج غير متاح.</desc>
+  </programme>
+  
+<programme start="20250725170000 +0000" stop="20250725175500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">عائلتي تربح الموس</title>
+    <desc lang="ar">S4 E23 تتنافس عائلتين من خلال الإجابة على اسئلة معلومات عامة للفوز بجائزة مالية بقيمة عشرة ملايين دينار عراقي.</desc>
+  </programme>
+  
+<programme start="20250725175500 +0000" stop="20250725180000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">جدول البرامج غير متاح</title>
+    <desc lang="ar">جدول البرامج غير متاح.</desc>
+  </programme>
+  
+<programme start="20250725180000 +0000" stop="20250725185500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">حيرة</title>
+    <desc lang="ar">S1 E23 في حكاية يتخللها الحب والانتقام، يتوجب على عاشقين مواجهة مجتمع قاسٍ، ووالد متسلط، عازم على منع زواجهما.</desc>
+  </programme>
+  
+<programme start="20250725185500 +0000" stop="20250725190000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">جدول البرامج غير متاح</title>
+    <desc lang="ar">جدول البرامج غير متاح.</desc>
+  </programme>
+  
+<programme start="20250725190000 +0000" stop="20250725200000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">Top Chef مش أي شيف  موس</title>
+    <desc lang="ar">S8 E5 ينطلق الموسم الثامن من البرنامج حيث يتوجب على كل متسابق تحضير طبق باستخدام أحد المنتجات المحلية.</desc>
+  </programme>
+  
+<programme start="20250725200000 +0000" stop="20250725205500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">عائلتي تربح الموس</title>
+    <desc lang="ar">S4 E23 تتنافس عائلتين من خلال الإجابة على اسئلة معلومات عامة للفوز بجائزة مالية بقيمة عشرة ملايين دينار عراقي.</desc>
+  </programme>
+  
+<programme start="20250725205500 +0000" stop="20250725210000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">جدول البرامج غير متاح</title>
+    <desc lang="ar">جدول البرامج غير متاح.</desc>
+  </programme>
+  
+<programme start="20250725210000 +0000" stop="20250725212500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">بين أهلنا  موس</title>
+    <desc lang="ar">S7 E16 الصويرة.</desc>
+  </programme>
+  
+<programme start="20250725212500 +0000" stop="20250725215500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">بين أهلنا  موس</title>
+    <desc lang="ar">S7 E17 الموصل 2.</desc>
+  </programme>
+  
+<programme start="20250725215500 +0000" stop="20250725220000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">جدول البرامج غير متاح</title>
+    <desc lang="ar">جدول البرامج غير متاح.</desc>
+  </programme>
+  
+<programme start="20250725220000 +0000" stop="20250725224500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">مال القبان  موس</title>
+    <desc lang="ar">S1 E11 مال القبان  موس.</desc>
+  </programme>
+  
+<programme start="20250725224500 +0000" stop="20250725233000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">المداح: أسطورة العهد  موس</title>
+    <desc lang="ar">S5 E7 يقرر الملك الأحمر زيارة خضر ورائحة الموت تفوح منه، بينما يكتشف صابر عملا سحريا خطيرا في المقبرة يرتبط بفتاة غامضة.</desc>
+  </programme>
+  
+<programme start="20250725233000 +0000" stop="20250726001500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">Top Chef مش أي شيف  موس</title>
+    <desc lang="ar">S8 E4 ينطلق الموسم الثامن من البرنامج حيث يتوجب على كل متسابق تحضير طبق باستخدام أحد المنتجات المحلية.</desc>
+  </programme>
+  
+<programme start="20250726001500 +0000" stop="20250726010000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">حيرة</title>
+    <desc lang="ar">S1 E23 في حكاية يتخللها الحب والانتقام، يتوجب على عاشقين مواجهة مجتمع قاسٍ، ووالد متسلط، عازم على منع زواجهما.</desc>
+  </programme>
+  
+<programme start="20250726010000 +0000" stop="20250726015500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">عائلتي تربح الموس</title>
+    <desc lang="ar">S4 E23 تتنافس عائلتين من خلال الإجابة على اسئلة معلومات عامة للفوز بجائزة مالية بقيمة عشرة ملايين دينار عراقي.</desc>
+  </programme>
+  
+<programme start="20250726015500 +0000" stop="20250726020000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">جدول البرامج غير متاح</title>
+    <desc lang="ar">جدول البرامج غير متاح.</desc>
+  </programme>
+  
+<programme start="20250726020000 +0000" stop="20250726024500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">مال القبان  موس</title>
+    <desc lang="ar">S1 E11 مال القبان  موس.</desc>
+  </programme>
+  
+<programme start="20250726024500 +0000" stop="20250726033000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">المداح: أسطورة العهد  موس</title>
+    <desc lang="ar">S5 E7 يقرر الملك الأحمر زيارة خضر ورائحة الموت تفوح منه، بينما يكتشف صابر عملا سحريا خطيرا في المقبرة يرتبط بفتاة غامضة.</desc>
+  </programme>
+  
+<programme start="20250726033000 +0000" stop="20250726051500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">خارج على القانون</title>
+    <desc lang="ar">يشهد عمر على مقتل والده خلال عملية لمكافحة المخدرات ويتولى تربيته أحد أكبر زعماء العصابات، فقط ليصبح هو نفسه تاجر ممنوعات.</desc>
+  </programme>
+  
+<programme start="20250726051500 +0000" stop="20250726060000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">حيرة</title>
+    <desc lang="ar">S1 E23 في حكاية يتخللها الحب والانتقام، يتوجب على عاشقين مواجهة مجتمع قاسٍ، ووالد متسلط، عازم على منع زواجهما.</desc>
+  </programme>
+  
+<programme start="20250726060000 +0000" stop="20250726065500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">عائلتي تربح الموس</title>
+    <desc lang="ar">S4 E23 تتنافس عائلتين من خلال الإجابة على اسئلة معلومات عامة للفوز بجائزة مالية بقيمة عشرة ملايين دينار عراقي.</desc>
+  </programme>
+  
+<programme start="20250726065500 +0000" stop="20250726070000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">جدول البرامج غير متاح</title>
+    <desc lang="ar">جدول البرامج غير متاح.</desc>
+  </programme>
+  
+<programme start="20250726070000 +0000" stop="20250726074500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">مال القبان  موس</title>
+    <desc lang="ar">S1 E11 مال القبان  موس.</desc>
+  </programme>
+  
+<programme start="20250726074500 +0000" stop="20250726080000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">جدول البرامج غير متاح</title>
+    <desc lang="ar">جدول البرامج غير متاح.</desc>
+  </programme>
+  
+<programme start="20250726080000 +0000" stop="20250726085000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">المداح: أسطورة العهد  موس</title>
+    <desc lang="ar">S5 E7 يقرر الملك الأحمر زيارة خضر ورائحة الموت تفوح منه، بينما يكتشف صابر عملا سحريا خطيرا في المقبرة يرتبط بفتاة غامضة.</desc>
+  </programme>
+  
+<programme start="20250726085000 +0000" stop="20250726090000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">جدول البرامج غير متاح</title>
+    <desc lang="ar">جدول البرامج غير متاح.</desc>
+  </programme>
+  
+<programme start="20250726090000 +0000" stop="20250726093000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">بين أهلنا  موس</title>
+    <desc lang="ar">S7 E17 الموصل 2.</desc>
+  </programme>
+  
+<programme start="20250726093000 +0000" stop="20250726100000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">بين أهلنا  موس</title>
+    <desc lang="ar">S7 E18 كركوك.</desc>
+  </programme>
+  
+<programme start="20250726100000 +0000" stop="20250726110000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">Top Chef مش أي شيف  موس</title>
+    <desc lang="ar">S8 E2 ينطلق الموسم الثامن من البرنامج حيث يتوجب على كل متسابق تحضير طبق باستخدام أحد المنتجات المحلية.</desc>
+  </programme>
+  
+<programme start="20250726110000 +0000" stop="20250726115500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">عائلتي تربح الموس</title>
+    <desc lang="ar">S4 E23 تتنافس عائلتين من خلال الإجابة على اسئلة معلومات عامة للفوز بجائزة مالية بقيمة عشرة ملايين دينار عراقي.</desc>
+  </programme>
+  
+<programme start="20250726115500 +0000" stop="20250726120000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">جدول البرامج غير متاح</title>
+    <desc lang="ar">جدول البرامج غير متاح.</desc>
+  </programme>
+  
+<programme start="20250726120000 +0000" stop="20250726125500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">حيرة</title>
+    <desc lang="ar">S1 E23 في حكاية يتخللها الحب والانتقام، يتوجب على عاشقين مواجهة مجتمع قاسٍ، ووالد متسلط، عازم على منع زواجهما.</desc>
+  </programme>
+  
+<programme start="20250726125500 +0000" stop="20250726130000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">جدول البرامج غير متاح</title>
+    <desc lang="ar">جدول البرامج غير متاح.</desc>
+  </programme>
+  
+<programme start="20250726130000 +0000" stop="20250726134400 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">مال القبان  موس</title>
+    <desc lang="ar">S1 E12 مال القبان  موس.</desc>
+  </programme>
+  
+<programme start="20250726134400 +0000" stop="20250726140000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">جدول البرامج غير متاح</title>
+    <desc lang="ar">جدول البرامج غير متاح.</desc>
+  </programme>
+  
+<programme start="20250726140000 +0000" stop="20250726145000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">المداح: أسطورة العهد  موس</title>
+    <desc lang="ar">S5 E8 يواجه جاد كيانا شريرا يسكن جسد طفل. لاحقا، يتلقى حسن صدمة عندما يقرر الذهاب إلى مقام صابر. أما الأخير، فيكثف مساعيه لكشف أسرار مشالي الدجال.</desc>
+  </programme>
+  
+<programme start="20250726145000 +0000" stop="20250726150000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">جدول البرامج غير متاح</title>
+    <desc lang="ar">جدول البرامج غير متاح.</desc>
+  </programme>
+  
+<programme start="20250726150000 +0000" stop="20250726165000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">أفريكانو</title>
+    <desc lang="ar">تأخذ حياة طبيب بيطري شاب طموح منعطفا عندما يرث حديقة في جنوب إفريقيا من عمه ويلتقي بامرأة تدعى جميلة هناك.</desc>
+  </programme>
+  
+<programme start="20250726165000 +0000" stop="20250726170000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">جدول البرامج غير متاح</title>
+    <desc lang="ar">جدول البرامج غير متاح.</desc>
+  </programme>
+  
+<programme start="20250726170000 +0000" stop="20250726175500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">عائلتي تربح الموس</title>
+    <desc lang="ar">S4 E24 تتنافس عائلتين من خلال الإجابة على اسئلة معلومات عامة للفوز بجائزة مالية بقيمة عشرة ملايين دينار عراقي.</desc>
+  </programme>
+  
+<programme start="20250726175500 +0000" stop="20250726180000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">جدول البرامج غير متاح</title>
+    <desc lang="ar">جدول البرامج غير متاح.</desc>
+  </programme>
+  
+<programme start="20250726180000 +0000" stop="20250726185500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">حيرة</title>
+    <desc lang="ar">S1 E24 في حكاية يتخللها الحب والانتقام، يتوجب على عاشقين مواجهة مجتمع قاسٍ، ووالد متسلط، عازم على منع زواجهما.</desc>
+  </programme>
+  
+<programme start="20250726185500 +0000" stop="20250726190000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">جدول البرامج غير متاح</title>
+    <desc lang="ar">جدول البرامج غير متاح.</desc>
+  </programme>
+  
+<programme start="20250726190000 +0000" stop="20250726211900 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">Top Chef مش أي شيف</title>
+    <desc lang="ar">ينطلق الموسم الثامن من البرنامج حيث يتوجب على كل متسابق تحضير طبق باستخدام أحد المنتجات المحلية.</desc>
+  </programme>
+  
+<programme start="20250726211900 +0000" stop="20250726213000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">جدول البرامج غير متاح</title>
+    <desc lang="ar">جدول البرامج غير متاح.</desc>
+  </programme>
+  
+<programme start="20250726213000 +0000" stop="20250726220000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">بين أهلنا  موس</title>
+    <desc lang="ar">S7 E19 هيت.</desc>
+  </programme>
+  
+<programme start="20250726220000 +0000" stop="20250726224500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">مال القبان  موس</title>
+    <desc lang="ar">S1 E12 مال القبان  موس.</desc>
+  </programme>
+  
+<programme start="20250726224500 +0000" stop="20250726233000 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">المداح: أسطورة العهد  موس</title>
+    <desc lang="ar">S5 E8 يواجه جاد كيانا شريرا يسكن جسد طفل. لاحقا، يتلقى حسن صدمة عندما يقرر الذهاب إلى مقام صابر. أما الأخير، فيكثف مساعيه لكشف أسرار مشالي الدجال.</desc>
+  </programme>
+  
+<programme start="20250726233000 +0000" stop="20250727001500 +0000" channel="MBC.Iraq.iq">
+    <title lang="ar">Top Chef مش أي شيف  موس</title>
+    <desc lang="ar">S8 E5 ينطلق الموسم الثامن من البرنامج حيث يتوجب على كل متسابق تحضير طبق باستخدام أحد المنتجات المحلية.</desc>
   </programme>
   
 <programme start="20250720002000 +0000" stop="20250720010400 +0000" channel="BabAlHara.sa@SD">
