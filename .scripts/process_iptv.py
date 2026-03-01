@@ -119,7 +119,8 @@ def process_iptv():
         try:
             r = requests.get(url, stream=True, timeout=120)
             content = r.content
-            f = gzip.GzipFile(fileobj=io.BytesIO(content)) if content.startswith(b b'\x1f\x8b') else io.BytesIO(content)
+            # Fixed syntax error in compression check
+            f = gzip.GzipFile(fileobj=io.BytesIO(content)) if content.startswith(b'\x1f\x8b') else io.BytesIO(content)
             
             context = ET.iterparse(f, events=('start', 'end'))
             for event, elem in context:
@@ -131,7 +132,6 @@ def process_iptv():
                         norm_id = normalise_id(chan_id)
                         
                         # --- 1. THE ABSOLUTE BLOCK LIST ---
-                        # If it contains an exclude word OR ends with a forbidden suffix, kill it immediately
                         if any(ex in norm_id for ex in EXCLUDE_WORDS) or \
                            any(norm_id.endswith(sfx) for sfx in FORBIDDEN_SUFFIXES) or \
                            '.tr' in norm_id:
@@ -161,7 +161,6 @@ def process_iptv():
                                     if lang in ['tr', 'tur', 'per', 'fas', 'kur', 'hi', 'kor']:
                                         is_forbidden_lang = True
                                         break
-                                    # Block English/French for generic matches (like Canadian CBC)
                                     if is_generic_match and lang in ['en', 'fr']:
                                         is_forbidden_lang = True
                                         break
