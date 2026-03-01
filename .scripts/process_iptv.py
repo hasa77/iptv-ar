@@ -18,7 +18,7 @@ EPG_SOURCES = [
 # Suffixes that indicate the channel is definitely NOT the Arabic version
 FORBIDDEN_SUFFIXES = (
     '.hk', '.kr', '.dk', '.fi', '.no', '.se', '.be', '.es', '.fr', 
-    '.ca', '.ca2', '.gr', '.de', '.cz', '.cy', '.ch', '.it', '.us', 
+    '.ca', '.ca2', '.gr', '.de', ".dk", '.cz', '.cy', '.ch', '.it', '.us', 
     '.distro', '.us_locals1', '.pluto'
 )
 
