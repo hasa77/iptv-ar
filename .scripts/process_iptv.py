@@ -33,7 +33,7 @@ EXCLUDE_WORDS = (
     'morocco', 'maroc', 'maghreb', '2m',                # Morocco
     'tunisia', 'tunisie', 'ttv', 'hannibal',            # Tunisia
     'libya', 'libye', '218 tv',                         # Libya
-    'iran', 'persian', 'farsi', 'gem tv',               # Iran
+    'iran', 'persian', 'farsi', 'gem tv', 'mbcpersia',  # Iran
     'afghanistan', 'afghan', 'pashto', 'tolo',          # Afghanistan
     'tchad', 'chad', 'turkmenistan', 'turkmen',         # Central Africa / Central Asia
     'babyfirst',                                        # US English Kids
@@ -43,6 +43,9 @@ EXCLUDE_WORDS = (
     'korea', 'korean', 'kbs', 'sbs', 'tvn',             # Korea
     'zealand', 'nz', 'australia', 'canterbury',         # NZ/AU
     'turk', 'trrt', 'atv.tr', 'fox.tr',                 # Turkish
+	'milb', 'ncaa', 'broncos', 'lobos', 'santa-clara',  # US Sports Junk
+    'canada', 'cbc.ca', 'cbcmusic',                     # Canadian CBC
+    'kmbc', 'wmbc', 'tmbc', 'mbc1usa', 'samsung',       # US MBC Look-alikes
 )
 
 ID_MAP = {
