@@ -63,44 +63,61 @@ EXCLUDE_WORDS = (
 )
 
 ID_MAP = {
+    # Abu Dhabi Network
+    'AbuDhabiTV.ae': 'Abu.Dhabi.HD.ae',
+    'AbuDhabiEmirates.ae': 'Abu.Dhabi.HD.ae',
     'AbuDhabiSports1.ae': 'AD.Sports.1.HD.ae',
     'AbuDhabiSports2.ae': 'AD.Sports.2.HD.ae',
-    'AbuDhabiEmirates.ae': 'Abu.Dhabi.HD.ae',
-    'AbuDhabiTV.ae': 'Abu.Dhabi.HD.ae',
     'YasTV.ae': 'Yas.TV.HD.ae',
+
+    # Dubai Network
     'DubaiTV.ae': 'Dubai.HD.ae',
-    'DubaiSports1.ae': 'Dubai.Sports.1.HD.ae',
-    'DubaiSports2.ae': 'Dubai.Sports.2.ae',
-    'DubaiRacing1.ae': 'Dubai.Racing.1.HD.ae',
     'SamaDubai.ae': 'Sama.Dubai.HD.ae',
     'DubaiOne.ae': 'Dubai.One.HD.ae',
-    'DubaiZaman.ae': 'Dubai.Zaman.ae',
     'NoorDubaiTV.ae': 'Noor.DubaiTV.ae',
+    'DubaiSports1.ae': 'Dubai.Sports.1.HD.ae',
+    'DubaiSports2.ae': 'Dubai.Sports.2.ae',
+    'DubaiRacing1.ae': 'Dubai.Racing.ae',
+    'DubaiZaman.ae': 'Dubai.Zaman.ae',
     'OneTv.ae': 'One.Tv.ae',
+
+    # MBC Network
     'MBC1.ae': 'MBC.1.ae',
     'MBC2.ae': 'MBC.2.ae',
+    'MBC3.ae': 'MBC.3.ae',
+    'MBC4.ae': 'MBC.4.ae',
+    'MBCAction.ae': 'MBC.Action.ae',
+    'MBCDrama.ae': 'MBC.Drama.ae',
     'MBCMasr.eg': 'MBC.Masr.HD.ae',
     'MBCMasr2.eg': 'MBC.Masr.2.HD.ae',
+    'Wanasah.ae': 'Wanasah.ae',
+
+    # Rotana Network
     'RotanaCinema.sa': 'Rotana.Cinema.KSA.ae',
     'RotanaCinemaEgypt.eg': 'Rotana.Cinema.Egypt.ae',
     'RotanaDrama.sa': 'Rotana.Drama.ae',
     'RotanaClassic.sa': 'Rotana.Classic.ae',
     'RotanaKhalijia.sa': 'Rotana.Khalijia.ae',
-    'KSA-Sports-1.sa': 'KSA.sports.1.ae',
-    'KSA-Sports-2.sa': 'KSA.sports.2.HD.ae',
+    'RotanaMousica.sa': 'Rotana.Mousica.ae',
+
+    # Sports & News
+    'KSA-Sports-1.sa': 'KSA.Sports.1.ae',
+    'KSA-Sports-2.sa': 'KSA.Sports.2.HD.ae',
     'OnTimeSports1.eg': 'On.Time.Sports.HD.ae',
     'OnTimeSports2.eg': 'On.Time.Sport.2.HD.ae',
     'SharjahSports.ae': 'Sharjah.Sports.HD.ae',
-    'JordanTV.jo': 'Jordan.TV.HD.ae',
     'AlArabiya.net': 'Al.Arabiya.HD.ae',
     'AlHadath.net': 'Al.Hadath.ae',
     'SkyNewsArabia.ae': 'Sky.News.Arabia.HD.ae',
+    'JordanTV.jo': 'Jordan.TV.HD.ae',
     'BBCArabic.uk': 'BBC.Arabic.ae',
     'France24Arabic.fr': 'France.24.Arabic.ae',
     'RTArabic.ru': 'RT.Arabic.HD.ae',
-    'SaudiEkhbariya.sa': 'Saudi.Al.Ekhbariya.HD.ae',
+
+    # Religious
     'SaudiQuran.sa': 'Saudi.Quran.TV.HD.ae',
     'SaudiSunnah.sa': 'Saudi.Sunna.TV.HD.ae',
+    'SaudiEkhbariya.sa': 'Saudi.Al.Ekhbariya.HD.ae',
     'SharjahQuran.ae': 'Sharjah.Quran.TV.ae'
 }
 
