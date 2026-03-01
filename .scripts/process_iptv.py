@@ -15,6 +15,12 @@ EPG_SOURCES = [
     "https://iptv-epg.org/files/epg-us.xml"
 ]
 
+# Suffixes that indicate the channel is definitely NOT the Arabic version
+FORBIDDEN_SUFFIXES = (
+    '.hk', '.kr', '.dk', '.fi', '.no', '.se', '.be', '.es', '.fr', 
+    '.ca', '.ca2', '.gr', '.de', '.cz', '.cy', '.ch', '.it'
+)
+
 AR_SUFFIXES = ('.ae', '.dz', '.eg', '.iq', '.jo', '.kw', '.lb', '.ly', '.ma', 
                '.om', '.ps', '.qa', '.sa', '.sd', '.sy', '.tn', '.ye', '.me', '.ar')
 
@@ -44,7 +50,7 @@ EXCLUDE_WORDS = (
     'zealand', 'nz', 'australia', 'canterbury',         # NZ/AU
     'turk', 'trrt', 'atv.tr', 'fox.tr',                 # Turkish
 	'milb', 'ncaa', 'broncos', 'lobos', 'santa-clara',  # US Sports Junk
-    'canada', 'cbc.ca', 'cbcmusic',                     # Canadian CBC
+    'canada', 'cbc.ca', 'cbcmusic', 'halifax', 'ottawa', 'winnipeg', 'calgary', 'vancouver', 'montreal',                 # Canadian CBC
     'kmbc', 'wmbc', 'tmbc', 'mbc1usa', 'samsung',       # US MBC Look-alikes
 	'milb', 'ncaa', 'broncos', 'lobos', 'santa-clara',  # US Sports
     'mlb-', 'cubs', 'guardians', 'white-sox', 'reds',   # Baseball specific
@@ -101,7 +107,7 @@ def normalise_id(cid):
     return re.sub(r'[._\-\s]', '', clean).lower()
 
 def process_iptv():
-    print("🚀 Running Smart Filter (Cleaning Data for TiviMate)...")
+    print("🚀 Running Absolute Filter (Blocking Regional Clones)...")
     REVERSE_MAP = {normalise_id(k): v for k, v in ID_MAP.items()}
     channel_elements = []
     program_elements = []
@@ -113,7 +119,7 @@ def process_iptv():
         try:
             r = requests.get(url, stream=True, timeout=120)
             content = r.content
-            f = gzip.GzipFile(fileobj=io.BytesIO(content)) if content.startswith(b'\x1f\x8b') else io.BytesIO(content)
+            f = gzip.GzipFile(fileobj=io.BytesIO(content)) if content.startswith(b b'\x1f\x8b') else io.BytesIO(content)
             
             context = ET.iterparse(f, events=('start', 'end'))
             for event, elem in context:
@@ -124,11 +130,18 @@ def process_iptv():
                     if chan_id:
                         norm_id = normalise_id(chan_id)
                         
-                        if any(ex in norm_id for ex in EXCLUDE_WORDS) or '.tr' in norm_id:
+                        # --- 1. THE ABSOLUTE BLOCK LIST ---
+                        # If it contains an exclude word OR ends with a forbidden suffix, kill it immediately
+                        if any(ex in norm_id for ex in EXCLUDE_WORDS) or \
+                           any(norm_id.endswith(sfx) for sfx in FORBIDDEN_SUFFIXES) or \
+                           '.tr' in norm_id:
                             elem.clear()
                             continue
 
+                        # --- 2. THE MATCHING LOGIC ---
                         final_id = None
+                        is_generic_match = False
+
                         if norm_id in REVERSE_MAP:
                             final_id = REVERSE_MAP[norm_id]
                         elif any(k in norm_id for k in STRONG_AR_KEYWORDS):
@@ -136,6 +149,7 @@ def process_iptv():
                         elif any(k in norm_id for k in GENERIC_AR_KEYWORDS):
                             if any(suffix in norm_id for suffix in AR_SUFFIXES):
                                 final_id = chan_id
+                                is_generic_match = True
 
                         if final_id:
                             is_forbidden_lang = False
@@ -147,7 +161,11 @@ def process_iptv():
                                     if lang in ['tr', 'tur', 'per', 'fas', 'kur', 'hi', 'kor']:
                                         is_forbidden_lang = True
                                         break
-                                    # Ensure the title actually has text and isn't just <title />
+                                    # Block English/French for generic matches (like Canadian CBC)
+                                    if is_generic_match and lang in ['en', 'fr']:
+                                        is_forbidden_lang = True
+                                        break
+                                    
                                     if child.text and len(child.text.strip()) > 0:
                                         has_valid_title = True
                             
@@ -163,7 +181,6 @@ def process_iptv():
             print(f"  ⚠️ Skipping {file_name}: {e}")
 
     if program_elements:
-        # Saving as plain XML for maximum TiviMate compatibility
         with open("arabic-epg.xml", "wb") as f_out:
             f_out.write(b'<?xml version="1.0" encoding="utf-8"?>\n<tv>\n')
             for c in channel_elements: f_out.write(c + b'\n')
