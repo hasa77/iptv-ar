@@ -79,7 +79,11 @@ ID_MAP = {
     'alarabiyahd': 'Al.Arabiya.HD.ae',
     'skynewsarabia': 'Sky.News.Arabia.HD.ae',
     'rotanacinemaegypt': 'Rotana.Cinema.Egypt.ae',
-    'rotanacinema': 'Rotana.Cinema.KSA.ae'
+    'rotanacinema': 'Rotana.Cinema.KSA.ae',
+
+	# MBC Iraq Fix
+    'mbciraq': 'MBC.Iraq.iq',
+    'mbciraqhd': 'MBC.Iraq.iq',
 }
 
 def normalise(text):
