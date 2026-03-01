@@ -126,64 +126,71 @@ def normalise_id(cid):
     clean = re.sub(r'(@[A-Z0-9]+)', '', cid)
     return re.sub(r'[._\-\s]', '', clean).lower()
 
+def get_allowed_ids():
+    """Reads the local M3U to see what IDs TiviMate actually wants."""
+    allowed = set()
+    if os.path.exists(M3U_FILE):
+        with open(M3U_FILE, 'r', encoding='utf-8') as f:
+            for line in f:
+                if 'tvg-id="' in line:
+                    id_val = line.split('tvg-id="')[1].split('"')[0]
+                    allowed.add(id_val)
+    return allowed
+
 def process_iptv():
-    print("🚀 Running Aggressive Mapper...")
+    print("🚀 Starting Smart Mapper...")
+    ALLOWED_IDS = get_allowed_ids()
     REVERSE_MAP = {normalise_id(k): v for k, v in ID_MAP.items()}
     
     channel_elements = []
     program_elements = []
-    global_added_channels = set()
+    processed_channels = set()
 
     for url in EPG_SOURCES:
-        file_name = url.split('/')[-1]
-        print(f"📥 Processing {file_name}...")
+        print(f"📥 Fetching: {url.split('/')[-1]}")
         try:
-            r = requests.get(url, stream=True, timeout=120)
-            content = r.content
-            f = gzip.GzipFile(fileobj=io.BytesIO(content)) if content.startswith(b'\x1f\x8b') else io.BytesIO(content)
+            r = requests.get(url, timeout=30)
+            f = gzip.GzipFile(fileobj=io.BytesIO(r.content)) if url.endswith('.gz') else io.BytesIO(r.content)
             
-            context = ET.iterparse(f, events=('start', 'end'))
-            for event, elem in context:
+            for event, elem in ET.iterparse(f, events=('end',)):
                 tag = elem.tag.split('}')[-1]
                 
-                if event == 'end' and tag == 'programme':
-                    chan_id = elem.get('channel')
-                    if chan_id:
-                        norm_id = normalise_id(chan_id)
-                        
-                        # --- 1. THE MAP CHECK (PRIORITY) ---
-                        final_id = None
-                        if norm_id in REVERSE_MAP:
-                            final_id = REVERSE_MAP[norm_id]
-                        else:
-                            for map_key, m3u_id in REVERSE_MAP.items():
-                                if map_key in norm_id or norm_id in map_key:
-                                    final_id = m3u_id
-                                    break
+                if tag == 'programme':
+                    source_id = elem.get('channel')
+                    norm = normalise_id(source_id)
+                    final_id = None
 
-                        # --- 2. APPLY TO XML IF FOUND ---
-                        if final_id:
-                            if not any(chan_id.lower().endswith(sfx) for sfx in FORBIDDEN_SUFFIXES) and \
-                               not any(ex in norm_id for ex in EXCLUDE_WORDS):
-                                
-                                elem.set('channel', final_id)
-                                program_elements.append(ET.tostring(elem, encoding='utf-8'))
-                                
-                                if final_id not in global_added_channels:
-                                    global_added_channels.add(final_id)
-                                    chan_xml = f'<channel id="{final_id}"><display-name>{final_id}</display-name></channel>'
-                                    channel_elements.append(chan_xml.encode('utf-8'))
+                    # 1. Priority: Manual Map
+                    if norm in REVERSE_MAP:
+                        final_id = REVERSE_MAP[norm]
+                    # 2. Priority: Direct M3U Match
+                    elif source_id in ALLOWED_IDS:
+                        final_id = source_id
+                    
+                    if final_id:
+                        # Skip if it's junk, UNLESS it's in our manual map
+                        if norm not in REVERSE_MAP and any(x in norm for x in EXCLUDE_WORDS):
+                            elem.clear()
+                            continue
+
+                        elem.set('channel', final_id)
+                        program_elements.append(ET.tostring(elem, encoding='utf-8'))
+                        
+                        if final_id not in processed_channels:
+                            processed_channels.add(final_id)
+                            chan_xml = f'<channel id="{final_id}"><display-name>{final_id}</display-name></channel>'
+                            channel_elements.append(chan_xml.encode('utf-8'))
                     elem.clear()
         except Exception as e:
-            print(f"  ⚠️ Skipping {file_name}: {e}")
+            print(f"  ⚠️ Error: {e}")
 
     if program_elements:
-        with open("arabic-epg.xml", "wb") as f_out:
+        with open(OUTPUT_FILE, "wb") as f_out:
             f_out.write(b'<?xml version="1.0" encoding="utf-8"?>\n<tv>\n')
             for c in channel_elements: f_out.write(c + b'\n')
             for p in program_elements: f_out.write(p + b'\n')
             f_out.write(b'</tv>')
-        print(f"✅ Success! Saved {len(program_elements)} programs for {len(global_added_channels)} channels.")
+        print(f"✅ Created EPG with {len(processed_channels)} channels.")
 
 if __name__ == "__main__":
     process_iptv()
