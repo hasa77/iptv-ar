@@ -6,6 +6,7 @@ import io
 import os
 
 M3U_URL = "https://iptv-org.github.io/iptv/languages/ara.m3u"
+OUTPUT_FILE = "arabic-epg.xml"
 EPG_SOURCES = [
     "https://epgshare01.online/epgshare01/epg_ripper_ALL_SOURCES1.xml.gz",
     "https://iptv-epg.org/files/epg-eg.xml",
@@ -128,14 +129,21 @@ def normalise_id(cid):
     return re.sub(r'[._\-\s]', '', clean).lower()
 
 def get_allowed_ids():
-    """Reads the local M3U to see what IDs TiviMate actually wants."""
+    """Fetches the live M3U from the URL to find what IDs TiviMate wants."""
     allowed = set()
-    if os.path.exists(M3U_URL):
-        with open(M3U_URL, 'r', encoding='utf-8') as f:
-            for line in f:
-                if 'tvg-id="' in line:
-                    id_val = line.split('tvg-id="')[1].split('"')[0]
-                    allowed.add(id_val)
+    # Always allow IDs that we have manually mapped
+    for target_id in ID_MAP.values():
+        allowed.add(target_id)
+        
+    print(f"🌐 Fetching live M3U from: {M3U_URL}")
+    try:
+        r = requests.get(M3U_URL, timeout=30)
+        matches = re.findall(r'tvg-id="([^"]+)"', r.text)
+        for m in matches:
+            allowed.add(m)
+        print(f"✅ Found {len(allowed)} potential channel IDs.")
+    except Exception as e:
+        print(f"⚠️ Could not fetch M3U URL: {e}")
     return allowed
 
 def process_iptv():
@@ -148,10 +156,13 @@ def process_iptv():
     processed_channels = set()
 
     for url in EPG_SOURCES:
-        print(f"📥 Fetching: {url.split('/')[-1]}")
+        file_name = url.split('/')[-1]
+        print(f"📥 Processing EPG: {file_name}")
         try:
-            r = requests.get(url, timeout=30)
-            f = gzip.GzipFile(fileobj=io.BytesIO(r.content)) if url.endswith('.gz') else io.BytesIO(r.content)
+            r = requests.get(url, timeout=45)
+            content = r.content
+            # Handle both Gzip and raw XML
+            f = gzip.GzipFile(fileobj=io.BytesIO(content)) if content.startswith(b'\x1f\x8b') else io.BytesIO(content)
             
             for event, elem in ET.iterparse(f, events=('end',)):
                 tag = elem.tag.split('}')[-1]
@@ -161,15 +172,15 @@ def process_iptv():
                     norm = normalise_id(source_id)
                     final_id = None
 
-                    # 1. Priority: Manual Map
+                    # 1. Map bridge (EPG Source ID -> M3U Target ID)
                     if norm in REVERSE_MAP:
                         final_id = REVERSE_MAP[norm]
-                    # 2. Priority: Direct M3U Match
+                    # 2. Direct Match (If EPG ID already matches M3U ID)
                     elif source_id in ALLOWED_IDS:
                         final_id = source_id
                     
                     if final_id:
-                        # Skip if it's junk, UNLESS it's in our manual map
+                        # Protection: Don't exclude channels we went to the trouble of mapping
                         if norm not in REVERSE_MAP and any(x in norm for x in EXCLUDE_WORDS):
                             elem.clear()
                             continue
@@ -183,15 +194,16 @@ def process_iptv():
                             channel_elements.append(chan_xml.encode('utf-8'))
                     elem.clear()
         except Exception as e:
-            print(f"  ⚠️ Error: {e}")
+            print(f"  ⚠️ Error processing {file_name}: {e}")
 
     if program_elements:
+        print(f"💾 Writing {len(program_elements)} programs for {len(processed_channels)} channels...")
         with open(OUTPUT_FILE, "wb") as f_out:
             f_out.write(b'<?xml version="1.0" encoding="utf-8"?>\n<tv>\n')
             for c in channel_elements: f_out.write(c + b'\n')
             for p in program_elements: f_out.write(p + b'\n')
             f_out.write(b'</tv>')
-        print(f"✅ Created EPG with {len(processed_channels)} channels.")
+        print(f"✅ Success! Created {OUTPUT_FILE}")
 
 if __name__ == "__main__":
     process_iptv()
