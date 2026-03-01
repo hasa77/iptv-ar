@@ -64,104 +64,68 @@ EXCLUDE_WORDS = (
 	'engelsk',											# Denmark
 )
 
+# Manual fixes for common mismatches
 ID_MAP = {
-    # Abu Dhabi Network
-    'AbuDhabiTV.ae': 'Abu.Dhabi.HD.ae',
-    'AbuDhabiEmirates.ae': 'Abu.Dhabi.HD.ae',
-    'AbuDhabiSports1.ae': 'AD.Sports.1.HD.ae',
-    'AbuDhabiSports2.ae': 'AD.Sports.2.HD.ae',
-    'YasTV.ae': 'Yas.TV.HD.ae',
-
-    # Dubai Network
-    'DubaiTV.ae': 'Dubai.HD.ae',
-    'SamaDubai.ae': 'Sama.Dubai.HD.ae',
-    'DubaiOne.ae': 'Dubai.One.HD.ae',
-    'NoorDubaiTV.ae': 'Noor.DubaiTV.ae',
-    'DubaiSports1.ae': 'Dubai.Sports.1.HD.ae',
-    'DubaiSports2.ae': 'Dubai.Sports.2.ae',
-    'DubaiRacing1.ae': 'Dubai.Racing.ae',
-    'DubaiZaman.ae': 'Dubai.Zaman.ae',
-    'OneTv.ae': 'One.Tv.ae',
-
-    # MBC Network
-    'MBC1.ae': 'MBC.1.ae',
-    'MBC2.ae': 'MBC.2.ae',
-    'MBC3.ae': 'MBC.3.ae',
-    'MBC4.ae': 'MBC.4.ae',
-    'MBCAction.ae': 'MBC.Action.ae',
-    'MBCDrama.ae': 'MBC.Drama.ae',
-    'MBCMasr.eg': 'MBC.Masr.HD.ae',
-    'MBCMasr2.eg': 'MBC.Masr.2.HD.ae',
-    'Wanasah.ae': 'Wanasah.ae',
-
-    # Rotana Network
-    'RotanaCinema.sa': 'Rotana.Cinema.KSA.ae',
-    'RotanaCinemaEgypt.eg': 'Rotana.Cinema.Egypt.ae',
-    'RotanaDrama.sa': 'Rotana.Drama.ae',
-    'RotanaClassic.sa': 'Rotana.Classic.ae',
-    'RotanaKhalijia.sa': 'Rotana.Khalijia.ae',
-    'RotanaMousica.sa': 'Rotana.Mousica.ae',
-
-    # Sports & News
-    'KSA-Sports-1.sa': 'KSA.Sports.1.ae',
-    'KSA-Sports-2.sa': 'KSA.Sports.2.HD.ae',
-    'OnTimeSports1.eg': 'On.Time.Sports.HD.ae',
-    'OnTimeSports2.eg': 'On.Time.Sport.2.HD.ae',
-    'SharjahSports.ae': 'Sharjah.Sports.HD.ae',
-    'AlArabiya.net': 'Al.Arabiya.HD.ae',
-    'AlHadath.net': 'Al.Hadath.ae',
-    'SkyNewsArabia.ae': 'Sky.News.Arabia.HD.ae',
-    'JordanTV.jo': 'Jordan.TV.HD.ae',
-    'BBCArabic.uk': 'BBC.Arabic.ae',
-    'France24Arabic.fr': 'France.24.Arabic.ae',
-    'RTArabic.ru': 'RT.Arabic.HD.ae',
-
-    # Religious
-    'SaudiQuran.sa': 'Saudi.Quran.TV.HD.ae',
-    'SaudiSunnah.sa': 'Saudi.Sunna.TV.HD.ae',
-    'SaudiEkhbariya.sa': 'Saudi.Al.Ekhbariya.HD.ae',
-    'SharjahQuran.ae': 'Sharjah.Quran.TV.ae'
+    'mbcmasr': 'MBC.Masr.HD.ae',
+    'mbcmasr2': 'MBC.Masr.2.HD.ae',
+    'mbcmasrtwo': 'MBC.Masr.2.HD.ae',
+    'abudhabitv': 'Abu.Dhabi.HD.ae',
+    'abudhabiemirates': 'Abu.Dhabi.HD.ae',
+    'adsports1': 'AD.Sports.1.HD.ae',
+    'adsports2': 'AD.Sports.2.HD.ae',
+    'ontimesport1': 'On.Time.Sports.HD.ae',
+    'ontimesports1': 'On.Time.Sports.HD.ae',
+    'alarabiya': 'Al.Arabiya.HD.ae',
+    'alarabiyahd': 'Al.Arabiya.HD.ae',
+    'skynewsarabia': 'Sky.News.Arabia.HD.ae',
+    'rotanacinemaegypt': 'Rotana.Cinema.Egypt.ae',
+    'rotanacinema': 'Rotana.Cinema.KSA.ae'
 }
 
-def normalise_id(cid):
-    if not cid: return ""
-    clean = re.sub(r'(@[A-Z0-9]+)', '', cid)
-    return re.sub(r'[._\-\s]', '', clean).lower()
+def normalise(text):
+    """Removes all non-alphanumeric chars and makes lowercase for comparison."""
+    if not text: return ""
+    # Remove things like ".ae", "HD", "TV", and special characters
+    text = re.sub(r'(@[A-Z0-9]+)', '', text)
+    text = text.lower().replace('hd', '').replace('tv', '').replace('.ae', '').replace('.eg', '')
+    return re.sub(r'[^a-z0-9]', '', text)
 
-def get_allowed_ids():
-    """Fetches the live M3U from the URL to find what IDs TiviMate wants."""
-    allowed = set()
-    # Always allow IDs that we have manually mapped
-    for target_id in ID_MAP.values():
-        allowed.add(target_id)
-        
+def get_m3u_data():
+    """Fetches the M3U and builds a dictionary of {CleanName: OriginalID}."""
+    m3u_map = {}
     print(f"🌐 Fetching live M3U from: {M3U_URL}")
     try:
         r = requests.get(M3U_URL, timeout=30)
-        matches = re.findall(r'tvg-id="([^"]+)"', r.text)
-        for m in matches:
-            allowed.add(m)
-        print(f"✅ Found {len(allowed)} potential channel IDs.")
+        # Find tvg-id and the channel name from the #EXTINF line
+        matches = re.findall(r'tvg-id="([^"]+)".*?,(.*)', r.text)
+        for tvg_id, channel_name in matches:
+            # Map both the ID and the Name to the target ID
+            m3u_map[normalise(tvg_id)] = tvg_id
+            m3u_map[normalise(channel_name)] = tvg_id
     except Exception as e:
-        print(f"⚠️ Could not fetch M3U URL: {e}")
-    return allowed
+        print(f"⚠️ M3U Fetch Error: {e}")
+    return m3u_map
 
 def process_iptv():
-    print("🚀 Starting Smart Mapper...")
-    ALLOWED_IDS = get_allowed_ids()
-    REVERSE_MAP = {normalise_id(k): v for k, v in ID_MAP.items()}
+    print("🚀 Starting Smart Auto-Mapper...")
     
+    # This map contains clean versions of every ID and Name in your M3U
+    SMART_MAP = get_m3u_data()
+    
+    # Merge our manual ID_MAP into the smart map
+    for key, val in ID_MAP.items():
+        SMART_MAP[normalise(key)] = val
+
     channel_elements = []
     program_elements = []
     processed_channels = set()
 
     for url in EPG_SOURCES:
         file_name = url.split('/')[-1]
-        print(f"📥 Processing EPG: {file_name}")
+        print(f"📥 Processing: {file_name}")
         try:
             r = requests.get(url, timeout=45)
             content = r.content
-            # Handle both Gzip and raw XML
             f = gzip.GzipFile(fileobj=io.BytesIO(content)) if content.startswith(b'\x1f\x8b') else io.BytesIO(content)
             
             for event, elem in ET.iterparse(f, events=('end',)):
@@ -169,19 +133,16 @@ def process_iptv():
                 
                 if tag == 'programme':
                     source_id = elem.get('channel')
-                    norm = normalise_id(source_id)
+                    norm_source = normalise(source_id)
                     final_id = None
 
-                    # 1. Map bridge (EPG Source ID -> M3U Target ID)
-                    if norm in REVERSE_MAP:
-                        final_id = REVERSE_MAP[norm]
-                    # 2. Direct Match (If EPG ID already matches M3U ID)
-                    elif source_id in ALLOWED_IDS:
-                        final_id = source_id
+                    # STEP 1 & 2 & 3: Look for match in our Smart Map
+                    if norm_source in SMART_MAP:
+                        final_id = SMART_MAP[norm_source]
                     
                     if final_id:
-                        # Protection: Don't exclude channels we went to the trouble of mapping
-                        if norm not in REVERSE_MAP and any(x in norm for x in EXCLUDE_WORDS):
+                        # Skip if it's junk (like Radio)
+                        if any(x in norm_source for x in EXCLUDE_WORDS):
                             elem.clear()
                             continue
 
@@ -194,16 +155,16 @@ def process_iptv():
                             channel_elements.append(chan_xml.encode('utf-8'))
                     elem.clear()
         except Exception as e:
-            print(f"  ⚠️ Error processing {file_name}: {e}")
+            print(f"  ⚠️ Error: {e}")
 
     if program_elements:
-        print(f"💾 Writing {len(program_elements)} programs for {len(processed_channels)} channels...")
+        print(f"💾 Saving {len(program_elements)} programs for {len(processed_channels)} channels...")
         with open(OUTPUT_FILE, "wb") as f_out:
             f_out.write(b'<?xml version="1.0" encoding="utf-8"?>\n<tv>\n')
             for c in channel_elements: f_out.write(c + b'\n')
             for p in program_elements: f_out.write(p + b'\n')
             f_out.write(b'</tv>')
-        print(f"✅ Success! Created {OUTPUT_FILE}")
+        print(f"✅ Created EPG with {len(processed_channels)} channels matched!")
 
 if __name__ == "__main__":
     process_iptv()
