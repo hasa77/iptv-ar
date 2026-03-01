@@ -35,8 +35,8 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           # This forces git to recognize the binary file has been touched
-          touch arabic-epg.xml.gz 
-          git add arabic-epg.xml.gz curated-live.m3u
+          touch arabic-epg.xml 
+          git add arabic-epg.xml curated-live.m3u
           # Added --allow-empty to ensure the workflow finishes cleanly
           git commit -m "Update Arabic EPG: $(date -u +'%Y-%m-%d %H:%M:%S') UTC" || echo "No changes to commit"
           git push origin main
