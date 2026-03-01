@@ -46,6 +46,11 @@ EXCLUDE_WORDS = (
 	'milb', 'ncaa', 'broncos', 'lobos', 'santa-clara',  # US Sports Junk
     'canada', 'cbc.ca', 'cbcmusic',                     # Canadian CBC
     'kmbc', 'wmbc', 'tmbc', 'mbc1usa', 'samsung',       # US MBC Look-alikes
+	'milb', 'ncaa', 'broncos', 'lobos', 'santa-clara',  # US Sports
+    'mlb-', 'cubs', 'guardians', 'white-sox', 'reds',   # Baseball specific
+    'canada', 'cbc.ca', 'cbcmusic',                     # Canadian CBC
+    'kmbc', 'wmbc', 'tmbc', 'mbc1usa', 'samsung',       # US MBC
+    'español', 'wellbeing', 'xtra',             		# Spanish / Health junk
 )
 
 ID_MAP = {
