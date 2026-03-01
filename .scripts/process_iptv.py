@@ -93,7 +93,7 @@ def normalise_id(cid):
     return re.sub(r'[._\-\s]', '', clean).lower()
 
 def process_iptv():
-    print("🚀 Running Smart Filter (Balancing Arabic Reach vs Global Blocking)...")
+    print("🚀 Running Smart Filter (Cleaning Data for TiviMate)...")
     REVERSE_MAP = {normalise_id(k): v for k, v in ID_MAP.items()}
     channel_elements = []
     program_elements = []
@@ -116,12 +116,10 @@ def process_iptv():
                     if chan_id:
                         norm_id = normalise_id(chan_id)
                         
-                        # --- 1. BLOCK THE JUNK ---
                         if any(ex in norm_id for ex in EXCLUDE_WORDS) or '.tr' in norm_id:
                             elem.clear()
                             continue
 
-                        # --- 2. MATCHING LOGIC ---
                         final_id = None
                         if norm_id in REVERSE_MAP:
                             final_id = REVERSE_MAP[norm_id]
@@ -133,17 +131,19 @@ def process_iptv():
 
                         if final_id:
                             is_forbidden_lang = False
-                            has_text = False
+                            has_valid_title = False
+                            
                             for child in elem:
                                 if child.tag.endswith('title'):
                                     lang = child.get('lang', '').lower()
                                     if lang in ['tr', 'tur', 'per', 'fas', 'kur', 'hi', 'kor']:
                                         is_forbidden_lang = True
                                         break
+                                    # Ensure the title actually has text and isn't just <title />
                                     if child.text and len(child.text.strip()) > 0:
-                                        has_text = True
+                                        has_valid_title = True
                             
-                            if not is_forbidden_lang and has_text:
+                            if not is_forbidden_lang and has_valid_title:
                                 elem.set('channel', final_id)
                                 program_elements.append(ET.tostring(elem, encoding='utf-8'))
                                 if final_id not in global_added_channels:
@@ -155,7 +155,8 @@ def process_iptv():
             print(f"  ⚠️ Skipping {file_name}: {e}")
 
     if program_elements:
-        with gzip.open("arabic-epg.xml.gz", "wb") as f_out:
+        # Saving as plain XML for maximum TiviMate compatibility
+        with open("arabic-epg.xml", "wb") as f_out:
             f_out.write(b'<?xml version="1.0" encoding="utf-8"?>\n<tv>\n')
             for c in channel_elements: f_out.write(c + b'\n')
             for p in program_elements: f_out.write(p + b'\n')
