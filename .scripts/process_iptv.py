@@ -127,8 +127,10 @@ def normalise_id(cid):
     return re.sub(r'[._\-\s]', '', clean).lower()
 
 def process_iptv():
-    print("🚀 Running Case-Insensitive Absolute Filter...")
+    print("🚀 Running Aggressive Mapper...")
+    # This creates a list of normalized keys for your map
     REVERSE_MAP = {normalise_id(k): v for k, v in ID_MAP.items()}
+    
     channel_elements = []
     program_elements = []
     global_added_channels = set()
@@ -148,57 +150,34 @@ def process_iptv():
                 if event == 'end' and tag == 'programme':
                     chan_id = elem.get('channel')
                     if chan_id:
-                        # FORCE LOWERCASE FOR ALL CHECKS
-                        norm_id = chan_id.lower()
-                        clean_id = normalise_id(chan_id)
+                        norm_id = normalise_id(chan_id) # e.g., 'dubaitv'
                         
-                        # --- 1. THE ABSOLUTE BLOCK LIST (Now Case-Insensitive) ---
-                        if any(norm_id.endswith(sfx) for sfx in FORBIDDEN_SUFFIXES) or \
-                           any(ex in norm_id for ex in EXCLUDE_WORDS) or \
-                           '.tr' in norm_id:
-                            elem.clear()
-                            continue
-
-                        # --- 2. MATCHING LOGIC ---
+                        # --- 1. THE MAP CHECK (PRIORITY) ---
                         final_id = None
-                        is_generic_match = False
+                        
+                        # Direct Map Match
+                        if norm_id in REVERSE_MAP:
+                            final_id = REVERSE_MAP[norm_id]
+                        
+                        # Partial Map Match (if 'dubai' is in 'dubaitvhd')
+                        else:
+                            for map_key, m3u_id in REVERSE_MAP.items():
+                                if map_key in norm_id or norm_id in map_key:
+                                    final_id = m3u_id
+                                    break
 
-                        if clean_id in REVERSE_MAP:
-                            final_id = REVERSE_MAP[clean_id]
-                        elif any(k in clean_id for k in STRONG_AR_KEYWORDS):
-                            final_id = chan_id
-                        elif any(k in clean_id for k in GENERIC_AR_KEYWORDS):
-                            if any(suffix in norm_id for suffix in AR_SUFFIXES):
-                                final_id = chan_id
-                                is_generic_match = True
-
+                        # --- 2. APPLY TO XML IF FOUND ---
                         if final_id:
-                            is_forbidden_lang = False
-                            has_valid_title = False
-                            
-                            for child in elem:
-                                if child.tag.endswith('title'):
-                                    lang = (child.get('lang') or '').lower()
-                                    if lang in ['tr', 'tur', 'per', 'fas', 'kur', 'hi', 'kor']:
-                                        is_forbidden_lang = True
-                                        break
-                                    if is_generic_match and lang in ['en', 'fr']:
-                                        is_forbidden_lang = True
-                                        break
-                                    
-                                    if child.text and len(child.text.strip()) > 0:
-                                        has_valid_title = True
-                            
-                            if not is_forbidden_lang and has_valid_title:
+                            # Keep only if it's not a regional clone we hate
+                            if not any(chan_id.lower().endswith(sfx) for sfx in FORBIDDEN_SUFFIXES):
                                 elem.set('channel', final_id)
                                 program_elements.append(ET.tostring(elem, encoding='utf-8'))
+                                
                                 if final_id not in global_added_channels:
                                     global_added_channels.add(final_id)
                                     chan_xml = f'<channel id="{final_id}"><display-name>{final_id}</display-name></channel>'
                                     channel_elements.append(chan_xml.encode('utf-8'))
                     elem.clear()
-        except Exception as e:
-            print(f"  ⚠️ Skipping {file_name}: {e}")
 
     if program_elements:
         with open("arabic-epg.xml", "wb") as f_out:
