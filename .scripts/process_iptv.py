@@ -15,16 +15,17 @@ EPG_SOURCES = [
     "https://iptv-epg.org/files/epg-us.xml"
 ]
 
-# 1. Target Suffixes (Must have one of these for keyword matches)
 AR_SUFFIXES = ('.ae', '.dz', '.eg', '.iq', '.jo', '.kw', '.lb', '.ly', '.ma', 
                '.om', '.ps', '.qa', '.sa', '.sd', '.sy', '.tn', '.ye', '.me', '.ar')
 
-# 2. Keywords to Keep
-AR_KEYWORDS = ('mbc', 'bein', 'osn', 'rotana', 'alkass', 'aljazeera', 'arabic', 'nilesat', 
-               'sharjah', 'dubai', 'abu dhabi', 'alarabiya', 'hadath', 'cbc', 'dmc', 'on ent',
-               'royal', 'art ', 'ssc ', 'syria', 'iraq', 'lebanon', 'al jadeed', 'lbc')
+# Strong keywords that are almost certainly Arabic
+STRONG_AR_KEYWORDS = ('mbc', 'bein', 'osn', 'rotana', 'alkass', 'aljazeera', 'nilesat', 
+                      'sharjah', 'dubai', 'abu dhabi', 'alarabiya', 'hadath', 'cbc', 'dmc', 
+                      'on ent', 'ssc ', 'al jadeed', 'lbc')
 
-# 3. UPDATED: GLOBAL EXCLUSION LIST (Blocks Korea, India, NZ, etc.)
+# Generic keywords that need a suffix to be safe
+GENERIC_AR_KEYWORDS = ('arabic', 'arab', 'royal', 'art ', 'syria', 'iraq', 'lebanon')
+
 EXCLUDE_WORDS = (
     'radio', 'fm', 'chaine', 'distro.tv', 'argentina', 'colombia', 'telefe', 'eltrece', 
     'kurd', 'kurdistan', 'rudaw', 'waar', 'duhok',      # Kurdish
@@ -44,7 +45,6 @@ EXCLUDE_WORDS = (
     'turk', 'trrt', 'atv.tr', 'fox.tr',                 # Turkish
 )
 
-# 4. ID Mapping for TiviMate
 ID_MAP = {
     'AbuDhabiSports1.ae': 'AD.Sports.1.HD.ae',
     'AbuDhabiSports2.ae': 'AD.Sports.2.HD.ae',
@@ -93,12 +93,8 @@ def normalise_id(cid):
     return re.sub(r'[._\-\s]', '', clean).lower()
 
 def process_iptv():
-    print("🚀 Running Filtered Extraction (Blocking Korea/India/NZ/Turkey)...")
-    
+    print("🚀 Running Smart Filter (Balancing Arabic Reach vs Global Blocking)...")
     REVERSE_MAP = {normalise_id(k): v for k, v in ID_MAP.items()}
-    target_ids = {normalise_id(t) for t in (set(ID_MAP.values()) | set(ID_MAP.keys()))}
-    keywords = ['mbc', 'dubai', 'abu', 'rotana', 'bein', 'ssc', 'sharjah', 'arab', 'aljazeera']
-    
     channel_elements = []
     program_elements = []
     global_added_channels = set()
@@ -120,18 +116,18 @@ def process_iptv():
                     if chan_id:
                         norm_id = normalise_id(chan_id)
                         
-                        # --- 1. THE EXCLUSION SHIELD ---
+                        # --- 1. BLOCK THE JUNK ---
                         if any(ex in norm_id for ex in EXCLUDE_WORDS) or '.tr' in norm_id:
                             elem.clear()
                             continue
 
-                        # --- 2. THE STICKY MATCH LOGIC ---
+                        # --- 2. MATCHING LOGIC ---
                         final_id = None
-                        # PRIORITY A: Explicitly in ID_MAP
                         if norm_id in REVERSE_MAP:
                             final_id = REVERSE_MAP[norm_id]
-                        # PRIORITY B: Keyword match + Arabic Suffix (Stops Korea/NZ/India)
-                        elif any(k in norm_id for k in keywords):
+                        elif any(k in norm_id for k in STRONG_AR_KEYWORDS):
+                            final_id = chan_id
+                        elif any(k in norm_id for k in GENERIC_AR_KEYWORDS):
                             if any(suffix in norm_id for suffix in AR_SUFFIXES):
                                 final_id = chan_id
 
@@ -164,7 +160,7 @@ def process_iptv():
             for c in channel_elements: f_out.write(c + b'\n')
             for p in program_elements: f_out.write(p + b'\n')
             f_out.write(b'</tv>')
-        print(f"✅ Success! Saved {len(program_elements)} programs for {len(global_added_channels)} Arabic channels.")
+        print(f"✅ Success! Saved {len(program_elements)} programs for {len(global_added_channels)} channels.")
 
 if __name__ == "__main__":
     process_iptv()
