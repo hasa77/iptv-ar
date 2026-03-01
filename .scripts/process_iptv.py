@@ -3,6 +3,7 @@ import re
 import gzip
 import xml.etree.ElementTree as ET
 import io
+import os
 
 M3U_URL = "https://iptv-org.github.io/iptv/languages/ara.m3u"
 EPG_SOURCES = [
