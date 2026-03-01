@@ -66,67 +66,80 @@ EXCLUDE_WORDS = (
 
 # Manual fixes for common mismatches
 ID_MAP = {
-    'mbcmasr': 'MBC.Masr.HD.ae',
-    'mbcmasr2': 'MBC.Masr.2.HD.ae',
-    'mbcmasrtwo': 'MBC.Masr.2.HD.ae',
-    'abudhabitv': 'Abu.Dhabi.HD.ae',
-    'abudhabiemirates': 'Abu.Dhabi.HD.ae',
-    'adsports1': 'AD.Sports.1.HD.ae',
-    'adsports2': 'AD.Sports.2.HD.ae',
-    'ontimesport1': 'On.Time.Sports.HD.ae',
-    'ontimesports1': 'On.Time.Sports.HD.ae',
-    'alarabiya': 'Al.Arabiya.HD.ae',
-    'alarabiyahd': 'Al.Arabiya.HD.ae',
-    'skynewsarabia': 'Sky.News.Arabia.HD.ae',
-    'rotanacinemaegypt': 'Rotana.Cinema.Egypt.ae',
-    'rotanacinema': 'Rotana.Cinema.KSA.ae',
+   # --- MBC IRAQ FIX ---
+    'MBCIraq.iq': 'MBC.Iraq.iq',
+    'MBCIraq.ae': 'MBC.Iraq.iq',
+    'MBCIraq': 'MBC.Iraq.iq',
 
-	# MBC Iraq Fix
-    'mbciraq': 'MBC.Iraq.iq',
-    'mbciraqhd': 'MBC.Iraq.iq',
+    # --- MBC NETWORK ---
+    'MBC1.ae': 'MBC.1.ae',
+    'MBC2.ae': 'MBC.2.ae',
+    'MBC3.ae': 'MBC.3.ae',
+    'MBC4.ae': 'MBC.4.ae',
+    'MBCAction.ae': 'MBC.Action.ae',
+    'MBCDrama.ae': 'MBC.Drama.ae',
+    'MBCMasr.eg': 'MBC.Masr.HD.ae',
+    'MBCMasr2.eg': 'MBC.Masr.2.HD.ae',
+    'Wanasah.ae': 'Wanasah.ae',
+
+    # --- ABU DHABI & DUBAI ---
+    'AbuDhabiTV.ae': 'Abu.Dhabi.HD.ae',
+    'AbuDhabiSports1.ae': 'AD.Sports.1.HD.ae',
+    'AbuDhabiSports2.ae': 'AD.Sports.2.HD.ae',
+    'DubaiTV.ae': 'Dubai.HD.ae',
+    'DubaiOne.ae': 'Dubai.One.HD.ae',
+    'SamaDubai.ae': 'Sama.Dubai.HD.ae',
+
+    # --- ROTANA ---
+    'RotanaCinema.sa': 'Rotana.Cinema.KSA.ae',
+    'RotanaCinemaEgypt.eg': 'Rotana.Cinema.Egypt.ae',
+    'RotanaDrama.sa': 'Rotana.Drama.ae',
+    
+    # --- SPORTS & NEWS ---
+    'OnTimeSports1.eg': 'On.Time.Sports.HD.ae',
+    'AlArabiya.net': 'Al.Arabiya.HD.ae',
+    'AlHadath.net': 'Al.Hadath.ae',
+    'SkyNewsArabia.ae': 'Sky.News.Arabia.HD.ae'
 }
 
-def normalise(text):
-    """Removes all non-alphanumeric chars and makes lowercase for comparison."""
-    if not text: return ""
-    # Remove things like ".ae", "HD", "TV", and special characters
-    text = re.sub(r'(@[A-Z0-9]+)', '', text)
-    text = text.lower().replace('hd', '').replace('tv', '').replace('.ae', '').replace('.eg', '')
-    return re.sub(r'[^a-z0-9]', '', text)
+def normalise_id(cid):
+    if not cid: return ""
+    # Remove @SD, @HD, and extra tags
+    clean = re.sub(r'(@[A-Z0-9]+)', '', cid)
+    # Remove dots, dashes, and spaces to find matches across different sources
+    return re.sub(r'[._\-\s]', '', clean).lower()
 
-def get_m3u_data():
-    """Fetches the M3U and builds a dictionary of {CleanName: OriginalID}."""
-    m3u_map = {}
+def get_allowed_ids():
+    allowed = set()
+    for target_id in ID_MAP.values():
+        allowed.add(target_id)
+        
     print(f"🌐 Fetching live M3U from: {M3U_URL}")
     try:
         r = requests.get(M3U_URL, timeout=30)
-        # Find tvg-id and the channel name from the #EXTINF line
-        matches = re.findall(r'tvg-id="([^"]+)".*?,(.*)', r.text)
-        for tvg_id, channel_name in matches:
-            # Map both the ID and the Name to the target ID
-            m3u_map[normalise(tvg_id)] = tvg_id
-            m3u_map[normalise(channel_name)] = tvg_id
+        matches = re.findall(r'tvg-id="([^"]+)"', r.text)
+        for m in matches:
+            allowed.add(m)
+        print(f"✅ Found {len(allowed)} potential channel IDs.")
     except Exception as e:
         print(f"⚠️ M3U Fetch Error: {e}")
-    return m3u_map
+    return allowed
 
 def process_iptv():
-    print("🚀 Starting Smart Auto-Mapper...")
+    print("🚀 Starting Smart Mapper...")
+    ALLOWED_IDS = get_allowed_ids()
     
-    # This map contains clean versions of every ID and Name in your M3U
-    SMART_MAP = get_m3u_data()
+    # Create a "Normalization Bridge"
+    # This maps 'mbciraqae' -> 'MBC.Iraq.iq'
+    REVERSE_MAP = {normalise_id(k): v for k, v in ID_MAP.items()}
     
-    # Merge our manual ID_MAP into the smart map
-    for key, val in ID_MAP.items():
-        SMART_MAP[normalise(key)] = val
-
     channel_elements = []
     program_elements = []
     processed_channels = set()
 
     for url in EPG_SOURCES:
         file_name = url.split('/')[-1]
-        print(f"📥 Processing: {file_name}")
+        print(f"📥 Processing EPG: {file_name}")
         try:
             r = requests.get(url, timeout=45)
             content = r.content
@@ -137,16 +150,18 @@ def process_iptv():
                 
                 if tag == 'programme':
                     source_id = elem.get('channel')
-                    norm_source = normalise(source_id)
+                    norm = normalise_id(source_id)
                     final_id = None
 
-                    # STEP 1 & 2 & 3: Look for match in our Smart Map
-                    if norm_source in SMART_MAP:
-                        final_id = SMART_MAP[norm_source]
+                    # 1. Check normalization bridge (Fixes MBC Iraq, MBC Masr, etc)
+                    if norm in REVERSE_MAP:
+                        final_id = REVERSE_MAP[norm]
+                    # 2. Check direct match against M3U
+                    elif source_id in ALLOWED_IDS:
+                        final_id = source_id
                     
                     if final_id:
-                        # Skip if it's junk (like Radio)
-                        if any(x in norm_source for x in EXCLUDE_WORDS):
+                        if norm not in REVERSE_MAP and any(x in norm for x in EXCLUDE_WORDS):
                             elem.clear()
                             continue
 
@@ -162,13 +177,13 @@ def process_iptv():
             print(f"  ⚠️ Error: {e}")
 
     if program_elements:
-        print(f"💾 Saving {len(program_elements)} programs for {len(processed_channels)} channels...")
+        print(f"💾 Writing {len(program_elements)} programs for {len(processed_channels)} channels...")
         with open(OUTPUT_FILE, "wb") as f_out:
             f_out.write(b'<?xml version="1.0" encoding="utf-8"?>\n<tv>\n')
             for c in channel_elements: f_out.write(c + b'\n')
             for p in program_elements: f_out.write(p + b'\n')
             f_out.write(b'</tv>')
-        print(f"✅ Created EPG with {len(processed_channels)} channels matched!")
+        print(f"✅ Created EPG with {len(processed_channels)} channels.")
 
 if __name__ == "__main__":
     process_iptv()
