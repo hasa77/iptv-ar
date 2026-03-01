@@ -18,7 +18,8 @@ EPG_SOURCES = [
 # Suffixes that indicate the channel is definitely NOT the Arabic version
 FORBIDDEN_SUFFIXES = (
     '.hk', '.kr', '.dk', '.fi', '.no', '.se', '.be', '.es', '.fr', 
-    '.ca', '.ca2', '.gr', '.de', '.cz', '.cy', '.ch', '.it'
+    '.ca', '.ca2', '.gr', '.de', '.cz', '.cy', '.ch', '.it', '.us', 
+    '.distro', '.us_locals1', '.pluto'
 )
 
 AR_SUFFIXES = ('.ae', '.dz', '.eg', '.iq', '.jo', '.kw', '.lb', '.ly', '.ma', 
@@ -57,6 +58,8 @@ EXCLUDE_WORDS = (
     'canada', 'cbc.ca', 'cbcmusic',                     # Canadian CBC
     'kmbc', 'wmbc', 'tmbc', 'mbc1usa', 'samsung',       # US MBC
     'español', 'wellbeing', 'xtra',             		# Spanish / Health junk
+    '-cd', '-ld', 'locals1', 'global.bc',				# US local station patterns
+	'engelsk',											# Denmark
 )
 
 ID_MAP = {
