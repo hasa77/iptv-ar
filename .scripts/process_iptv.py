@@ -7,35 +7,45 @@ import os
 from collections import defaultdict
 
 M3U_URL = "https://iptv-org.github.io/iptv/languages/ara.m3u"
-EPG_OUTPUT     = "arabic-epg.xml"
-M3U_OUTPUT     = "curated-live.m3u"
+OUTPUT_FILE = "arabic-epg.xml"
 EPG_SOURCES = [
     "https://epgshare01.online/epgshare01/epg_ripper_ALL_SOURCES1.xml.gz",
     #Combined Egypt, Lebanon, Saudi, UAE, GB, USA
     "https://iptv-epg.org/files/epg-meyqso.xml"
 ]
 
-# ── Logo overrides ────────────────────────────────────────────────────────────
-# Key = stripped tvg-id (no @SD/@HD suffix), matched with norm()
-# Value = direct image URL
 LOGO_MAP = {
-    # Abu Dhabi TV
-    'AbuDhabiTV.ae':            'https://upload.wikimedia.org/wikipedia/commons/d/d7/Abu_Dhabi_TV_logo_2023.png',
-    'AbuDhabiEmirates.ae':      'https://upload.wikimedia.org/wikipedia/commons/d/d7/Abu_Dhabi_TV_logo_2023.png',
-
-    # Ajman
-    'AjmanTV.ae':               'https://static.wikia.nocookie.net/logopedia/images/b/b3/Ajman_TV_Logo_1996.png/revision/latest?cb=20241210014941',
-
-    # Ajyal
-    'AjyalTV.ps':               'https://upload.wikimedia.org/wikipedia/en/2/23/AjyalTVLogo2014.png',
-
-    # Al Aqsa
-    'AlAqsaTV.ps':              'https://cdn.broadbandtvnews.com/wp-content/uploads/2024/01/04120752/Al-Aqsa-TV.jpg',
+    # Al Arabiya & Hadath
+    'Al.Arabiya.HD.ae': 'https://upload.wikimedia.org/wikipedia/commons/8/8b/Al_Arabiya_-Logo_%281%29.png',
+    'Al.Arabiya.Programs': 'https://upload.wikimedia.org/wikipedia/commons/8/8b/Al_Arabiya_-Logo_%281%29.png',
+    'Al.Arabiya.Business': 'https://aib.org.uk/wp-content/uploads/2023/10/AL-ARABIYA-BUSINESS-LOGO-2.jpg',
+    'Al.Hadath.ae': 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Al_Hadath_TV_logo_2023.svg/1920px-Al_Hadath_TV_logo_2023.svg.png',
+    
+    # Al Araby Network
+    'Al.Araby.TV': 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/ALARABY_ARABIC.png/960px-ALARABY_ARABIC.png',
+    'Al.Araby.TV2': 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/ALARABY_ARABIC.png/960px-ALARABY_ARABIC.png',
+    
+    # News & Info
+    'Al.Ekhbariya': 'https://upload.wikimedia.org/wikipedia/commons/e/e3/%D8%A7%D9%84%D9%82%D9%86%D8%A7.png',
+    'Al.Ghad.TV': 'https://upload.wikimedia.org/wikipedia/commons/0/06/AlGhad_TV.png',
+    
+    # Iraq
+    'Al.Iraqiya': 'https://static.wikia.nocookie.net/logopedia/images/1/18/Al_Iraqiya_Logo.png/revision/latest?cb=20210309003710',
+    'Al.Iraqia.News': 'https://static.wikia.nocookie.net/logopedia/images/1/18/Al_Iraqiya_Logo.png/revision/latest?cb=20210309003710',
+    
+    # Al Jazeera Variants
+    'Al.Jazeera.Mubasher.ae': 'https://upload.wikimedia.org/wikipedia/ar/c/c3/%D8%B4%D8%B9%D8%A7%D8%B1_%D9%82%D9%86%D8%A7%D8%A9_%D8%A7%D9%84%D8%AC%D8%B2%D9%8I%D8%B1%D8%A9_%D9%85%D8%A8%D8%A7%D8%B4%D8%B1.svg',
+    'Al.Jazeera.Mubasher24': 'https://upload.wikimedia.org/wikipedia/ar/c/c3/%D8%B4%D8%B9%D8%A7%D8%B1_%D9%82%D9%86%D8%A7%D8%A9_%D8%A7%D9%84%D8%AC%D8%B2%D9%8I%D8%B1%D8%A9_%D9%85%D8%A8%D8%A7%D8%B4%D8%B1.svg',
+    'Al.Jazeera.Mubasher.Broadcast2': 'https://upload.wikimedia.org/wikipedia/ar/c/c3/%D8%B4%D8%B9%D8%A7%D8%B1_%D9%82%D9%86%D8%A7%D8%A9_%D8%A7%D9%84%D8%AC%D8%B2%D9%8I%D8%B1%D8%A9_%D9%85%D8%A8%D8%A7%D8%B4%D8%B1.svg',
+    
+    # Religious & Others
+    'Al.Maaref.TV': 'https://almaaref.ch/wp-content/uploads/2021/10/Almaaref-Logo.png',
+    'Al.Mamlaka.TV': 'https://upload.wikimedia.org/wikipedia/en/8/8a/Al-Mamlaka_TV_logo.png'
 }
 
-# ── Explicit EPG ID bridges ───────────────────────────────────────────────────
-# Key   = M3U tvg-id stripped of @suffix
-# Value = exact EPG channel id
+# ── Explicit bridges: M3U tvg-id  →  EPG channel id ──────────────────────────
+# Left side  = exact tvg-id value as it appears in the iptv-org M3U
+# Right side = exact channel id as it appears in the EPG source
 ID_MAP = {
     # Abu Dhabi
     'Abu.Dhabi.HD.ae':          'AbuDhabiTV.ae',
@@ -94,140 +104,160 @@ ID_MAP = {
 }
 
 EXCLUDE_WORDS = (
-    'radio', '.fm', 'chaine', 'distrotv',
-    'kurd', 'kurdistan', 'rudaw', 'waar', 'duhok',
-    'morocco', 'maroc', 'maghreb',
-    'tunisia', 'tunisie',
-    'libya', 'libye', '218tv',
-    'iran', 'persian', 'farsi', 'gemtv', 'mbcpersia',
-    'afghanistan', 'afghan', 'pashto', 'tolo',
-    'babyfirst',
-    'eritrea', 'eritv',
-    'i24news',
-    'india', 'hindi', 'tamil', 'telugu', 'malayalam',
-    'korea', 'korean',
-    'zealand', 'australia',
-    'turk', 'trrt',
-    'canada', 'cbcca', 'cbcmusic',
-    'kmbc', 'wmbc', 'tmbc', 'mbc1usa',
-    'espanol', 'wellbeing',
-    'engelsk',
-    'argentina', 'colombia',
+    'radio', 'fm', 'chaine', 'distro.tv', 'argentina', 'colombia', 'telefe', 'eltrece', 
+    'kurd', 'kurdistan', 'rudaw', 'waar', 'duhok',       # Kurdish
+    'morocco', 'maroc', 'maghreb', '2m',                 # Morocco
+    'tunisia', 'tunisie', 'ttv', 'hannibal',             # Tunisia
+    'libya', 'libye', '218 tv',                          # Libya
+    'iran', 'persian', 'farsi', 'gem tv', 'mbcpersia',   # Iran
+    'afghanistan', 'afghan', 'pashto', 'tolo', 'afghani' # Afghanistan
+    'babyfirst',                                         # US English Kids
+    'eritrea', 'eri-tv',                                 # Eritrea
+    'i24news',                                           # Israel-based news
+    'india', 'hindi', 'tamil', 'telugu', 'malayalam',    # India
+    'korea', 'korean', 'kbs', 'sbs', 'tvn',              # Korea
+    'zealand', 'nz', 'australia', 'canterbury',          # NZ/AU
+    'turk', 'trrt', 'atv.tr', 'fox.tr',                  # Turkish
+    'canada', 'cbc.ca', 'cbcmusic', 'halifax', 'ottawa', 'winnipeg', 'calgary', 'vancouver', 'montreal',                 # Canadian CBC
+    'kmbc', 'wmbc', 'tmbc', 'mbc1usa', 'samsung',        # US MBC Look-alikes
+    'milb', 'ncaa', 'broncos', 'lobos', 'santa-clara',  # US Sports
+    'mlb-', 'cubs', 'guardians', 'white-sox', 'reds',   # Baseball specific
+    'espanol', 'wellbeing',                             # Spanish / Health junk
+    'engelsk',                                          # Denmark
+    'argentina', 'colombia',                            # Argentina + Colombia
 )
 
-# ── Helpers ───────────────────────────────────────────────────────────────────
-
+# ── Helpers ──────────────────────────────────────────────────────────────────
 def strip_quality(s):
-    """Remove trailing @SD, @HD, @Arabic, @Plus1, etc."""
-    return re.sub(r'@\S+$', '', s or '').strip()
+    # Removes @SD, @HD, and parentheses content
+    return re.sub(r'(@\S+)|(\s*\(.*\))', '', s or '').strip()
 
 def norm(s):
     s = strip_quality(s)
-    return re.sub(r'[._\-\s/]', '', s).lower()
+    # Replaces dots, dashes, and spaces with nothing, keeps lowercase letters and numbers
+    return re.sub(r'[^a-z0-9]', '', s.lower())
 
 def is_excluded(tvg_id, name=''):
     combined = norm(tvg_id) + ' ' + norm(name)
     return any(x in combined for x in EXCLUDE_WORDS)
 
 def apply_logo(extinf_line, tvg_id):
-    """Inject or replace tvg-logo in an EXTINF line if we have one."""
-    stripped = strip_quality(tvg_id)
-    n = norm(stripped)
-    # Build a norm->url lookup
+    n_id = norm(tvg_id)
     logo_url = None
+    # Find match in LOGO_MAP using normalized keys
     for k, v in LOGO_MAP.items():
-        if norm(k) == n:
+        if norm(k) == n_id:
             logo_url = v
             break
-    if not logo_url:
-        return extinf_line  # nothing to change
-
-    if 'tvg-logo=' in extinf_line:
-        # Replace existing logo
-        return re.sub(r'tvg-logo="[^"]*"', f'tvg-logo="{logo_url}"', extinf_line)
-    else:
-        # Insert before the closing comma+name section
-        return re.sub(r'(#EXTINF:[^,]*)', rf'\1 tvg-logo="{logo_url}"', extinf_line, count=1)
+            
+    if logo_url:
+        if 'tvg-logo=' in extinf_line:
+            return re.sub(r'tvg-logo="[^"]*"', f'tvg-logo="{logo_url}"', extinf_line)
+        else:
+            return re.sub(r'(#EXTINF:[^,]*)', rf'\1 tvg-logo="{logo_url}"', extinf_line, count=1)
+    return extinf_line
 
 
-# ── Step 1: Load EPG ──────────────────────────────────────────────────────────
+# ── Step 1: Load all EPG channels ────────────────────────────────────────────
 
 def load_epg_channels():
+    """
+    Returns:
+      epg_exact      : set of exact EPG channel ids
+      epg_norm       : dict  norm(id) -> exact EPG channel id
+      epg_programmes : dict  exact_id -> list of ET element bytes
+    """
     epg_exact      = set()
     epg_norm       = {}
     epg_programmes = defaultdict(list)
 
     for url in EPG_SOURCES:
         fname = url.split('/')[-1]
-        print(f"📥 Loading EPG: {fname}")
+        print(f"📥 Loading EPG channels from: {fname}")
         try:
             r = requests.get(url, timeout=60)
             content = r.content
             if not content:
-                print("   ⚠️  Empty"); continue
+                print(f"   ⚠️  Empty response")
+                continue
 
-            f = (gzip.GzipFile(fileobj=io.BytesIO(content))
-                 if content[:2] == b'\x1f\x8b' else io.BytesIO(content))
+            f = gzip.GzipFile(fileobj=io.BytesIO(content)) if content[:2] == b'\x1f\x8b' else io.BytesIO(content)
 
             for event, elem in ET.iterparse(f, events=('end',)):
                 tag = elem.tag.split('}')[-1]
+
                 if tag == 'channel':
                     cid = elem.get('id', '')
                     if cid:
                         epg_exact.add(cid)
                         epg_norm[norm(cid)] = cid
+
                 elif tag == 'programme':
                     cid = elem.get('channel', '')
                     if cid in epg_exact:
                         epg_programmes[cid].append(ET.tostring(elem, encoding='utf-8'))
+
                 elem.clear()
+
         except Exception as e:
             print(f"   ⚠️  Error: {e}")
 
-    print(f"   ✅ {len(epg_exact)} EPG channels, "
-          f"{sum(len(v) for v in epg_programmes.values())} programmes\n")
+    print(f"   ✅ EPG has {len(epg_exact)} unique channel ids, "
+          f"{sum(len(v) for v in epg_programmes.values())} programmes total\n")
     return epg_exact, epg_norm, epg_programmes
 
 
-# ── Step 2: Fetch M3U and resolve ─────────────────────────────────────────────
+# ── Step 2: Fetch M3U and resolve each channel to an EPG id ──────────────────
 
 def fetch_and_resolve_m3u(epg_exact, epg_norm):
+    """
+    Returns list of dicts:
+      { 'extinf': original #EXTINF line,
+        'url':    stream URL,
+        'tvg_id': original tvg-id from M3U,
+        'epg_id': resolved EPG channel id (or None) }
+    """
+    # Build normalised ID_MAP lookup: norm(M3U tvg-id) -> EPG channel id
     id_map_norm = {norm(k): v for k, v in ID_MAP.items()}
 
     print(f"🌐 Fetching M3U: {M3U_URL}")
     r = requests.get(M3U_URL, timeout=30)
     lines = r.text.splitlines()
-    print(f"   ✅ {len(lines)} lines\n")
+    print(f"   ✅ {len(lines)} lines fetched\n")
 
     channels = []
     i = 0
     while i < len(lines):
         line = lines[i]
         if line.startswith('#EXTINF'):
-            url = lines[i + 1] if i + 1 < len(lines) else ''
+            extinf = line
+            url    = lines[i + 1] if i + 1 < len(lines) else ''
             i += 2
 
-            tid_m  = re.search(r'tvg-id="([^"]*)"',   line)
-            name_m = re.search(r'tvg-name="([^"]*)"', line)
+            tid_m  = re.search(r'tvg-id="([^"]*)"',   extinf)
+            name_m = re.search(r'tvg-name="([^"]*)"', extinf)
             tvg_id = tid_m.group(1)  if tid_m  else ''
             name   = name_m.group(1) if name_m else ''
 
-            stripped = strip_quality(tvg_id)
-            n        = norm(stripped)
-
+            # Try to resolve to EPG id
             epg_id = None
-            if n in id_map_norm:
+            n = norm(tvg_id)
+
+            if n in id_map_norm:                     # 1. explicit map
                 candidate = id_map_norm[n]
                 if candidate in epg_exact:
                     epg_id = candidate
-            if not epg_id and stripped in epg_exact:
-                epg_id = stripped
-            if not epg_id and n in epg_norm:
+            if not epg_id and tvg_id in epg_exact:   # 2. exact
+                epg_id = tvg_id
+            if not epg_id and n in epg_norm:         # 3. fuzzy
                 epg_id = epg_norm[n]
 
             channels.append({
-                'extinf': line, 'url': url,
-                'tvg_id': tvg_id, 'name': name, 'epg_id': epg_id,
+                'extinf': extinf,
+                'url':    url,
+                'tvg_id': tvg_id,
+                'name':   name,
+                'epg_id': epg_id,
             })
         else:
             i += 1
@@ -235,48 +265,53 @@ def fetch_and_resolve_m3u(epg_exact, epg_norm):
     return channels
 
 
-# ── Step 3: Write outputs ─────────────────────────────────────────────────────
+# ── Step 3: Filter and write outputs ─────────────────────────────────────────
 
-def write_outputs(channels, epg_programmes):
-    kept, no_epg = [], []
+def write_outputs(channels, epg_exact, epg_norm, epg_programmes):
+    kept_channels   = []
+    epg_ids_needed  = set()
+    no_epg          = []
 
     for ch in channels:
         if is_excluded(ch['tvg_id'], ch['name']):
             continue
-        (kept if ch['epg_id'] else no_epg).append(ch)
 
-    epg_ids = {ch['epg_id'] for ch in kept}
+        if ch['epg_id']:
+            epg_ids_needed.add(ch['epg_id'])
+            kept_channels.append(ch)
+        else:
+            no_epg.append(ch)
 
-    logos_applied = 0
+    # ── Write M3U ────────────────────────────────────────────────────────────
+    print(f"📝 Writing M3U: {len(kept_channels)} channels with EPG  "
+          f"({len(no_epg)} dropped — no EPG match)")
 
-    # M3U
-    print(f"📝 Writing M3U: {len(kept)} channels with EPG")
     with open(M3U_OUTPUT, 'w', encoding='utf-8') as f:
         f.write('#EXTM3U\n')
-        for ch in kept:
+        for ch in kept_channels:
+            # Rewrite tvg-id in the EXTINF line to the EPG id
             extinf = re.sub(r'tvg-id="[^"]*"', f'tvg-id="{ch["epg_id"]}"', ch['extinf'])
-            new_extinf = apply_logo(extinf, ch['tvg_id'])
-            if new_extinf != extinf:
-                logos_applied += 1
-            f.write(new_extinf + '\n' + ch['url'] + '\n')
+            f.write(extinf + '\n')
+            f.write(ch['url'] + '\n')
 
-    print(f"🖼️  Logos applied: {logos_applied}")
+    # ── Write EPG ────────────────────────────────────────────────────────────
+    total_progs = sum(len(epg_programmes[eid]) for eid in epg_ids_needed)
+    print(f"💾 Writing EPG: {len(epg_ids_needed)} channels, {total_progs} programmes")
 
-    # EPG
-    total = sum(len(epg_programmes[e]) for e in epg_ids)
-    print(f"💾 Writing EPG: {len(epg_ids)} channels, {total} programmes")
     with open(EPG_OUTPUT, 'wb') as f:
         f.write(b'<?xml version="1.0" encoding="utf-8"?>\n<tv>\n')
-        for eid in sorted(epg_ids):
-            f.write(f'<channel id="{eid}"><display-name>{eid}</display-name></channel>\n'.encode())
-        for eid in sorted(epg_ids):
+        for eid in sorted(epg_ids_needed):
+            chan_xml = f'<channel id="{eid}"><display-name>{eid}</display-name></channel>\n'
+            f.write(chan_xml.encode('utf-8'))
+        for eid in sorted(epg_ids_needed):
             for prog in epg_programmes[eid]:
                 f.write(prog + b'\n')
         f.write(b'</tv>')
 
-    print(f"\n❓ {len(no_epg)} channels without EPG:")
-    for ch in sorted(no_epg, key=lambda x: x['tvg_id']):
-        print(f"   {ch['tvg_id']}")
+    # ── Debug: what didn't get EPG ────────────────────────────────────────────
+    print(f"\n❓ Channels WITHOUT EPG match ({len(no_epg)}) — add to ID_MAP if you want them:")
+    for ch in sorted(no_epg, key=lambda x: x['name']):
+        print(f"   tvg-id={ch['tvg_id']!r:45s}  name={ch['name']!r}")
 
     print(f"\n✅ Done!  →  {M3U_OUTPUT}  +  {EPG_OUTPUT}")
 
@@ -287,7 +322,8 @@ def main():
     print("🚀 Arabic IPTV Sync\n")
     epg_exact, epg_norm, epg_programmes = load_epg_channels()
     channels = fetch_and_resolve_m3u(epg_exact, epg_norm)
-    write_outputs(channels, epg_programmes)
+    write_outputs(channels, epg_exact, epg_norm, epg_programmes)
+
 
 if __name__ == '__main__':
     main()
