@@ -15,52 +15,104 @@ EPG_SOURCES = [
     "https://iptv-epg.org/files/epg-meyqso.xml"
 ]
 
-# Explicit overrides where even stripped fuzzy match won't work.
-# Key   = M3U tvg-id (with or without @suffix — we strip before lookup)
+# ── Logo overrides ────────────────────────────────────────────────────────────
+# Key = stripped tvg-id (no @SD/@HD suffix), matched with norm()
+# Value = direct image URL
+LOGO_MAP = {
+    # Abu Dhabi TV
+    'AbuDhabiTV.ae':            'https://upload.wikimedia.org/wikipedia/commons/d/d7/Abu_Dhabi_TV_logo_2023.png',
+    'AbuDhabiEmirates.ae':      'https://upload.wikimedia.org/wikipedia/commons/d/d7/Abu_Dhabi_TV_logo_2023.png',
+
+    # Ajman
+    'AjmanTV.ae':               'https://static.wikia.nocookie.net/logopedia/images/b/b3/Ajman_TV_Logo_1996.png/revision/latest?cb=20241210014941',
+
+    # Ajyal
+    'AjyalTV.ps':               'https://upload.wikimedia.org/wikipedia/en/2/23/AjyalTVLogo2014.png',
+
+    # Al Aqsa
+    'AlAqsaTV.ps':              'https://cdn.broadbandtvnews.com/wp-content/uploads/2024/01/04120752/Al-Aqsa-TV.jpg',
+}
+
+# ── Explicit EPG ID bridges ───────────────────────────────────────────────────
+# Key   = M3U tvg-id stripped of @suffix
 # Value = exact EPG channel id
 ID_MAP = {
-    'AlJazeera.qa':        'AlJazeera.qa',
-    'France24.fr':         'France24Arabic.fr',
-    'DW.de':               'DWArabic.de',
-    'BBCArabic.uk':        'BBCArabic.uk',
-    'RTArabic.ru':         'RTArabic.ru',
-    'JordanTV.jo':         'JordanTV.jo',
-    'MBCMasr.eg':          'MBCMasr.eg',
-    'MBCMasr2.eg':         'MBCMasr2.eg',
-    'MBC1Egypt.eg':        'MBCMasr.eg',
-    'RotanaCinemaEgypt.eg':'RotanaCinemaEgypt.eg',
-    'KSA-Sports-1.sa':     'KSA-Sports-1.sa',
-    'KSA-Sports-2.sa':     'KSA-Sports-2.sa',
-    'OnTimeSports1.eg':    'OnTimeSports1.eg',
-    'OnTimeSports2.eg':    'OnTimeSports2.eg',
-    'AlArabiya.ae':        'AlArabiya.net',
-    'Alarabiya.ae':        'AlArabiya.net',
-    'AlEkhbariya.sa':      'SaudiEkhbariya.sa',
-    'SkyNewsArabia.ae':    'SkyNewsArabia.ae',
+    # Abu Dhabi
+    'Abu.Dhabi.HD.ae':          'AbuDhabiTV.ae',
+    'AD.Sports.1.HD.ae':        'AbuDhabiSports1.ae',
+    'AD.Sports.2.HD.ae':        'AbuDhabiSports2.ae',
+    'Yas.TV.HD.ae':             'YasTV.ae',
+
+    # Dubai
+    'Dubai.HD.ae':              'DubaiTV.ae',
+    'Sama.Dubai.HD.ae':         'SamaDubai.ae',
+    'Dubai.One.HD.ae':          'DubaiOne.ae',
+    'Noor.DubaiTV.ae':          'NoorDubaiTV.ae',
+    'Dubai.Sports.1.HD.ae':     'DubaiSports1.ae',
+    'Dubai.Sports.2.ae':        'DubaiSports2.ae',
+    'Dubai.Racing.ae':          'DubaiRacing1.ae',
+    'Dubai.Zaman.ae':           'DubaiZaman.ae',
+    'One.Tv.ae':                'OneTv.ae',
+
+    # MBC
+    'MBC.1.ae':                 'MBC1.ae',
+    'MBC.2.ae':                 'MBC2.ae',
+    'MBC.3.ae':                 'MBC3.ae',
+    'MBC.4.ae':                 'MBC4.ae',
+    'MBC.Action.ae':            'MBCAction.ae',
+    'MBC.Drama.ae':             'MBCDrama.ae',
+    'MBC.Masr.HD.ae':           'MBCMasr.eg',
+    'MBC.Masr.2.HD.ae':         'MBCMasr2.eg',
+
+    # Rotana
+    'Rotana.Cinema.KSA.ae':     'RotanaCinema.sa',
+    'Rotana.Cinema.Egypt.ae':   'RotanaCinemaEgypt.eg',
+    'Rotana.Drama.ae':          'RotanaDrama.sa',
+    'Rotana.Classic.ae':        'RotanaClassic.sa',
+    'Rotana.Khalijia.ae':       'RotanaKhalijia.sa',
+    'Rotana.Mousica.ae':        'RotanaMousica.sa',
+
+    # Sports & News
+    'KSA.Sports.1.ae':          'KSA-Sports-1.sa',
+    'KSA.Sports.2.HD.ae':       'KSA-Sports-2.sa',
+    'On.Time.Sports.HD.ae':     'OnTimeSports1.eg',
+    'On.Time.Sport.2.HD.ae':    'OnTimeSports2.eg',
+    'Sharjah.Sports.HD.ae':     'SharjahSports.ae',
+    'Al.Arabiya.HD.ae':         'AlArabiya.net',
+    'Al.Hadath.ae':             'AlHadath.net',
+    'Sky.News.Arabia.HD.ae':    'SkyNewsArabia.ae',
+    'Jordan.TV.HD.ae':          'JordanTV.jo',
+    'BBC.Arabic.ae':            'BBCArabic.uk',
+    'France.24.Arabic.ae':      'France24Arabic.fr',
+    'RT.Arabic.HD.ae':          'RTArabic.ru',
+
+    # Religious
+    'Saudi.Quran.TV.HD.ae':     'SaudiQuran.sa',
+    'Saudi.Sunna.TV.HD.ae':     'SaudiSunnah.sa',
+    'Saudi.Al.Ekhbariya.HD.ae': 'SaudiEkhbariya.sa',
+    'Sharjah.Quran.TV.ae':      'SharjahQuran.ae',
 }
 
 EXCLUDE_WORDS = (
-    'radio', 'fm',
+    'radio', '.fm', 'chaine', 'distrotv',
     'kurd', 'kurdistan', 'rudaw', 'waar', 'duhok',
-    'iran', 'persian', 'farsi', 'gemtv', 'mbcpersia', 'kawthar', 'wilayah',
+    'morocco', 'maroc', 'maghreb',
+    'tunisia', 'tunisie',
+    'libya', 'libye', '218tv',
+    'iran', 'persian', 'farsi', 'gemtv', 'mbcpersia',
     'afghanistan', 'afghan', 'pashto', 'tolo',
     'babyfirst',
-    'eritrea',
+    'eritrea', 'eritv',
     'i24news',
-    'hindi', 'tamil', 'telugu', 'malayalam',
-    'korean',
+    'india', 'hindi', 'tamil', 'telugu', 'malayalam',
+    'korea', 'korean',
+    'zealand', 'australia',
     'turk', 'trrt',
-    'cbcca', 'cbcmusic',
+    'canada', 'cbcca', 'cbcmusic',
     'kmbc', 'wmbc', 'tmbc', 'mbc1usa',
-    'wellbeing',
+    'espanol', 'wellbeing',
     'engelsk',
     'argentina', 'colombia',
-    'rojavatv', 'ronahitv', 'welatv', 'zagrostv',   # Kurdish Syria
-    'chada', 'medi1',                                # Morocco
-    'jawhara', 'mosaiquepm',                         # Tunisia
-    'february', 'tanasuh', 'wasat',                  # Libya
-    'dabanga',                                       # Sudan
-    'teletChad', 'rtd4',                             # Chad/Djibouti
 )
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
@@ -70,21 +122,39 @@ def strip_quality(s):
     return re.sub(r'@\S+$', '', s or '').strip()
 
 def norm(s):
-    """Normalise: strip quality suffix, punctuation, lowercase."""
     s = strip_quality(s)
-    s = re.sub(r'[._\-\s/]', '', s)
-    return s.lower()
+    return re.sub(r'[._\-\s/]', '', s).lower()
 
 def is_excluded(tvg_id, name=''):
     combined = norm(tvg_id) + ' ' + norm(name)
     return any(x in combined for x in EXCLUDE_WORDS)
+
+def apply_logo(extinf_line, tvg_id):
+    """Inject or replace tvg-logo in an EXTINF line if we have one."""
+    stripped = strip_quality(tvg_id)
+    n = norm(stripped)
+    # Build a norm->url lookup
+    logo_url = None
+    for k, v in LOGO_MAP.items():
+        if norm(k) == n:
+            logo_url = v
+            break
+    if not logo_url:
+        return extinf_line  # nothing to change
+
+    if 'tvg-logo=' in extinf_line:
+        # Replace existing logo
+        return re.sub(r'tvg-logo="[^"]*"', f'tvg-logo="{logo_url}"', extinf_line)
+    else:
+        # Insert before the closing comma+name section
+        return re.sub(r'(#EXTINF:[^,]*)', rf'\1 tvg-logo="{logo_url}"', extinf_line, count=1)
 
 
 # ── Step 1: Load EPG ──────────────────────────────────────────────────────────
 
 def load_epg_channels():
     epg_exact      = set()
-    epg_norm       = {}          # norm(id) -> exact id
+    epg_norm       = {}
     epg_programmes = defaultdict(list)
 
     for url in EPG_SOURCES:
@@ -94,7 +164,7 @@ def load_epg_channels():
             r = requests.get(url, timeout=60)
             content = r.content
             if not content:
-                print("   ⚠️  Empty response"); continue
+                print("   ⚠️  Empty"); continue
 
             f = (gzip.GzipFile(fileobj=io.BytesIO(content))
                  if content[:2] == b'\x1f\x8b' else io.BytesIO(content))
@@ -122,7 +192,6 @@ def load_epg_channels():
 # ── Step 2: Fetch M3U and resolve ─────────────────────────────────────────────
 
 def fetch_and_resolve_m3u(epg_exact, epg_norm):
-    # norm(stripped M3U id) -> EPG id
     id_map_norm = {norm(k): v for k, v in ID_MAP.items()}
 
     print(f"🌐 Fetching M3U: {M3U_URL}")
@@ -143,17 +212,17 @@ def fetch_and_resolve_m3u(epg_exact, epg_norm):
             tvg_id = tid_m.group(1)  if tid_m  else ''
             name   = name_m.group(1) if name_m else ''
 
-            stripped = strip_quality(tvg_id)   # e.g. BBCArabic.uk@SD -> BBCArabic.uk
-            n        = norm(stripped)           # e.g. bbcarabicuk
+            stripped = strip_quality(tvg_id)
+            n        = norm(stripped)
 
             epg_id = None
-            if n in id_map_norm:               # 1. explicit map
+            if n in id_map_norm:
                 candidate = id_map_norm[n]
                 if candidate in epg_exact:
                     epg_id = candidate
-            if not epg_id and stripped in epg_exact:   # 2. exact stripped
+            if not epg_id and stripped in epg_exact:
                 epg_id = stripped
-            if not epg_id and n in epg_norm:           # 3. fuzzy
+            if not epg_id and n in epg_norm:
                 epg_id = epg_norm[n]
 
             channels.append({
@@ -178,14 +247,20 @@ def write_outputs(channels, epg_programmes):
 
     epg_ids = {ch['epg_id'] for ch in kept}
 
-    # M3U — rewrite tvg-id to the EPG id TiviMate expects
-    print(f"📝 Writing M3U: {len(kept)} channels with EPG  "
-          f"({len(no_epg)} without EPG — kept but no guide)")
+    logos_applied = 0
+
+    # M3U
+    print(f"📝 Writing M3U: {len(kept)} channels with EPG")
     with open(M3U_OUTPUT, 'w', encoding='utf-8') as f:
         f.write('#EXTM3U\n')
         for ch in kept:
             extinf = re.sub(r'tvg-id="[^"]*"', f'tvg-id="{ch["epg_id"]}"', ch['extinf'])
-            f.write(extinf + '\n' + ch['url'] + '\n')
+            new_extinf = apply_logo(extinf, ch['tvg_id'])
+            if new_extinf != extinf:
+                logos_applied += 1
+            f.write(new_extinf + '\n' + ch['url'] + '\n')
+
+    print(f"🖼️  Logos applied: {logos_applied}")
 
     # EPG
     total = sum(len(epg_programmes[e]) for e in epg_ids)
@@ -199,8 +274,7 @@ def write_outputs(channels, epg_programmes):
                 f.write(prog + b'\n')
         f.write(b'</tv>')
 
-    # Debug: unmatched
-    print(f"\n❓ {len(no_epg)} channels without EPG (not written to M3U):")
+    print(f"\n❓ {len(no_epg)} channels without EPG:")
     for ch in sorted(no_epg, key=lambda x: x['tvg_id']):
         print(f"   {ch['tvg_id']}")
 
@@ -217,4 +291,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
