@@ -64,13 +64,22 @@ EXCLUDE_WORDS = (
 	'engelsk',											# Denmark
 )
 
-# Manual fixes for common mismatches
+# --- THE STEADY STATE MAP (Matches TiviMate IDs) ---
 ID_MAP = {
-   	# --- MBC IRAQ FIX ---
+    # Iraq Fix
     'MBCIraq.iq': 'MBC.Iraq.iq',
     'MBCIraq.ae': 'MBC.Iraq.iq',
+    'MBC.Iraq.iq': 'MBC.Iraq.iq',
     
-    # --- MBC NETWORK ---
+    # Abu Dhabi & Dubai
+    'AbuDhabiTV.ae': 'Abu.Dhabi.HD.ae',
+    'AbuDhabiEmirates.ae': 'Abu.Dhabi.HD.ae',
+    'AbuDhabiSports1.ae': 'AD.Sports.1.HD.ae',
+    'DubaiTV.ae': 'Dubai.HD.ae',
+    'DubaiOne.ae': 'Dubai.One.HD.ae',
+    'SamaDubai.ae': 'Sama.Dubai.HD.ae',
+
+    # MBC
     'MBC1.ae': 'MBC.1.ae',
     'MBC2.ae': 'MBC.2.ae',
     'MBC3.ae': 'MBC.3.ae',
@@ -79,88 +88,66 @@ ID_MAP = {
     'MBCDrama.ae': 'MBC.Drama.ae',
     'MBCMasr.eg': 'MBC.Masr.HD.ae',
     'MBCMasr2.eg': 'MBC.Masr.2.HD.ae',
-    
-    # --- ABU DHABI & DUBAI ---
-    'AbuDhabiTV.ae': 'Abu.Dhabi.HD.ae',
-    'AbuDhabiSports1.ae': 'AD.Sports.1.HD.ae',
-    'DubaiTV.ae': 'Dubai.HD.ae',
-    'DubaiOne.ae': 'Dubai.One.HD.ae',
-    'SamaDubai.ae': 'Sama.Dubai.HD.ae',
 
-    # --- SPORTS & NEWS ---
+    # News & Sports
     'AlArabiya.net': 'Al.Arabiya.HD.ae',
-    'AlHadath.net': 'Al.Hadath.ae',
     'SkyNewsArabia.ae': 'Sky.News.Arabia.HD.ae',
     'OnTimeSports1.eg': 'On.Time.Sports.HD.ae',
     
-    # --- ROTANA ---
+    # Rotana
     'RotanaCinema.sa': 'Rotana.Cinema.KSA.ae',
     'RotanaCinemaEgypt.eg': 'Rotana.Cinema.Egypt.ae'
 }
 
-def normalise_id(cid):
+def clean_id(cid):
     if not cid: return ""
-    # Strip @SD, @HD, @720p etc
-    clean = re.sub(r'(@[A-Z0-9]+)', '', cid)
-    return re.sub(r'[._\-\s]', '', clean).lower()
-
-def get_allowed_ids():
-    allowed = set()
-    for target_id in ID_MAP.values():
-        allowed.add(target_id)
-    try:
-        r = requests.get(M3U_URL, timeout=30)
-        matches = re.findall(r'tvg-id="([^"]+)"', r.text)
-        for m in matches:
-            # Clean the ID before adding to allowed list
-            allowed.add(re.sub(r'(@[A-Z0-9]+)', '', m))
-    except:
-        pass
-    return allowed
+    # Strip @SD, @HD tags
+    base = re.sub(r'(@[A-Z0-9]+)', '', cid)
+    # Standardize for comparison
+    return re.sub(r'[._\-\s]', '', base).lower()
 
 def process_iptv():
-    print("🚀 Starting Smart Mapper (Iraq Fix Version)...")
-    ALLOWED_IDS = get_allowed_ids()
-    REVERSE_MAP = {normalise_id(k): v for k, v in ID_MAP.items()}
+    print("🚀 Running Filtered Master Mapper...")
+    REVERSE_MAP = {clean_id(k): v for k, v in ID_MAP.items()}
     
     channel_elements = []
     program_elements = []
     processed_channels = set()
 
     for url in EPG_SOURCES:
-        file_name = url.split('/')[-1]
-        print(f"📥 Processing EPG: {file_name}")
+        print(f"📥 Processing: {url.split('/')[-1]}")
         try:
             r = requests.get(url, timeout=45)
-            content = r.content
-            f = gzip.GzipFile(fileobj=io.BytesIO(content)) if content.startswith(b'\x1f\x8b') else io.BytesIO(content)
+            f = gzip.GzipFile(fileobj=io.BytesIO(r.content)) if r.content.startswith(b'\x1f\x8b') else io.BytesIO(r.content)
             
             for event, elem in ET.iterparse(f, events=('end',)):
                 tag = elem.tag.split('}')[-1]
                 
                 if tag == 'programme':
                     source_id = elem.get('channel')
-                    # Pre-clean the source ID to match our map
-                    clean_source = re.sub(r'(@[A-Z0-9]+)', '', source_id)
-                    norm = normalise_id(clean_source)
+                    norm = clean_id(source_id)
                     
-                    final_id = None
+                    # 1. Match against our Map
                     if norm in REVERSE_MAP:
-                        final_id = REVERSE_MAP[norm]
-                    elif clean_source in ALLOWED_IDS:
-                        final_id = clean_source
-                    
-                    if final_id:
-                        if norm not in REVERSE_MAP and any(x in norm for x in EXCLUDE_WORDS):
+                        target_id = REVERSE_MAP[norm]
+                        
+                        # 2. Apply your Filters
+                        # If it has a forbidden suffix AND isn't in our forced map, skip it
+                        if any(source_id.endswith(s) for s in FORBIDDEN_SUFFIXES):
+                            elem.clear()
+                            continue
+                        
+                        # If it contains exclude words, skip it
+                        if any(x in norm for x in EXCLUDE_WORDS):
                             elem.clear()
                             continue
 
-                        elem.set('channel', final_id)
+                        elem.set('channel', target_id)
                         program_elements.append(ET.tostring(elem, encoding='utf-8'))
                         
-                        if final_id not in processed_channels:
-                            processed_channels.add(final_id)
-                            chan_xml = f'<channel id="{final_id}"><display-name>{final_id}</display-name></channel>'
+                        if target_id not in processed_channels:
+                            processed_channels.add(target_id)
+                            chan_xml = f'<channel id="{target_id}"><display-name>{target_id}</display-name></channel>'
                             channel_elements.append(chan_xml.encode('utf-8'))
                     elem.clear()
         except Exception as e:
