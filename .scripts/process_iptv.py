@@ -15,204 +15,150 @@ EPG_SOURCES = [
     "https://iptv-epg.org/files/epg-meyqso.xml"
 ]
 
-# ── Explicit bridges: M3U tvg-id  →  EPG channel id ──────────────────────────
-# Left side  = exact tvg-id value as it appears in the iptv-org M3U
-# Right side = exact channel id as it appears in the EPG source
+# Explicit overrides where even stripped fuzzy match won't work.
+# Key   = M3U tvg-id (with or without @suffix — we strip before lookup)
+# Value = exact EPG channel id
 ID_MAP = {
-    # Abu Dhabi
-    'Abu.Dhabi.HD.ae':          'AbuDhabiTV.ae',
-    'AD.Sports.1.HD.ae':        'AbuDhabiSports1.ae',
-    'AD.Sports.2.HD.ae':        'AbuDhabiSports2.ae',
-    'Yas.TV.HD.ae':             'YasTV.ae',
-
-    # Dubai
-    'Dubai.HD.ae':              'DubaiTV.ae',
-    'Sama.Dubai.HD.ae':         'SamaDubai.ae',
-    'Dubai.One.HD.ae':          'DubaiOne.ae',
-    'Noor.DubaiTV.ae':          'NoorDubaiTV.ae',
-    'Dubai.Sports.1.HD.ae':     'DubaiSports1.ae',
-    'Dubai.Sports.2.ae':        'DubaiSports2.ae',
-    'Dubai.Racing.ae':          'DubaiRacing1.ae',
-    'Dubai.Zaman.ae':           'DubaiZaman.ae',
-    'One.Tv.ae':                'OneTv.ae',
-
-    # MBC
-    'MBC.1.ae':                 'MBC1.ae',
-    'MBC.2.ae':                 'MBC2.ae',
-    'MBC.3.ae':                 'MBC3.ae',
-    'MBC.4.ae':                 'MBC4.ae',
-    'MBC.Action.ae':            'MBCAction.ae',
-    'MBC.Drama.ae':             'MBCDrama.ae',
-    'MBC.Masr.HD.ae':           'MBCMasr.eg',
-    'MBC.Masr.2.HD.ae':         'MBCMasr2.eg',
-
-    # Rotana
-    'Rotana.Cinema.KSA.ae':     'RotanaCinema.sa',
-    'Rotana.Cinema.Egypt.ae':   'RotanaCinemaEgypt.eg',
-    'Rotana.Drama.ae':          'RotanaDrama.sa',
-    'Rotana.Classic.ae':        'RotanaClassic.sa',
-    'Rotana.Khalijia.ae':       'RotanaKhalijia.sa',
-    'Rotana.Mousica.ae':        'RotanaMousica.sa',
-
-    # Sports & News
-    'KSA.Sports.1.ae':          'KSA-Sports-1.sa',
-    'KSA.Sports.2.HD.ae':       'KSA-Sports-2.sa',
-    'On.Time.Sports.HD.ae':     'OnTimeSports1.eg',
-    'On.Time.Sport.2.HD.ae':    'OnTimeSports2.eg',
-    'Sharjah.Sports.HD.ae':     'SharjahSports.ae',
-    'Al.Arabiya.HD.ae':         'AlArabiya.net',
-    'Al.Hadath.ae':             'AlHadath.net',
-    'Sky.News.Arabia.HD.ae':    'SkyNewsArabia.ae',
-    'Jordan.TV.HD.ae':          'JordanTV.jo',
-    'BBC.Arabic.ae':            'BBCArabic.uk',
-    'France.24.Arabic.ae':      'France24Arabic.fr',
-    'RT.Arabic.HD.ae':          'RTArabic.ru',
-
-    # Religious
-    'Saudi.Quran.TV.HD.ae':     'SaudiQuran.sa',
-    'Saudi.Sunna.TV.HD.ae':     'SaudiSunnah.sa',
-    'Saudi.Al.Ekhbariya.HD.ae': 'SaudiEkhbariya.sa',
-    'Sharjah.Quran.TV.ae':      'SharjahQuran.ae',
+    'AlJazeera.qa':        'AlJazeera.qa',
+    'France24.fr':         'France24Arabic.fr',
+    'DW.de':               'DWArabic.de',
+    'BBCArabic.uk':        'BBCArabic.uk',
+    'RTArabic.ru':         'RTArabic.ru',
+    'JordanTV.jo':         'JordanTV.jo',
+    'MBCMasr.eg':          'MBCMasr.eg',
+    'MBCMasr2.eg':         'MBCMasr2.eg',
+    'MBC1Egypt.eg':        'MBCMasr.eg',
+    'RotanaCinemaEgypt.eg':'RotanaCinemaEgypt.eg',
+    'KSA-Sports-1.sa':     'KSA-Sports-1.sa',
+    'KSA-Sports-2.sa':     'KSA-Sports-2.sa',
+    'OnTimeSports1.eg':    'OnTimeSports1.eg',
+    'OnTimeSports2.eg':    'OnTimeSports2.eg',
+    'AlArabiya.ae':        'AlArabiya.net',
+    'Alarabiya.ae':        'AlArabiya.net',
+    'AlEkhbariya.sa':      'SaudiEkhbariya.sa',
+    'SkyNewsArabia.ae':    'SkyNewsArabia.ae',
 }
 
 EXCLUDE_WORDS = (
-    'radio', '.fm', 'chaine', 'distrotv',
+    'radio', 'fm',
     'kurd', 'kurdistan', 'rudaw', 'waar', 'duhok',
-    'morocco', 'maroc', 'maghreb',
-    'tunisia', 'tunisie',
-    'libya', 'libye', '218tv',
-    'iran', 'persian', 'farsi', 'gemtv', 'mbcpersia',
+    'iran', 'persian', 'farsi', 'gemtv', 'mbcpersia', 'kawthar', 'wilayah',
     'afghanistan', 'afghan', 'pashto', 'tolo',
     'babyfirst',
-    'eritrea', 'eritv',
+    'eritrea',
     'i24news',
-    'india', 'hindi', 'tamil', 'telugu', 'malayalam',
-    'korea', 'korean',
-    'zealand', 'australia',
+    'hindi', 'tamil', 'telugu', 'malayalam',
+    'korean',
     'turk', 'trrt',
-    'canada', 'cbcca', 'cbcmusic',
+    'cbcca', 'cbcmusic',
     'kmbc', 'wmbc', 'tmbc', 'mbc1usa',
-    'espanol', 'wellbeing',
+    'wellbeing',
     'engelsk',
     'argentina', 'colombia',
+    'rojavatv', 'ronahitv', 'welatv', 'zagrostv',   # Kurdish Syria
+    'chada', 'medi1',                                # Morocco
+    'jawhara', 'mosaiquepm',                         # Tunisia
+    'february', 'tanasuh', 'wasat',                  # Libya
+    'dabanga',                                       # Sudan
+    'teletChad', 'rtd4',                             # Chad/Djibouti
 )
 
-# ── Helpers ──────────────────────────────────────────────────────────────────
+# ── Helpers ───────────────────────────────────────────────────────────────────
+
+def strip_quality(s):
+    """Remove trailing @SD, @HD, @Arabic, @Plus1, etc."""
+    return re.sub(r'@\S+$', '', s or '').strip()
 
 def norm(s):
-    """Normalise: strip punctuation, lowercase."""
-    if not s:
-        return ''
-    s = re.sub(r'(@[A-Z0-9]+)', '', s)
-    return re.sub(r'[._\-\s/]', '', s).lower()
+    """Normalise: strip quality suffix, punctuation, lowercase."""
+    s = strip_quality(s)
+    s = re.sub(r'[._\-\s/]', '', s)
+    return s.lower()
 
-
-def is_excluded(channel_id, name=''):
-    """Return True if this channel should be dropped."""
-    combined = norm(channel_id) + ' ' + norm(name)
+def is_excluded(tvg_id, name=''):
+    combined = norm(tvg_id) + ' ' + norm(name)
     return any(x in combined for x in EXCLUDE_WORDS)
 
 
-# ── Step 1: Load all EPG channels ────────────────────────────────────────────
+# ── Step 1: Load EPG ──────────────────────────────────────────────────────────
 
 def load_epg_channels():
-    """
-    Returns:
-      epg_exact      : set of exact EPG channel ids
-      epg_norm       : dict  norm(id) -> exact EPG channel id
-      epg_programmes : dict  exact_id -> list of ET element bytes
-    """
     epg_exact      = set()
-    epg_norm       = {}
+    epg_norm       = {}          # norm(id) -> exact id
     epg_programmes = defaultdict(list)
 
     for url in EPG_SOURCES:
         fname = url.split('/')[-1]
-        print(f"📥 Loading EPG channels from: {fname}")
+        print(f"📥 Loading EPG: {fname}")
         try:
             r = requests.get(url, timeout=60)
             content = r.content
             if not content:
-                print(f"   ⚠️  Empty response")
-                continue
+                print("   ⚠️  Empty response"); continue
 
-            f = gzip.GzipFile(fileobj=io.BytesIO(content)) if content[:2] == b'\x1f\x8b' else io.BytesIO(content)
+            f = (gzip.GzipFile(fileobj=io.BytesIO(content))
+                 if content[:2] == b'\x1f\x8b' else io.BytesIO(content))
 
             for event, elem in ET.iterparse(f, events=('end',)):
                 tag = elem.tag.split('}')[-1]
-
                 if tag == 'channel':
                     cid = elem.get('id', '')
                     if cid:
                         epg_exact.add(cid)
                         epg_norm[norm(cid)] = cid
-
                 elif tag == 'programme':
                     cid = elem.get('channel', '')
                     if cid in epg_exact:
                         epg_programmes[cid].append(ET.tostring(elem, encoding='utf-8'))
-
                 elem.clear()
-
         except Exception as e:
             print(f"   ⚠️  Error: {e}")
 
-    print(f"   ✅ EPG has {len(epg_exact)} unique channel ids, "
-          f"{sum(len(v) for v in epg_programmes.values())} programmes total\n")
+    print(f"   ✅ {len(epg_exact)} EPG channels, "
+          f"{sum(len(v) for v in epg_programmes.values())} programmes\n")
     return epg_exact, epg_norm, epg_programmes
 
 
-# ── Step 2: Fetch M3U and resolve each channel to an EPG id ──────────────────
+# ── Step 2: Fetch M3U and resolve ─────────────────────────────────────────────
 
 def fetch_and_resolve_m3u(epg_exact, epg_norm):
-    """
-    Returns list of dicts:
-      { 'extinf': original #EXTINF line,
-        'url':    stream URL,
-        'tvg_id': original tvg-id from M3U,
-        'epg_id': resolved EPG channel id (or None) }
-    """
-    # Build normalised ID_MAP lookup: norm(M3U tvg-id) -> EPG channel id
+    # norm(stripped M3U id) -> EPG id
     id_map_norm = {norm(k): v for k, v in ID_MAP.items()}
 
     print(f"🌐 Fetching M3U: {M3U_URL}")
     r = requests.get(M3U_URL, timeout=30)
     lines = r.text.splitlines()
-    print(f"   ✅ {len(lines)} lines fetched\n")
+    print(f"   ✅ {len(lines)} lines\n")
 
     channels = []
     i = 0
     while i < len(lines):
         line = lines[i]
         if line.startswith('#EXTINF'):
-            extinf = line
-            url    = lines[i + 1] if i + 1 < len(lines) else ''
+            url = lines[i + 1] if i + 1 < len(lines) else ''
             i += 2
 
-            tid_m  = re.search(r'tvg-id="([^"]*)"',   extinf)
-            name_m = re.search(r'tvg-name="([^"]*)"', extinf)
+            tid_m  = re.search(r'tvg-id="([^"]*)"',   line)
+            name_m = re.search(r'tvg-name="([^"]*)"', line)
             tvg_id = tid_m.group(1)  if tid_m  else ''
             name   = name_m.group(1) if name_m else ''
 
-            # Try to resolve to EPG id
-            epg_id = None
-            n = norm(tvg_id)
+            stripped = strip_quality(tvg_id)   # e.g. BBCArabic.uk@SD -> BBCArabic.uk
+            n        = norm(stripped)           # e.g. bbcarabicuk
 
-            if n in id_map_norm:                     # 1. explicit map
+            epg_id = None
+            if n in id_map_norm:               # 1. explicit map
                 candidate = id_map_norm[n]
                 if candidate in epg_exact:
                     epg_id = candidate
-            if not epg_id and tvg_id in epg_exact:   # 2. exact
-                epg_id = tvg_id
-            if not epg_id and n in epg_norm:         # 3. fuzzy
+            if not epg_id and stripped in epg_exact:   # 2. exact stripped
+                epg_id = stripped
+            if not epg_id and n in epg_norm:           # 3. fuzzy
                 epg_id = epg_norm[n]
 
             channels.append({
-                'extinf': extinf,
-                'url':    url,
-                'tvg_id': tvg_id,
-                'name':   name,
-                'epg_id': epg_id,
+                'extinf': line, 'url': url,
+                'tvg_id': tvg_id, 'name': name, 'epg_id': epg_id,
             })
         else:
             i += 1
@@ -220,53 +166,43 @@ def fetch_and_resolve_m3u(epg_exact, epg_norm):
     return channels
 
 
-# ── Step 3: Filter and write outputs ─────────────────────────────────────────
+# ── Step 3: Write outputs ─────────────────────────────────────────────────────
 
-def write_outputs(channels, epg_exact, epg_norm, epg_programmes):
-    kept_channels   = []
-    epg_ids_needed  = set()
-    no_epg          = []
+def write_outputs(channels, epg_programmes):
+    kept, no_epg = [], []
 
     for ch in channels:
         if is_excluded(ch['tvg_id'], ch['name']):
             continue
+        (kept if ch['epg_id'] else no_epg).append(ch)
 
-        if ch['epg_id']:
-            epg_ids_needed.add(ch['epg_id'])
-            kept_channels.append(ch)
-        else:
-            no_epg.append(ch)
+    epg_ids = {ch['epg_id'] for ch in kept}
 
-    # ── Write M3U ────────────────────────────────────────────────────────────
-    print(f"📝 Writing M3U: {len(kept_channels)} channels with EPG  "
-          f"({len(no_epg)} dropped — no EPG match)")
-
+    # M3U — rewrite tvg-id to the EPG id TiviMate expects
+    print(f"📝 Writing M3U: {len(kept)} channels with EPG  "
+          f"({len(no_epg)} without EPG — kept but no guide)")
     with open(M3U_OUTPUT, 'w', encoding='utf-8') as f:
         f.write('#EXTM3U\n')
-        for ch in kept_channels:
-            # Rewrite tvg-id in the EXTINF line to the EPG id
+        for ch in kept:
             extinf = re.sub(r'tvg-id="[^"]*"', f'tvg-id="{ch["epg_id"]}"', ch['extinf'])
-            f.write(extinf + '\n')
-            f.write(ch['url'] + '\n')
+            f.write(extinf + '\n' + ch['url'] + '\n')
 
-    # ── Write EPG ────────────────────────────────────────────────────────────
-    total_progs = sum(len(epg_programmes[eid]) for eid in epg_ids_needed)
-    print(f"💾 Writing EPG: {len(epg_ids_needed)} channels, {total_progs} programmes")
-
+    # EPG
+    total = sum(len(epg_programmes[e]) for e in epg_ids)
+    print(f"💾 Writing EPG: {len(epg_ids)} channels, {total} programmes")
     with open(EPG_OUTPUT, 'wb') as f:
         f.write(b'<?xml version="1.0" encoding="utf-8"?>\n<tv>\n')
-        for eid in sorted(epg_ids_needed):
-            chan_xml = f'<channel id="{eid}"><display-name>{eid}</display-name></channel>\n'
-            f.write(chan_xml.encode('utf-8'))
-        for eid in sorted(epg_ids_needed):
+        for eid in sorted(epg_ids):
+            f.write(f'<channel id="{eid}"><display-name>{eid}</display-name></channel>\n'.encode())
+        for eid in sorted(epg_ids):
             for prog in epg_programmes[eid]:
                 f.write(prog + b'\n')
         f.write(b'</tv>')
 
-    # ── Debug: what didn't get EPG ────────────────────────────────────────────
-    print(f"\n❓ Channels WITHOUT EPG match ({len(no_epg)}) — add to ID_MAP if you want them:")
-    for ch in sorted(no_epg, key=lambda x: x['name']):
-        print(f"   tvg-id={ch['tvg_id']!r:45s}  name={ch['name']!r}")
+    # Debug: unmatched
+    print(f"\n❓ {len(no_epg)} channels without EPG (not written to M3U):")
+    for ch in sorted(no_epg, key=lambda x: x['tvg_id']):
+        print(f"   {ch['tvg_id']}")
 
     print(f"\n✅ Done!  →  {M3U_OUTPUT}  +  {EPG_OUTPUT}")
 
@@ -277,8 +213,8 @@ def main():
     print("🚀 Arabic IPTV Sync\n")
     epg_exact, epg_norm, epg_programmes = load_epg_channels()
     channels = fetch_and_resolve_m3u(epg_exact, epg_norm)
-    write_outputs(channels, epg_exact, epg_norm, epg_programmes)
-
+    write_outputs(channels, epg_programmes)
 
 if __name__ == '__main__':
     main()
+
