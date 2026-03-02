@@ -64,39 +64,53 @@ EXCLUDE_WORDS = (
 	'engelsk',											# Denmark
 )
 
-# --- THE STEADY STATE MAP (Matches TiviMate IDs) ---
+# --- THE DEFINITIVE MAP ---
+# Left side = What the EPG source calls it
+# Right side = Exactly what is in your curated-live.m3u
 ID_MAP = {
-    # Iraq Fix
+    # MBC Iraq
     'MBCIraq.iq': 'MBC.Iraq.iq',
     'MBCIraq.ae': 'MBC.Iraq.iq',
     'MBC.Iraq.iq': 'MBC.Iraq.iq',
-    
-    # Abu Dhabi & Dubai
-    'AbuDhabiTV.ae': 'Abu.Dhabi.HD.ae',
-    'AbuDhabiEmirates.ae': 'Abu.Dhabi.HD.ae',
-    'AbuDhabiSports1.ae': 'AD.Sports.1.HD.ae',
-    'DubaiTV.ae': 'Dubai.HD.ae',
-    'DubaiOne.ae': 'Dubai.One.HD.ae',
-    'SamaDubai.ae': 'Sama.Dubai.HD.ae',
+    'MBCIraq': 'MBC.Iraq.iq',
 
-    # MBC
+    # MBC Masr
+    'MBCMasr.eg': 'MBC.Masr.HD.ae',
+    'MBCMasr.ae': 'MBC.Masr.HD.ae',
+    'MBC.Masr.HD.ae': 'MBC.Masr.HD.ae',
+    'MBCMasr2.eg': 'MBC.Masr.2.HD.ae',
+    'MBC.Masr.2.HD.ae': 'MBC.Masr.2.HD.ae',
+
+    # MBC Main
     'MBC1.ae': 'MBC.1.ae',
     'MBC2.ae': 'MBC.2.ae',
     'MBC3.ae': 'MBC.3.ae',
     'MBC4.ae': 'MBC.4.ae',
     'MBCAction.ae': 'MBC.Action.ae',
     'MBCDrama.ae': 'MBC.Drama.ae',
-    'MBCMasr.eg': 'MBC.Masr.HD.ae',
-    'MBCMasr2.eg': 'MBC.Masr.2.HD.ae',
 
-    # News & Sports
-    'AlArabiya.net': 'Al.Arabiya.HD.ae',
-    'SkyNewsArabia.ae': 'Sky.News.Arabia.HD.ae',
-    'OnTimeSports1.eg': 'On.Time.Sports.HD.ae',
-    
+    # Abu Dhabi & Dubai
+    'AbuDhabiTV.ae': 'Abu.Dhabi.HD.ae',
+    'AbuDhabiEmirates.ae': 'Abu.Dhabi.HD.ae',
+    'ADSports1.ae': 'AD.Sports.1.HD.ae',
+    'AbuDhabiSports1.ae': 'AD.Sports.1.HD.ae',
+    'DubaiTV.ae': 'Dubai.HD.ae',
+    'SamaDubai.ae': 'Sama.Dubai.HD.ae',
+    'DubaiOne.ae': 'Dubai.One.HD.ae',
+
     # Rotana
     'RotanaCinema.sa': 'Rotana.Cinema.KSA.ae',
-    'RotanaCinemaEgypt.eg': 'Rotana.Cinema.Egypt.ae'
+    'RotanaCinemaEgypt.eg': 'Rotana.Cinema.Egypt.ae',
+    'RotanaDrama.sa': 'Rotana.Drama.ae',
+
+    # News
+    'AlArabiya.net': 'Al.Arabiya.HD.ae',
+    'SkyNewsArabia.ae': 'Sky.News.Arabia.HD.ae',
+    'AlHadath.net': 'Al.Hadath.ae',
+    
+    # Sports
+    'OnTimeSports1.eg': 'On.Time.Sports.HD.ae',
+    'OnTimeSports2.eg': 'On.Time.Sport.2.HD.ae'
 }
 
 def clean_id(cid):
@@ -107,8 +121,7 @@ def clean_id(cid):
     return re.sub(r'[._\-\s]', '', base).lower()
 
 def process_iptv():
-    print("🚀 Running Filtered Master Mapper...")
-    REVERSE_MAP = {clean_id(k): v for k, v in ID_MAP.items()}
+    print("🚀 Running Definitive ID Mapper...")
     
     channel_elements = []
     program_elements = []
@@ -125,23 +138,17 @@ def process_iptv():
                 
                 if tag == 'programme':
                     source_id = elem.get('channel')
-                    norm = clean_id(source_id)
                     
-                    # 1. Match against our Map
-                    if norm in REVERSE_MAP:
-                        target_id = REVERSE_MAP[norm]
-                        
-                        # 2. Apply your Filters
-                        # If it has a forbidden suffix AND isn't in our forced map, skip it
-                        if any(source_id.endswith(s) for s in FORBIDDEN_SUFFIXES):
-                            elem.clear()
-                            continue
-                        
-                        # If it contains exclude words, skip it
-                        if any(x in norm for x in EXCLUDE_WORDS):
-                            elem.clear()
-                            continue
+                    # We check if the raw source_id (or source_id minus @SD/@HD) is in our map
+                    clean_source = re.sub(r'(@[A-Z0-9]+)', '', source_id)
+                    
+                    target_id = None
+                    if source_id in ID_MAP:
+                        target_id = ID_MAP[source_id]
+                    elif clean_source in ID_MAP:
+                        target_id = ID_MAP[clean_source]
 
+                    if target_id:
                         elem.set('channel', target_id)
                         program_elements.append(ET.tostring(elem, encoding='utf-8'))
                         
