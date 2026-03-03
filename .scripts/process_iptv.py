@@ -143,6 +143,10 @@ EXCLUDE_WORDS = (
     'aghapy', 'aghania_ghani', 'godstands', 'teletchad',
     'dabanga', 'sudanese', 'northafricaine', 'cnadz',
     'cnadzsd', 'tv2dzsd', 'cnadz', 'tv2dz',
+    'almaghribia',   # Catch the Moroccan Darija channel
+    'alalam.ir',     # Catch the Iranian news channel
+    'alwilayah',     # Catch the Iranian religious channel
+    'eritreatv',     # Catch the Eritrean multi-lang channel
 )
 
 # ── Helpers ──────────────────────────────────────────────────────────────────
@@ -241,22 +245,24 @@ def fetch_and_resolve_m3u(epg_exact, epg_norm):
 def write_outputs(channels, epg_exact, epg_norm, epg_programmes):
     kept_channels = []
     epg_ids_needed = set()
-    no_epg = []
+    
     for ch in channels:
         if is_excluded(ch['tvg_id'], ch['tvg_name']):
             continue
         kept_channels.append(ch)
         if ch['epg_id']:
             epg_ids_needed.add(ch['epg_id'])
-        else:
-            no_epg.append(ch)
 
     with open(M3U_OUTPUT, 'w', encoding='utf-8') as f:
         f.write('#EXTM3U\n')
         for ch in kept_channels:
+            # 1. APPLY LOGO FIRST (while the original IDs are still present)
             line = apply_logo(ch['extinf'], ch['tvg_id'], ch['tvg_name'])
+            
+            # 2. THEN OVERWRITE TVG-ID FOR EPG (if a match exists)
             if ch['epg_id']:
                 line = re.sub(r'tvg-id="[^"]*"', f'tvg-id="{ch["epg_id"]}"', line)
+                
             f.write(line + '\n' + ch['url'] + '\n')
 
     total_progs = sum(len(epg_programmes[eid]) for eid in epg_ids_needed)
