@@ -267,19 +267,22 @@ def fetch_and_resolve_m3u(epg_exact, epg_norm):
 
 
 # ── Step 3: Filter and write outputs ─────────────────────────────────────────
-
 def write_outputs(channels, epg_exact, epg_norm, epg_programmes):
-    kept_channels   = []
-    epg_ids_needed  = set()
-    no_epg          = []
+    kept_channels = []
+    epg_ids_needed = set()
+    no_epg = []
 
     for ch in channels:
+        # Keep the exclusion check if you want to filter out specific junk
         if is_excluded(ch['tvg_id'], ch['name']):
             continue
 
+        # ADD EVERY CHANNEL TO THE LIST
+        kept_channels.append(ch)
+        
+        # Only collect EPG IDs for channels that have a match
         if ch['epg_id']:
             epg_ids_needed.add(ch['epg_id'])
-            kept_channels.append(ch)
         else:
             no_epg.append(ch)
 
@@ -290,9 +293,14 @@ def write_outputs(channels, epg_exact, epg_norm, epg_programmes):
     with open(M3U_OUTPUT, 'w', encoding='utf-8') as f:
         f.write('#EXTM3U\n')
         for ch in kept_channels:
-            # Rewrite tvg-id in the EXTINF line to the EPG id
-            extinf = re.sub(r'tvg-id="[^"]*"', f'tvg-id="{ch["epg_id"]}"', ch['extinf'])
-            f.write(extinf + '\n')
+            # Apply your custom LOGO_MAP links here
+            line = apply_logo(ch['extinf'], ch['tvg_id'])
+            
+            # Only rewrite tvg-id if a valid epg_id was found
+            if ch['epg_id']:
+                line = re.sub(r'tvg-id="[^"]*"', f'tvg-id="{ch["epg_id"]}"', line)
+            
+            f.write(line + '\n')
             f.write(ch['url'] + '\n')
 
     # ── Write EPG ────────────────────────────────────────────────────────────
