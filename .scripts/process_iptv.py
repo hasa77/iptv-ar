@@ -245,13 +245,17 @@ def fetch_and_resolve_m3u(epg_exact, epg_norm):
 def write_outputs(channels, epg_exact, epg_norm, epg_programmes):
     kept_channels = []
     epg_ids_needed = set()
+    no_epg = []
     
     for ch in channels:
         if is_excluded(ch['tvg_id'], ch['tvg_name']):
             continue
         kept_channels.append(ch)
+        
         if ch['epg_id']:
             epg_ids_needed.add(ch['epg_id'])
+        else:
+            no_epg.append(ch)
 
     with open(M3U_OUTPUT, 'w', encoding='utf-8') as f:
         f.write('#EXTM3U\n')
