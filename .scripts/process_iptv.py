@@ -142,6 +142,7 @@ EXCLUDE_WORDS = (
     'charity', 'coptic', 'logos', 'llbn', 'canalalgerie', 'tv2.dz', 'cna.dz',     
     'aghapy', 'aghania_ghani', 'godstands', 'teletchad',
     'dabanga', 'sudanese', 'northafricaine', 'cnadz',
+    'cnadzsd', 'tv2dzsd', 'cnadz', 'tv2dz',
 )
 
 # ── Helpers ──────────────────────────────────────────────────────────────────
