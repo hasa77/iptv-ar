@@ -112,7 +112,7 @@ ID_MAP = {
 
 EXCLUDE_WORDS = (
     'radio', 'fm', 'chaine', 'distro.tv', 'argentina', 'colombia', 'telefe', 'eltrece', 
-    'kurd', 'kurdistan', 'rudaw', 'waar', 'duhok',        # Kurdish
+    'kurd', 'kurdistan', 'rudaw', 'waar', 'duhok', 'rojava', 'Ronahi'       # Kurdish
     'morocco', 'maroc', 'maghreb', '2m',                  # Morocco
     'tunisia', 'tunisie', 'ttv', 'hannibal',              # Tunisia
     'libya', 'libye', '218 tv',                           # Libya
