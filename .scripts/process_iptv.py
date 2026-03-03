@@ -48,6 +48,12 @@ LOGO_MAP = {
 # Left side  = exact tvg-id value as it appears in the iptv-org M3U
 # Right side = exact channel id as it appears in the EPG source
 ID_MAP = {
+
+    'Al.Arabiya.Programs': 'AlArabiya.net',
+    'Al.Araby.TV2': 'Al.Araby.2.HD.ae',
+    'Al.Iraqia.News': 'Al.Iraqiya.HD.ae',
+    'Al.Maaref.TV': 'AlMaaref.bh',
+    
     # Abu Dhabi
     'Abu.Dhabi.HD.ae':          'AbuDhabiTV.ae',
     'AD.Sports.1.HD.ae':        'AbuDhabiSports1.ae',
@@ -126,6 +132,7 @@ EXCLUDE_WORDS = (
     'espanol', 'wellbeing',                             # Spanish / Health junk
     'engelsk',                                          # Denmark
     'argentina', 'colombia',                            # Argentina + Colombia
+    'brazil', 'portuguese', 'france', 'italy', 'deutsch', 'german', 'spanish', 'espana', # Other languages
 )
 
 # ── Helpers ──────────────────────────────────────────────────────────────────
@@ -142,12 +149,15 @@ def is_excluded(tvg_id, name=''):
     combined = norm(tvg_id) + ' ' + norm(name)
     return any(x in combined for x in EXCLUDE_WORDS)
 
-def apply_logo(extinf_line, tvg_id):
+def apply_logo(extinf_line, tvg_id, tvg_name):
+    # Try to match logo against both the ID and the friendly Name
     n_id = norm(tvg_id)
+    n_name = norm(tvg_name)
     logo_url = None
-    # Find match in LOGO_MAP using normalized keys
+    
     for k, v in LOGO_MAP.items():
-        if norm(k) == n_id:
+        n_key = norm(k)
+        if n_key == n_id or n_key == n_name:
             logo_url = v
             break
             
@@ -211,58 +221,42 @@ def load_epg_channels():
 # ── Step 2: Fetch M3U and resolve each channel to an EPG id ──────────────────
 
 def fetch_and_resolve_m3u(epg_exact, epg_norm):
-    """
-    Returns list of dicts:
-      { 'extinf': original #EXTINF line,
-        'url':    stream URL,
-        'tvg_id': original tvg-id from M3U,
-        'epg_id': resolved EPG channel id (or None) }
-    """
-    # Build normalised ID_MAP lookup: norm(M3U tvg-id) -> EPG channel id
     id_map_norm = {norm(k): v for k, v in ID_MAP.items()}
-
-    print(f"🌐 Fetching M3U: {M3U_URL}")
     r = requests.get(M3U_URL, timeout=30)
     lines = r.text.splitlines()
-    print(f"   ✅ {len(lines)} lines fetched\n")
-
     channels = []
     i = 0
     while i < len(lines):
         line = lines[i]
         if line.startswith('#EXTINF'):
             extinf = line
-            url    = lines[i + 1] if i + 1 < len(lines) else ''
+            url = lines[i + 1] if i + 1 < len(lines) else ''
             i += 2
-
-            tid_m  = re.search(r'tvg-id="([^"]*)"',   extinf)
+            
+            tid_m = re.search(r'tvg-id="([^"]*)"', extinf)
             name_m = re.search(r'tvg-name="([^"]*)"', extinf)
-            tvg_id = tid_m.group(1)  if tid_m  else ''
-            name   = name_m.group(1) if name_m else ''
+            tvg_id = tid_m.group(1) if tid_m else ''
+            tvg_name = name_m.group(1) if name_m else ''
 
-            # Try to resolve to EPG id
-            epg_id = None
+            # Logic to keep the channel but try to find EPG
             n = norm(tvg_id)
-
-            if n in id_map_norm:                     # 1. explicit map
-                candidate = id_map_norm[n]
-                if candidate in epg_exact:
-                    epg_id = candidate
-            if not epg_id and tvg_id in epg_exact:   # 2. exact
+            epg_id = None
+            if n in id_map_norm:
+                epg_id = id_map_norm[n]
+            elif tvg_id in epg_exact:
                 epg_id = tvg_id
-            if not epg_id and n in epg_norm:         # 3. fuzzy
+            elif n in epg_norm:
                 epg_id = epg_norm[n]
 
             channels.append({
                 'extinf': extinf,
-                'url':    url,
+                'url': url,
                 'tvg_id': tvg_id,
-                'name':   name,
-                'epg_id': epg_id,
+                'tvg_name': tvg_name,
+                'epg_id': epg_id
             })
         else:
             i += 1
-
     return channels
 
 
@@ -287,21 +281,29 @@ def write_outputs(channels, epg_exact, epg_norm, epg_programmes):
             no_epg.append(ch)
 
     # ── Write M3U ────────────────────────────────────────────────────────────
-    print(f"📝 Writing M3U: {len(kept_channels)} channels with EPG  "
-          f"({len(no_epg)} dropped — no EPG match)")
+    def write_outputs(channels, epg_exact, epg_norm, epg_programmes):
+    kept_channels = []
+    epg_ids_needed = set()
+    
+    for ch in channels:
+        # 1. Filter out non-arabic based on EXCLUDE_WORDS
+        if is_excluded(ch['tvg_id'], ch['tvg_name']):
+            continue
+            
+        kept_channels.append(ch)
+        if ch['epg_id']:
+            epg_ids_needed.add(ch['epg_id'])
 
     with open(M3U_OUTPUT, 'w', encoding='utf-8') as f:
         f.write('#EXTM3U\n')
         for ch in kept_channels:
-            # Apply your custom LOGO_MAP links here
-            line = apply_logo(ch['extinf'], ch['tvg_id'])
+            # 2. Apply Logo Map (Checking both ID and Name)
+            line = apply_logo(ch['extinf'], ch['tvg_id'], ch['tvg_name'])
             
-            # Only rewrite tvg-id if a valid epg_id was found
             if ch['epg_id']:
                 line = re.sub(r'tvg-id="[^"]*"', f'tvg-id="{ch["epg_id"]}"', line)
             
-            f.write(line + '\n')
-            f.write(ch['url'] + '\n')
+            f.write(line + '\n' + ch['url'] + '\n')
 
     # ── Write EPG ────────────────────────────────────────────────────────────
     total_progs = sum(len(epg_programmes[eid]) for eid in epg_ids_needed)
