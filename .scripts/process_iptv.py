@@ -134,6 +134,21 @@ LOGO_MAP = {
     'RoyaDrama.jo@SD': 'https://royamediagroup.com/imgs/royat.png',
     'Ch4Teen.kw@SD': 'https://ch14.tv/img/logo.png',
     'ArabicaTV.lb@SD': 'https://play-lh.googleusercontent.com/vJ3tvJIwbdKtQ2cnG8j38hHBHvLXsq59wlG5MGhRfjh8lNpxgvfsush-5v9IabjVCQ',
+    'AghaniAghaniTV.lb@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ71udLceuolkA09cpq4ingoSzGhexsqFyuw&s',
+    'JawharaTV.tn@SD': 'https://m.jawharafm.net/ar/img/logo_jfmtv_fini.png',
+    'MarinaTV.kw@SD': 'https://upload.wikimedia.org/wikipedia/commons/0/0d/MarinaTV-Logo-2023.jpg',
+    'MelodyHits.ca@SD': 'https://upload.wikimedia.org/wikipedia/en/c/c1/Melody_Hits.png',
+    'Wanasah.ae@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAAwrDpA7J5DQ25STCwHRunmBOiMaZ-KWX4g&s',
+    'AlQuranAlKareemTV.sa@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2pRmfi-mTBumXgbPboYNK3yIBHtX-uw-AKg&s',
+    'AlJawadainTV.iq@SD': 'https://yt3.googleusercontent.com/K53EvSf8Pu048rumnr1AVQC4lFaymDtTlS-XEU6jyf5D3ZEzXJ57MByZIZh5EiNvUhqevuaIyg=s900-c-k-c0x00ffffff-no-rj',
+    'AlMajdHolyQuran.sa@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR99o10KFH_1PpVaKGdsV5uvsJRkjKP3y1xEg&s',
+    'AlerthAlnabawiChannel.jo@SD': 'https://upload.wikimedia.org/wikipedia/id/1/15/Logo_Nabawi_TV.png',
+    'AlImanTV.lb@SD': 'https://play-lh.googleusercontent.com/0xzwga2oE-6bUp7tggVMlMKCbPVmfXf0xwKpUF6UQ_qPveg3riA6EeE29COrCXKUhGTN',
+    'AlistiqamaTV.om@SD': 'https://www.istiqama.tv/wp-content/uploads/2024/04/channel_logo-1024x557.png',
+    'AlmagdTVMiddleEast.us@SD': 'https://play-lh.googleusercontent.com/uwjQhw4MHZ37JCaxTN9Wct3kbqmMOoi7JEdwzviG60uaBSiSrN-Z4-g6XADP3v8rrPc',
+    'Alquran.iq@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTandtY_hQQEDBt0aRmndEl4WhBXq3C0mL9VA&s',
+    'BahrainQuran.bh@SD': 'https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/05a1e4174424521.651d0c6f4d98c.png',
+    'BeitolAbbasTVChannel.iq@SD': 'https://beitolabbas.tv/wp-content/uploads/2023/01/Logo-1.png',
 }
 
 # ── Explicit bridges: M3U tvg-id  →  EPG channel id ──────────────────────────
@@ -235,10 +250,11 @@ EXCLUDE_WORDS = (
     'aghapy', 'aghania_ghani', 'godstands', 'teletchad',
     'dabanga', 'sudanese', 'northafricaine', 'cnadz',
     'cnadzsd', 'tv2dzsd', 'cnadz', 'tv2dz',
-    'almaghribia',   # Catch the Moroccan Darija channel
-    'alalam.ir',     # Catch the Iranian news channel
-    'alwilayah',     # Catch the Iranian religious channel
-    'eritreatv',     # Catch the Eritrean multi-lang channel
+    'almaghribia',                                                                       # Catch the Moroccan Darija channel
+    'alalam.ir',                                                                         # Catch the Iranian news channel
+    'alwilayah',                                                                         # Catch the Iranian religious channel
+    'eritreatv',                                                                         # Catch the Eritrean multi-lang channel
+    'alfady', 'alkarma', 'atvsat', 'abnsat', 'elbeshara', 'alhorreya',        
 )
 
 # ── Helpers ──────────────────────────────────────────────────────────────────
