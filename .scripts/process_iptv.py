@@ -110,6 +110,12 @@ ID_MAP = {
     'Sharjah.Quran.TV.ae':      'SharjahQuran.ae',
 }
 
+FORBIDDEN_SUFFIXES = (
+    '.hk', '.kr', '.dk', '.fi', '.no', '.se', '.be', '.es', '.fr', 
+    '.ca', '.ca2', '.gr', '.de', ".dk", '.cz', '.cy', '.ch', '.it', '.us', '.bb',
+    '.distro', '.us_locals1', '.pluto'
+)
+
 EXCLUDE_WORDS = (
     'radio', 'fm', 'chaine', 'distro.tv', 'argentina', 'colombia', 'telefe', 'eltrece', 'Aghapy',
     'kurd', 'kurdistan', 'rudaw', 'waar', 'duhok', 'rojava', 'ronahi', 'channel8',        # Kurdish
@@ -147,7 +153,11 @@ def norm(s):
     return re.sub(r'[^a-z0-9]', '', s.lower())
 
 def is_excluded(tvg_id, name=''):
-    # Normalize everything to lowercase to match EXCLUDE_WORDS
+    # 1. Check for forbidden regional suffixes (like .us, .fr, .kr)
+    if any(tvg_id.lower().endswith(s) for s in FORBIDDEN_SUFFIXES):
+        return True
+
+    # 2. Check for keywords (like 'kurd', 'dabanga', etc.)
     combined = (norm(tvg_id) + ' ' + norm(name)).lower()
     return any(x.lower() in combined for x in EXCLUDE_WORDS)
 
