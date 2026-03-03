@@ -56,11 +56,6 @@ LOGO_MAP = {
     # Al Aqsa
     'AlAqsaTV.ps':              'https://cdn.broadbandtvnews.com/wp-content/uploads/2024/01/04120752/Al-Aqsa-TV.jpg',
 
-    I have integrated all the specific links you provided into the LOGO_MAP. I also performed a quick cleanup to ensure consistency—specifically making sure that variations like @SD or @HD in your keys won't prevent the norm() function from matching them correctly to your M3U's tvg-id.
-
-Here is the updated LOGO_MAP block for your script:
-Python
-
 LOGO_MAP = {
     # --- MBC Group ---
     'MBC1.ae': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/MBC_1_Logo.svg/960px-MBC_1_Logo.svg.png',
@@ -93,7 +88,6 @@ LOGO_MAP = {
 
     # --- News & Regionals ---
     'AlhurraIraq.us@SD': 'https://upload.wikimedia.org/wikipedia/commons/0/06/AlHurra_logo.svg',
-    'IraqFuture.iq@SD': 'https://upload.wikimedia.org/wikipedia/en/b/bc/Future_tv_logo_2012.jpg',
     'AlIraqia.iq@SD': 'https://static.wikia.nocookie.net/logopedia/images/1/18/Al_Iraqiya_Logo.png/revision/latest?cb=20210309003710',
     'FalastiniTV.ps@SD': 'https://www.falastini.tv/wp-content/uploads/2017/02/logo.png',
     'AlHorreyaTV.us@SD': 'https://yt3.googleusercontent.com/idxhelPtWa-U8GvXsSdMidgl6yGagtDwUspkCMWxz31bTA6FyMFCYKU5xDzXybVw3ZjmGIHY=s900-c-k-c0x00ffffff-no-rj',
@@ -103,6 +97,7 @@ LOGO_MAP = {
     'AlIttihadTV.lb@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5T8fq0fAxPmJK7XZOOXZRju9DdKgN_N3LmA&s',
     'AlJadeed.lb@SD': 'https://upload.wikimedia.org/wikipedia/en/1/17/Al_Jadeed.PNG',
     'AlRasheedTV.iq@SD': 'https://upload.wikimedia.org/wikipedia/en/b/b5/Al_Rasheed_TV_logo.png',
+    'IraqFuture.iq@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBIJR2f3buhd-IbO9num-iCNbc0LDAaVzrVQ&s',
 
     'Al.Arabiya.HD.ae': 'https://upload.wikimedia.org/wikipedia/commons/8/8b/Al_Arabiya_-Logo_%281%29.png',
     'Al.Arabiya.Programs': 'https://upload.wikimedia.org/wikipedia/commons/8/8b/Al_Arabiya_-Logo_%281%29.png',
@@ -112,6 +107,48 @@ LOGO_MAP = {
     'Al.Ekhbariya': 'https://upload.wikimedia.org/wikipedia/commons/e/e3/%D8%A7%D9%84%D9%82%D9%86%D8%A7.png',
     'AlYaumTV.ae': 'https://upload.wikimedia.org/wikipedia/commons/5/56/%D9%81%D9%86%D8%A7%D8%A9_%D8%A7%D9%84%D9%82%D9%86%D8%A7%D8%A9_%D8%A7%D9%84%D9%8A%D9%82%D8%B8%D8%A9.jpg',
     'AjyalTV.ps': 'https://upload.wikimedia.org/wikipedia/en/2/23/AjyalTVLogo2014.png',
+
+    'AlRayyanTV.qa@SD': 'https://upload.wikimedia.org/wikipedia/commons/e/ed/%D8%B4%D8%B9%D8%A7%D8%B1_%D8%A7%D9%84%D9%82%D9%86%D8%A7%D8%A9_2014-03-24_07-56.png',
+    'AlRayyanOldTV.qa@SD': 'https://alrayyan.qa/wp-content/uploads/2023/10/qadeem-logo2-300x134.gif',
+    'AlSaudiya.sa@SD': 'https://upload.wikimedia.org/wikipedia/en/d/d6/Al-Saudia_TV_Logo_2018.png',
+    'AlShallalTV.ae@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqmoNes6R_R0yx7nk1E9suapmPYyT4bhS65Q&s',
+    'AlSharqiyaMinKabla.ae@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3kYi61BFxLNpoz_iqDx6Rk-E3noS6D874Sw&s',
+    'AlWoustaTV.ae@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuqFcmzwsiTK-vLy7olcX0lSPinClIgF716A&s',
+    'Al-Sharqiya': 'https://upload.wikimedia.org/wikipedia/commons/1/1e/Al_Sharqiya.png',
+    'Althania.sy@SD': 'https://www.fadaatmedia.com/sites/default/files/2025-03/Logo%20syria%202%20Color.png',
+    'AmmanTV.jo@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWI2bNVA0-INJ3WFInusjdyyhgOrVYQYGBDw&s',
+    'BahrainInternational.bh@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH4-rpzsYt37RLrnzP08u9mAd3atzJ31keMA&s',
+    'BahrainTV.bh@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKqVIPA1s5YgGMsk3YiRbTZOierr5Lg0AxEQ&s',
+    'CBC.eg@SD': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Cbctv.svg/250px-Cbctv.svg.png',
+    'ElOussraTV.mr@SD': 'https://www.lyngsat.com/logo/tv/ee/el-oussra-tv-mr.png',
+    'ElsharqTV.tr@SD': 'https://elsharq.tv/wp-content/uploads/2025/10/ELSHARQ-TV645646-e1761838412808.png',
+    'ERiTV1.er@SD': 'https://upload.wikimedia.org/wikipedia/commons/0/01/EritTV_Logo.png',
+    'FutureTV.lb@SD': 'https://upload.wikimedia.org/wikipedia/en/b/bc/Future_tv_logo_2012.jpg',
+    'HalaLondon.uk@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqylrFx4KoPrq4XswHRn6ackepLntyp2cNhQ&s',
+    'HalaTV.il@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9hC8umj_HunhNKbllCtSaCX4pMD9zIamkkw&s',
+    'JordanTV.jo@SD': 'https://static.wikia.nocookie.net/iepfanon/images/d/df/Jordan_TV.png/revision/latest?cb=20240121200521',
+    'KTV1.kw@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH1YwZw4L26eNJx51HStZkNIfCbMrXAi9ggA&s',
+    'LanaTV.lb@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGIFIP3-1NLtmkesGoujJ1fpfVzVJ9Og622Q&s',
+    'OmanTV.om@SD': 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Saghhjjdegh.jpg',
+    'OTV.lb@SD': 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/OTV_%28logo%29.svg/1280px-OTV_%28logo%29.svg.png',
+    'QatarTelevision.qa@SD': 'https://upload.wikimedia.org/wikipedia/en/8/88/Qatar_TV_logo.png',
+    'QatarTelevision2.qa@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVuRil1BT-pR9h4oy9khMgQxpLFVFI1qqaUg&s',
+    'WatanTV.eg@SD': 'https://upload.wikimedia.org/wikipedia/commons/6/68/Watan_tv_logo.jpg',
+    'AlHadath.sa': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTn1QrjoG3q6_ku5D054jCd9vZFPJ2YRDpWg&s',
+    'BBCArabic.uk@SD': 'https://upload.wikimedia.org/wikipedia/commons/b/b8/Logo_BBC_Arabic.png',
+    'HalabTodayTV.sy@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa0qcmi0Vtpx5UHjj8c1Jkc4gQEtqjVuGWTg&s',
+    'SkyNewsArabia.ae@HD': 'https://play-lh.googleusercontent.com/phi19fJAMvOxBWN4M1lb-EXIybEIaW176n-5uWXyne6IKL0eLUvWVItWhGE3HcqucxMy=w240-h480-rw',
+    'SkyNewsArabia.ae@SD': 'https://play-lh.googleusercontent.com/phi19fJAMvOxBWN4M1lb-EXIybEIaW176n-5uWXyne6IKL0eLUvWVItWhGE3HcqucxMy=w240-h480-rw',
+    'SyriaTV.sy@SD': 'https://upload.wikimedia.org/wikipedia/en/d/d2/Syria_TV_logo.svg',
+    'VoiceofLebanon.lb@SD': 'https://yt3.googleusercontent.com/0g7bspn9-AVSgdMLQNA8unukgzhWBE35dTu0zookmfLpb5wa47DPUDsKndtIc3RAdFz54cvSbg=s900-c-k-c0x00ffffff-no-rj',
+    'AlHiwarTV.uk@SD': 'https://m.media-amazon.com/images/I/71fWor-YyUL.png',
+    'PalestineEdu.ps@SD': 'https://upload.wikimedia.org/wikipedia/commons/7/7f/Palestine_Satellite_Channel_Logo.png',
+    'AsharqDocumentary.sa@SD': 'https://static.wikia.nocookie.net/logopedia/images/a/a8/Asharq_Doc_23.png/revision/latest?cb=20230924082531',
+    'NationalGeographicAbuDhabi.ae@HD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-RR0tIHK2kmDd4sUOsJ95ijgr4lAsDZ-4XA&s',
+    'RotanaAflamPlus.sa@SD': 'https://www.ethnicchannels.com/images/channeldetail/rotana-aflam/rotana-aflam.png',
+    'RoyaDrama.jo@SD': 'https://royamediagroup.com/imgs/royat.png',
+    'Ch4Teen.kw@SD': 'https://ch14.tv/img/logo.png',
+    'ArabicaTV.lb@SD': 'https://play-lh.googleusercontent.com/vJ3tvJIwbdKtQ2cnG8j38hHBHvLXsq59wlG5MGhRfjh8lNpxgvfsush-5v9IabjVCQ',
 }
 
 # ── Explicit bridges: M3U tvg-id  →  EPG channel id ──────────────────────────
