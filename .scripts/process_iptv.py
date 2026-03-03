@@ -133,6 +133,7 @@ EXCLUDE_WORDS = (
     'engelsk',                                          # Denmark
     'argentina', 'colombia',                            # Argentina + Colombia
     'brazil', 'portuguese', 'france', 'italy', 'deutsch', 'german', 'spanish', 'espana', # Other languages
+    'charity', 'coptic', 'logos', 'llbn', 'canalalgerie', 'tv2.dz', 'cna.dz',
 )
 
 # ── Helpers ──────────────────────────────────────────────────────────────────
