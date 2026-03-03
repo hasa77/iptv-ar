@@ -8,6 +8,7 @@ from collections import defaultdict
 
 M3U_URL = "https://iptv-org.github.io/iptv/languages/ara.m3u"
 M3U_OUTPUT = "curated-live.m3u"
+EPG_OUTPUT = "arabic-epg.xml"
 EPG_SOURCES = [
     "https://epgshare01.online/epgshare01/epg_ripper_ALL_SOURCES1.xml.gz",
     #Combined Egypt, Lebanon, Saudi, UAE, GB, USA
