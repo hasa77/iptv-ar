@@ -41,7 +41,20 @@ LOGO_MAP = {
     
     # Religious & Others
     'Al.Maaref.TV': 'https://almaaref.ch/wp-content/uploads/2021/10/Almaaref-Logo.png',
-    'Al.Mamlaka.TV': 'https://upload.wikimedia.org/wikipedia/en/8/8a/Al-Mamlaka_TV_logo.png'
+    'Al.Mamlaka.TV': 'https://upload.wikimedia.org/wikipedia/en/8/8a/Al-Mamlaka_TV_logo.png',
+
+    # Abu Dhabi TV
+    'AbuDhabiTV.ae':            'https://upload.wikimedia.org/wikipedia/commons/d/d7/Abu_Dhabi_TV_logo_2023.png',
+    'AbuDhabiEmirates.ae':      'https://upload.wikimedia.org/wikipedia/commons/d/d7/Abu_Dhabi_TV_logo_2023.png',
+
+    # Ajman
+    'AjmanTV.ae':               'https://static.wikia.nocookie.net/logopedia/images/b/b3/Ajman_TV_Logo_1996.png/revision/latest?cb=20241210014941',
+
+    # Ajyal
+    'AjyalTV.ps':               'https://upload.wikimedia.org/wikipedia/en/2/23/AjyalTVLogo2014.png',
+
+    # Al Aqsa
+    'AlAqsaTV.ps':              'https://cdn.broadbandtvnews.com/wp-content/uploads/2024/01/04120752/Al-Aqsa-TV.jpg',
 }
 
 # ── Explicit bridges: M3U tvg-id  →  EPG channel id ──────────────────────────
