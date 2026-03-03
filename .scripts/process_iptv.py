@@ -149,6 +149,10 @@ LOGO_MAP = {
     'Alquran.iq@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTandtY_hQQEDBt0aRmndEl4WhBXq3C0mL9VA&s',
     'BahrainQuran.bh@SD': 'https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/05a1e4174424521.651d0c6f4d98c.png',
     'BeitolAbbasTVChannel.iq@SD': 'https://beitolabbas.tv/wp-content/uploads/2023/01/Logo-1.png',
+    'ImamHusseinTV2.iq@SD': 'https://imamhussein.tv/image2021/TV02.png',
+    'IqraaArabic.sa@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbnLd9ilUrcxhSNACnNFmXprT8DwTsvQyz6g&s',
+    'IqraaQuran.sa@SD': 'https://upload.wikimedia.org/wikipedia/commons/c/c4/Iqraa_Logo.svg',
+    'KTVAlQurain.kw@SD': 'https://static.wikia.nocookie.net/logopedia/images/2/2e/Qurain_TV.jpg/revision/latest?cb=20220327145418',
 }
 
 # ── Explicit bridges: M3U tvg-id  →  EPG channel id ──────────────────────────
@@ -254,7 +258,7 @@ EXCLUDE_WORDS = (
     'alalam.ir',                                                                         # Catch the Iranian news channel
     'alwilayah',                                                                         # Catch the Iranian religious channel
     'eritreatv',                                                                         # Catch the Eritrean multi-lang channel
-    'alfady', 'alkarma', 'atvsat', 'abnsat', 'elbeshara', 'alhorreya',        
+    'alfady', 'alkarma', 'atvsat', 'abnsat', 'elbeshara', 'alhorreya', 'IqraaAfricaEurope.sa@SD',       
 )
 
 # ── Helpers ──────────────────────────────────────────────────────────────────
