@@ -219,7 +219,6 @@ def load_epg_channels():
 
 
 # ── Step 2: Fetch M3U and resolve each channel to an EPG id ──────────────────
-
 def fetch_and_resolve_m3u(epg_exact, epg_norm):
     id_map_norm = {norm(k): v for k, v in ID_MAP.items()}
     r = requests.get(M3U_URL, timeout=30)
@@ -232,13 +231,10 @@ def fetch_and_resolve_m3u(epg_exact, epg_norm):
             extinf = line
             url = lines[i + 1] if i + 1 < len(lines) else ''
             i += 2
-            
             tid_m = re.search(r'tvg-id="([^"]*)"', extinf)
             name_m = re.search(r'tvg-name="([^"]*)"', extinf)
             tvg_id = tid_m.group(1) if tid_m else ''
             tvg_name = name_m.group(1) if name_m else ''
-
-            # Logic to keep the channel but try to find EPG
             n = norm(tvg_id)
             epg_id = None
             if n in id_map_norm:
@@ -247,62 +243,33 @@ def fetch_and_resolve_m3u(epg_exact, epg_norm):
                 epg_id = tvg_id
             elif n in epg_norm:
                 epg_id = epg_norm[n]
-
-            channels.append({
-                'extinf': extinf,
-                'url': url,
-                'tvg_id': tvg_id,
-                'tvg_name': tvg_name,
-                'epg_id': epg_id
-            })
+            channels.append({'extinf': extinf, 'url': url, 'tvg_id': tvg_id, 'tvg_name': tvg_name, 'epg_id': epg_id})
         else:
             i += 1
     return channels
 
 
 # ── Step 3: Filter and write outputs ─────────────────────────────────────────
-def write_outputs(channels, epg_exact, epg_norm, epg_programmes):
+ def write_outputs(channels, epg_exact, epg_norm, epg_programmes):
     kept_channels = []
     epg_ids_needed = set()
     no_epg = []
 
     for ch in channels:
-        # Keep the exclusion check if you want to filter out specific junk
-        if is_excluded(ch['tvg_id'], ch['name']):
+        if is_excluded(ch['tvg_id'], ch['tvg_name']):
             continue
-
-        # ADD EVERY CHANNEL TO THE LIST
         kept_channels.append(ch)
-        
-        # Only collect EPG IDs for channels that have a match
         if ch['epg_id']:
             epg_ids_needed.add(ch['epg_id'])
         else:
             no_epg.append(ch)
 
-    # ── Write M3U ────────────────────────────────────────────────────────────
-    def write_outputs(channels, epg_exact, epg_norm, epg_programmes):
-    kept_channels = []
-    epg_ids_needed = set()
-    
-    for ch in channels:
-        # 1. Filter out non-arabic based on EXCLUDE_WORDS
-        if is_excluded(ch['tvg_id'], ch['tvg_name']):
-            continue
-            
-        kept_channels.append(ch)
-        if ch['epg_id']:
-            epg_ids_needed.add(ch['epg_id'])
-
     with open(M3U_OUTPUT, 'w', encoding='utf-8') as f:
         f.write('#EXTM3U\n')
         for ch in kept_channels:
-            # 2. Apply Logo Map (Checking both ID and Name)
             line = apply_logo(ch['extinf'], ch['tvg_id'], ch['tvg_name'])
-            
             if ch['epg_id']:
                 line = re.sub(r'tvg-id="[^"]*"', f'tvg-id="{ch["epg_id"]}"', line)
-            
             f.write(line + '\n' + ch['url'] + '\n')
 
     # ── Write EPG ────────────────────────────────────────────────────────────
