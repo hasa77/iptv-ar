@@ -55,6 +55,63 @@ LOGO_MAP = {
 
     # Al Aqsa
     'AlAqsaTV.ps':              'https://cdn.broadbandtvnews.com/wp-content/uploads/2024/01/04120752/Al-Aqsa-TV.jpg',
+
+    I have integrated all the specific links you provided into the LOGO_MAP. I also performed a quick cleanup to ensure consistency—specifically making sure that variations like @SD or @HD in your keys won't prevent the norm() function from matching them correctly to your M3U's tvg-id.
+
+Here is the updated LOGO_MAP block for your script:
+Python
+
+LOGO_MAP = {
+    # --- MBC Group ---
+    'MBC1.ae': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/MBC_1_Logo.svg/960px-MBC_1_Logo.svg.png',
+    'MBC1Egypt.eg@HD': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/MBC_1_Logo.svg/960px-MBC_1_Logo.svg.png',
+    'MBC3USA.us@SD': 'https://static.wikia.nocookie.net/logopedia/images/f/f1/Mbc_tree.svg/revision/latest?cb=20250711113001',
+    'MBC4.ae': 'https://static.wikia.nocookie.net/logopedia/images/7/73/Mbc_for.svg/revision/latest?cb=20250711112900',
+    'MBC5.ae@SD': 'https://upload.wikimedia.org/wikipedia/commons/0/0f/MBC5_logo.png?_=20200521144912',
+    'MBCMasr.eg': 'https://static.wikia.nocookie.net/logopedia/images/b/bd/Mbc_egypt.svg/revision/latest?cb=20250711110419',
+    'MBCMasr2.eg': 'https://static.wikia.nocookie.net/logopedia/images/5/53/MBC_Masr_2_Logo.svg/revision/latest?cb=20250710124414',
+    'MBCMasrUSA.us@SD': 'https://static.wikia.nocookie.net/logopedia/images/b/bd/Mbc_egypt.svg/revision/latest?cb=20250711110419',
+    'MBCDrama.ae': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCQuAFbk-Pg3pHSO1xrAxTUJY3ZaGZNgu18Q&s',
+    'MBCPlusDrama.sa': 'https://upload.wikimedia.org/wikipedia/commons/2/2a/MBC_Drama_Plus_TV_Channel_Logo.png',
+    'MBCDramaUSA.us@SD': 'https://upload.wikimedia.org/wikipedia/commons/e/e9/MBC_Drama_Logo.svg',
+    'MBCIraq.iq@SD': 'https://static.wikia.nocookie.net/logopedia/images/6/6e/MBCIraq.jpeg/revision/latest/scale-to-width-down/1000?cb=20191214070733',
+    'MBC.Bollywood.ae': 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/MBC_Bollywood_Logo.svg/1280px-MBC_Bollywood_Logo.svg.png',
+
+    # --- Al Jazeera ---
+    'AlJazeera.qa@Arabic': 'https://static.wikia.nocookie.net/logopedia/images/0/0f/Al_Jazeera.svg/revision/latest?cb=20171112085348',
+    'AlJazeeraMubasher.qa@SD': 'https://static.wikia.nocookie.net/logopedia/images/9/95/Al_Jazeera_Mubasher_II.svg/revision/latest?cb=20231231100551',
+    'AlJazeeraMubasher24.qa@SD': 'https://static.wikia.nocookie.net/logopedia/images/9/95/Al_Jazeera_Mubasher_II.svg/revision/latest?cb=20231231100551',
+    'AlJazeeraMubasherBroadcast2.qa@SD': 'https://static.wikia.nocookie.net/logopedia/images/9/95/Al_Jazeera_Mubasher_II.svg/revision/latest?cb=20231231100551',
+    'AlJazeeraDocumentary.qa@SD': 'https://static.wikia.nocookie.net/logopedia/images/e/e8/Al_Jazeera_Documentary_Channel.png/revision/latest?cb=20120211112107',
+
+    # --- Sports ---
+    'AbuDhabiSports1.ae': 'https://static.wikia.nocookie.net/logopedia/images/0/0f/AbuDhabiSportsTV2023.png/revision/latest?cb=20230921160459',
+    'AbuDhabiSports2.ae': 'https://static.wikia.nocookie.net/logopedia/images/0/0f/AbuDhabiSportsTV2023.png/revision/latest?cb=20230921160459',
+    'BahrainSports1.bh@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9CEJXbMzbYPUX2ULkYAWmskUVAvYLAETCLQ&s',
+    'BahrainSports2.bh@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9CEJXbMzbYPUX2ULkYAWmskUVAvYLAETCLQ&s',
+    'JordanSport.jo@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2LTBDvhF-a5CZLFvM65U5TqFSCY0UdEANIA&s',
+
+    # --- News & Regionals ---
+    'AlhurraIraq.us@SD': 'https://upload.wikimedia.org/wikipedia/commons/0/06/AlHurra_logo.svg',
+    'IraqFuture.iq@SD': 'https://upload.wikimedia.org/wikipedia/en/b/bc/Future_tv_logo_2012.jpg',
+    'AlIraqia.iq@SD': 'https://static.wikia.nocookie.net/logopedia/images/1/18/Al_Iraqiya_Logo.png/revision/latest?cb=20210309003710',
+    'FalastiniTV.ps@SD': 'https://www.falastini.tv/wp-content/uploads/2017/02/logo.png',
+    'AlHorreyaTV.us@SD': 'https://yt3.googleusercontent.com/idxhelPtWa-U8GvXsSdMidgl6yGagtDwUspkCMWxz31bTA6FyMFCYKU5xDzXybVw3ZjmGIHY=s900-c-k-c0x00ffffff-no-rj',
+    'AlRafidainTV.tr@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK4NEActEu3lsaYHkDumTXs9jDaMCPDml0YQ&s',
+    'AlSunnahAlNabawiyahTV.sa@SD': 'https://www.tvyayinakisi.com/wp-content/uploads/2020/05/al-sunnah-al-nabawiyah-tv-logo.png',
+    'SharjahTV.ae@SD': 'https://static.wikia.nocookie.net/logopedia/images/a/a6/Sharjah_TV_Logo_2011.png/revision/latest/scale-to-width-down/300?cb=20241212234207',
+    'AlIttihadTV.lb@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5T8fq0fAxPmJK7XZOOXZRju9DdKgN_N3LmA&s',
+    'AlJadeed.lb@SD': 'https://upload.wikimedia.org/wikipedia/en/1/17/Al_Jadeed.PNG',
+    'AlRasheedTV.iq@SD': 'https://upload.wikimedia.org/wikipedia/en/b/b5/Al_Rasheed_TV_logo.png',
+
+    'Al.Arabiya.HD.ae': 'https://upload.wikimedia.org/wikipedia/commons/8/8b/Al_Arabiya_-Logo_%281%29.png',
+    'Al.Arabiya.Programs': 'https://upload.wikimedia.org/wikipedia/commons/8/8b/Al_Arabiya_-Logo_%281%29.png',
+    'Al.Arabiya.Business': 'https://aib.org.uk/wp-content/uploads/2023/10/AL-ARABIYA-BUSINESS-LOGO-2.jpg',
+    'Al.Hadath.ae': 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Al_Hadath_TV_logo_2023.svg/1920px-Al_Hadath_TV_logo_2023.svg.png',
+    'Al.Araby.TV': 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/ALARABY_ARABIC.png/960px-ALARABY_ARABIC.png',
+    'Al.Ekhbariya': 'https://upload.wikimedia.org/wikipedia/commons/e/e3/%D8%A7%D9%84%D9%82%D9%86%D8%A7.png',
+    'AlYaumTV.ae': 'https://upload.wikimedia.org/wikipedia/commons/5/56/%D9%81%D9%86%D8%A7%D8%A9_%D8%A7%D9%84%D9%82%D9%86%D8%A7%D8%A9_%D8%A7%D9%84%D9%8A%D9%82%D8%B8%D8%A9.jpg',
+    'AjyalTV.ps': 'https://upload.wikimedia.org/wikipedia/en/2/23/AjyalTVLogo2014.png',
 }
 
 # ── Explicit bridges: M3U tvg-id  →  EPG channel id ──────────────────────────
