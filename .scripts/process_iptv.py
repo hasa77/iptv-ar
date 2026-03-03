@@ -16,12 +16,6 @@ EPG_SOURCES = [
 ]
 
 LOGO_MAP = {
-    # Al Arabiya & Hadath
-    'Al.Arabiya.HD.ae': 'https://upload.wikimedia.org/wikipedia/commons/8/8b/Al_Arabiya_-Logo_%281%29.png',
-    'Al.Arabiya.Programs': 'https://upload.wikimedia.org/wikipedia/commons/8/8b/Al_Arabiya_-Logo_%281%29.png',
-    'Al.Arabiya.Business': 'https://aib.org.uk/wp-content/uploads/2023/10/AL-ARABIYA-BUSINESS-LOGO-2.jpg',
-    'Al.Hadath.ae': 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Al_Hadath_TV_logo_2023.svg/1920px-Al_Hadath_TV_logo_2023.svg.png',
-    
     # Al Araby Network
     'Al.Araby.TV': 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/ALARABY_ARABIC.png/960px-ALARABY_ARABIC.png',
     'Al.Araby.TV2': 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/ALARABY_ARABIC.png/960px-ALARABY_ARABIC.png',
@@ -49,9 +43,6 @@ LOGO_MAP = {
 
     # Ajman
     'AjmanTV.ae':               'https://static.wikia.nocookie.net/logopedia/images/b/b3/Ajman_TV_Logo_1996.png/revision/latest?cb=20241210014941',
-
-    # Ajyal
-    'AjyalTV.ps':               'https://upload.wikimedia.org/wikipedia/en/2/23/AjyalTVLogo2014.png',
 
     # Al Aqsa
     'AlAqsaTV.ps':              'https://cdn.broadbandtvnews.com/wp-content/uploads/2024/01/04120752/Al-Aqsa-TV.jpg',
@@ -98,12 +89,7 @@ LOGO_MAP = {
     'AlRasheedTV.iq@SD': 'https://upload.wikimedia.org/wikipedia/en/b/b5/Al_Rasheed_TV_logo.png',
     'IraqFuture.iq@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBIJR2f3buhd-IbO9num-iCNbc0LDAaVzrVQ&s',
 
-    'Al.Arabiya.HD.ae': 'https://upload.wikimedia.org/wikipedia/commons/8/8b/Al_Arabiya_-Logo_%281%29.png',
-    'Al.Arabiya.Programs': 'https://upload.wikimedia.org/wikipedia/commons/8/8b/Al_Arabiya_-Logo_%281%29.png',
-    'Al.Arabiya.Business': 'https://aib.org.uk/wp-content/uploads/2023/10/AL-ARABIYA-BUSINESS-LOGO-2.jpg',
     'Al.Hadath.ae': 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Al_Hadath_TV_logo_2023.svg/1920px-Al_Hadath_TV_logo_2023.svg.png',
-    'Al.Araby.TV': 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/ALARABY_ARABIC.png/960px-ALARABY_ARABIC.png',
-    'Al.Ekhbariya': 'https://upload.wikimedia.org/wikipedia/commons/e/e3/%D8%A7%D9%84%D9%82%D9%86%D8%A7.png',
     'AlYaumTV.ae': 'https://upload.wikimedia.org/wikipedia/commons/5/56/%D9%81%D9%86%D8%A7%D8%A9_%D8%A7%D9%84%D9%82%D9%86%D8%A7%D8%A9_%D8%A7%D9%84%D9%8A%D9%82%D8%B8%D8%A9.jpg',
     'AjyalTV.ps': 'https://upload.wikimedia.org/wikipedia/en/2/23/AjyalTVLogo2014.png',
 
