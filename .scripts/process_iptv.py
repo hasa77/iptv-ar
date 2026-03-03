@@ -167,19 +167,34 @@ def is_excluded(tvg_id, name=''):
     return any(x.lower() in combined for x in EXCLUDE_WORDS)
 
 def apply_logo(extinf_line, tvg_id, tvg_name):
+    # Normalize everything for comparison
     n_id = norm(tvg_id)
     n_name = norm(tvg_name)
+    
     logo_url = None
-    for k, v in LOGO_MAP.items():
-        n_key = norm(k)
-        if n_key == n_id or n_key == n_name:
-            logo_url = v
+    
+    for key, url in LOGO_MAP.items():
+        n_key = norm(key)
+        
+        # Check if the map key is inside the ID (e.g., "alarabiyabusiness" in "alarabiyabusinessae")
+        # OR if the ID is inside the key.
+        if (n_key in n_id and n_key != '') or (n_id in n_key and n_id != ''):
+            logo_url = url
             break
+        # Fallback to name check
+        if (n_key in n_name and n_key != '') or (n_name in n_key and n_name != ''):
+            logo_url = url
+            break
+
     if logo_url:
+        # Forcefully replace the existing tvg-logo link
         if 'tvg-logo=' in extinf_line:
+            # This regex finds the tvg-logo attribute and replaces the URL inside the quotes
             return re.sub(r'tvg-logo="[^"]*"', f'tvg-logo="{logo_url}"', extinf_line)
         else:
+            # If no logo tag exists, insert it after the #EXTINF:-1
             return re.sub(r'(#EXTINF:[^,]*)', rf'\1 tvg-logo="{logo_url}"', extinf_line, count=1)
+            
     return extinf_line
 
 def load_epg_channels():
