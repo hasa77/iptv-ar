@@ -135,6 +135,7 @@ EXCLUDE_WORDS = (
     'brazil', 'portuguese', 'france', 'italy', 'deutsch', 'german', 'spanish', 'espana',  # Other languages
     'charity', 'coptic', 'logos', 'llbn', 'canalalgerie', 'tv2.dz', 'cna.dz',     
     'aghapy', 'aghania_ghani', 'godstands', 'teletchad',
+    'dabanga', 'sudanese', 'northafricaine', 'cnadz',
 )
 
 # ── Helpers ──────────────────────────────────────────────────────────────────
