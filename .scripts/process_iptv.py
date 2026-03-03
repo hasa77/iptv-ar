@@ -137,12 +137,10 @@ EXCLUDE_WORDS = (
 
 # ── Helpers ──────────────────────────────────────────────────────────────────
 def strip_quality(s):
-    # Removes @SD, @HD, and parentheses content
     return re.sub(r'(@\S+)|(\s*\(.*\))', '', s or '').strip()
 
 def norm(s):
     s = strip_quality(s)
-    # Replaces dots, dashes, and spaces with nothing, keeps lowercase letters and numbers
     return re.sub(r'[^a-z0-9]', '', s.lower())
 
 def is_excluded(tvg_id, name=''):
@@ -150,17 +148,14 @@ def is_excluded(tvg_id, name=''):
     return any(x in combined for x in EXCLUDE_WORDS)
 
 def apply_logo(extinf_line, tvg_id, tvg_name):
-    # Try to match logo against both the ID and the friendly Name
     n_id = norm(tvg_id)
     n_name = norm(tvg_name)
     logo_url = None
-    
     for k, v in LOGO_MAP.items():
         n_key = norm(k)
         if n_key == n_id or n_key == n_name:
             logo_url = v
             break
-            
     if logo_url:
         if 'tvg-logo=' in extinf_line:
             return re.sub(r'tvg-logo="[^"]*"', f'tvg-logo="{logo_url}"', extinf_line)
@@ -168,20 +163,10 @@ def apply_logo(extinf_line, tvg_id, tvg_name):
             return re.sub(r'(#EXTINF:[^,]*)', rf'\1 tvg-logo="{logo_url}"', extinf_line, count=1)
     return extinf_line
 
-
-# ── Step 1: Load all EPG channels ────────────────────────────────────────────
-
 def load_epg_channels():
-    """
-    Returns:
-      epg_exact      : set of exact EPG channel ids
-      epg_norm       : dict  norm(id) -> exact EPG channel id
-      epg_programmes : dict  exact_id -> list of ET element bytes
-    """
-    epg_exact      = set()
-    epg_norm       = {}
+    epg_exact = set()
+    epg_norm = {}
     epg_programmes = defaultdict(list)
-
     for url in EPG_SOURCES:
         fname = url.split('/')[-1]
         print(f"📥 Loading EPG channels from: {fname}")
@@ -191,34 +176,24 @@ def load_epg_channels():
             if not content:
                 print(f"   ⚠️  Empty response")
                 continue
-
             f = gzip.GzipFile(fileobj=io.BytesIO(content)) if content[:2] == b'\x1f\x8b' else io.BytesIO(content)
-
             for event, elem in ET.iterparse(f, events=('end',)):
                 tag = elem.tag.split('}')[-1]
-
                 if tag == 'channel':
                     cid = elem.get('id', '')
                     if cid:
                         epg_exact.add(cid)
                         epg_norm[norm(cid)] = cid
-
                 elif tag == 'programme':
                     cid = elem.get('channel', '')
                     if cid in epg_exact:
                         epg_programmes[cid].append(ET.tostring(elem, encoding='utf-8'))
-
                 elem.clear()
-
         except Exception as e:
             print(f"   ⚠️  Error: {e}")
-
-    print(f"   ✅ EPG has {len(epg_exact)} unique channel ids, "
-          f"{sum(len(v) for v in epg_programmes.values())} programmes total\n")
+    print(f"   ✅ EPG has {len(epg_exact)} unique channel ids\n")
     return epg_exact, epg_norm, epg_programmes
 
-
-# ── Step 2: Fetch M3U and resolve each channel to an EPG id ──────────────────
 def fetch_and_resolve_m3u(epg_exact, epg_norm):
     id_map_norm = {norm(k): v for k, v in ID_MAP.items()}
     r = requests.get(M3U_URL, timeout=30)
@@ -248,13 +223,10 @@ def fetch_and_resolve_m3u(epg_exact, epg_norm):
             i += 1
     return channels
 
-
-# ── Step 3: Filter and write outputs ─────────────────────────────────────────
- def write_outputs(channels, epg_exact, epg_norm, epg_programmes):
+def write_outputs(channels, epg_exact, epg_norm, epg_programmes):
     kept_channels = []
     epg_ids_needed = set()
     no_epg = []
-
     for ch in channels:
         if is_excluded(ch['tvg_id'], ch['tvg_name']):
             continue
@@ -272,10 +244,8 @@ def fetch_and_resolve_m3u(epg_exact, epg_norm):
                 line = re.sub(r'tvg-id="[^"]*"', f'tvg-id="{ch["epg_id"]}"', line)
             f.write(line + '\n' + ch['url'] + '\n')
 
-    # ── Write EPG ────────────────────────────────────────────────────────────
     total_progs = sum(len(epg_programmes[eid]) for eid in epg_ids_needed)
     print(f"💾 Writing EPG: {len(epg_ids_needed)} channels, {total_progs} programmes")
-
     with open(EPG_OUTPUT, 'wb') as f:
         f.write(b'<?xml version="1.0" encoding="utf-8"?>\n<tv>\n')
         for eid in sorted(epg_ids_needed):
@@ -286,22 +256,16 @@ def fetch_and_resolve_m3u(epg_exact, epg_norm):
                 f.write(prog + b'\n')
         f.write(b'</tv>')
 
-    # ── Debug: what didn't get EPG ────────────────────────────────────────────
-    print(f"\n❓ Channels WITHOUT EPG match ({len(no_epg)}) — add to ID_MAP if you want them:")
-    for ch in sorted(no_epg, key=lambda x: x['name']):
-        print(f"   tvg-id={ch['tvg_id']!r:45s}  name={ch['name']!r}")
-
-    print(f"\n✅ Done!  →  {M3U_OUTPUT}  +  {EPG_OUTPUT}")
-
-
-# ── Main ──────────────────────────────────────────────────────────────────────
+    print(f"\n❓ Channels WITHOUT EPG match ({len(no_epg)}):")
+    for ch in sorted(no_epg, key=lambda x: x['tvg_name']):
+        print(f"   tvg-id={ch['tvg_id']!r:45s}  name={ch['tvg_name']!r}")
+    print(f"\n✅ Done! → {M3U_OUTPUT} + {EPG_OUTPUT}")
 
 def main():
     print("🚀 Arabic IPTV Sync\n")
     epg_exact, epg_norm, epg_programmes = load_epg_channels()
     channels = fetch_and_resolve_m3u(epg_exact, epg_norm)
     write_outputs(channels, epg_exact, epg_norm, epg_programmes)
-
 
 if __name__ == '__main__':
     main()
