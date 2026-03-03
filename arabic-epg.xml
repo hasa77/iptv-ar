@@ -3959,6 +3959,7 @@
   
 <programme start="20260302095000 +0000" stop="20260302100500 +0000" channel="MTA1World.uk">
     <title /><desc /></programme>
+  
 <programme start="20260302100500 +0000" stop="20260302103000 +0000" channel="MTA1World.uk">
     <title /><desc /></programme>
   
@@ -4260,8 +4261,7 @@
     <title /><desc /></programme>
   
 <programme start="20260304231500 +0000" stop="20260305000000 +0000" channel="MTA1World.uk">
-    <title />
-    <desc /></programme>
+    <title /><desc /></programme>
   
 <programme start="20260305000000 +0000" stop="20260305002000 +0000" channel="MTA1World.uk">
     <title /><desc /></programme>
@@ -4304,7 +4304,6 @@
   
 <programme start="20260305073500 +0000" stop="20260305080500 +0000" channel="MTA1World.uk">
     <title /><desc /></programme>
-  
 <programme start="20260305080500 +0000" stop="20260305082500 +0000" channel="MTA1World.uk">
     <title /><desc /></programme>
   
@@ -4474,6 +4473,15 @@
     <title /><desc /></programme>
   
 <programme start="20260306144000 +0000" stop="20260306155000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306155000 +0000" stop="20260306165000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306165000 +0000" stop="20260306175300 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306175300 +0000" stop="20260306180000 +0000" channel="MTA1World.uk">
     <title /><desc /></programme>
   
 <programme start="20250720004100 +0000" stop="20250720012400 +0000" channel="Maraya.sa">
