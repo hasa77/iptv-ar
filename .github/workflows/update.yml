@@ -3,6 +3,10 @@ on:
   schedule:
     - cron: '0 0 * * *'
   workflow_dispatch:
+  push:
+    paths:
+      - 'exclude_words.txt'          # Triggers build when words change
+      - '.scripts/process_iptv.py'   # Triggers build when code changes
 
 concurrency:
   group: epg-update
@@ -22,7 +26,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.x' # Always uses the latest stable Python 3 release
+          python-version: '3.x'
 
       - name: Install dependencies
         run: pip install requests
@@ -34,9 +38,6 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          # This forces git to recognize the binary file has been touched
-          touch arabic-epg.xml 
           git add arabic-epg.xml curated-live.m3u
-          # Added --allow-empty to ensure the workflow finishes cleanly
           git commit -m "Update Arabic EPG: $(date -u +'%Y-%m-%d %H:%M:%S') UTC" || echo "No changes to commit"
           git push origin main
