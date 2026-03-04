@@ -260,42 +260,17 @@ FORBIDDEN_SUFFIXES = (
     '.distro', '.us_locals1', '.pluto'
 )
 
-EXCLUDE_WORDS = (
-    'radio', 'fm', 'chaine', 'distro.tv', 'argentina', 'colombia', 'telefe', 'eltrece', 'Aghapy',
-    'kurd', 'kurdistan', 'rudaw', 'waar', 'duhok', 'rojava', 'ronahi', 'channel8',        # Kurdish
-    'morocco', 'maroc', 'maghreb', '2m',                                                  # Morocco
-    'tunisia', 'tunisie', 'ttv', 'hannibal',                                              # Tunisia
-    'libya', 'libye', '218 tv',                                                           # Libya
-    'iran', 'persian', 'farsi', 'gem tv', 'mbcpersia',                                    # Iran
-    'afghanistan', 'afghan', 'pashto', 'tolo', 'afghani',                                 # Afghanistan
-    'babyfirst',                                                                          # US English Kids
-    'eritrea', 'eri-tv',                                                                  # Eritrea
-    'i24news',                                                                            # Israel-based news
-    'india', 'hindi', 'tamil', 'telugu', 'malayalam',                                     # India
-    'korea', 'korean', 'kbs', 'sbs', 'tvn',                                               # Korea
-    'zealand', 'nz', 'australia', 'canterbury',                                           # NZ/AU
-    'turk', 'trrt', 'atv.tr', 'fox.tr',                                                   # Turkish
-    'canada', 'cbc.ca', 'cbcmusic', 'halifax', 'ottawa', 'winnipeg', 'calgary', 'vancouver', 'montreal',                 # Canadian CBC
-    'kmbc', 'wmbc', 'tmbc', 'mbc1usa', 'samsung',                                         # US MBC Look-alikes
-    'milb', 'ncaa', 'broncos', 'lobos', 'santa-clara',                                    # US Sports
-    'mlb-', 'cubs', 'guardians', 'white-sox', 'reds',                                     # Baseball specific
-    'espanol', 'wellbeing',                                                               # Spanish / Health junk
-    'engelsk',                                                                            # Denmark
-    'argentina', 'colombia',                                                              # Argentina + Colombia
-    'brazil', 'portuguese', 'france', 'italy', 'deutsch', 'german', 'spanish', 'espana',  # Other languages
-    'charity', 'coptic', 'logos', 'llbn', 'canalalgerie', 'tv2.dz', 'cna.dz',     
-    'aghapy', 'aghania_ghani', 'godstands', 'teletchad',
-    'dabanga', 'sudanese', 'northafricaine', 'cnadz',
-    'cnadzsd', 'tv2dzsd', 'cnadz', 'tv2dz',
-    'almaghribia',                                                                       # Catch the Moroccan Darija channel
-    'alalam.ir',                                                                         # Catch the Iranian news channel
-    'alwilayah',                                                                         # Catch the Iranian religious channel
-    'eritreatv',                                                                         # Catch the Eritrean multi-lang channel
-    'alfady', 'alkarma', 'atvsat', 'abnsat', 'elbeshara', 'alhorreya', 'IqraaAfricaEurope.sa@SD',
-    'RTD4.dj@SD', '.dj', 'zarin', 'zagrostv', 'miracletv', 'noursat', 'noural', 'nourel', 
-    'missionasia', 'sadaehaq', 'mta', 'cgtn', 'loveworld',
-)
+def load_exclude_words(file_path='exclude_words.txt'):
+    if not os.path.exists(file_path):
+        print(f"Warning: {file_path} not found. Using empty exclusion list.")
+        return []
+    
+    with open(file_path, 'r', encoding='utf-8') as f:
+        # Reads lines, strips whitespace, ignores empty lines and comments
+        return [line.strip() for line in f if line.strip() and not line.startswith('#')]
 
+
+EXCLUDE_WORDS = load_exclude_words()
 # ── Helpers ──────────────────────────────────────────────────────────────────
 def strip_quality(s):
     return re.sub(r'(@\S+)|(\s*\(.*\))', '', s or '').strip()
