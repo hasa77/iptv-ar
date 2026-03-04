@@ -129,7 +129,6 @@ sadaehaq
 mta
 cgtn
 loveworld
-# Added Requested Exclusions
 KoogiTV
 Nour Mariam
 ERi-TV 1
@@ -154,8 +153,8 @@ nourmariam
 mariam
 noursat
 nour
-City View
-Rotana Tarab
+CityView
+RotanaTarab
 Senses TV
 Story Channel
 Koogi TV
