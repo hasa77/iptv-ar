@@ -97,8 +97,8 @@ LOGO_MAP = {
     'AlHadath.sa': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTn1QrjoG3q6_ku5D054jCd9vZFPJ2YRDpWg&s',
     'BBCArabic.uk@SD': 'https://upload.wikimedia.org/wikipedia/commons/b/b8/Logo_BBC_Arabic.png',
     'HalabTodayTV.sy@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa0qcmi0Vtpx5UHjj8c1Jkc4gQEtqjVuGWTg&s',
-    'SkyNewsArabia.ae@HD': 'https://play-lh.googleusercontent.com/phi19fJAMvOxBWN4M1lb-EXIybEIaW176n-5uWXyne6IKL0eLUvWVItWhGE3HcqucxMy=w240-h480-rw',
-    'SkyNewsArabia.ae@SD': 'https://play-lh.googleusercontent.com/phi19fJAMvOxBWN4M1lb-EXIybEIaW176n-5uWXyne6IKL0eLUvWVItWhGE3HcqucxMy=w240-h480-rw',
+    'SkyNewsArabia.ae@HD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfcBQGj_4TejozhwUpC3SYg-sDgDD25OoEDQ&s',
+    'SkyNewsArabia.ae@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfcBQGj_4TejozhwUpC3SYg-sDgDD25OoEDQ&s',
     'SyriaTV.sy@SD': 'https://upload.wikimedia.org/wikipedia/en/d/d2/Syria_TV_logo.svg',
     'VoiceofLebanon.lb@SD': 'https://yt3.googleusercontent.com/0g7bspn9-AVSgdMLQNA8unukgzhWBE35dTu0zookmfLpb5wa47DPUDsKndtIc3RAdFz54cvSbg=s900-c-k-c0x00ffffff-no-rj',
     'AlHiwarTV.uk@SD': 'https://m.media-amazon.com/images/I/71fWor-YyUL.png',
@@ -159,6 +159,33 @@ LOGO_MAP = {
     'Alhurra.us@SD': 'https://upload.wikimedia.org/wikipedia/commons/0/06/AlHurra_logo.svg',
     'AlmahriahTV.tr@SD': 'https://upload.wikimedia.org/wikipedia/ar/0/04/%D9%82%D9%86%D8%A7%D8%A9_%D8%A7%D9%84%D9%85%D9%87%D8%B1%D9%8A%D8%A9.png',
     'AlQanat9.tr@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJuge35cLKkchfXJ4ogW91cf84kdxJhk97Ww&s',
+    'AltaghierTV.jo@SD': 'https://upload.wikimedia.org/wikipedia/commons/c/c1/%D8%B4%D8%B9%D8%A7%D8%B1_%D9%82%D9%86%D8%A7%D8%A9_%D8%A7%D9%84%D8%AA%D8%BA%D9%8A%D9%8A%D8%B1.png',
+    'ALWifakNewsTV.lb@SD': 'https://www.alwifaknews.com/wp-content/uploads/2019/11/cropped-Main-WifakLogo.png',
+    'CGTNArabic.cn@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7YPR78lAVFK7p4sIDfJ8e2blq43KrcMOv8Q&s',
+    'DijlahTV.iq@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHKAmhPGAW9sB_TU0FTXM4TnENt-IJWOARrg&s',
+    'DW.de@Arabic': 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Deutsche_Welle_symbol_2012.svg/1280px-Deutsche_Welle_symbol_2012.svg.png',
+    'INews.iq@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWk6uG8y7yBlguxAYVDAELl__AHTsKa30dgw&s',
+    'Medi1TVArabic.ma@SD': 'https://upload.wikimedia.org/wikipedia/commons/c/ca/Medi_1_TV_logo.png',
+    'MekameleenTV.tr@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNzqxruKb6deTPr3qHm-glV5rmLC1h7vTefw&s',
+    'RTArabic.ru@SD': 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Russia-today-logo.svg',
+    'SkyNewsArabiaVertical.ae@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfcBQGj_4TejozhwUpC3SYg-sDgDD25OoEDQ&s',
+    'SkyNewsArabiaVertical.ae@HD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfcBQGj_4TejozhwUpC3SYg-sDgDD25OoEDQ&s',
+    'TRT.ARABI.tr': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkE4Tufb39xO4a2a16XBUXeRq0ePqsRThd7Q&s',
+    'Al.Arabiya.Business.ae': 'https://upload.wikimedia.org/wikipedia/commons/8/8b/Al_Arabiya_-Logo_%281%29.png',
+    'AlArabiyaPrograms.ae@SD': 'https://upload.wikimedia.org/wikipedia/commons/8/8b/Al_Arabiya_-Logo_%281%29.png',
+    'KolalnasTV.ps@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9uzdYqfusgZm7yhM3eVrf-PVV38dAtqkJaQ&s',
+    'Makan33.il@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtOM54EQLfDPu9z9TtW-dPVGi05ZVzem-xDQ&s',
+    'NabaaTV.lb@SD': 'https://upload.wikimedia.org/wikipedia/commons/f/ff/Al-Naba_logo.svg',
+    'NablusTV.ps@SD': 'https://upload.wikimedia.org/wikipedia/commons/7/7f/Palestine_Satellite_Channel_Logo.png',
+    'OmanTVMubashir.om@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1GbBi5TPDKlOExqlxYwTR9x1xgeRcvXYvEQ&s',
+    'PalestineAlYawm.lb@SD': 'https://www.lyngsat.com/logo/tv/pp/palestine-al-yawm-lb.png',
+    'PalestineToday.ps@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSID-Qem61NCFXH-xJu8kZ1uyOZ6PG6PuSKKQ&s',
+    'RedTVLebanon.lb@HD': 'https://upload.wikimedia.org/wikipedia/en/thumb/1/1f/REDTV_Logo.jpg/250px-REDTV_Logo.jpg',
+    'IqraaAfricaEurope.sa@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbnLd9ilUrcxhSNACnNFmXprT8DwTsvQyz6g&s',
+    'KTVEthraa.kw@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP4qP11ASDWuanFA3veUerKbeNfx0SCSk7Kg&s',
+    'LoveWorldArabic.ng@SD': 'https://loveworldarabic.tv/ms-icon-310x310.png',
+    'MakkahTV.sa@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlQcFmfkOvHQIA5-XhTaIo535iwXrqmNsIow&s',
+    'MiracleTV.se@SD': 'https://cdn.prod.website-files.com/5c87e4b7e902058fc439677f/60918047bc925d86a39d9b22_MC_Logo_Black.png',
 }
 
 # ── Explicit bridges: M3U tvg-id  →  EPG channel id ──────────────────────────
@@ -265,7 +292,7 @@ EXCLUDE_WORDS = (
     'alwilayah',                                                                         # Catch the Iranian religious channel
     'eritreatv',                                                                         # Catch the Eritrean multi-lang channel
     'alfady', 'alkarma', 'atvsat', 'abnsat', 'elbeshara', 'alhorreya', 'IqraaAfricaEurope.sa@SD',
-    'RTD4.dj@SD', '.dj', 'zarin', 'zagrostv',
+    'RTD4.dj@SD', '.dj', 'zarin', 'zagrostv', 'miracletv', 'noursat', 'noural', 'nourel', 'missionasia', 'sadaehaq',
 )
 
 # ── Helpers ──────────────────────────────────────────────────────────────────
