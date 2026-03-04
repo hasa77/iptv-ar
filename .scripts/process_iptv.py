@@ -4,6 +4,7 @@ import gzip
 import xml.etree.ElementTree as ET
 import io
 import os
+import json
 from collections import defaultdict
 
 M3U_URL = "https://iptv-org.github.io/iptv/languages/ara.m3u"
@@ -15,178 +16,36 @@ EPG_SOURCES = [
     "https://iptv-epg.org/files/epg-meyqso.xml"
 ]
 
-LOGO_MAP = {
-    'Al.Araby.TV': 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/ALARABY_ARABIC.png/960px-ALARABY_ARABIC.png',
-    'Al.Araby.TV2': 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/ALARABY_ARABIC.png/960px-ALARABY_ARABIC.png',
-    'Al.Ekhbariya': 'https://upload.wikimedia.org/wikipedia/commons/e/e3/%D8%A7%D9%84%D9%82%D9%86%D8%A7.png',
-    'Al.Ghad.TV': 'https://upload.wikimedia.org/wikipedia/commons/0/06/AlGhad_TV.png',
-    'Al.Iraqiya': 'https://static.wikia.nocookie.net/logopedia/images/1/18/Al_Iraqiya_Logo.png/revision/latest?cb=20210309003710',
-    'Al.Iraqia.News': 'https://static.wikia.nocookie.net/logopedia/images/1/18/Al_Iraqiya_Logo.png/revision/latest?cb=20210309003710',
-    'Al.Jazeera.Mubasher.ae': 'https://upload.wikimedia.org/wikipedia/ar/c/c3/%D8%B4%D8%B9%D8%A7%D8%B1_%D9%82%D9%86%D8%A7%D8%A9_%D8%A7%D9%84%D8%AC%D8%B2%D9%8I%D8%B1%D8%A9_%D9%85%D8%A8%D8%A7%D8%B4%D8%B1.svg',
-    'Al.Jazeera.Mubasher24': 'https://static.wikia.nocookie.net/logopedia/images/9/95/Al_Jazeera_Mubasher_II.svg/revision/latest?cb=20231231100551',
-    'Al.Jazeera.Mubasher.Broadcast2': 'https://static.wikia.nocookie.net/logopedia/images/9/95/Al_Jazeera_Mubasher_II.svg/revision/latest?cb=20231231100551',
-    'Al.Maaref.TV': 'https://almaaref.ch/wp-content/uploads/2021/10/Almaaref-Logo.png',
-    'Al.Mamlaka.TV': 'https://upload.wikimedia.org/wikipedia/en/8/8a/Al-Mamlaka_TV_logo.png',
-    'AbuDhabiTV.ae': 'https://upload.wikimedia.org/wikipedia/commons/d/d7/Abu_Dhabi_TV_logo_2023.png',
-    'AbuDhabiEmirates.ae':'https://upload.wikimedia.org/wikipedia/commons/d/d7/Abu_Dhabi_TV_logo_2023.png',
-    'AjmanTV.ae': 'https://static.wikia.nocookie.net/logopedia/images/b/b3/Ajman_TV_Logo_1996.png/revision/latest?cb=20241210014941',
-    'AlAqsaTV.ps': 'https://cdn.broadbandtvnews.com/wp-content/uploads/2024/01/04120752/Al-Aqsa-TV.jpg',
-    'MBC1.ae': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/MBC_1_Logo.svg/960px-MBC_1_Logo.svg.png',
-    'MBC1Egypt.eg@HD': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/MBC_1_Logo.svg/960px-MBC_1_Logo.svg.png',
-    'MBC3USA.us@SD': 'https://static.wikia.nocookie.net/logopedia/images/f/f1/Mbc_tree.svg/revision/latest?cb=20250711113001',
-    'MBC4.ae': 'https://static.wikia.nocookie.net/logopedia/images/7/73/Mbc_for.svg/revision/latest?cb=20250711112900',
-    'MBC5.ae@SD': 'https://upload.wikimedia.org/wikipedia/commons/0/0f/MBC5_logo.png?_=20200521144912',
-    'MBCMasr.eg': 'https://static.wikia.nocookie.net/logopedia/images/b/bd/Mbc_egypt.svg/revision/latest?cb=20250711110419',
-    'MBCMasr2.eg': 'https://static.wikia.nocookie.net/logopedia/images/5/53/MBC_Masr_2_Logo.svg/revision/latest?cb=20250710124414',
-    'MBCMasrUSA.us@SD': 'https://static.wikia.nocookie.net/logopedia/images/b/bd/Mbc_egypt.svg/revision/latest?cb=20250711110419',
-    'MBCDrama.ae': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCQuAFbk-Pg3pHSO1xrAxTUJY3ZaGZNgu18Q&s',
-    'MBCPlusDrama.sa': 'https://upload.wikimedia.org/wikipedia/commons/2/2a/MBC_Drama_Plus_TV_Channel_Logo.png',
-    'MBCDramaUSA.us@SD': 'https://upload.wikimedia.org/wikipedia/commons/e/e9/MBC_Drama_Logo.svg',
-    'MBCIraq.iq@SD': 'https://static.wikia.nocookie.net/logopedia/images/6/6e/MBCIraq.jpeg/revision/latest/scale-to-width-down/1000?cb=20191214070733',
-    'MBC.Bollywood.ae': 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/MBC_Bollywood_Logo.svg/1280px-MBC_Bollywood_Logo.svg.png',
-    'AlJazeera.qa@Arabic': 'https://static.wikia.nocookie.net/logopedia/images/0/0f/Al_Jazeera.svg/revision/latest?cb=20171112085348',
-    'AlJazeeraMubasher.qa@SD': 'https://static.wikia.nocookie.net/logopedia/images/9/95/Al_Jazeera_Mubasher_II.svg/revision/latest?cb=20231231100551',
-    'AlJazeeraMubasher24.qa@SD': 'https://static.wikia.nocookie.net/logopedia/images/9/95/Al_Jazeera_Mubasher_II.svg/revision/latest?cb=20231231100551',
-    'AlJazeeraMubasherBroadcast2.qa@SD': 'https://static.wikia.nocookie.net/logopedia/images/9/95/Al_Jazeera_Mubasher_II.svg/revision/latest?cb=20231231100551',
-    'AlJazeeraDocumentary.qa@SD': 'https://static.wikia.nocookie.net/logopedia/images/e/e8/Al_Jazeera_Documentary_Channel.png/revision/latest?cb=20120211112107',
-    'AbuDhabiSports1.ae': 'https://static.wikia.nocookie.net/logopedia/images/0/0f/AbuDhabiSportsTV2023.png/revision/latest?cb=20230921160459',
-    'AbuDhabiSports2.ae': 'https://static.wikia.nocookie.net/logopedia/images/0/0f/AbuDhabiSportsTV2023.png/revision/latest?cb=20230921160459',
-    'BahrainSports1.bh@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9CEJXbMzbYPUX2ULkYAWmskUVAvYLAETCLQ&s',
-    'BahrainSports2.bh@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9CEJXbMzbYPUX2ULkYAWmskUVAvYLAETCLQ&s',
-    'JordanSport.jo@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2LTBDvhF-a5CZLFvM65U5TqFSCY0UdEANIA&s',
-    'AlhurraIraq.us@SD': 'https://upload.wikimedia.org/wikipedia/commons/0/06/AlHurra_logo.svg',
-    'AlIraqia.iq@SD': 'https://static.wikia.nocookie.net/logopedia/images/1/18/Al__Logo.png/revision/latest?cb=20210309003710',
-    'FalastiniTV.ps@SD': 'https://www.falastini.tv/wp-content/uploads/2017/02/logo.png',
-    'AlHorreyaTV.us@SD': 'https://yt3.googleusercontent.com/idxhelPtWa-U8GvXsSdMidgl6yGagtDwUspkCMWxz31bTA6FyMFCYKU5xDzXybVw3ZjmGIHY=s900-c-k-c0x00ffffff-no-rj',
-    'AlRafidainTV.tr@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK4NEActEu3lsaYHkDumTXs9jDaMCPDml0YQ&s',
-    'AlSunnahAlNabawiyahTV.sa@SD': 'https://www.tvyayinakisi.com/wp-content/uploads/2020/05/al-sunnah-al-nabawiyah-tv-logo.png',
-    'SharjahTV.ae@SD': 'https://static.wikia.nocookie.net/logopedia/images/a/a6/Sharjah_TV_Logo_2011.png/revision/latest/scale-to-width-down/300?cb=20241212234207',
-    'AlIttihadTV.lb@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5T8fq0fAxPmJK7XZOOXZRju9DdKgN_N3LmA&s',
-    'AlJadeed.lb@SD': 'https://upload.wikimedia.org/wikipedia/en/1/17/Al_Jadeed.PNG',
-    'AlRasheedTV.iq@SD': 'https://upload.wikimedia.org/wikipedia/en/b/b5/Al_Rasheed_TV_logo.png',
-    'IraqFuture.iq@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBIJR2f3buhd-IbO9num-iCNbc0LDAaVzrVQ&s',
-    'Al.Hadath.ae': 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Al_Hadath_TV_logo_2023.svg/1920px-Al_Hadath_TV_logo_2023.svg.png',
-    'AlYaumTV.ae': 'https://upload.wikimedia.org/wikipedia/commons/5/56/%D9%81%D9%86%D8%A7%D8%A9_%D8%A7%D9%84%D9%8A%D9%88%D9%85.jpg',
-    'AjyalTV.ps': 'https://upload.wikimedia.org/wikipedia/en/2/23/AjyalTVLogo2014.png',
-    'AlRayyanTV.qa@SD': 'https://upload.wikimedia.org/wikipedia/commons/e/ed/%D8%B4%D8%B9%D8%A7%D8%B1_%D8%A7%D9%84%D9%82%D9%86%D8%A7%D8%A9_2014-03-24_07-56.png',
-    'AlRayyanOldTV.qa@SD': 'https://alrayyan.qa/wp-content/uploads/2023/10/qadeem-logo2-300x134.gif',
-    'AlSaudiya.sa@SD': 'https://upload.wikimedia.org/wikipedia/en/d/d6/Al-Saudia_TV_Logo_2018.png',
-    'AlShallalTV.ae@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqmoNes6R_R0yx7nk1E9suapmPYyT4bhS65Q&s',
-    'AlSharqiyaMinKabla.ae@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3kYi61BFxLNpoz_iqDx6Rk-E3noS6D874Sw&s',
-    'AlWoustaTV.ae@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuqFcmzwsiTK-vLy7olcX0lSPinClIgF716A&s',
-    'Al-Sharqiya': 'https://upload.wikimedia.org/wikipedia/commons/1/1e/Al_Sharqiya.png',
-    'Althania.sy@SD': 'https://www.fadaatmedia.com/sites/default/files/2025-03/Logo%20syria%202%20Color.png',
-    'AmmanTV.jo@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWI2bNVA0-INJ3WFInusjdyyhgOrVYQYGBDw&s',
-    'BahrainInternational.bh@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH4-rpzsYt37RLrnzP08u9mAd3atzJ31keMA&s',
-    'BahrainTV.bh@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKqVIPA1s5YgGMsk3YiRbTZOierr5Lg0AxEQ&s',
-    'CBC.eg@SD': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Cbctv.svg/250px-Cbctv.svg.png',
-    'ElOussraTV.mr@SD': 'https://www.lyngsat.com/logo/tv/ee/el-oussra-tv-mr.png',
-    'ElsharqTV.tr@SD': 'https://elsharq.tv/wp-content/uploads/2025/10/ELSHARQ-TV645646-e1761838412808.png',
-    'ERiTV1.er@SD': 'https://upload.wikimedia.org/wikipedia/commons/0/01/EritTV_Logo.png',
-    'FutureTV.lb@SD': 'https://upload.wikimedia.org/wikipedia/en/b/bc/Future_tv_logo_2012.jpg',
-    'HalaLondon.uk@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqylrFx4KoPrq4XswHRn6ackepLntyp2cNhQ&s',
-    'HalaTV.il@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9hC8umj_HunhNKbllCtSaCX4pMD9zIamkkw&s',
-    'JordanTV.jo@SD': 'https://static.wikia.nocookie.net/iepfanon/images/d/df/Jordan_TV.png/revision/latest?cb=20240121200521',
-    'KTV1.kw@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH1YwZw4L26eNJx51HStZkNIfCbMrXAi9ggA&s',
-    'LanaTV.lb@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGIFIP3-1NLtmkesGoujJ1fpfVzVJ9Og622Q&s',
-    'OmanTV.om@SD': 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Saghhjjdegh.jpg',
-    'OTV.lb@SD': 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/OTV_%28logo%29.svg/1280px-OTV_%28logo%29.svg.png',
-    'QatarTelevision.qa@SD': 'https://upload.wikimedia.org/wikipedia/en/8/88/Qatar_TV_logo.png',
-    'QatarTelevision2.qa@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVuRil1BT-pR9h4oy9khMgQxpLFVFI1qqaUg&s',
-    'WatanTV.eg@SD': 'https://upload.wikimedia.org/wikipedia/commons/6/68/Watan_tv_logo.jpg',
-    'AlHadath.sa': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTn1QrjoG3q6_ku5D054jCd9vZFPJ2YRDpWg&s',
-    'BBCArabic.uk@SD': 'https://upload.wikimedia.org/wikipedia/commons/b/b8/Logo_BBC_Arabic.png',
-    'HalabTodayTV.sy@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa0qcmi0Vtpx5UHjj8c1Jkc4gQEtqjVuGWTg&s',
-    'SkyNewsArabia.ae@HD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfcBQGj_4TejozhwUpC3SYg-sDgDD25OoEDQ&s',
-    'SkyNewsArabia.ae@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfcBQGj_4TejozhwUpC3SYg-sDgDD25OoEDQ&s',
-    'SyriaTV.sy@SD': 'https://upload.wikimedia.org/wikipedia/en/d/d2/Syria_TV_logo.svg',
-    'VoiceofLebanon.lb@SD': 'https://yt3.googleusercontent.com/0g7bspn9-AVSgdMLQNA8unukgzhWBE35dTu0zookmfLpb5wa47DPUDsKndtIc3RAdFz54cvSbg=s900-c-k-c0x00ffffff-no-rj',
-    'AlHiwarTV.uk@SD': 'https://m.media-amazon.com/images/I/71fWor-YyUL.png',
-    'PalestineEdu.ps@SD': 'https://upload.wikimedia.org/wikipedia/commons/7/7f/Palestine_Satellite_Channel_Logo.png',
-    'AsharqDocumentary.sa@SD': 'https://static.wikia.nocookie.net/logopedia/images/a/a8/Asharq_Doc_23.png/revision/latest?cb=20230924082531',
-    'NationalGeographicAbuDhabi.ae@HD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-RR0tIHK2kmDd4sUOsJ95ijgr4lAsDZ-4XA&s',
-    'RotanaAflamPlus.sa@SD': 'https://www.ethnicchannels.com/images/channeldetail/rotana-aflam/rotana-aflam.png',
-    'RoyaDrama.jo@SD': 'https://royamediagroup.com/imgs/royat.png',
-    'Ch4Teen.kw@SD': 'https://ch14.tv/img/logo.png',
-    'ArabicaTV.lb@SD': 'https://play-lh.googleusercontent.com/vJ3tvJIwbdKtQ2cnG8j38hHBHvLXsq59wlG5MGhRfjh8lNpxgvfsush-5v9IabjVCQ',
-    'AghaniAghaniTV.lb@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ71udLceuolkA09cpq4ingoSzGhexsqFyuw&s',
-    'JawharaTV.tn@SD': 'https://m.jawharafm.net/ar/img/logo_jfmtv_fini.png',
-    'MarinaTV.kw@SD': 'https://upload.wikimedia.org/wikipedia/commons/0/0d/MarinaTV-Logo-2023.jpg',
-    'MelodyHits.ca@SD': 'https://upload.wikimedia.org/wikipedia/en/c/c1/Melody_Hits.png',
-    'Wanasah.ae@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAAwrDpA7J5DQ25STCwHRunmBOiMaZ-KWX4g&s',
-    'AlQuranAlKareemTV.sa@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2pRmfi-mTBumXgbPboYNK3yIBHtX-uw-AKg&s',
-    'AlJawadainTV.iq@SD': 'https://yt3.googleusercontent.com/K53EvSf8Pu048rumnr1AVQC4lFaymDtTlS-XEU6jyf5D3ZEzXJ57MByZIZh5EiNvUhqevuaIyg=s900-c-k-c0x00ffffff-no-rj',
-    'AlMajdHolyQuran.sa@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR99o10KFH_1PpVaKGdsV5uvsJRkjKP3y1xEg&s',
-    'AlerthAlnabawiChannel.jo@SD': 'https://upload.wikimedia.org/wikipedia/id/1/15/Logo_Nabawi_TV.png',
-    'AlImanTV.lb@SD': 'https://play-lh.googleusercontent.com/0xzwga2oE-6bUp7tggVMlMKCbPVmfXf0xwKpUF6UQ_qPveg3riA6EeE29COrCXKUhGTN',
-    'AlistiqamaTV.om@SD': 'https://www.istiqama.tv/wp-content/uploads/2024/04/channel_logo-1024x557.png',
-    'AlmagdTVMiddleEast.us@SD': 'https://play-lh.googleusercontent.com/uwjQhw4MHZ37JCaxTN9Wct3kbqmMOoi7JEdwzviG60uaBSiSrN-Z4-g6XADP3v8rrPc',
-    'Alquran.iq@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTandtY_hQQEDBt0aRmndEl4WhBXq3C0mL9VA&s',
-    'BahrainQuran.bh@SD': 'https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/05a1e4174424521.651d0c6f4d98c.png',
-    'BeitolAbbasTVChannel.iq@SD': 'https://beitolabbas.tv/wp-content/uploads/2023/01/Logo-1.png',
-    'ImamHusseinTV2.iq@SD': 'https://imamhussein.tv/image2021/TV02.png',
-    'IqraaArabic.sa@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbnLd9ilUrcxhSNACnNFmXprT8DwTsvQyz6g&s',
-    'IqraaQuran.sa@SD': 'https://upload.wikimedia.org/wikipedia/commons/c/c4/Iqraa_Logo.svg',
-    'KTVAlQurain.kw@SD': 'https://static.wikia.nocookie.net/logopedia/images/2/2e/Qurain_TV.jpg/revision/latest?cb=20220327145418',
-    'AlIraqia.iq@SD': 'https://static.wikia.nocookie.net/logopedia/images/1/18/Al_Iraqiya_Logo.png/revision/latest?cb=20210309003710',
-    'RASDTV.eh@SD': 'https://upload.wikimedia.org/wikipedia/en/8/8c/Rasdtv3.jpg',
-    'SBC.sa@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOF6ZlrI6F9zDrrl85nM9wZiw9uGDLfw6DuA&s',
-    'TanasuhTV.ly@HD': 'https://live.tanasuh.tv/img/logo.png',
-    'TeleLiban.lb@SD': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Logo_of_T%C3%A9l%C3%A9_Liban.svg/330px-Logo_of_T%C3%A9l%C3%A9_Liban.svg.png',
-    'WatarTV.ps@SD': 'https://upload.wikimedia.org/wikipedia/en/8/88/Qatar_TV_logo.png',
-    'Aflam.sa': 'https://static.wikia.nocookie.net/logopedia/images/4/42/Zee_Aflam_2025.png/revision/latest?cb=20250728102223',
-    'MixHollywood.eg@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiuF1aqu19Q7fLULU0yQWPuThF04cb0nvwCA&s',
-    'AlkassOne.qa@SD': 'https://www.cne-eg.com/uploads/logos/20183142627377.png',
-    'AlkassTwo.qa@SD': 'https://www.cne-eg.com/uploads/logos/20183142948397.png',
-    'AlkassThree.qa@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpHXCG6k52kkGCeH-j0jVeWCpBnm5y1hMYVA&s',
-    'AlkassFour.qa@SD': 'https://cne-eg.com/uploads/logos/20183142520385.png',
-    'AlkassFive.qa@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9b5k3Jz1UMEtASxalxzvQLxHQrqdnRMLvvg&s',
-    'AlkassSeven.qa@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Sv-5MKLOVvDs_x4Vye4Pt88EORL4nF-JTA&s',
-    'KTVSport.kw@SD': 'https://www.arabtimesonline.com/uploads/imported_images/2023/06/ktv-sports.jpg',
-    'KTVSportPlus.kw@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsKdmdQUw9frpfsEeeaEsNMYcQo9JzaUO0wA&s',
-    'OmanSportsTV.om@SD': 'https://flix.bdtype.com/uploads/tv_image/oman-tv-sport.png',
-    'SharjahSports.ae@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRPyMpGyY7q2vGkNrPghc73w1Y7KqPRsUf6A&s',
-    'AlAlam.ir@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoPnWwAG-6RkteDTh6i1-MdpzrsWlkl0B6qw&s',
-    'Alarabiya.ae@SD': 'https://upload.wikimedia.org/wikipedia/commons/8/8b/Al_Arabiya_-Logo_%281%29.png',
-    'AlJazeeraMubasher24.qa@SD': 'https://static.wikia.nocookie.net/logopedia/images/9/95/Al_Jazeera_Mubasher_II.svg/revision/latest?cb=20231231100551',
-    'AlJazeeraMubasherBroadcast2.qa@SD': 'https://static.wikia.nocookie.net/logopedia/images/9/95/Al_Jazeera_Mubasher_II.svg/revision/latest?cb=20231231100551',
-    'AlManar.lb@SD': 'https://upload.wikimedia.org/wikipedia/en/8/81/New_Al-Manar_logo.PNG',
-    'Al Masirah': 'https://upload.wikimedia.org/wikipedia/commons/2/2b/%D8%B4%D8%B9%D8%A7%D8%B1_%D9%82%D9%86%D8%A7%D8%A9_%D8%A7%D9%84%D9%85%D8%B3%D9%8I%D8%B1%D8%A9.svg',
-    'AlMasirahMubacher.ye@SD': 'https://upload.wikimedia.org/wikipedia/commons/2/2b/%D8%B4%D8%B9%D8%A7%D8%B1_%D9%82%D9%86%D8%A7%D8%A9_%D8%A7%D9%84%D9%85%D8%B3%D9%8I%D8%B1%D8%A9.svg',
-    'AlMayadeenTV.lb@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT644DfqhaDaD1HTN4KjAtpw68dXlewp8_sQ&s',
-    'AlNajahNews.ps@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTztnhfR-L319D2hijG__tY-_0znWm9gt4fkw&s',
-    'AlalamNewsChannelSyria.sy@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4xFQ66JAlFIgQXIV1jIRmwHEq2ZPNFI8vyg&s',
-    'Alhurra.us@SD': 'https://upload.wikimedia.org/wikipedia/commons/0/06/AlHurra_logo.svg',
-    'AlmahriahTV.tr@SD': 'https://upload.wikimedia.org/wikipedia/ar/0/04/%D9%82%D9%86%D8%A7%D8%A9_%D8%A7%D9%84%D9%85%D9%87%D8%B1%D9%8A%D8%A9.png',
-    'AlQanat9.tr@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJuge35cLKkchfXJ4ogW91cf84kdxJhk97Ww&s',
-    'AltaghierTV.jo@SD': 'https://upload.wikimedia.org/wikipedia/commons/c/c1/%D8%B4%D8%B9%D8%A7%D8%B1_%D9%82%D9%86%D8%A7%D8%A9_%D8%A7%D9%84%D8%AA%D8%BA%D9%8A%D9%8A%D8%B1.png',
-    'ALWifakNewsTV.lb@SD': 'https://www.alwifaknews.com/wp-content/uploads/2019/11/cropped-Main-WifakLogo.png',
-    'CGTNArabic.cn@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7YPR78lAVFK7p4sIDfJ8e2blq43KrcMOv8Q&s',
-    'DijlahTV.iq@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHKAmhPGAW9sB_TU0FTXM4TnENt-IJWOARrg&s',
-    'DW.de@Arabic': 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Deutsche_Welle_symbol_2012.svg/1280px-Deutsche_Welle_symbol_2012.svg.png',
-    'INews.iq@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWk6uG8y7yBlguxAYVDAELl__AHTsKa30dgw&s',
-    'Medi1TVArabic.ma@SD': 'https://upload.wikimedia.org/wikipedia/commons/c/ca/Medi_1_TV_logo.png',
-    'MekameleenTV.tr@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNzqxruKb6deTPr3qHm-glV5rmLC1h7vTefw&s',
-    'RTArabic.ru@SD': 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Russia-today-logo.svg',
-    'SkyNewsArabiaVertical.ae@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfcBQGj_4TejozhwUpC3SYg-sDgDD25OoEDQ&s',
-    'SkyNewsArabiaVertical.ae@HD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfcBQGj_4TejozhwUpC3SYg-sDgDD25OoEDQ&s',
-    'TRT.ARABI.tr': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkE4Tufb39xO4a2a16XBUXeRq0ePqsRThd7Q&s',
-    'Al.Arabiya.Business.ae': 'https://upload.wikimedia.org/wikipedia/commons/8/8b/Al_Arabiya_-Logo_%281%29.png',
-    'AlArabiyaPrograms.ae@SD': 'https://upload.wikimedia.org/wikipedia/commons/8/8b/Al_Arabiya_-Logo_%281%29.png',
-    'KolalnasTV.ps@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9uzdYqfusgZm7yhM3eVrf-PVV38dAtqkJaQ&s',
-    'Makan33.il@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtOM54EQLfDPu9z9TtW-dPVGi05ZVzem-xDQ&s',
-    'NabaaTV.lb@SD': 'https://upload.wikimedia.org/wikipedia/commons/f/ff/Al-Naba_logo.svg',
-    'NablusTV.ps@SD': 'https://upload.wikimedia.org/wikipedia/commons/7/7f/Palestine_Satellite_Channel_Logo.png',
-    'OmanTVMubashir.om@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1GbBi5TPDKlOExqlxYwTR9x1xgeRcvXYvEQ&s',
-    'PalestineAlYawm.lb@SD': 'https://www.lyngsat.com/logo/tv/pp/palestine-al-yawm-lb.png',
-    'PalestineToday.ps@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSID-Qem61NCFXH-xJu8kZ1uyOZ6PG6PuSKKQ&s',
-    'RedTVLebanon.lb@HD': 'https://upload.wikimedia.org/wikipedia/en/thumb/1/1f/REDTV_Logo.jpg/250px-REDTV_Logo.jpg',
-    'IqraaAfricaEurope.sa@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbnLd9ilUrcxhSNACnNFmXprT8DwTsvQyz6g&s',
-    'KTVEthraa.kw@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP4qP11ASDWuanFA3veUerKbeNfx0SCSk7Kg&s',
-    'LoveWorldArabic.ng@SD': 'https://loveworldarabic.tv/ms-icon-310x310.png',
-    'MakkahTV.sa@SD': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlQcFmfkOvHQIA5-XhTaIo535iwXrqmNsIow&s',
-    'MiracleTV.se@SD': 'https://cdn.prod.website-files.com/5c87e4b7e902058fc439677f/60918047bc925d86a39d9b22_MC_Logo_Black.png',
-}
+# Paths
+LOGO_MAP_PATH = os.path.join('root', 'resources', 'logo_map.json')
+EXCLUDE_WORDS_PATH = os.path.join('root', 'resources', 'exclude_words.txt')
+
+# Path to logo map JSON
+def load_logo_map():
+    """Loads the logo map from root/resources/logo_map.json"""
+    if not os.path.exists(LOGO_MAP_PATH):
+        print(f"Warning: {LOGO_MAP_PATH} not found. Logo mapping will be disabled.")
+        return {}
+    try:
+        with open(LOGO_MAP_PATH, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except Exception as e:
+        print(f"Error loading logo map JSON: {e}")
+        return {}
+
+def load_exclude_words(file_path=EXCLUDE_WORDS_PATH):
+    """Loads exclusion keywords from root/resources/exclude_words.txt"""
+    if not os.path.exists(file_path):
+        print(f"Warning: {file_path} not found. Using empty exclusion list.")
+        return []
+    
+    with open(file_path, 'r', encoding='utf-8') as f:
+        # Reads lines, strips whitespace, ignores empty lines and comments
+        return [line.strip() for line in f if line.strip() and not line.startswith('#')]
+
+# Load external resources
+LOGO_MAP = load_logo_map()
+EXCLUDE_WORDS = load_exclude_words()
 
 # ── Explicit bridges: M3U tvg-id  →  EPG channel id ──────────────────────────
 # Left side  = exact tvg-id value as it appears in the iptv-org M3U
@@ -260,17 +119,6 @@ FORBIDDEN_SUFFIXES = (
     '.distro', '.us_locals1', '.pluto'
 )
 
-def load_exclude_words(file_path='exclude_words.txt'):
-    if not os.path.exists(file_path):
-        print(f"Warning: {file_path} not found. Using empty exclusion list.")
-        return []
-    
-    with open(file_path, 'r', encoding='utf-8') as f:
-        # Reads lines, strips whitespace, ignores empty lines and comments
-        return [line.strip() for line in f if line.strip() and not line.startswith('#')]
-
-
-EXCLUDE_WORDS = load_exclude_words()
 # ── Helpers ──────────────────────────────────────────────────────────────────
 def strip_quality(s):
     return re.sub(r'(@\S+)|(\s*\(.*\))', '', s or '').strip()
