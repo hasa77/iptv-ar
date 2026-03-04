@@ -292,7 +292,7 @@ EXCLUDE_WORDS = (
     'alwilayah',                                                                         # Catch the Iranian religious channel
     'eritreatv',                                                                         # Catch the Eritrean multi-lang channel
     'alfady', 'alkarma', 'atvsat', 'abnsat', 'elbeshara', 'alhorreya', 'IqraaAfricaEurope.sa@SD',
-    'RTD4.dj@SD', '.dj', 'zarin', 'zagrostv', 'miracletv', 'noursat', 'noural', 'nourel', 'missionasia', 'sadaehaq',
+    'RTD4.dj@SD', '.dj', 'zarin', 'zagrostv', 'miracletv', 'noursat', 'noural', 'nourel', 'missionasia', 'sadaehaq', 'mta', 'cgtn',
 )
 
 # ── Helpers ──────────────────────────────────────────────────────────────────
@@ -304,11 +304,14 @@ def norm(s):
     return re.sub(r'[^a-z0-9]', '', s.lower())
 
 def is_excluded(tvg_id, name=''):
-    # 1. Check for forbidden regional suffixes (like .us, .fr, .kr)
-    if any(tvg_id.lower().endswith(s) for s in FORBIDDEN_SUFFIXES):
+    # Clean the ID first so suffixes like .se are caught even with @SD
+    clean_id = strip_quality(tvg_id).lower()
+    
+    # 1. Check for forbidden regional suffixes
+    if any(clean_id.endswith(s) for s in FORBIDDEN_SUFFIXES):
         return True
 
-    # 2. Check for keywords (like 'kurd', 'dabanga', etc.)
+    # 2. Check for keywords
     combined = (norm(tvg_id) + ' ' + norm(name)).lower()
     return any(x.lower() in combined for x in EXCLUDE_WORDS)
 
