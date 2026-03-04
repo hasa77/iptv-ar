@@ -130,7 +130,7 @@ mta
 cgtn
 loveworld
 # Added Requested Exclusions
-Koogi TV
+KoogiTV
 Nour Mariam
 ERi-TV 1
 RTD 4
