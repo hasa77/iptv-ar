@@ -145,3 +145,8 @@ eritreatv
 IqraaAfricaEurope.sa@SD
 RTD4.dj@SD
 .dj
+Coptic
+CTV
+Asil
+ERi-TV
+Eritrea
