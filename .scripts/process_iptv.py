@@ -292,7 +292,8 @@ EXCLUDE_WORDS = (
     'alwilayah',                                                                         # Catch the Iranian religious channel
     'eritreatv',                                                                         # Catch the Eritrean multi-lang channel
     'alfady', 'alkarma', 'atvsat', 'abnsat', 'elbeshara', 'alhorreya', 'IqraaAfricaEurope.sa@SD',
-    'RTD4.dj@SD', '.dj', 'zarin', 'zagrostv', 'miracletv', 'noursat', 'noural', 'nourel', 'missionasia', 'sadaehaq', 'mta', 'cgtn',
+    'RTD4.dj@SD', '.dj', 'zarin', 'zagrostv', 'miracletv', 'noursat', 'noural', 'nourel', 
+    'missionasia', 'sadaehaq', 'mta', 'cgtn', 'loveworld',
 )
 
 # ── Helpers ──────────────────────────────────────────────────────────────────
