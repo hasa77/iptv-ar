@@ -1,0 +1,147 @@
+# General / Tech
+radio
+fm
+chaine
+distro.tv
+samsung
+wellbeing
+# Regional / Language
+argentina
+colombia
+telefe
+eltrece
+kurd
+kurdistan
+rudaw
+waar
+duhok
+rojava
+ronahi
+channel8
+morocco
+maroc
+maghreb
+2m
+tunisia
+tunisie
+ttv
+hannibal
+libya
+libye
+218 tv
+iran
+persian
+farsi
+gem tv
+mbcpersia
+afghanistan
+afghan
+pashto
+tolo
+afghani
+india
+hindi
+tamil
+telugu
+malayalam
+korea
+korean
+kbs
+sbs
+tvn
+zealand
+nz
+australia
+canterbury
+turk
+trrt
+atv.tr
+fox.tr
+canada
+cbc.ca
+cbcmusic
+halifax
+ottawa
+winnipeg
+calgary
+vancouver
+montreal
+brazil
+portuguese
+france
+italy
+deutsch
+german
+spanish
+espana
+engelsk
+# Specific Channels / Keywords
+babyfirst
+i24news
+kmbc
+wmbc
+tmbc
+mbc1usa
+milb
+ncaa
+broncos
+lobos
+santa-clara
+mlb-
+cubs
+guardians
+white-sox
+reds
+espanol
+charity
+logos
+llbn
+canalalgerie
+tv2.dz
+cna.dz
+aghania_ghani
+godstands
+teletchad
+dabanga
+sudanese
+northafricaine
+cnadz
+cnadzsd
+tv2dzsd
+tv2dz
+almaghribia
+alalam.ir
+alwilayah
+alfady
+alkarma
+atvsat
+abnsat
+elbeshara
+alhorreya
+zarin
+zagrostv
+miracletv
+noursat
+noural
+nourel
+missionasia
+sadaehaq
+mta
+cgtn
+loveworld
+# Added Requested Exclusions
+Koogi TV
+Nour Mariam
+ERi-TV 1
+RTD 4
+Iqraa Africa & Europe
+Makan 33
+# Original Variations
+Aghapy
+aghapy
+eritrea
+eri-tv
+eritreatv
+IqraaAfricaEurope.sa@SD
+RTD4.dj@SD
+.dj
