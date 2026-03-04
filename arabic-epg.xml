@@ -13,14 +13,17 @@
 <channel id="MBCMasr.eg"><display-name>MBCMasr.eg</display-name></channel>
 <channel id="MBCMasr2.eg"><display-name>MBCMasr2.eg</display-name></channel>
 <channel id="MBCPlusDrama.sa"><display-name>MBCPlusDrama.sa</display-name></channel>
+<channel id="MTA1World.uk"><display-name>MTA1World.uk</display-name></channel>
 <channel id="Maraya.sa"><display-name>Maraya.sa</display-name></channel>
 <channel id="MoviesAction.sa"><display-name>MoviesAction.sa</display-name></channel>
 <channel id="MoviesThriller.sa"><display-name>MoviesThriller.sa</display-name></channel>
 <channel id="RotanaCinemaKSA.sa"><display-name>RotanaCinemaKSA.sa</display-name></channel>
 <channel id="RotanaClassic.sa"><display-name>RotanaClassic.sa</display-name></channel>
 <channel id="RotanaKhalijia.sa"><display-name>RotanaKhalijia.sa</display-name></channel>
+<channel id="Sharjah.Radio.ae"><display-name>Sharjah.Radio.ae</display-name></channel>
 <channel id="TRT.ARABI.tr"><display-name>TRT.ARABI.tr</display-name></channel>
 <channel id="Zee.Alwan.ae"><display-name>Zee.Alwan.ae</display-name></channel>
+<channel id="i24NEWS.ARABIC.il"><display-name>i24NEWS.ARABIC.il</display-name></channel>
 <programme start="20250720005400 +0000" stop="20250720030900 +0000" channel="Aflam.sa">
     <title /><desc /></programme>
   
@@ -3951,6 +3954,569 @@
 <programme start="20250723070000 +0000" stop="20250723074500 +0000" channel="MBCPlusDrama.sa">
     <title /><title /><title /><desc /></programme>
   
+<programme start="20260303000000 +0000" stop="20260303002000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260303002000 +0000" stop="20260303003500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260303003500 +0000" stop="20260303014500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260303014500 +0000" stop="20260303021000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260303021000 +0000" stop="20260303030000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260303030000 +0000" stop="20260303041500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260303041500 +0000" stop="20260303051500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260303051500 +0000" stop="20260303052000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260303052000 +0000" stop="20260303053000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260303053000 +0000" stop="20260303060000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260303060000 +0000" stop="20260303065500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260303065500 +0000" stop="20260303071000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260303071000 +0000" stop="20260303081000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260303081000 +0000" stop="20260303090000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260303090000 +0000" stop="20260303100000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260303100000 +0000" stop="20260303102000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260303102000 +0000" stop="20260303103000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260303103000 +0000" stop="20260303110000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260303110000 +0000" stop="20260303120000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260303120000 +0000" stop="20260303124500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260303124500 +0000" stop="20260303130000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260303130000 +0000" stop="20260303142500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260303142500 +0000" stop="20260303151500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260303151500 +0000" stop="20260303154500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260303154500 +0000" stop="20260303160000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+<programme start="20260303160000 +0000" stop="20260303162000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260303162000 +0000" stop="20260303163000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260303163000 +0000" stop="20260303164500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260303164500 +0000" stop="20260303175000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260303175000 +0000" stop="20260303180000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260303180000 +0000" stop="20260303182000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260303182000 +0000" stop="20260303183000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260303183000 +0000" stop="20260303185000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260303185000 +0000" stop="20260303195000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260303195000 +0000" stop="20260303204000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260303204000 +0000" stop="20260303213000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260303213000 +0000" stop="20260303224500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260303224500 +0000" stop="20260303233000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260303233000 +0000" stop="20260304000500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260304000500 +0000" stop="20260304002500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260304002500 +0000" stop="20260304004000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260304004000 +0000" stop="20260304010000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260304010000 +0000" stop="20260304013500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260304013500 +0000" stop="20260304015000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260304015000 +0000" stop="20260304025500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260304025500 +0000" stop="20260304041500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260304041500 +0000" stop="20260304051200 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260304051200 +0000" stop="20260304052000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260304052000 +0000" stop="20260304053000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260304053000 +0000" stop="20260304060000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260304060000 +0000" stop="20260304064500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260304064500 +0000" stop="20260304070000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260304070000 +0000" stop="20260304080000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260304080000 +0000" stop="20260304082000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260304082000 +0000" stop="20260304085500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260304085500 +0000" stop="20260304100500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260304100500 +0000" stop="20260304103000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260304103000 +0000" stop="20260304105500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260304105500 +0000" stop="20260304115000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260304115000 +0000" stop="20260304120000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260304120000 +0000" stop="20260304124500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260304124500 +0000" stop="20260304130000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260304130000 +0000" stop="20260304142500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260304142500 +0000" stop="20260304150000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260304150000 +0000" stop="20260304160500 +0000" channel="MTA1World.uk">
+    <title /><desc /><new /></programme>
+  
+<programme start="20260304160500 +0000" stop="20260304162500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260304162500 +0000" stop="20260304163500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260304163500 +0000" stop="20260304164500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260304164500 +0000" stop="20260304174900 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260304174900 +0000" stop="20260304180000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260304180000 +0000" stop="20260304182000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260304182000 +0000" stop="20260304183500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260304183500 +0000" stop="20260304190000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260304190000 +0000" stop="20260304192000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260304192000 +0000" stop="20260304202500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260304202500 +0000" stop="20260304213000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260304213000 +0000" stop="20260304225000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260304225000 +0000" stop="20260304231500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260304231500 +0000" stop="20260305000000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305000000 +0000" stop="20260305002000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305002000 +0000" stop="20260305003500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305003500 +0000" stop="20260305013000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305013000 +0000" stop="20260305014500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305014500 +0000" stop="20260305025000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305025000 +0000" stop="20260305041000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305041000 +0000" stop="20260305051000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305051000 +0000" stop="20260305052000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305052000 +0000" stop="20260305052500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305052500 +0000" stop="20260305060000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305060000 +0000" stop="20260305065500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305065500 +0000" stop="20260305071000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305071000 +0000" stop="20260305073500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305073500 +0000" stop="20260305080500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305080500 +0000" stop="20260305082500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305082500 +0000" stop="20260305090000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305090000 +0000" stop="20260305100000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305100000 +0000" stop="20260305104000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305104000 +0000" stop="20260305110500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305110500 +0000" stop="20260305115000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305115000 +0000" stop="20260305120000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305120000 +0000" stop="20260305125000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305125000 +0000" stop="20260305130000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305130000 +0000" stop="20260305142000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305142000 +0000" stop="20260305144500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305144500 +0000" stop="20260305151500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305151500 +0000" stop="20260305161000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305161000 +0000" stop="20260305162000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305162000 +0000" stop="20260305165000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305165000 +0000" stop="20260305175100 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305175100 +0000" stop="20260305180000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305180000 +0000" stop="20260305182000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305182000 +0000" stop="20260305183000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305183000 +0000" stop="20260305185000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305185000 +0000" stop="20260305190000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305190000 +0000" stop="20260305194000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305194000 +0000" stop="20260305200000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305200000 +0000" stop="20260305210000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305210000 +0000" stop="20260305213000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305213000 +0000" stop="20260305224500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305224500 +0000" stop="20260305230000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305230000 +0000" stop="20260305231000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260305231000 +0000" stop="20260306000000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306000000 +0000" stop="20260306002000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306002000 +0000" stop="20260306004000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306004000 +0000" stop="20260306010500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306010500 +0000" stop="20260306013500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306013500 +0000" stop="20260306014500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306014500 +0000" stop="20260306022500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306022500 +0000" stop="20260306024500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306024500 +0000" stop="20260306035500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306035500 +0000" stop="20260306040500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306040500 +0000" stop="20260306050800 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306050800 +0000" stop="20260306052000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306052000 +0000" stop="20260306055500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306055500 +0000" stop="20260306060000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306060000 +0000" stop="20260306065000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306065000 +0000" stop="20260306070500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306070500 +0000" stop="20260306080500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306080500 +0000" stop="20260306082500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306082500 +0000" stop="20260306090000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306090000 +0000" stop="20260306101500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306101500 +0000" stop="20260306103000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306103000 +0000" stop="20260306105500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306105500 +0000" stop="20260306120000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306120000 +0000" stop="20260306124500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306124500 +0000" stop="20260306125500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306125500 +0000" stop="20260306130000 +0000" channel="MTA1World.uk">
+    <title /><desc /><new /></programme>
+  
+<programme start="20260306130000 +0000" stop="20260306140500 +0000" channel="MTA1World.uk">
+    <title /><desc /><new /></programme>
+  
+<programme start="20260306140500 +0000" stop="20260306144000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306144000 +0000" stop="20260306155000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306155000 +0000" stop="20260306165000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306165000 +0000" stop="20260306175300 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306175300 +0000" stop="20260306180000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306180000 +0000" stop="20260306182000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306182000 +0000" stop="20260306183500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306183500 +0000" stop="20260306190000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306190000 +0000" stop="20260306200500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306200500 +0000" stop="20260306210500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306210500 +0000" stop="20260306214000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306214000 +0000" stop="20260306230000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306230000 +0000" stop="20260306231000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260306231000 +0000" stop="20260307000000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260307000000 +0000" stop="20260307002000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260307002000 +0000" stop="20260307003000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260307003000 +0000" stop="20260307013000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260307013000 +0000" stop="20260307014000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260307014000 +0000" stop="20260307024500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260307024500 +0000" stop="20260307040500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260307040500 +0000" stop="20260307050500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260307050500 +0000" stop="20260307051500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260307051500 +0000" stop="20260307055000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260307055000 +0000" stop="20260307060000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260307060000 +0000" stop="20260307065500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260307065500 +0000" stop="20260307075000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260307075000 +0000" stop="20260307080000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260307080000 +0000" stop="20260307085000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260307085000 +0000" stop="20260307091000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260307091000 +0000" stop="20260307095000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260307095000 +0000" stop="20260307100000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260307100000 +0000" stop="20260307103000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260307103000 +0000" stop="20260307110000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260307110000 +0000" stop="20260307113500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260307113500 +0000" stop="20260307120000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260307120000 +0000" stop="20260307124500 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260307124500 +0000" stop="20260307130000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260307130000 +0000" stop="20260307142000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260307142000 +0000" stop="20260307150000 +0000" channel="MTA1World.uk">
+    <title /><desc /></programme>
+  
+<programme start="20260307150000 +0000" stop="20260307160000 +0000" channel="MTA1World.uk">
+    <title /><desc /><new /></programme>
+  
 <programme start="20250720004100 +0000" stop="20250720012400 +0000" channel="Maraya.sa">
     <title /><desc /></programme>
   
@@ -4750,6 +5316,282 @@
   
 <programme start="20250725101500 +0000" stop="20250725120000 +0000" channel="MoviesThriller.sa">
     <title /><desc /></programme>
+  
+<programme start="20260304000000 +0000" stop="20260304003000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260304003000 +0000" stop="20260304013000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260304013000 +0000" stop="20260304022000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260304022000 +0000" stop="20260304031000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260304031000 +0000" stop="20260304040000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260304040000 +0000" stop="20260304045000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260304045000 +0000" stop="20260304055000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260304055000 +0000" stop="20260304062000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260304062000 +0000" stop="20260304064000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260304064000 +0000" stop="20260304072500 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260304072500 +0000" stop="20260304081000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260304081000 +0000" stop="20260304090000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260304090000 +0000" stop="20260304093000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260304093000 +0000" stop="20260304100000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260304100000 +0000" stop="20260304103000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260304103000 +0000" stop="20260304105500 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260304105500 +0000" stop="20260304110000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260304110000 +0000" stop="20260304114500 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260304114500 +0000" stop="20260304122000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260304122000 +0000" stop="20260304130000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260304130000 +0000" stop="20260304140000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260304140000 +0000" stop="20260304150000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260304150000 +0000" stop="20260304160000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category />
+    <category /><icon /></programme>
+  
+<programme start="20260304160000 +0000" stop="20260304170000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260304170000 +0000" stop="20260304180000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260304180000 +0000" stop="20260304183000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260304183000 +0000" stop="20260304193000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260304193000 +0000" stop="20260304203000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260304203000 +0000" stop="20260305000000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260305000000 +0000" stop="20260305003000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260305003000 +0000" stop="20260305013000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260305013000 +0000" stop="20260305022000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260305022000 +0000" stop="20260305031000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260305031000 +0000" stop="20260305040000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260305040000 +0000" stop="20260305045000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260305045000 +0000" stop="20260305053000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260305053000 +0000" stop="20260305062000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260305062000 +0000" stop="20260305064000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260305064000 +0000" stop="20260305072500 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260305072500 +0000" stop="20260305081500 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260305081500 +0000" stop="20260305090000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260305090000 +0000" stop="20260305093000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260305093000 +0000" stop="20260305100000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260305100000 +0000" stop="20260305103000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260305103000 +0000" stop="20260305105500 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260305105500 +0000" stop="20260305110000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260305110000 +0000" stop="20260305114500 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260305114500 +0000" stop="20260305122000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260305122000 +0000" stop="20260305130000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260305130000 +0000" stop="20260305140000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260305140000 +0000" stop="20260305150000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260305150000 +0000" stop="20260305160000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260305160000 +0000" stop="20260305170000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260305170000 +0000" stop="20260305180000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260305180000 +0000" stop="20260305183000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260305183000 +0000" stop="20260305193000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260305193000 +0000" stop="20260305203000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260305203000 +0000" stop="20260306000000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260306000000 +0000" stop="20260306003000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260306003000 +0000" stop="20260306013000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260306013000 +0000" stop="20260306022000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260306022000 +0000" stop="20260306031000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260306031000 +0000" stop="20260306040000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260306040000 +0000" stop="20260306045000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260306045000 +0000" stop="20260306055000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260306055000 +0000" stop="20260306062000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260306062000 +0000" stop="20260306064000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260306064000 +0000" stop="20260306072500 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260306072500 +0000" stop="20260306081500 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260306081500 +0000" stop="20260306090000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260306090000 +0000" stop="20260306093000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260306093000 +0000" stop="20260306095000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260306095000 +0000" stop="20260306101000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260306101000 +0000" stop="20260306103000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260306103000 +0000" stop="20260306105500 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260306105500 +0000" stop="20260306110000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><category /><icon /></programme>
+<programme start="20260306110000 +0000" stop="20260306114500 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260306114500 +0000" stop="20260306122000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260306122000 +0000" stop="20260306130000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260306130000 +0000" stop="20260306140000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260306140000 +0000" stop="20260306150000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260306150000 +0000" stop="20260306160000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260306160000 +0000" stop="20260306170000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260306170000 +0000" stop="20260306180000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260306180000 +0000" stop="20260306183000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260306183000 +0000" stop="20260306193000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260306193000 +0000" stop="20260306203000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260306203000 +0000" stop="20260306210000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260306210000 +0000" stop="20260306220000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260306220000 +0000" stop="20260306222000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260306222000 +0000" stop="20260306230000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
+  
+<programme start="20260306230000 +0000" stop="20260307000000 +0000" channel="Sharjah.Radio.ae">
+    <title /><desc /><date /><category /><category /><icon /></programme>
   
 <programme start="20260304000000 +0000" stop="20260304003000 +0000" channel="TRT.ARABI.tr">
     <title /><desc /><category /><icon /></programme>
@@ -5806,5 +6648,223 @@
   
 <programme start="20260307233000 +0000" stop="20260308000000 +0000" channel="Zee.Alwan.ae">
     <title /><desc /><date /><category /><category /><icon /><episode-num /></programme>
+  
+<programme start="20260302080000 +0000" stop="20260302100000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260302100000 +0000" stop="20260302120000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260302120000 +0000" stop="20260302140000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260302140000 +0000" stop="20260302160000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260302160000 +0000" stop="20260302180000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260302180000 +0000" stop="20260302200000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260302200000 +0000" stop="20260302210000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260302210000 +0000" stop="20260302223000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260302223000 +0000" stop="20260302233000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260302233000 +0000" stop="20260303000000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260303000000 +0000" stop="20260303010000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260303010000 +0000" stop="20260303023000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260303023000 +0000" stop="20260303033000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260303033000 +0000" stop="20260303040000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260303040000 +0000" stop="20260303050000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260303050000 +0000" stop="20260303060000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260303060000 +0000" stop="20260303063000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260303063000 +0000" stop="20260303070000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260303070000 +0000" stop="20260303073000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260303073000 +0000" stop="20260303080000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260303080000 +0000" stop="20260303090000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260303090000 +0000" stop="20260303100000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260303100000 +0000" stop="20260303110000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260303110000 +0000" stop="20260303120000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260303120000 +0000" stop="20260303130000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260303130000 +0000" stop="20260303140000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260303140000 +0000" stop="20260303143000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260303143000 +0000" stop="20260303150000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260303150000 +0000" stop="20260303160000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260303160000 +0000" stop="20260303170000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260303170000 +0000" stop="20260303180000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260303180000 +0000" stop="20260303183000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+<programme start="20260303183000 +0000" stop="20260303190000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260303190000 +0000" stop="20260303193000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260303193000 +0000" stop="20260303200000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260303200000 +0000" stop="20260303210000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260303210000 +0000" stop="20260303223000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260303223000 +0000" stop="20260303233000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260303233000 +0000" stop="20260304000000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260304000000 +0000" stop="20260304010000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260304010000 +0000" stop="20260304023000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260304023000 +0000" stop="20260304033000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260304033000 +0000" stop="20260304040000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260304040000 +0000" stop="20260304050000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260304050000 +0000" stop="20260304060000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260304060000 +0000" stop="20260304063000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260304063000 +0000" stop="20260304070000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260304070000 +0000" stop="20260304073000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260304073000 +0000" stop="20260304080000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260304080000 +0000" stop="20260304090000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260304090000 +0000" stop="20260304100000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260304100000 +0000" stop="20260304110000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260304110000 +0000" stop="20260304120000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260304120000 +0000" stop="20260304130000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260304130000 +0000" stop="20260304140000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260304140000 +0000" stop="20260304143000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260304143000 +0000" stop="20260304150000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260304150000 +0000" stop="20260304160000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260304160000 +0000" stop="20260304170000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260304170000 +0000" stop="20260304180000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260304180000 +0000" stop="20260304183000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260304183000 +0000" stop="20260304190000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260304190000 +0000" stop="20260304193000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260304193000 +0000" stop="20260304200000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260304200000 +0000" stop="20260304210000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260304210000 +0000" stop="20260304223000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260304223000 +0000" stop="20260304233000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260304233000 +0000" stop="20260305000000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260305000000 +0000" stop="20260305010000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260305010000 +0000" stop="20260305023000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260305023000 +0000" stop="20260305033000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260305033000 +0000" stop="20260305040000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
+  
+<programme start="20260305040000 +0000" stop="20260305050000 +0000" channel="i24NEWS.ARABIC.il">
+    <title /><desc /><category /><icon /></programme>
   
 </tv>
