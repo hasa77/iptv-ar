@@ -280,16 +280,28 @@ def norm(s):
     return re.sub(r'[^a-z0-9]', '', s.lower())
 
 def is_excluded(tvg_id, name=''):
-    # Clean the ID first so suffixes like .se are caught even with @SD
+    # 1. Clean the ID and Name
     clean_id = strip_quality(tvg_id).lower()
+    clean_name = name.lower()
     
-    # 1. Check for forbidden regional suffixes
+    # 2. Check for forbidden regional suffixes (e.g., .us, .fr)
     if any(clean_id.endswith(s) for s in FORBIDDEN_SUFFIXES):
         return True
 
-    # 2. Check for keywords
-    combined = (norm(tvg_id) + ' ' + norm(name)).lower()
-    return any(x.lower() in combined for x in EXCLUDE_WORDS)
+    # 3. Check keywords against multiple versions of the name
+    # We check: 'mbc plus', 'mbcplus', and 'MBC.Plus'
+    for word in EXCLUDE_WORDS:
+        w = word.lower().strip()
+        if not w: continue
+        
+        # Check raw ID (catches 'mbc.plus')
+        if w in clean_id: return True
+        # Check raw Name (catches 'MBC Plus')
+        if w in clean_name: return True
+        # Check normalized version (catches 'mbcplus')
+        if w in norm(tvg_id) or w in norm(name): return True
+            
+    return False
 
 def apply_logo(extinf_line, tvg_id, tvg_name):
     # Normalize everything for comparison
