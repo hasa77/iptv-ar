@@ -169,10 +169,12 @@ def load_epg_channels():
                 elif tag == 'programme':
                     cid = elem.get('channel', '')
                     if cid in epg_exact:
-                        epg_programmes[cid].append(ET.tostring(elem, encoding='utf-8'))
+                        epg_programmes[cid].append(ET.tostring(elem))
                 elem.clear()
         except Exception as e:
-            print(f"   ⚠️ Error: {e}")
+            print(f"    ⚠️ Error: {e}")
+    
+    print(f"📊 Total unique EPG channel IDs found: {len(epg_exact)}")
     return epg_exact, epg_norm, epg_programmes
 
 def fetch_and_resolve_m3u(epg_exact, epg_norm):
@@ -197,12 +199,11 @@ def fetch_and_resolve_m3u(epg_exact, epg_norm):
     return channels
 
 def write_outputs(channels, epg_programmes):
-    kept, epg_needed, no_epg = [], set(), []
+    kept, epg_needed = [], set()
     for ch in channels:
         if is_excluded(ch['tvg_id'], ch['tvg_name']): continue
         kept.append(ch)
         if ch['epg_id']: epg_needed.add(ch['epg_id'])
-        else: no_epg.append(ch)
 
     with open(M3U_OUTPUT, 'w', encoding='utf-8') as f:
         f.write('#EXTM3U\n')
@@ -219,7 +220,10 @@ def write_outputs(channels, epg_programmes):
             for prog in epg_programmes[eid]:
                 f.write(prog + b'\n')
         f.write(b'</tv>')
-    print(f"\n✅ Done! → {M3U_OUTPUT} ({len(kept)} channels)")
+    
+    print(f"📺 EPG Mapped: {len(epg_needed)} channels have guide data.")
+    print(f"🚫 EPG Missing: {len(kept) - len(epg_needed)} channels have no guide data.")
+    print(f"\n✅ Done! → {M3U_OUTPUT} ({len(kept)} channels total)")
 
 def main():
     print("🚀 Arabic IPTV Sync\n")
