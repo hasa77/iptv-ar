@@ -17,8 +17,8 @@ EPG_SOURCES = [
 ]
 
 # Paths
-LOGO_MAP_PATH = os.path.join('root', 'resources', 'logo_map.json')
-EXCLUDE_WORDS_PATH = os.path.join('root', 'resources', 'exclude_words.txt')
+LOGO_MAP_PATH = os.path.join('resources', 'logo_map.json')
+EXCLUDE_WORDS_PATH = os.path.join('resources', 'exclude_words.txt')
 
 # Path to logo map JSON
 def load_logo_map():
@@ -128,58 +128,40 @@ def norm(s):
     return re.sub(r'[^a-z0-9]', '', s.lower())
 
 def is_excluded(tvg_id, name=''):
-    # 1. Clean the ID and Name
-    clean_id = strip_quality(tvg_id).lower()
-    clean_name = name.lower()
-    
-    # 2. Check for forbidden regional suffixes (e.g., .us, .fr)
-    if any(clean_id.endswith(s) for s in FORBIDDEN_SUFFIXES):
+    c_id = (tvg_id or '').lower()
+    c_name = (name or '').lower()
+    n_id = norm(tvg_id)
+    n_name = norm(name)
+
+    # 1. Suffix check
+    if any(c_id.endswith(s) for s in FORBIDDEN_SUFFIXES):
         return True
 
-    # 3. Check keywords against multiple versions of the name
-    # We check: 'mbc plus', 'mbcplus', and 'MBC.Plus'
+    # 2. Keyword check
     for word in EXCLUDE_WORDS:
-        w = word.lower().strip()
-        if not w: continue
-        
-        # Check raw ID (catches 'mbc.plus')
-        if w in clean_id: return True
-        # Check raw Name (catches 'MBC Plus')
-        if w in clean_name: return True
-        # Check normalized version (catches 'mbcplus')
-        if w in norm(tvg_id) or w in norm(name): return True
-            
+        # Check if word exists in raw id, raw name, or normalized versions
+        if word in c_id or word in c_name or word in n_id or word in n_name:
+            return True
     return False
 
 def apply_logo(extinf_line, tvg_id, tvg_name):
-    # Normalize everything for comparison
     n_id = norm(tvg_id)
     n_name = norm(tvg_name)
-    
     logo_url = None
     
     for key, url in LOGO_MAP.items():
         n_key = norm(key)
+        if not n_key: continue
         
-        # Check if the map key is inside the ID (e.g., "alarabiyabusiness" in "alarabiyabusinessae")
-        # OR if the ID is inside the key.
-        if (n_key in n_id and n_key != '') or (n_id in n_key and n_id != ''):
-            logo_url = url
-            break
-        # Fallback to name check
-        if (n_key in n_name and n_key != '') or (n_name in n_key and n_name != ''):
+        if n_key in n_id or n_id in n_key or n_key in n_name or n_name in n_key:
             logo_url = url
             break
 
     if logo_url:
-        # Forcefully replace the existing tvg-logo link
         if 'tvg-logo=' in extinf_line:
-            # This regex finds the tvg-logo attribute and replaces the URL inside the quotes
             return re.sub(r'tvg-logo="[^"]*"', f'tvg-logo="{logo_url}"', extinf_line)
         else:
-            # If no logo tag exists, insert it after the #EXTINF:-1
             return re.sub(r'(#EXTINF:[^,]*)', rf'\1 tvg-logo="{logo_url}"', extinf_line, count=1)
-            
     return extinf_line
 
 def load_epg_channels():
