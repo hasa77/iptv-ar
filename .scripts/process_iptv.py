@@ -39,11 +39,6 @@ def load_exclude_words():
         
 # ── Helpers ──────────────────────────────────────────────────────────────────
 def norm(s):
-    """
-    Aggressive normalization to bridge M3U and EPG gaps.
-    Example: 'MBCIraq.iq@SD' -> 'mbciraq'
-    Example: 'MBC.Iraq.HD.ae' -> 'mbciraq'
-    """
     if not s: return ""
     # 1. Remove quality tags like @SD, @HD, (720p), [HD]
     s = re.sub(r'(@\S+)|(\s*\(.*\))|(\s*\[.*\])', '', s)
@@ -61,13 +56,10 @@ EXCLUDE_WORDS = load_exclude_words()
 
 # ── Explicit bridges ────────────────────────────────────────────────────────
 ID_MAP = {
-    # Iraq & News
     'MBCIraq.iq': 'MBC.Iraq.HD.ae',
     'Al.Arabiya.Programs': 'AlArabiya.net',
     'Al.Araby.TV2': 'Al.Araby.2.HD.ae',
     'Al.Iraqia.News': 'Al.Iraqiya.HD.ae',
-    
-    # Sports & General
     'On.Time.Sports.HD.ae': 'OnTimeSports1.eg',
     'On.Time.Sport.2.HD.ae': 'OnTimeSports2.eg',
     'AD.Sports.1.HD.ae': 'AbuDhabiSports1.ae',
@@ -101,14 +93,18 @@ def apply_logo(extinf_line, tvg_id, tvg_name):
     return extinf_line
 
 def load_epg_channels():
-    epg_exact, epg_norm = set(), {}
+    epg_exact = set()
+    epg_norm = {}
     epg_programmes = defaultdict(list)
+    
     for url in EPG_SOURCES:
         print(f"📥 Loading EPG: {url.split('/')[-1]}")
         try:
             r = requests.get(url, timeout=60)
             f = gzip.GzipFile(fileobj=io.BytesIO(r.content)) if r.content[:2] == b'\x1f\x8b' else io.BytesIO(r.content)
-            for _, elem in ET.iterparse(f, events=('end',)):
+            
+            # Using event-based parsing to capture channel IDs before programmes
+            for event, elem in ET.iterparse(f, events=('end',)):
                 tag = elem.tag.split('}')[-1]
                 if tag == 'channel':
                     cid = elem.get('id', '')
@@ -141,11 +137,7 @@ def fetch_and_resolve_m3u(epg_exact, epg_norm):
             tid, tname = tid_m.group(1) if tid_m else '', name_m.group(1) if name_m else ''
             
             n = norm(tid)
-            # Match priority: Explicit Map -> Exact Match -> Normalized Match
             epg_id = id_map_norm.get(n) or (tid if tid in epg_exact else epg_norm.get(n))
-            
-            # DEBUG: Uncomment the line below to see why a channel is missing
-            # if tid and not epg_id: print(f"DEBUG: No match for {tid} (norm: {n})")
             
             channels.append({'extinf': extinf, 'url': url, 'tvg_id': tid, 'tvg_name': tname, 'epg_id': epg_id})
         else:
@@ -153,12 +145,16 @@ def fetch_and_resolve_m3u(epg_exact, epg_norm):
     return channels
 
 def write_outputs(channels, epg_programmes):
-    kept, epg_needed = [], set()
+    kept = []
+    epg_to_write = {} # Stores epg_id -> display_name
+    
     for ch in channels:
         if is_excluded(ch['tvg_id'], ch['tvg_name']): continue
         kept.append(ch)
-        if ch['epg_id']: epg_needed.add(ch['epg_id'])
+        if ch['epg_id']:
+            epg_to_write[ch['epg_id']] = ch['tvg_name']
 
+    # Write M3U
     with open(M3U_OUTPUT, 'w', encoding='utf-8') as f:
         f.write('#EXTM3U\n')
         for ch in kept:
@@ -167,16 +163,17 @@ def write_outputs(channels, epg_programmes):
                 line = re.sub(r'tvg-id="[^"]*"', f'tvg-id="{ch["epg_id"]}"', line)
             f.write(f"{line}\n{ch['url']}\n")
 
+    # Write EPG
     with open(EPG_OUTPUT, 'wb') as f:
         f.write(b'<?xml version="1.0" encoding="utf-8"?>\n<tv>\n')
-        for eid in sorted(epg_needed):
-            f.write(f'<channel id="{eid}"><display-name>{eid}</display-name></channel>\n'.encode('utf-8'))
-            for prog in epg_programmes[eid]:
+        for eid, display_name in sorted(epg_to_write.items()):
+            f.write(f'<channel id="{eid}"><display-name>{display_name}</display-name></channel>\n'.encode('utf-8'))
+            for prog in epg_programmes.get(eid, []):
                 f.write(prog + b'\n')
         f.write(b'</tv>')
     
-    print(f"📺 EPG Mapped: {len(epg_needed)} channels.")
-    print(f"🚫 EPG Missing: {len(kept) - len(epg_needed)} channels.")
+    print(f"📺 EPG Mapped: {len(epg_to_write)} channels.")
+    print(f"🚫 EPG Missing: {len(kept) - len(epg_to_write)} channels.")
     print(f"✅ Done! → {M3U_OUTPUT}")
 
 def main():
