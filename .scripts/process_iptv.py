@@ -14,8 +14,6 @@ EPG_SOURCES = [
     "https://epgshare01.online/epgshare01/epg_ripper_AE1.xml.gz",
     "https://epgshare01.online/epgshare01/epg_ripper_ALJAZEERA1.xml.gz",
     "https://epgshare01.online/epgshare01/epg_ripper_BEIN1.xml.gz",
-    "https://epgshare01.online/epgshare01/epg_ripper_EG1.xml.gz",
-    "https://epgshare01.online/epgshare01/epg_ripper_SA1.xml.gz",
     "https://epgshare01.online/epgshare01/epg_ripper_SA2.xml.gz",
     "https://epgshare01.online/epgshare01/epg_ripper_UK1.xml.gz",
     "https://epgshare01.online/epgshare01/epg_ripper_US2.xml.gz",
