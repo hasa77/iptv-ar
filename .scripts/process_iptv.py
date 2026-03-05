@@ -118,27 +118,13 @@ def is_excluded(tvg_id, name=''):
         if word in c_id or word in c_name or word in n_id or word in n_name: return True
     return False
 
-def apply_logo(extinf_line, tvg_id, tvg_name):
-    # 1. Try to find the logo using the exact tvg-id from the M3U
-    # (This catches things like "JordanTV.jo@SD")
-    new_logo = LOGO_MAP.get(tvg_id)
-    
-    # 2. If not found, try the tvg-name as a backup
-    if not new_logo:
-        new_logo = LOGO_MAP.get(tvg_name)
-
-    # 3. If we found a logo in your map, update the line
-    if new_logo:
-        if 'tvg-logo="' in extinf_line:
-            # Replace the old/broken logo URL
-            return re.sub(r'tvg-logo="[^"]*"', f'tvg-logo="{new_logo}"', extinf_line)
-        else:
-            # Insert the logo attribute if it was missing
-            return extinf_line.replace(f'tvg-id="{tvg_id}"', f'tvg-id="{tvg_id}" tvg-logo="{new_logo}"')
-            
-    # 4. CRITICAL: If no match is found, return the line UNCHANGED
-    # This prevents the "majority of logos breaking" issue you had before
-    return extinf_line
+def apply_logo(line, tvg_id, tvg_name):
+    n_id, n_name = norm(tvg_id), norm(tvg_name)
+    logo = LOGO_MAP.get(n_id) or LOGO_MAP.get(n_name)
+    if logo:
+        if 'tvg-logo=' in line: return re.sub(r'tvg-logo="[^"]*"', f'tvg-logo="{logo}"', line)
+        else: return re.sub(r'(#EXTINF:[^,]*)', rf'\1 tvg-logo="{logo}"', line, count=1)
+    return line
     
 def load_epg_channels():
     """
