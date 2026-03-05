@@ -118,26 +118,14 @@ def is_excluded(tvg_id, name=''):
         if word in c_id or word in c_name or word in n_id or word in n_name: return True
     return False
 
-def apply_logo(extinf_line, tvg_id, tvg_name):
-    # 1. Clean the ID (remove @HD/@SD suffixes)
-    clean_id = tvg_id.split('@')[0] if '@' in tvg_id else tvg_id
+def apply_logo(line, tvg_id, tvg_name):
+    n_id, n_name = norm(tvg_id), norm(tvg_name)
+    logo = LOGO_MAP.get(n_id) or LOGO_MAP.get(n_name)
+    if logo:
+        if 'tvg-logo=' in line: return re.sub(r'tvg-logo="[^"]*"', f'tvg-logo="{logo}"', line)
+        else: return re.sub(r'(#EXTINF:[^,]*)', rf'\1 tvg-logo="{logo}"', line, count=1)
+    return line
     
-    # 2. Get the correct EPG ID from our map, or use the clean ID
-    epg_target_id = ID_MAP.get(tvg_id, clean_id)
-    
-    # 3. Look up the logo using the mapped EPG ID
-    # This assumes LOGO_MAP is built from the <channel> tags in your XML
-    logo_url = LOGO_MAP.get(epg_target_id)
-    
-    if logo_url:
-        # Update existing tvg-logo or insert it if missing
-        if 'tvg-logo="' in extinf_line:
-            return re.sub(r'tvg-logo="[^"]*"', f'tvg-logo="{logo_url}"', extinf_line)
-        else:
-            return extinf_line.replace(f'tvg-id="{tvg_id}"', f'tvg-id="{tvg_id}" tvg-logo="{logo_url}"')
-            
-    return extinf_line
-
 def load_epg_channels():
     """
     THE REAL FIX: Don't use elem.clear() at all during parsing.
