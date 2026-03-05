@@ -11,7 +11,12 @@ M3U_URL = "https://iptv-org.github.io/iptv/languages/ara.m3u"
 M3U_OUTPUT = "curated-live.m3u"
 EPG_OUTPUT = "arabic-epg.xml"
 EPG_SOURCES = [
-    "https://epgshare01.online/epgshare01/epg_ripper_ALL_SOURCES1.xml.gz",
+    "https://epgshare01.online/epgshare01/epg_ripper_EG1.xml.gz"
+    "https://epgshare01.online/epgshare01/epg_ripper_SA1.xml.gz"0
+    "https://epgshare01.online/epgshare01/epg_ripper_SA2.xml.gz"
+    "https://epgshare01.online/epgshare01/epg_ripper_AE1.xml.gz"
+    "https://epgshare01.online/epgshare01/epg_ripper_BEIN1.xml.gz"
+    "https://epgshare01.online/epgshare01/epg_ripper_ALJAZEERA1.xml.gz"
     "https://iptv-epg.org/files/epg-meyqso.xml"
 ]
 
