@@ -12,7 +12,6 @@ M3U_OUTPUT = "curated-live.m3u"
 EPG_OUTPUT = "arabic-epg.xml"
 EPG_SOURCES = [
     "https://epgshare01.online/epgshare01/epg_ripper_ALL_SOURCES1.xml.gz",
-    #Combined Egypt, Lebanon, Saudi, UAE, GB, USA
     "https://iptv-epg.org/files/epg-meyqso.xml"
 ]
 
@@ -23,11 +22,9 @@ EXCLUDE_WORDS_PATH = os.path.join('resources', 'exclude_words.txt')
 # --- Resource Loading ---
 def load_logo_map():
     if not os.path.exists(LOGO_MAP_PATH):
-        print(f"Warning: {LOGO_MAP_PATH} not found.")
         return {}
     try:
         with open(LOGO_MAP_PATH, 'r', encoding='utf-8') as f:
-            # We normalize the keys immediately for faster lookup
             data = json.load(f)
             return {norm(k): v for k, v in data.items()}
     except Exception as e:
@@ -36,92 +33,50 @@ def load_logo_map():
 
 def load_exclude_words():
     if not os.path.exists(EXCLUDE_WORDS_PATH):
-        print(f"Warning: {EXCLUDE_WORDS_PATH} not found.")
         return []
     with open(EXCLUDE_WORDS_PATH, 'r', encoding='utf-8') as f:
         return [line.strip().lower() for line in f if line.strip() and not line.startswith('#')]
         
 # ── Helpers ──────────────────────────────────────────────────────────────────
-def strip_quality(s):
-    return re.sub(r'(@\S+)|(\s*\(.*\))', '', s or '').strip()
-
 def norm(s):
-    s = strip_quality(s)
-    return re.sub(r'[^a-z0-9]', '', s.lower())
+    """
+    Aggressive normalization to bridge M3U and EPG gaps.
+    Example: 'MBCIraq.iq@SD' -> 'mbciraq'
+    Example: 'MBC.Iraq.HD.ae' -> 'mbciraq'
+    """
+    if not s: return ""
+    # 1. Remove quality tags like @SD, @HD, (720p), [HD]
+    s = re.sub(r'(@\S+)|(\s*\(.*\))|(\s*\[.*\])', '', s)
+    s = s.lower()
+    # 2. Strip common country/source suffixes
+    s = re.sub(r'\.ae$|\.iq$|\.sa$|\.eg$|\.jo$|\.uk$|\.tv$|\.net$|\.com$|\.bh$', '', s)
+    # 3. Strip quality keywords and "TV"
+    s = re.sub(r'hd|sd|plus|arabic|tv', '', s)
+    # 4. Final alphanumeric cleanup
+    return re.sub(r'[^a-z0-9]', '', s)
 
 # Load external resources
 LOGO_MAP = load_logo_map()
 EXCLUDE_WORDS = load_exclude_words()
 
-# ── Explicit bridges: M3U tvg-id  →  EPG channel id ──────────────────────────
-# Left side  = exact tvg-id value as it appears in the iptv-org M3U
-# Right side = exact channel id as it appears in the EPG source
+# ── Explicit bridges ────────────────────────────────────────────────────────
 ID_MAP = {
-
+    # Iraq & News
+    'MBCIraq.iq': 'MBC.Iraq.HD.ae',
     'Al.Arabiya.Programs': 'AlArabiya.net',
     'Al.Araby.TV2': 'Al.Araby.2.HD.ae',
     'Al.Iraqia.News': 'Al.Iraqiya.HD.ae',
-    'Al.Maaref.TV': 'AlMaaref.bh',
     
-    # Abu Dhabi
-    'Abu.Dhabi.HD.ae':          'AbuDhabiTV.ae',
-    'AD.Sports.1.HD.ae':        'AbuDhabiSports1.ae',
-    'AD.Sports.2.HD.ae':        'AbuDhabiSports2.ae',
-    'Yas.TV.HD.ae':             'YasTV.ae',
-
-    # Dubai
-    'Dubai.HD.ae':              'DubaiTV.ae',
-    'Sama.Dubai.HD.ae':         'SamaDubai.ae',
-    'Dubai.One.HD.ae':          'DubaiOne.ae',
-    'Noor.DubaiTV.ae':          'NoorDubaiTV.ae',
-    'Dubai.Sports.1.HD.ae':     'DubaiSports1.ae',
-    'Dubai.Sports.2.ae':        'DubaiSports2.ae',
-    'Dubai.Racing.ae':          'DubaiRacing1.ae',
-    'Dubai.Zaman.ae':           'DubaiZaman.ae',
-    'One.Tv.ae':                'OneTv.ae',
-
-    # MBC
-    'MBC.1.ae':                 'MBC1.ae',
-    'MBC.2.ae':                 'MBC2.ae',
-    'MBC.3.ae':                 'MBC3.ae',
-    'MBC.4.ae':                 'MBC4.ae',
-    'MBC.Action.ae':            'MBCAction.ae',
-    'MBC.Drama.ae':             'MBCDrama.ae',
-    'MBC.Masr.HD.ae':           'MBCMasr.eg',
-    'MBC.Masr.2.HD.ae':         'MBCMasr2.eg',
-
-    # Rotana
-    'Rotana.Cinema.KSA.ae':     'RotanaCinema.sa',
-    'Rotana.Cinema.Egypt.ae':   'RotanaCinemaEgypt.eg',
-    'Rotana.Drama.ae':          'RotanaDrama.sa',
-    'Rotana.Classic.ae':        'RotanaClassic.sa',
-    'Rotana.Khalijia.ae':       'RotanaKhalijia.sa',
-    'Rotana.Mousica.ae':        'RotanaMousica.sa',
-
-    # Sports & News
-    'KSA.Sports.1.ae':          'KSA-Sports-1.sa',
-    'KSA.Sports.2.HD.ae':       'KSA-Sports-2.sa',
-    'On.Time.Sports.HD.ae':     'OnTimeSports1.eg',
-    'On.Time.Sport.2.HD.ae':    'OnTimeSports2.eg',
-    'Sharjah.Sports.HD.ae':     'SharjahSports.ae',
-    'Al.Arabiya.HD.ae':         'AlArabiya.net',
-    'Al.Hadath.ae':             'AlHadath.net',
-    'Sky.News.Arabia.HD.ae':    'SkyNewsArabia.ae',
-    'Jordan.TV.HD.ae':          'JordanTV.jo',
-    'BBC.Arabic.ae':            'BBCArabic.uk',
-    'France.24.Arabic.ae':      'France24Arabic.fr',
-    'RT.Arabic.HD.ae':          'RTArabic.ru',
-
-    # Religious
-    'Saudi.Quran.TV.HD.ae':     'SaudiQuran.sa',
-    'Saudi.Sunna.TV.HD.ae':     'SaudiSunnah.sa',
-    'Saudi.Al.Ekhbariya.HD.ae': 'SaudiEkhbariya.sa',
-    'Sharjah.Quran.TV.ae':      'SharjahQuran.ae',
+    # Sports & General
+    'On.Time.Sports.HD.ae': 'OnTimeSports1.eg',
+    'On.Time.Sport.2.HD.ae': 'OnTimeSports2.eg',
+    'AD.Sports.1.HD.ae': 'AbuDhabiSports1.ae',
+    'AD.Sports.2.HD.ae': 'AbuDhabiSports2.ae',
 }
 
 FORBIDDEN_SUFFIXES = (
     '.hk', '.kr', '.dk', '.fi', '.no', '.se', '.be', '.es', '.fr', 
-    '.ca', '.ca2', '.gr', '.de', ".dk", '.cz', '.cy', '.ch', '.it', '.us', '.bb',
+    '.ca', '.ca2', '.gr', '.de', '.cz', '.cy', '.ch', '.it', '.us', '.bb',
     '.distro', '.us_locals1', '.pluto'
 )
 
@@ -129,10 +84,7 @@ def is_excluded(tvg_id, name=''):
     c_id = (tvg_id or '').lower()
     c_name = (name or '').lower()
     n_id, n_name = norm(tvg_id), norm(name)
-
-    if any(c_id.endswith(s) for s in FORBIDDEN_SUFFIXES):
-        return True
-
+    if any(c_id.endswith(s) for s in FORBIDDEN_SUFFIXES): return True
     for word in EXCLUDE_WORDS:
         if word in c_id or word in c_name or word in n_id or word in n_name:
             return True
@@ -140,10 +92,7 @@ def is_excluded(tvg_id, name=''):
 
 def apply_logo(extinf_line, tvg_id, tvg_name):
     n_id, n_name = norm(tvg_id), norm(tvg_name)
-    
-    # Precise Match (Lookup in our pre-normalized dictionary)
     logo_url = LOGO_MAP.get(n_id) or LOGO_MAP.get(n_name)
-
     if logo_url:
         if 'tvg-logo=' in extinf_line:
             return re.sub(r'tvg-logo="[^"]*"', f'tvg-logo="{logo_url}"', extinf_line)
@@ -192,7 +141,12 @@ def fetch_and_resolve_m3u(epg_exact, epg_norm):
             tid, tname = tid_m.group(1) if tid_m else '', name_m.group(1) if name_m else ''
             
             n = norm(tid)
+            # Match priority: Explicit Map -> Exact Match -> Normalized Match
             epg_id = id_map_norm.get(n) or (tid if tid in epg_exact else epg_norm.get(n))
+            
+            # DEBUG: Uncomment the line below to see why a channel is missing
+            # if tid and not epg_id: print(f"DEBUG: No match for {tid} (norm: {n})")
+            
             channels.append({'extinf': extinf, 'url': url, 'tvg_id': tid, 'tvg_name': tname, 'epg_id': epg_id})
         else:
             i += 1
@@ -221,9 +175,9 @@ def write_outputs(channels, epg_programmes):
                 f.write(prog + b'\n')
         f.write(b'</tv>')
     
-    print(f"📺 EPG Mapped: {len(epg_needed)} channels have guide data.")
-    print(f"🚫 EPG Missing: {len(kept) - len(epg_needed)} channels have no guide data.")
-    print(f"\n✅ Done! → {M3U_OUTPUT} ({len(kept)} channels total)")
+    print(f"📺 EPG Mapped: {len(epg_needed)} channels.")
+    print(f"🚫 EPG Missing: {len(kept) - len(epg_needed)} channels.")
+    print(f"✅ Done! → {M3U_OUTPUT}")
 
 def main():
     print("🚀 Arabic IPTV Sync\n")
