@@ -12,9 +12,9 @@ M3U_OUTPUT = "curated-live.m3u"
 EPG_OUTPUT = "arabic-epg.xml"
 EPG_SOURCES = [
     "https://epgshare01.online/epgshare01/epg_ripper_AE1.xml.gz",
-    "https://epgshare01.online/epgshare01/epg_ripper_EG1.xml.gz",
     "https://epgshare01.online/epgshare01/epg_ripper_ALJAZEERA1.xml.gz",
     "https://epgshare01.online/epgshare01/epg_ripper_BEIN1.xml.gz",
+    "https://epgshare01.online/epgshare01/epg_ripper_EG1.xml.gz",
     "https://epgshare01.online/epgshare01/epg_ripper_SA1.xml.gz",
     "https://epgshare01.online/epgshare01/epg_ripper_SA2.xml.gz",
     "https://epgshare01.online/epgshare01/epg_ripper_UK1.xml.gz",
@@ -27,19 +27,15 @@ LOGO_MAP_PATH = os.path.join('resources', 'logo_map.json')
 EXCLUDE_WORDS_PATH = os.path.join('resources', 'exclude_words.txt')
 
 def load_logo_map():
-    if not os.path.exists(LOGO_MAP_PATH):
-        return {}
+    if not os.path.exists(LOGO_MAP_PATH): return {}
     try:
         with open(LOGO_MAP_PATH, 'r', encoding='utf-8') as f:
             data = json.load(f)
             return {norm(k): v for k, v in data.items()}
-    except Exception as e:
-        print(f"Error loading logo map: {e}")
-        return {}
+    except: return {}
 
 def load_exclude_words():
-    if not os.path.exists(EXCLUDE_WORDS_PATH):
-        return []
+    if not os.path.exists(EXCLUDE_WORDS_PATH): return []
     with open(EXCLUDE_WORDS_PATH, 'r', encoding='utf-8') as f:
         return [line.strip().lower() for line in f if line.strip() and not line.startswith('#')]
         
@@ -104,92 +100,75 @@ ID_MAP = {
     'Sharjah.Quran.TV.ae': 'SharjahQuran.ae',
 }
 
-FORBIDDEN_SUFFIXES = (
-    '.hk', '.kr', '.dk', '.fi', '.no', '.se', '.be', '.es', '.fr', 
-    '.ca', '.ca2', '.gr', '.de', '.cz', '.cy', '.ch', '.it', '.us', '.bb',
-    '.distro', '.us_locals1', '.pluto'
-)
-
 def is_excluded(tvg_id, name=''):
-    c_id = (tvg_id or '').lower()
-    c_name = (name or '').lower()
+    c_id, c_name = (tvg_id or '').lower(), (name or '').lower()
     n_id, n_name = norm(tvg_id), norm(name)
-    if any(c_id.endswith(s) for s in FORBIDDEN_SUFFIXES): return True
+    forbidden = ('.hk', '.kr', '.dk', '.fi', '.no', '.se', '.be', '.es', '.fr', '.ca', '.gr', '.de', '.cz', '.it', '.us', '.pluto')
+    if any(c_id.endswith(s) for s in forbidden): return True
     for word in EXCLUDE_WORDS:
-        if word in c_id or word in c_name or word in n_id or word in n_name:
-            return True
+        if word in c_id or word in c_name or word in n_id or word in n_name: return True
     return False
 
-def apply_logo(extinf_line, tvg_id, tvg_name):
+def apply_logo(line, tvg_id, tvg_name):
     n_id, n_name = norm(tvg_id), norm(tvg_name)
-    logo_url = LOGO_MAP.get(n_id) or LOGO_MAP.get(n_name)
-    if logo_url:
-        if 'tvg-logo=' in extinf_line:
-            return re.sub(r'tvg-logo="[^"]*"', f'tvg-logo="{logo_url}"', extinf_line)
-        else:
-            return re.sub(r'(#EXTINF:[^,]*)', rf'\1 tvg-logo="{logo_url}"', extinf_line, count=1)
-    return extinf_line
+    logo = LOGO_MAP.get(n_id) or LOGO_MAP.get(n_name)
+    if logo:
+        if 'tvg-logo=' in line: return re.sub(r'tvg-logo="[^"]*"', f'tvg-logo="{logo}"', line)
+        else: return re.sub(r'(#EXTINF:[^,]*)', rf'\1 tvg-logo="{logo}"', line, count=1)
+    return line
 
 def load_epg_channels():
     epg_exact, epg_norm = set(), {}
     epg_programmes = defaultdict(list)
     
     for url in EPG_SOURCES:
-        print(f"\n📥 Loading EPG: {url.split('/')[-1]}")
+        print(f"📥 Loading EPG: {url.split('/')[-1]}")
         try:
             r = requests.get(url, timeout=60)
-            is_gzipped = r.content[:2] == b'\x1f\x8b'
-            content = gzip.decompress(r.content) if is_gzipped else r.content
+            content = gzip.decompress(r.content) if r.content[:2] == b'\x1f\x8b' else r.content
             
+            # Using context manager for memory safety
             f = io.BytesIO(content)
             channel_count = 0
             programme_count = 0
             
-            # Using iterparse for memory efficiency
             for _, elem in ET.iterparse(f, events=('end',)):
+                # This split extracts the tag name regardless of namespace (e.g., 'ns0:programme' -> 'programme')
                 tag = elem.tag.split('}')[-1]
                 
                 if tag == 'channel':
-                    cid = elem.get('id', '')
+                    cid = elem.get('id')
                     if cid:
                         epg_exact.add(cid)
                         epg_norm[norm(cid)] = cid
                         channel_count += 1
                         
                 elif tag == 'programme':
-                    cid = elem.get('channel', '')
+                    cid = elem.get('channel')
                     if cid:
-                        # FIX: Check for title regardless of namespace
-                        title_node = elem.find('.//{*}title')
-                        if title_node is not None and title_node.text:
-                            # FIX: Use method='xml' to ensure child tags like <desc> are included
-                            prog_xml = ET.tostring(elem, encoding='unicode', method='xml')
-                            epg_programmes[cid].append(prog_xml)
-                            programme_count += 1
-                        
-                elem.clear()
-            
+                        # Extract the full XML of the programme block
+                        # method='xml' ensures <desc>, <category> etc are included
+                        prog_xml = ET.tostring(elem, encoding='unicode', method='xml')
+                        epg_programmes[cid].append(prog_xml)
+                        programme_count += 1
+                
+                elem.clear() # Free memory
             print(f"    ✅ Found {channel_count:,} channels and {programme_count:,} programmes")
-            
         except Exception as e:
-            print(f"    ⚠️  Error: {e}")
-    
+            print(f"    ⚠️ Error: {e}")
+            
     return epg_exact, epg_norm, epg_programmes
 
 def main():
     epg_exact, epg_norm, epg_progs = load_epg_channels()
-    
-    print(f"\n📡 Fetching M3U...")
     id_map_norm = {norm(k): v for k, v in ID_MAP.items()}
     
+    print(f"\n📡 Fetching M3U...")
     r = requests.get(M3U_URL, timeout=30)
     lines = r.text.splitlines()
     kept, epg_needed = [], set()
 
     i = 0
-    matched_count = 0
-    unmatched_count = 0
-    
     while i < len(lines):
         line = lines[i]
         if line.startswith('#EXTINF'):
@@ -206,38 +185,27 @@ def main():
             if epg_id:
                 epg_needed.add(epg_id)
                 extinf = re.sub(r'tvg-id="[^"]*"', f'tvg-id="{epg_id}"', extinf)
-                matched_count += 1
-            else:
-                unmatched_count += 1
             
             kept.append((apply_logo(extinf, tid, tname), url))
         else: i += 1
 
-    print(f"\n📊 Processing Summary:")
-    print(f"   Matched with EPG: {matched_count}")
-    print(f"   Missing EPG: {unmatched_count}")
-
+    # Write M3U
     with open(M3U_OUTPUT, 'w', encoding='utf-8') as f:
         f.write('#EXTM3U\n')
         for extinf, url in kept: f.write(f"{extinf}\n{url}\n")
 
-    
+    # Write EPG
     with open(EPG_OUTPUT, 'w', encoding='utf-8') as f:
         f.write('<?xml version="1.0" encoding="utf-8"?>\n<tv>\n')
-        # Write Channels
         for eid in sorted(epg_needed):
             f.write(f'  <channel id="{eid}"><display-name>{eid}</display-name></channel>\n')
-        
-        # Write Programmes
-        for eid in sorted(epg_needed):
-            progs = epg_progs.get(eid, [])
-            for prog in progs:
-                # Cleanup: Remove namespace prefixes (ns0:) that Python adds during parsing
+            for prog in epg_progs.get(eid, []):
+                # Remove namespace prefixes like ns0: from tags so players can read them
                 clean_prog = re.sub(r'ns\d+:', '', prog)
                 f.write(f'  {clean_prog}\n')
         f.write('</tv>\n')
     
-    print(f"\n✅ Created {M3U_OUTPUT} and {EPG_OUTPUT}")
+    print(f"\n📊 Summary: {matched_count} matches. Files created.")
 
 if __name__ == '__main__':
     main()
