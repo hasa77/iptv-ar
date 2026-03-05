@@ -128,11 +128,23 @@ def load_epg_channels():
     epg_programmes = defaultdict(list)
     
     for url in EPG_SOURCES:
-        print(f"📥 Loading EPG: {url.split('/')[-1]}")
+        print(f"\n📥 Loading EPG: {url.split('/')[-1]}")
         try:
             r = requests.get(url, timeout=60)
-            content = gzip.decompress(r.content) if r.content[:2] == b'\x1f\x8b' else r.content
+            print(f"   Downloaded: {len(r.content):,} bytes")
+            
+            # Check if gzipped
+            is_gzipped = r.content[:2] == b'\x1f\x8b'
+            print(f"   Gzipped: {is_gzipped}")
+            
+            content = gzip.decompress(r.content) if is_gzipped else r.content
+            print(f"   Content size: {len(content):,} bytes")
+            
             f = io.BytesIO(content)
+            
+            channel_count = 0
+            programme_count = 0
+            
             for _, elem in ET.iterparse(f, events=('end',)):
                 tag = elem.tag.split('}')[-1]
                 if tag == 'channel':
@@ -140,18 +152,45 @@ def load_epg_channels():
                     if cid:
                         epg_exact.add(cid)
                         epg_norm[norm(cid)] = cid
+                        channel_count += 1
+                        
                 elif tag == 'programme':
                     cid = elem.get('channel', '')
                     if cid:
-                        epg_programmes[cid].append(ET.tostring(elem, encoding='unicode'))
+                        prog_xml = ET.tostring(elem, encoding='unicode')
+                        epg_programmes[cid].append(prog_xml)
+                        programme_count += 1
+                        
+                        # Debug: Show first programme
+                        if programme_count == 1:
+                            print(f"\n   📺 Sample programme:")
+                            print(f"      Channel: {cid}")
+                            print(f"      XML: {prog_xml[:200]}...")
+                        
                 elem.clear()
+            
+            print(f"   ✅ Channels found: {channel_count:,}")
+            print(f"   ✅ Programmes found: {programme_count:,}")
+            
+            # Show sample channel IDs
+            if channel_count > 0:
+                sample = list(epg_exact)[:10]
+                print(f"   📋 Sample channel IDs: {', '.join(sample)}")
+            
         except Exception as e:
-            print(f"    ⚠️  Error: {e}")
+            print(f"   ⚠️  Error: {e}")
+    
+    print(f"\n📊 TOTAL EPG Summary:")
+    print(f"   Unique channels: {len(epg_exact):,}")
+    print(f"   Total programme entries: {sum(len(v) for v in epg_programmes.values()):,}")
+    
     return epg_exact, epg_norm, epg_programmes
 
 def main():
-    print("🚀 Syncing...")
+    print("🚀 Syncing with DEBUG mode...")
     epg_exact, epg_norm, epg_progs = load_epg_channels()
+    
+    print(f"\n📡 Fetching M3U...")
     id_map_norm = {norm(k): v for k, v in ID_MAP.items()}
     
     r = requests.get(M3U_URL, timeout=30)
@@ -159,6 +198,9 @@ def main():
     kept, epg_needed = [], set()
 
     i = 0
+    matched_count = 0
+    unmatched_count = 0
+    
     while i < len(lines):
         line = lines[i]
         if line.startswith('#EXTINF'):
@@ -175,9 +217,28 @@ def main():
             if epg_id:
                 epg_needed.add(epg_id)
                 extinf = re.sub(r'tvg-id="[^"]*"', f'tvg-id="{epg_id}"', extinf)
+                matched_count += 1
+                
+                # Debug first few matches
+                if matched_count <= 5:
+                    print(f"\n   ✅ Match #{matched_count}:")
+                    print(f"      M3U tvg-id: {tid}")
+                    print(f"      EPG channel: {epg_id}")
+                    print(f"      Programmes: {len(epg_progs.get(epg_id, []))}")
+            else:
+                unmatched_count += 1
+                if unmatched_count <= 5:
+                    print(f"\n   ❌ No EPG match:")
+                    print(f"      tvg-id: {tid}")
+                    print(f"      normalized: {n}")
             
             kept.append((apply_logo(extinf, tid, tname), url))
         else: i += 1
+
+    print(f"\n📊 M3U Processing Summary:")
+    print(f"   Total channels kept: {len(kept)}")
+    print(f"   Matched with EPG: {matched_count}")
+    print(f"   No EPG match: {unmatched_count}")
 
     with open(M3U_OUTPUT, 'w', encoding='utf-8') as f:
         f.write('#EXTM3U\n')
@@ -187,10 +248,13 @@ def main():
         f.write('<?xml version="1.0" encoding="utf-8"?>\n<tv>\n')
         for eid in sorted(epg_needed):
             f.write(f'  <channel id="{eid}"><display-name>{eid}</display-name></channel>\n')
-            for prog in epg_progs.get(eid, []): f.write(f'  {prog}\n')
+            progs = epg_progs.get(eid, [])
+            print(f"\n   Writing {len(progs)} programmes for {eid}")
+            for prog in progs:
+                f.write(f'  {prog}\n')
         f.write('</tv>\n')
     
-    print(f"✅ Created {M3U_OUTPUT} and {EPG_OUTPUT} with {len(epg_needed)} matched channels.")
+    print(f"\n✅ Created {M3U_OUTPUT} and {EPG_OUTPUT} with {len(epg_needed)} matched channels.")
 
 if __name__ == '__main__':
     main()
