@@ -53,11 +53,11 @@ ID_MAP = {
     'Al.Araby.TV2': 'Al.Araby.2.HD.ae',
     'Al.Iraqia.News': 'Al.Iraqiya.HD.ae',
     'Al.Maaref.TV': 'AlMaaref.bh',
-    'Abu.Dhabi.HD.ae': 'AbuDhabiTV.ae',
+    'Abu.Dhabi.HD.ae': 'Abu.Dhabi.HD.ae',
     'AD.Sports.1.HD.ae': 'AbuDhabiSports1.ae',
     'AD.Sports.2.HD.ae': 'AbuDhabiSports2.ae',
     'Yas.TV.HD.ae': 'YasTV.ae',
-    'Dubai.HD.ae': 'DubaiTV.ae',
+    'Dubai.HD.ae': 'Dubai.ae',
     'Sama.Dubai.HD.ae': 'SamaDubai.ae',
     'Dubai.One.HD.ae': 'DubaiOne.ae',
     'Noor.DubaiTV.ae': 'NoorDubaiTV.ae',
@@ -68,14 +68,14 @@ ID_MAP = {
     'One.Tv.ae': 'OneTv.ae',
     'MBC.1.ae': 'MBC1.ae',
     'MBC.2.ae': 'MBC2.ae',
-    'MBC.3.ae': 'MBC3.ae',
+    'MBC.3.ae': 'MBC.3.ae',
     'MBC.4.ae': 'MBC4.ae',
     'MBC.Action.ae': 'MBCAction.ae',
     'MBC.Drama.ae': 'MBCDrama.ae',
-    'MBC.Masr.HD.ae': 'MBCMasr.eg',
+    'MBC.Masr.HD.ae': 'MBC.Masr.HD.ae',
     'MBC.Masr.2.HD.ae': 'MBCMasr2.eg',
     'MBCIraq.iq@SD': 'MBC.Iraq.HD.ae',
-    'Rotana.Cinema.KSA.ae': 'RotanaCinema.sa',
+    'Rotana.Cinema.KSA.ae': 'RotanaCinemaKSA.sa',
     'Rotana.Cinema.Egypt.ae': 'RotanaCinemaEgypt.eg',
     'Rotana.Drama.ae': 'RotanaDrama.sa',
     'Rotana.Classic.ae': 'RotanaClassic.sa',
@@ -87,7 +87,7 @@ ID_MAP = {
     'On.Time.Sport.2.HD.ae': 'OnTimeSports2.eg',
     'Sharjah.Sports.HD.ae': 'SharjahSports.ae',
     'Al.Arabiya.HD.ae': 'AlArabiya.net',
-    'Al.Hadath.ae': 'AlHadath.net',
+    'Al.Hadath.ae': 'AlHadath.sa',
     'Sky.News.Arabia.HD.ae': 'SkyNewsArabia.ae',
     'Jordan.TV.HD.ae': 'JordanTV.jo',
     'BBC.Arabic.ae': 'BBCArabic.uk',
@@ -117,6 +117,10 @@ def apply_logo(line, tvg_id, tvg_name):
     return line
 
 def load_epg_channels():
+    """
+    THE REAL FIX: Don't use elem.clear() at all during parsing.
+    Store the raw XML string directly without modifying the tree.
+    """
     epg_exact, epg_norm = set(), {}
     epg_programmes = defaultdict(list)
     
@@ -125,32 +129,31 @@ def load_epg_channels():
         try:
             r = requests.get(url, timeout=60)
             content = gzip.decompress(r.content) if r.content[:2] == b'\x1f\x8b' else r.content
-            f = io.BytesIO(content)
             
-            channel_count = 0
-            programme_count = 0
+            # Parse content as string to extract raw XML
+            content_str = content.decode('utf-8')
             
-            for _, elem in ET.iterparse(f, events=('end',)):
-                tag = elem.tag.split('}')[-1]
-                
-                if tag == 'channel':
-                    cid = elem.get('id')
-                    if cid:
-                        epg_exact.add(cid)
-                        epg_norm[norm(cid)] = cid
-                        channel_count += 1
-                        
-                elif tag == 'programme':
-                    cid = elem.get('channel')
-                    if cid:
-                        prog_xml = ET.tostring(elem, encoding='unicode', method='xml')
-                        epg_programmes[cid].append(prog_xml)
-                        programme_count += 1
-                
-                elem.clear()
-            print(f"    ✅ Found {channel_count:,} channels and {programme_count:,} programmes")
+            # Use regex to extract channel IDs and programmes
+            # Extract channels
+            for match in re.finditer(r'<channel id="([^"]+)"', content_str):
+                cid = match.group(1)
+                epg_exact.add(cid)
+                epg_norm[norm(cid)] = cid
+            
+            # Extract complete programme tags (preserving all content)
+            for match in re.finditer(r'<programme[^>]*>.*?</programme>', content_str, re.DOTALL):
+                prog_xml = match.group(0)
+                # Extract channel ID from this programme
+                cid_match = re.search(r'channel="([^"]+)"', prog_xml)
+                if cid_match:
+                    cid = cid_match.group(1)
+                    epg_programmes[cid].append(prog_xml)
+            
+            print(f"    ✅ Found {len([c for c in epg_exact if c not in epg_programmes])} channels")
+            print(f"    ✅ Found {sum(len(v) for k, v in epg_programmes.items() if k in epg_exact)} programmes")
+            
         except Exception as e:
-            print(f"    ⚠️ Error: {e}")
+            print(f"    ⚠️  Error: {e}")
             
     return epg_exact, epg_norm, epg_programmes
 
@@ -164,7 +167,6 @@ def main():
     kept, epg_needed = [], set()
 
     matched_count = 0
-    unmatched_count = 0
     
     i = 0
     while i < len(lines):
@@ -184,8 +186,6 @@ def main():
                 epg_needed.add(epg_id)
                 extinf = re.sub(r'tvg-id="[^"]*"', f'tvg-id="{epg_id}"', extinf)
                 matched_count += 1
-            else:
-                unmatched_count += 1
             
             kept.append((apply_logo(extinf, tid, tname), url))
         else: i += 1
@@ -198,12 +198,13 @@ def main():
         f.write('<?xml version="1.0" encoding="utf-8"?>\n<tv>\n')
         for eid in sorted(epg_needed):
             f.write(f'  <channel id="{eid}"><display-name>{eid}</display-name></channel>\n')
+        for eid in sorted(epg_needed):
             for prog in epg_progs.get(eid, []):
-                clean_prog = re.sub(r'ns\d+:', '', prog)
-                f.write(f'  {clean_prog}\n')
+                f.write(f'  {prog}\n')
         f.write('</tv>\n')
     
-    print(f"\n📊 Summary: {matched_count} matches found. Files created.")
+    print(f"\n✅ Created {M3U_OUTPUT} ({len(kept)} channels)")
+    print(f"✅ Created {EPG_OUTPUT} ({matched_count} channels with EPG data)")
 
 if __name__ == '__main__':
     main()
