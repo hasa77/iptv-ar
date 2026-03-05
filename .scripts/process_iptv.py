@@ -126,14 +126,12 @@ def load_epg_channels():
         try:
             r = requests.get(url, timeout=60)
             content = gzip.decompress(r.content) if r.content[:2] == b'\x1f\x8b' else r.content
-            
-            # Using context manager for memory safety
             f = io.BytesIO(content)
+            
             channel_count = 0
             programme_count = 0
             
             for _, elem in ET.iterparse(f, events=('end',)):
-                # This split extracts the tag name regardless of namespace (e.g., 'ns0:programme' -> 'programme')
                 tag = elem.tag.split('}')[-1]
                 
                 if tag == 'channel':
@@ -146,13 +144,11 @@ def load_epg_channels():
                 elif tag == 'programme':
                     cid = elem.get('channel')
                     if cid:
-                        # Extract the full XML of the programme block
-                        # method='xml' ensures <desc>, <category> etc are included
                         prog_xml = ET.tostring(elem, encoding='unicode', method='xml')
                         epg_programmes[cid].append(prog_xml)
                         programme_count += 1
                 
-                elem.clear() # Free memory
+                elem.clear()
             print(f"    ✅ Found {channel_count:,} channels and {programme_count:,} programmes")
         except Exception as e:
             print(f"    ⚠️ Error: {e}")
@@ -168,6 +164,9 @@ def main():
     lines = r.text.splitlines()
     kept, epg_needed = [], set()
 
+    matched_count = 0
+    unmatched_count = 0
+    
     i = 0
     while i < len(lines):
         line = lines[i]
@@ -185,27 +184,27 @@ def main():
             if epg_id:
                 epg_needed.add(epg_id)
                 extinf = re.sub(r'tvg-id="[^"]*"', f'tvg-id="{epg_id}"', extinf)
+                matched_count += 1
+            else:
+                unmatched_count += 1
             
             kept.append((apply_logo(extinf, tid, tname), url))
         else: i += 1
 
-    # Write M3U
     with open(M3U_OUTPUT, 'w', encoding='utf-8') as f:
         f.write('#EXTM3U\n')
         for extinf, url in kept: f.write(f"{extinf}\n{url}\n")
 
-    # Write EPG
     with open(EPG_OUTPUT, 'w', encoding='utf-8') as f:
         f.write('<?xml version="1.0" encoding="utf-8"?>\n<tv>\n')
         for eid in sorted(epg_needed):
             f.write(f'  <channel id="{eid}"><display-name>{eid}</display-name></channel>\n')
             for prog in epg_progs.get(eid, []):
-                # Remove namespace prefixes like ns0: from tags so players can read them
                 clean_prog = re.sub(r'ns\d+:', '', prog)
                 f.write(f'  {clean_prog}\n')
         f.write('</tv>\n')
     
-    print(f"\n📊 Summary: {matched_count} matches. Files created.")
+    print(f"\n📊 Summary: {matched_count} matches found. Files created.")
 
 if __name__ == '__main__':
     main()
