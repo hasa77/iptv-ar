@@ -118,13 +118,26 @@ def is_excluded(tvg_id, name=''):
         if word in c_id or word in c_name or word in n_id or word in n_name: return True
     return False
 
-def apply_logo(line, tvg_id, tvg_name):
-    n_id, n_name = norm(tvg_id), norm(tvg_name)
-    logo = LOGO_MAP.get(n_id) or LOGO_MAP.get(n_name)
-    if logo:
-        if 'tvg-logo=' in line: return re.sub(r'tvg-logo="[^"]*"', f'tvg-logo="{logo}"', line)
-        else: return re.sub(r'(#EXTINF:[^,]*)', rf'\1 tvg-logo="{logo}"', line, count=1)
-    return line
+def apply_logo(extinf_line, tvg_id, tvg_name):
+    # 1. Check if this is one of the specific channels needing a fix
+    if tvg_id in MANUAL_LOGO_FIXES:
+        new_logo = MANUAL_LOGO_FIXES[tvg_id]
+    else:
+        # 2. Otherwise, look for a match in your existing logo_map
+        # We use the full ID first to avoid breaking existing matches
+        new_logo = LOGO_MAP.get(tvg_id) or LOGO_MAP.get(tvg_name)
+    
+    # 3. Only perform the replacement if we actually found a logo
+    if new_logo:
+        if 'tvg-logo="' in extinf_line:
+            # Safely replace the existing logo URL
+            return re.sub(r'tvg-logo="[^"]*"', f'tvg-logo="{new_logo}"', extinf_line)
+        else:
+            # Insert the logo tag if it's missing entirely
+            return extinf_line.replace(f'tvg-id="{tvg_id}"', f'tvg-id="{tvg_id}" tvg-logo="{new_logo}"')
+            
+    # 4. If no new logo is found, return the line exactly as it was (fixed the "breaking" issue)
+    return extinf_line
     
 def load_epg_channels():
     """
