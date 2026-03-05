@@ -119,24 +119,25 @@ def is_excluded(tvg_id, name=''):
     return False
 
 def apply_logo(extinf_line, tvg_id, tvg_name):
-    # 1. Check if this is one of the specific channels needing a fix
-    if tvg_id in MANUAL_LOGO_FIXES:
-        new_logo = MANUAL_LOGO_FIXES[tvg_id]
-    else:
-        # 2. Otherwise, look for a match in your existing logo_map
-        # We use the full ID first to avoid breaking existing matches
-        new_logo = LOGO_MAP.get(tvg_id) or LOGO_MAP.get(tvg_name)
+    # 1. Try to find the logo using the exact tvg-id from the M3U
+    # (This catches things like "JordanTV.jo@SD")
+    new_logo = LOGO_MAP.get(tvg_id)
     
-    # 3. Only perform the replacement if we actually found a logo
+    # 2. If not found, try the tvg-name as a backup
+    if not new_logo:
+        new_logo = LOGO_MAP.get(tvg_name)
+
+    # 3. If we found a logo in your map, update the line
     if new_logo:
         if 'tvg-logo="' in extinf_line:
-            # Safely replace the existing logo URL
+            # Replace the old/broken logo URL
             return re.sub(r'tvg-logo="[^"]*"', f'tvg-logo="{new_logo}"', extinf_line)
         else:
-            # Insert the logo tag if it's missing entirely
+            # Insert the logo attribute if it was missing
             return extinf_line.replace(f'tvg-id="{tvg_id}"', f'tvg-id="{tvg_id}" tvg-logo="{new_logo}"')
             
-    # 4. If no new logo is found, return the line exactly as it was (fixed the "breaking" issue)
+    # 4. CRITICAL: If no match is found, return the line UNCHANGED
+    # This prevents the "majority of logos breaking" issue you had before
     return extinf_line
     
 def load_epg_channels():
