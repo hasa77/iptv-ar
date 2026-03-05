@@ -1,27 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <tv>
   <channel id="Aflam.sa"><display-name>Aflam.sa</display-name></channel>
-  <channel id="Al.Arabiya.Business.ae"><display-name>Al.Arabiya.Business.ae</display-name></channel>
-  <channel id="Al.Qamar.TV.ae"><display-name>Al.Qamar.TV.ae</display-name></channel>
-  <channel id="AlHadath.sa"><display-name>AlHadath.sa</display-name></channel>
-  <channel id="BabAlHara.sa"><display-name>BabAlHara.sa</display-name></channel>
-  <channel id="CNBC.Arabiya.ae"><display-name>CNBC.Arabiya.ae</display-name></channel>
-  <channel id="MBC.Bollywood.ae"><display-name>MBC.Bollywood.ae</display-name></channel>
-  <channel id="MBC.Iraq.HD.ae"><display-name>MBC.Iraq.HD.ae</display-name></channel>
-  <channel id="MBC1.ae"><display-name>MBC1.ae</display-name></channel>
-  <channel id="MBC4.ae"><display-name>MBC4.ae</display-name></channel>
-  <channel id="MBCDrama.ae"><display-name>MBCDrama.ae</display-name></channel>
-  <channel id="MBCMasr.eg"><display-name>MBCMasr.eg</display-name></channel>
-  <channel id="MBCMasr2.eg"><display-name>MBCMasr2.eg</display-name></channel>
-  <channel id="MBCPlusDrama.sa"><display-name>MBCPlusDrama.sa</display-name></channel>
-  <channel id="Maraya.sa"><display-name>Maraya.sa</display-name></channel>
-  <channel id="MoviesAction.sa"><display-name>MoviesAction.sa</display-name></channel>
-  <channel id="MoviesThriller.sa"><display-name>MoviesThriller.sa</display-name></channel>
-  <channel id="RotanaCinemaKSA.sa"><display-name>RotanaCinemaKSA.sa</display-name></channel>
-  <channel id="RotanaClassic.sa"><display-name>RotanaClassic.sa</display-name></channel>
-  <channel id="RotanaKhalijia.sa"><display-name>RotanaKhalijia.sa</display-name></channel>
-  <channel id="TRT.ARABI.tr"><display-name>TRT.ARABI.tr</display-name></channel>
-  <channel id="Zee.Alwan.ae"><display-name>Zee.Alwan.ae</display-name></channel>
   <programme start="20250720005400 +0000" stop="20250720030900 +0000" channel="Aflam.sa">
     <title /><desc /></programme>
   
@@ -286,6 +265,7 @@
   <programme start="20250725221500 +0000" stop="20250726001100 +0000" channel="Aflam.sa">
     <title /><desc /></programme>
   
+  <channel id="Al.Arabiya.Business.ae"><display-name>Al.Arabiya.Business.ae</display-name></channel>
   <programme start="20260304000000 +0000" stop="20260304000500 +0000" channel="Al.Arabiya.Business.ae">
     <title /><desc /><category /><icon /></programme>
   
@@ -649,6 +629,7 @@
   <programme start="20260307233000 +0000" stop="20260308000000 +0000" channel="Al.Arabiya.Business.ae">
     <title /><desc /><category /><icon /></programme>
   
+  <channel id="Al.Qamar.TV.ae"><display-name>Al.Qamar.TV.ae</display-name></channel>
   <programme start="20260304000000 +0000" stop="20260304003000 +0000" channel="Al.Qamar.TV.ae">
     <title /><desc /><date /><category /><category /><icon /></programme>
   
@@ -926,6 +907,7 @@
   <programme start="20260306230000 +0000" stop="20260307000000 +0000" channel="Al.Qamar.TV.ae">
     <title /><desc /><date /><category /><category /><icon /></programme>
   
+  <channel id="AlHadath.sa"><display-name>AlHadath.sa</display-name></channel>
   <programme start="20250720000000 +0000" stop="20250720003000 +0000" channel="AlHadath.sa">
     <title /><desc /></programme>
   
@@ -1240,6 +1222,7 @@
   <programme start="20250722233000 +0000" stop="20250723000000 +0000" channel="AlHadath.sa">
     <title /><desc /></programme>
   
+  <channel id="BabAlHara.sa"><display-name>BabAlHara.sa</display-name></channel>
   <programme start="20250720002000 +0000" stop="20250720010400 +0000" channel="BabAlHara.sa">
     <title /><desc /></programme>
   
@@ -1615,6 +1598,7 @@
   <programme start="20250724000200 +0000" stop="20250724004700 +0000" channel="BabAlHara.sa">
     <title /><desc /></programme>
   
+  <channel id="CNBC.Arabiya.ae"><display-name>CNBC.Arabiya.ae</display-name></channel>
   <programme start="20260304000000 +0000" stop="20260304003000 +0000" channel="CNBC.Arabiya.ae">
     <title /><desc /><category /><icon /></programme>
   
@@ -2160,6 +2144,7 @@
   <programme start="20260307231500 +0000" stop="20260308000000 +0000" channel="CNBC.Arabiya.ae">
     <title /><desc /><category /><icon /></programme>
   
+  <channel id="MBC.Bollywood.ae"><display-name>MBC.Bollywood.ae</display-name></channel>
   <programme start="20260304003000 +0000" stop="20260304011500 +0000" channel="MBC.Bollywood.ae">
     <title /><desc /><date /><category /><category /><icon /><episode-num /></programme>
   
@@ -2469,6 +2454,7 @@
   <programme start="20260307235000 +0000" stop="20260308004300 +0000" channel="MBC.Bollywood.ae">
     <title /><desc /><date /><category /><category /><icon /><episode-num /></programme>
   
+  <channel id="MBC.Iraq.HD.ae"><display-name>MBC.Iraq.HD.ae</display-name></channel>
   <programme start="20260304001500 +0000" stop="20260304010000 +0000" channel="MBC.Iraq.HD.ae">
     <title /><desc /><date /><category /><category /><icon /><episode-num /></programme>
   
@@ -2837,6 +2823,10 @@
   <programme start="20260307233000 +0000" stop="20260308001500 +0000" channel="MBC.Iraq.HD.ae">
     <title /><desc /><date /><category /><category /><icon /><episode-num /></programme>
   
+  <channel id="MBC1.ae"><display-name>MBC1.ae</display-name></channel>
+  <channel id="MBC4.ae"><display-name>MBC4.ae</display-name></channel>
+  <channel id="MBCDrama.ae"><display-name>MBCDrama.ae</display-name></channel>
+  <channel id="MBCMasr.eg"><display-name>MBCMasr.eg</display-name></channel>
   <programme start="20250721003600 +0000" stop="20250721013600 +0000" channel="MBCMasr.eg">
     <title /><desc /></programme>
   
@@ -3361,6 +3351,7 @@
   <programme start="20250726213000 +0000" stop="20250727000000 +0000" channel="MBCMasr.eg">
     <title /><desc /></programme>
   
+  <channel id="MBCMasr2.eg"><display-name>MBCMasr2.eg</display-name></channel>
   <programme start="20250721013000 +0000" stop="20250721022900 +0000" channel="MBCMasr2.eg">
     <title /><desc /></programme>
   
@@ -4025,6 +4016,7 @@
   <programme start="20250726234000 +0000" stop="20250727012600 +0000" channel="MBCMasr2.eg">
     <title /><desc /></programme>
   
+  <channel id="MBCPlusDrama.sa"><display-name>MBCPlusDrama.sa</display-name></channel>
   <programme start="20250720053000 +0000" stop="20250720061500 +0000" channel="MBCPlusDrama.sa">
     <title /><title /><title /><desc /></programme>
   
@@ -4323,6 +4315,7 @@
   <programme start="20250723070000 +0000" stop="20250723074500 +0000" channel="MBCPlusDrama.sa">
     <title /><title /><title /><desc /></programme>
   
+  <channel id="Maraya.sa"><display-name>Maraya.sa</display-name></channel>
   <programme start="20250720004100 +0000" stop="20250720012400 +0000" channel="Maraya.sa">
     <title /><desc /></programme>
   
@@ -4724,6 +4717,7 @@
   <programme start="20250724110100 +0000" stop="20250724115400 +0000" channel="Maraya.sa">
     <title /><desc /></programme>
   
+  <channel id="MoviesAction.sa"><display-name>MoviesAction.sa</display-name></channel>
   <programme start="20250720012200 +0000" stop="20250720032200 +0000" channel="MoviesAction.sa">
     <title /><desc /></programme>
   
@@ -4898,6 +4892,7 @@
   <programme start="20250724114500 +0000" stop="20250724120000 +0000" channel="MoviesAction.sa">
     <title /><desc /></programme>
   
+  <channel id="MoviesThriller.sa"><display-name>MoviesThriller.sa</display-name></channel>
   <programme start="20250720010000 +0000" stop="20250720023000 +0000" channel="MoviesThriller.sa">
     <title /><desc /></programme>
   
@@ -5123,6 +5118,10 @@
   <programme start="20250725101500 +0000" stop="20250725120000 +0000" channel="MoviesThriller.sa">
     <title /><desc /></programme>
   
+  <channel id="RotanaCinemaKSA.sa"><display-name>RotanaCinemaKSA.sa</display-name></channel>
+  <channel id="RotanaClassic.sa"><display-name>RotanaClassic.sa</display-name></channel>
+  <channel id="RotanaKhalijia.sa"><display-name>RotanaKhalijia.sa</display-name></channel>
+  <channel id="TRT.ARABI.tr"><display-name>TRT.ARABI.tr</display-name></channel>
   <programme start="20260305000000 +0000" stop="20260305003000 +0000" channel="TRT.ARABI.tr">
     <title /><desc /><category /><icon /></programme>
   
@@ -5625,6 +5624,7 @@
   <programme start="20260308233000 +0000" stop="20260309000000 +0000" channel="TRT.ARABI.tr">
     <title /><desc /><category /><icon /></programme>
   
+  <channel id="Zee.Alwan.ae"><display-name>Zee.Alwan.ae</display-name></channel>
   <programme start="20260304000000 +0000" stop="20260304003000 +0000" channel="Zee.Alwan.ae">
     <title /><desc /><date /><category /><category /><icon /><episode-num /></programme>
   
