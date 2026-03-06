@@ -1,14 +1,13 @@
 {
-  "Al.Araby.TV": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/ALARABY_ARABIC.png/960px-ALARABY_ARABIC.png",
-  "Al.Araby.TV2": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/ALARABY_ARABIC.png/960px-ALARABY_ARABIC.png",
-  "Al.Ekhbariya": "https://upload.wikimedia.org/wikipedia/commons/e/e3/%D8%A7%D9%84%D9%82%D9%86%D8%A7.png",
-  "Al.Ghad.TV": "https://upload.wikimedia.org/wikipedia/commons/0/06/AlGhad_TV.png",
-  "Al.Iraqiya": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Al_Iraqiya_logo.png/512px-Al_Iraqiya_logo.png",
-  "Al.Iraqia.News": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Al_Iraqiya_logo.png/512px-Al_Iraqiya_logo.png",
-  "Al.Jazeera.Mubasher.ae": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Al_Jazeera_Mubasher_Logo.png/512px-Al_Jazeera_Mubasher_Logo.png",
-  "Al.Jazeera.Mubasher24": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Al_Jazeera_Mubasher_Logo.png/512px-Al_Jazeera_Mubasher_Logo.png",
-  "Al.Jazeera.Mubasher.Broadcast2": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Al_Jazeera_Mubasher_Logo.png/512px-Al_Jazeera_Mubasher_Logo.png",
-  "Al.Mamlaka.TV": "https://upload.wikimedia.org/wikipedia/en/8/8a/Al-Mamlaka_TV_logo.png",
+  "Al.Araby.TV": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAw4GDIfVzQC2G0qwT0Tcw1jv0bu1Vj_uCVQ&s",
+  "Al.Araby.TV2": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAw4GDIfVzQC2G0qwT0Tcw1jv0bu1Vj_uCVQ&s",
+  "Al.Ekhbariya": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHdqD_Y5aWJCTNyU_-J4mqVJaBkiG0_bjKSg&s",
+  "Al.Ghad.TV": "https://upload.wikimedia.org/wikipedia/commons/e/e3/%D8%A7%D9%84%D9%82%D9%86%D8%A7.png",
+  "AlIraqia.iq@SD": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Al_Iraqiya_logo.png/512px-Al_Iraqiya_logo.png",
+  "AlIraqiaNews.iq@SD": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Al_Iraqiya_logo.png/512px-Al_Iraqiya_logo.png"
+  "AlMaarefTV.qa@SD": "https://almaaref.ch/wp-content/uploads/2021/10/Almaaref-Logo.png",
+  "AlMadina.ps@SD": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEPrrPLU7fVf9HnVd9_qTf2Zfn5SBPLenh5w&s",
+  "almamlakatv.jo@sd": "https://upload.wikimedia.org/wikipedia/en/8/8a/Al-Mamlaka_TV_logo.png"
   "AbuDhabiTV.ae": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Abu_Dhabi_TV_logo_2023.png",
   "AbuDhabiEmirates.ae": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Abu_Dhabi_TV_logo_2023.png",
   "AjmanTV.ae": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPWdCD-DTXie1W-PLmqFHdlqe-R6mmF8CpCw&s",
@@ -24,8 +23,10 @@
   "MBCIraq.iq@SD": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKFKdJlnMZ3F9sX-jzQGPxwYL-sfzLzPJyyw&s",
   "MBC.Bollywood.ae": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/MBC_Bollywood_Logo.svg/1280px-MBC_Bollywood_Logo.svg.png",
   "AlJazeera.qa@Arabic": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Al_jazeera_logo.png/512px-Al_jazeera_logo.png",
-  "AlJazeeraMubasher.qa@SD": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Al_Jazeera_Mubasher_Logo.png/512px-Al_Jazeera_Mubasher_Logo.png",
   "AlJazeeraDocumentary.qa@SD": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Al_Jazeera_Documentary_Logo.png/512px-Al_Jazeera_Documentary_Logo.png",
+  "AlJazeeraMubasher.qa@SD": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Al_Jazeera_Mubasher_Logo.png/512px-Al_Jazeera_Mubasher_Logo.png",
+  "AlJazeeraMubasher24.qa@SD": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Al_Jazeera_Mubasher_Logo.png/512px-Al_Jazeera_Mubasher_Logo.png",
+  "AlJazeeraMubasherBroadcast2.qa@SD": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Al_Jazeera_Mubasher_Logo.png/512px-Al_Jazeera_Mubasher_Logo.png",
   "AbuDhabiSports1.ae": "https://static.wikia.nocookie.net/logopedia/images/6/66/AD_Sports_2023.png/revision/latest/scale-to-width-down/1000?cb=20231008181135",
   "AbuDhabiSports2.ae": "https://static.wikia.nocookie.net/logopedia/images/6/66/AD_Sports_2023.png/revision/latest/scale-to-width-down/1000?cb=20231008181135",
   "BahrainSports1.bh@SD": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9CEJXbMzbYPUX2ULkYAWmskUVAvYLAETCLQ&s",
@@ -117,6 +118,7 @@
   "SharjahSports.ae@SD": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRPyMpGyY7q2vGkNrPghc73w1Y7KqPRsUf6A&s",
   "AlAlam.ir@SD": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoPnWwAG-6RkteDTh6i1-MdpzrsWlkl0B6qw&s",
   "alarabiya.ae@sd": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Al_Arabiya_-Logo_%281%29.png"
+  "Al.Arabiya.Business.ae": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Al_Arabiya_-Logo_%281%29.png"
   "AlManar.lb@SD": "https://upload.wikimedia.org/wikipedia/en/8/81/New_Al-Manar_logo.PNG",
   "Al Masirah": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/%D8%B4%D8%B9%D8%A7%D8%B1_%D9%82%D9%86%D8%A7%D8%A9_%D8%A7%D9%84%D9%85%D8%B3%D9%8I%D8%B1%D8%A9.svg/512px-png.png",
   "AlMayadeenTV.lb@SD": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT644DfqhaDaD1HTN4KjAtpw68dXlewp8_sQ&s",
