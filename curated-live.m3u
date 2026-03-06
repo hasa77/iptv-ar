@@ -45,15 +45,15 @@ https://cdn.catiacast.video/abr/78054972db7708422595bc96c6e024ac/playlist.m3u8
 http://185.105.4.151:8080/_defapp_/ittihad/index.m3u8
 #EXTINF:-1 tvg-id="AlJadeed.lb@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/1/17/Al_Jadeed.PNG" group-title="General",Al Jadeed (1080p)
 http://185.9.2.18/chid_391/mono.m3u8
-#EXTINF:-1 tvg-id="AlJazeera.qa@Arabic" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Al_jazeera_logo.png/512px-Al_jazeera_logo.png" group-title="News",Al Jazeera (1080p)
+#EXTINF:-1 tvg-id="AlJazeera.qa@Arabic" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/0/0f/Al_Jazeera.svg/revision/latest?cb=20171112085348" group-title="News",Al Jazeera (1080p)
 https://live-hls-apps-aja-fa.getaj.net/AJA/index.m3u8
-#EXTINF:-1 tvg-id="AlJazeeraDocumentary.qa@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Al_Jazeera_Documentary_Logo.png/512px-Al_Jazeera_Documentary_Logo.png" group-title="Documentary",Al Jazeera Documentary (1080p) [Geo-blocked]
+#EXTINF:-1 tvg-id="AlJazeeraDocumentary.qa@SD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/e/e8/Al_Jazeera_Documentary_Channel.png/revision/latest?cb=20120211112107" group-title="Documentary",Al Jazeera Documentary (1080p) [Geo-blocked]
 https://live-hls-apps-ajd-fa.getaj.net/AJD/index.m3u8
-#EXTINF:-1 tvg-id="AlJazeeraMubasher.qa@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Al_Jazeera_Mubasher_Logo.png/512px-Al_Jazeera_Mubasher_Logo.png" group-title="News",Al Jazeera Mubasher (1080p)
+#EXTINF:-1 tvg-id="AlJazeeraMubasher.qa@SD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/9/95/Al_Jazeera_Mubasher_II.svg/revision/latest?cb=20231231100551" group-title="News",Al Jazeera Mubasher (1080p)
 https://live-hls-apps-ajm-fa.getaj.net/AJM/index.m3u8
-#EXTINF:-1 tvg-id="AlJazeeraMubasher24.qa@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Al_Jazeera_Mubasher_Logo.png/512px-Al_Jazeera_Mubasher_Logo.png" group-title="News",Al Jazeera Mubasher 24 (1080p)
+#EXTINF:-1 tvg-id="AlJazeeraMubasher24.qa@SD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/9/95/Al_Jazeera_Mubasher_II.svg/revision/latest?cb=20231231100551" group-title="News",Al Jazeera Mubasher 24 (1080p)
 https://live-hls-apps-ajm24-fa.getaj.net/AJM24/index.m3u8
-#EXTINF:-1 tvg-id="AlJazeeraMubasherBroadcast2.qa@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Al_Jazeera_Mubasher_Logo.png/512px-Al_Jazeera_Mubasher_Logo.png" group-title="News",Al Jazeera Mubasher Broadcast 2 (1080p)
+#EXTINF:-1 tvg-id="AlJazeeraMubasherBroadcast2.qa@SD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/9/95/Al_Jazeera_Mubasher_II.svg/revision/latest?cb=20231231100551" group-title="News",Al Jazeera Mubasher Broadcast 2 (1080p)
 https://live-hls-apps-ajm2-fa.getaj.net/AJM2/index.m3u8
 #EXTINF:-1 tvg-id="AlMaarefTV.qa@SD" tvg-logo="https://almaaref.ch/wp-content/uploads/2021/10/Almaaref-Logo.png" group-title="Religious",Al Maaref TV (1080p)
 https://bucharest.zeuscdn724.com/lb0/CH-AL-MA/index.m3u8
