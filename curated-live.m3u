@@ -209,7 +209,7 @@ https://live.kwikmotion.com/bahry1live/bahry1.smil/playlist.m3u8
 https://vs-cmaf-pushb-ww-live.akamaized.net/x=4/i=urn:bbc:pips:service:bbc_arabic_tv/pc_hd_abr_v2.mpd
 #EXTINF:-1 tvg-id="BeitolAbbasTVChannel.iq@SD" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrmuHFRl0A0AmPlQABu3fPwtEC74bdPukQGA&s" group-title="Religious",BeitolAbbas TV Channel (720p)
 https://live.beitolabbas.tv/live/beitolabbastv.m3u8
-#EXTINF:-1 tvg-id="BerbereTV.fr@SD" tvg-logo="https://i.imgur.com/Uc2PAmL.png" group-title="Culture",Berbere TV (1080p)
+#EXTINF:-1 tvg-id="BerbereTV.fr@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/0/0a/BerbereTV.jpg" group-title="Culture",Berbere TV (1080p)
 http://5.253.46.190:8000/play/a0fi/index.m3u8
 #EXTINF:-1 tvg-id="BigTimePlus.sa@SD" tvg-logo="https://shahid.mbc.net/mediaObject/4e042cb6-500b-4e4c-a8ca-21a5a7a7a71b" group-title="Undefined",Big Time Plus (1080p)
 https://shd-gcp-live.edgenextcdn.net/live/bitmovin-big-time-plus/924283f994779a311c1389698ff7e736/index.m3u8
@@ -505,7 +505,7 @@ http://5.253.46.190:8000/play/a0ep/index.m3u8
 http://5.253.46.190:8000/play/a0eq/index.m3u8
 #EXTINF:-1 tvg-id="TV8.dz@SD" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM-5az51kk4Vn4d9NgYO2qZrhRDz5XfVS9-g&s" group-title="Documentary",TV8 El-Dhakira (576p)
 http://5.253.46.190:8000/play/a0er/index.m3u8
-#EXTINF:-1 tvg-id="TV9.dz@SD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/d/d0/TV9ALG.svg/revision/latest?cb=20250217120929" group-title="Legislative",TV9 El-Barlamaniya (1080p)
+#EXTINF:-1 tvg-id="TV9.dz@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/b/be/NewlogoTV9_%28Malaysia%29.png" group-title="Legislative",TV9 El-Barlamaniya (1080p)
 http://5.253.46.190:8000/play/a0es/index.m3u8
 #EXTINF:-1 tvg-id="UNews.lb@SD" tvg-logo="https://www.lyngsat.com/logo/tv/uu/unews-lb.png" group-title="News",UNews
 https://cdn.catiacast.video/abr/9436b5ab3c1171ab04a59af11951292f/playlist.m3u8
