@@ -131,24 +131,26 @@ cgtn
 loveworld
 KoogiTV
 Nour Mariam
-ERi-TV 1
 RTD 4
 Iqraa Africa & Europe
 Makan 33
 # Original Variations
 Aghapy
 aghapy
-eritrea
-eri-tv
-eritreatv
 IqraaAfricaEurope.sa@SD
 RTD4.dj@SD
 .dj
 Coptic
 CTV
 Asil
-ERi-TV
 Eritrea
+ERiTV1.er@SD
+eritv1
+ERi-TV 1
+ERi-TV
+eritreatv
+eri-tv
+eritrea
 nourmariam
 mariam
 noursat
