@@ -83,7 +83,7 @@ https://media1.livaat.com/static/AL-RASHEED-HD/playlist.m3u8
 https://alrayyancdn.vidgyor.com/pub-noalrayy3pwz0l/liveabr/playlist_dvr.m3u8
 #EXTINF:-1 tvg-id="AlRayyanOldTV.qa@SD" tvg-logo="https://alrayyan.qa/wp-content/uploads/2023/10/qadeem-logo2-300x134.gif" group-title="General",Al Rayyan Al Qadeem (1080p)
 https://alrayyancdn.vidgyor.com/pub-nooldraybinbdh/liveabr/playlist_dvr.m3u8
-#EXTINF:-1 tvg-id="AlResalah.sa@SD" tvg-logo="https://i.imgur.com/7o4HgrP.png" http-referrer="https://rotana.net/" group-title="Religious",Al Resalah (1080p) [Geo-blocked]
+#EXTINF:-1 tvg-id="AlResalah.sa@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/AlResalah_TV.png/250px-AlResalah_TV.png" http-referrer="https://rotana.net/" group-title="Religious",Al Resalah (1080p) [Geo-blocked]
 #EXTVLCOPT:http-referrer=https://rotana.net/
 #EXTINF:-1 tvg-id="AlSaudiya.sa@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/d/d6/Al-Saudia_TV_Logo_2018.png" group-title="General",Al Saudiya (1080p)
 https://shd-gcp-live.edgenextcdn.net/live/bitmovin-saudi-tv/2ad66056b51fd8c1b624854623112e43/index.m3u8
@@ -117,9 +117,9 @@ http://82.212.74.2:8000/live/7307.m3u8
 https://ghaasiflu.online/alhqeqa/index.m3u8
 #EXTINF:-1 tvg-id="AlHiwarTV.uk@SD" tvg-logo="https://m.media-amazon.com/images/I/71fWor-YyUL.png" group-title="Education",Alhiwar TV (1080p) [Not 24/7]
 https://mn-nl.mncdn.com/alhiwar_live/smil:alhiwar.smil/playlist.m3u8
-#EXTINF:-1 tvg-id="Alhurra.us@SD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/4/4c/Alhurra_logo.svg.png/revision/latest?cb=20200705202622" group-title="News",Alhurra (720p)
+#EXTINF:-1 tvg-id="Alhurra.us@SD" tvg-logo="https://i.imgur.com/tiQp2sR.png" group-title="News",Alhurra (720p)
 https://mbn-ingest-worldsafe.akamaized.net/hls/live/2038900/MBN_Alhurra_Worldsafe_HLS/master.m3u8
-#EXTINF:-1 tvg-id="AlhurraIraq.us@SD" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYxeTWIJSua2MIKFqX_5hcfP56xzXlW1VqHA&s" group-title="News",Alhurra Iraq (720p)
+#EXTINF:-1 tvg-id="AlhurraIraq.us@SD" tvg-logo="https://i.imgur.com/fsgQDcN.png" group-title="News",Alhurra Iraq (720p)
 https://mbn-ingest-worldsafe.akamaized.net/hls/live/2038899/MBN_Iraq_Worldsafe_HLS/master.m3u8
 #EXTINF:-1 tvg-id="AlImanTV.lb@SD" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzK7OtuR4ujOJ_OT4oFjP0F9rFKo98iK58dA&s" group-title="Religious",Aliman TV (240p) [Not 24/7]
 https://svs.itworkscdn.net/alimanlive/imantv.smil/playlist.m3u8
@@ -147,7 +147,7 @@ https://liveeu-gcp.alkassdigital.net/alkass2-p/main.m3u8
 https://lenz.splus.ir/PLTV/88888888/224/3221226158/index.m3u8
 #EXTINF:-1 tvg-id="AlmagdTVMiddleEast.us@SD" tvg-logo="https://i.imgur.com/3pUik3b.png" group-title="Religious",Almagd TV Middle East (1080p) [Not 24/7]
 https://597f64b67707a.streamlock.net/almagd.tv/almagd.smil/playlist.m3u8
-#EXTINF:-1 tvg-id="AlmahriahTV.tr@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/ar/0/04/%D9%82%D9%86%D8%A7%D8%A9_%D8%A7%D9%84%D9%85%D9%87%D8%B1%D9%8A%D8%A9.png" group-title="News",Almahriah TV (576p)
+#EXTINF:-1 tvg-id="AlmahriahTV.tr@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/ar/0/04/%D9%82%D9%86%D8%A7%D8%A9_%D8%A7%D9%84%D9%85%D9%87%D8%B1%D9%8Internal linkD8%A9.png" group-title="News",Almahriah TV (576p)
 https://starmenajo.com/hls/almahriah/index.m3u8
 #EXTINF:-1 tvg-id="AlQanat9.tr@SD" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJuge35cLKkchfXJ4ogW91cf84kdxJhk97Ww&s" group-title="News",Alqanat9 TV (1080p)
 https://cdn.bestream.io:19360/alqanat9/alqanat9.m3u8
@@ -165,7 +165,7 @@ https://ammantv-live.ercdn.net/ammantvhd/ammantvhd.m3u8
 http://mkstream.servehttp.com:1940/AmouYazid/ay1/playlist.m3u8
 #EXTINF:-1 tvg-id="Anime.sa@SD" tvg-logo="https://shahid.mbc.net/mediaObject/a5893f8d-8488-4c21-ab97-a627f99c7676?height=auto&width=512&croppingPoint=&version=1&type=png" group-title="Animation",Anime (1080p)
 https://shls-live-enc.edgenextcdn.net/out/v1/e7350ddf46c94dddafe14b099394ff56/index.m3u8
-#EXTINF:-1 tvg-id="AnwarTV2.iq@SD" tvg-logo="https://i.imgur.com/yHZXPcn.png" http-referrer="https://odysee.com/" group-title="News",Anwar TV2 (720p)
+#EXTINF:-1 tvg-id="AnwarTV2.iq@SD" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_2GcuWxEQg9KJ4vbRxDijv1t08Vu2WEyk2w&s" http-referrer="https://odysee.com/" group-title="News",Anwar TV2 (720p)
 #EXTVLCOPT:http-referrer=https://odysee.com/
 #EXTINF:-1 tvg-id="ArabicaTV.lb@SD" tvg-logo="https://play-lh.googleusercontent.com/vJ3tvJIwbdKtQ2cnG8j38hHBHvLXsq59wlG5MGhRfjh8lNpxgvfsush-5v9IabjVCQ" group-title="Music",Arabica TV (720p)
 http://istream.binarywaves.com:8081/hls/arabica/playlist.m3u8
@@ -235,8 +235,6 @@ https://dwamdstream103.akamaized.net/hls/live/2015526/dwstream103/master.m3u8
 https://dvrfl06.bozztv.com/astv-elousra/index.m3u8
 #EXTINF:-1 tvg-id="ElsharqTV.tr@SD" tvg-logo="https://elsharq.tv/wp-content/uploads/2025/10/ELSHARQ-TV645646-e1761838412808.png" group-title="General",Elsharq TV (1080p) [Not 24/7]
 https://mn-nl.mncdn.com/elsharq_live/live/playlist.m3u8
-#EXTINF:-1 tvg-id="ERiTV1.er@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/01/EritTV_Logo.png" group-title="General",ERi-TV 1 (576p)
-https://jmc-live.ercdn.net/eritreatv/eritreatv.m3u8
 #EXTINF:-1 tvg-id="Fairuz.sa@HD" tvg-logo="https://shahid.mbc.net/mediaObject/f809d51c-e83d-43c9-8236-78731c2216ad?type=png" group-title="Music",Fairuz (1080p)
 https://shls-live-enc.edgenextcdn.net/out/v1/bba3ef00b71b470fa955d93a9ca8c277/index.m3u8
 #EXTINF:-1 tvg-id="FalastiniTV.ps@SD" tvg-logo="https://www.falastini.tv/wp-content/uploads/2017/02/logo.png" group-title="Music",Falastini TV (1080p)
@@ -307,7 +305,7 @@ https://kwtspta.cdn.mangomolo.com/sp/smil:sp.stream.smil/chunklist.m3u8
 https://kwtsplta.cdn.mangomolo.com/spl/smil:spl.stream.smil/chunklist.m3u8
 #EXTINF:-1 tvg-id="LaayouneTV.ma@SD" tvg-logo="https://www.snrt.ma/sites/default/files/2023-04/laayoune.png" group-title="General",Laayoune TV (576p)
 http://5.253.46.190:8000/play/a0eg/index.m3u8
-#EXTINF:-1 tvg-id="LBC.sa@SD" tvg-logo="https://i.imgur.com/whyZXzW.png" http-referrer="https://rotana.net/" group-title="General",LBC (1080p) [Geo-blocked]
+#EXTINF:-1 tvg-id="LBC.sa@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Logo_LBC_International_%28Lebanon%29.png/250px-Logo_LBC_International_%28Lebanon%29.png" http-referrer="https://rotana.net/" group-title="General",LBC (1080p) [Geo-blocked]
 #EXTVLCOPT:http-referrer=https://rotana.net/
 #EXTINF:-1 tvg-id="LanaTV.lb@SD" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGIFIP3-1NLtmkesGoujJ1fpfVzVJ9Og622Q&s" group-title="General",LTV (360p)
 https://p-ltv.akamaized.net/ltv/ltv.m3u8
