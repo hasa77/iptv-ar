@@ -1,6 +1,6 @@
 {
-  "AlAraby.qa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAw4GDIfVzQC2G0qwT0Tcw1jv0bu1Vj_uCVQ&s",
-  "AlAraby2.qa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAw4GDIfVzQC2G0qwT0Tcw1jv0bu1Vj_uCVQ&s",
+  "AlAraby.qa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxp-wPcrevaz0rzuX-aoEJMKZu2_51H15m6Q&s",
+  "AlAraby2.qa": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxp-wPcrevaz0rzuX-aoEJMKZu2_51H15m6Q&s",
   "AlEkhbariya.sa@SD": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHdqD_Y5aWJCTNyU_-J4mqVJaBkiG0_bjKSg&s",
   "AlGhadTV.eg@SD": "https://upload.wikimedia.org/wikipedia/commons/e/e3/%D8%A7%D9%84%D9%82%D9%86%D8%A7.png",
   "AlIraqia.iq@SD": "https://static.wikia.nocookie.net/logopedia/images/9/92/Al_Iraqiya_Arabic_logo.jpg/revision/latest?cb=20241204022751",
@@ -46,7 +46,7 @@
   "AlRasheedTV.iq@SD": "https://upload.wikimedia.org/wikipedia/en/b/b5/Al_Rasheed_TV_logo.png",
   "IraqFuture.iq@SD": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBIJR2f3buhd-IbO9num-iCNbc0LDAaVzrVQ&s",
   "Al.Hadath.ae": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Al_Hadath_TV_logo_2023.svg/1920px-Al_Hadath_TV_logo_2023.svg.png",
-  "AlYaumTV.ae": "https://upload.wikimedia.org/wikipedia/commons/5/56/%D9%81%D9%86%D8%A7%D8%A9_%D8%A7%D9%84%D9%82%D9%86%D8%A7.jpg",
+  "AlYaumTV.ae@SD": "https://upload.wikimedia.org/wikipedia/commons/5/56/%D9%81%D9%86%D8%A7%D8%A9_%D8%A7%D9%84%D9%82%D9%86%D8%A7.jpg",
   "AjyalTV.ps": "https://upload.wikimedia.org/wikipedia/en/2/23/AjyalTVLogo2014.png",
   "AlRayyanTV.qa@SD": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8Psmr8QUCeGbh1bsY673dhWPC8kYFhM_bPQ&s",
   "AlRayyanOldTV.qa@SD": "https://alrayyan.qa/wp-content/uploads/2023/10/qadeem-logo2-300x134.gif",
@@ -212,5 +212,6 @@
   "TV6.dz@SD": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuCcI5tMOhpgX2hITMMQLEE0XPL8wl846msQ&s",
   "TV7.dz@SD": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR86mlYj91LFjXhUrwP4t2iW-JJVbrlgOeZRQ&s",
   "TV8.dz@SD": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM-5az51kk4Vn4d9NgYO2qZrhRDz5XfVS9-g&s",
-  "TV9.dz@SD": "https://static.wikia.nocookie.net/logopedia/images/d/d0/TV9ALG.svg/revision/latest?cb=20250217120929"
+  "TV9.dz@SD": "https://upload.wikimedia.org/wikipedia/en/b/be/NewlogoTV9_%28Malaysia%29.png",
+  "BerbereTV.fr@SD": "https://upload.wikimedia.org/wikipedia/en/0/0a/BerbereTV.jpg"
 }
