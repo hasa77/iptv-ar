@@ -8,6 +8,9 @@ on:
       - 'exclude_words.txt'          # Triggers build when words change
       - '.scripts/process_iptv.py'   # Triggers build when code changes
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 concurrency:
   group: epg-update
   cancel-in-progress: true
