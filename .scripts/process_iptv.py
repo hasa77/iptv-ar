@@ -46,6 +46,7 @@ def norm(s):
 LOGO_MAP = load_logo_map()
 EXCLUDE_WORDS = load_exclude_words()
 
+#"normalized_m3u_tvg_id": "Exact_EPG_Channel_ID"
 ID_MAP = {
     'Al.Arabiya.Programs': 'AlArabiya.net',
     'Al.Arabiya.Business.ae': 'AlArabiyaBusiness.ae',
