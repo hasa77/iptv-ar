@@ -33,7 +33,7 @@
     'mbc2sa': 'MBC2.ae',
     'mbc3usa.us': 'MBC3.ae',
     'mbc4sa': 'MBC4.ae',
-    "mbc5.ma": "MBC5.eg",
+    'mbc5.ma': 'MBC5.eg',
     'MBC.Action.ae': 'MBCAction.ae',
     'mbcdramasa': 'MBCDrama.ae', #MBC DRAMA
     'mbcdramausa': 'MBC.Drama.ae', #MBC DRAMA USA
@@ -84,7 +84,7 @@
     'alkasstwo.qa': 'Alkass_2_AR.bein',
     'alkassthree.qa': 'Alkass_3_AR.bein',
     'alkassfour.qa': 'Alkass_4_AR.bein',
-    'alkassfive.qa': 'Alkass_5_AR.bein",
+    'alkassfive.qa': 'Alkass_5_AR.bein',
     'alkasssix.qa': 'Alkass_6_AR.bein',
     'alkassseven.qa': 'Alkass_7_AR.bein',
     'Almasirah.TV.ae': 'AlMasirah.ye@SD',
