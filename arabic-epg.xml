@@ -13,6 +13,7 @@
   <channel id="MBC.Drama.ae"><display-name>MBC.Drama.ae</display-name></channel>
   <channel id="MBC.Iraq.HD.ae"><display-name>MBC.Iraq.HD.ae</display-name></channel>
   <channel id="MBC.Masr.2.ae"><display-name>MBC.Masr.2.ae</display-name></channel>
+  <channel id="MBC.Masr.ae"><display-name>MBC.Masr.ae</display-name></channel>
   <channel id="Sky.News.Arabia.HD.ae"><display-name>Sky.News.Arabia.HD.ae</display-name></channel>
   <channel id="Zee.Alwan.ae"><display-name>Zee.Alwan.ae</display-name></channel>
   <programme start="20260314000000 +0000" stop="20260314003000 +0000" channel="CNBC.Arabiya.ae">
