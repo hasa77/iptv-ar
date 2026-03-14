@@ -71,14 +71,19 @@ ID_MAP = {
     'Dubai.Zaman.ae': 'DubaiZaman.ae',
     'BaynounahTV.ae@HD': 'Sama.Dubai.ae',
     'Majid.ae@HD': 'One.Tv.ae',
-    'mbc1sa': 'MBC1.ae',
+    'mbc1sa': 'MBC1.ae', #MBC 1 
+    'mbc1eg': 'MBC.Masr.ae', #mbc 1 EGYPT
     'mbc2sa': 'MBC2.ae',
     'mbc3sa': 'MBC3.ae',
     'mbc4sa': 'MBC4.ae',
+    'mbc5sa': 'MBC5.ae',
     'MBC.Action.ae': 'MBCAction.ae',
-    'mbcdramasa': 'MBCDrama.ae',
-    'mbcmasr1eg': 'MBC.Masr.ae',
+    'mbcdramasa': 'MBCDrama.ae', #MBC DRAMA
+    'mbcdramausa': 'MBC.Drama.ae', #MBC DRAMA USA
+    'mbcmasreg': 'MBC.Masr.ae',
     'mbcmasr2eg': 'MBC.Masr.2.ae',
+    'mbcmasrdramaeg': 'MBC.Masr.ae', #MBC MASR DRAMA
+    'mbcplusdrama': 'MBC.Drama.Plus.ae', #MBC PLUS DRAMA
     'MBCIraq.iq@SD': 'MBC.Iraq.HD.ae',
     'MBC Iraq': 'MBC.Iraq.HD.ae',
     'Rotana.Cinema.KSA.ae': 'RotanaCinema.sa',
