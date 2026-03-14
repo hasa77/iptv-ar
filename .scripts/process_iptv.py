@@ -72,6 +72,8 @@ ID_MAP = {
     'Dubai.Zaman.ae': 'DubaiZaman.ae',
     'BaynounahTV.ae@HD': 'Sama.Dubai.ae',
     'Majid.ae@HD': 'One.Tv.ae',
+    'Iraq Future': 'IraqFuture.iq@SD',
+    'Iraq Future TV': 'IraqFuture.iq@SD',
     'Iraq.Future.TV.ae': 'IraqFuture.iq@SD',
     'mbc1sa': 'MBC1.ae', #MBC 1 
     'mbc1eg': 'MBC.Masr.ae', #mbc 1 EGYPT
