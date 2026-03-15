@@ -33,7 +33,7 @@
     "alkasssix.qa": "Alkass_6_AR.bein",
     "alkassseven.qa": "Alkass_7_AR.bein",
 	"Al.Maaref.TV": "AlMaaref.bh",
-	"Al Mamlaka TV HD": "Al.Mamlaka.TV.HD.ae",
+	"AlMamlakaTV.jo@SD": "Al.Mamlaka.TV.HD.ae",
 	"Al.Masar.TV.HD.ae": "AlMasarTV.ly@SD",
     "Al.Mashhad.ae": "AlMashhad.ae@SD",
 	"AlMasirah.ye@SD": "Almasirah.TV.ae",
@@ -70,6 +70,7 @@
 	"KSA.Sports.1.ae": "KSA-Sports-1.sa",
     "KSA.Sports.2.HD.ae": "KSA-Sports-2.sa", 
     "Majid.ae@HD": "One.Tv.ae",
+	"Mix.bel.Araby.TV.ae": "Mix.bel.Araby.TV.ae"
 	"mbc1egypt.eg": "MBC1Egypt.eg",
     "MBC.Masr.ae": "MBC.Masr.HD.ae",
     "mbcmasr2.eg": "MBCMasr2.eg",
@@ -106,6 +107,6 @@
     "Sharjah.Quran.TV.ae": "SharjahQuran.ae",
     "spacetoon": "Space.Toon.ae",
     "UTV.Iraq.ae": "UTV.iq@SD",
-	"Watan.TV.ae": "WatanTV.eg@SD",
+	"WatanTV.eg@SD": "Watan.TV.ae",
 	"Yas.TV.HD.ae": "YasTV.ae"
 }
