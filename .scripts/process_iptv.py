@@ -17,7 +17,7 @@ EPG_SOURCES = [
     "https://epgshare01.online/epgshare01/epg_ripper_SA2.xml.gz",
     "https://epgshare01.online/epgshare01/epg_ripper_UK1.xml.gz",
     "https://epgshare01.online/epgshare01/epg_ripper_US2.xml.gz",
-    "https://iptv-epg.org/files/epg-meyqso.xml",
+    #"https://iptv-epg.org/files/epg-meyqso.xml",
 ]
 
 # Paths
