@@ -3,8 +3,8 @@
 https://d2hng5r56zpsbw.cloudfront.net/out/v1/9c4c990f44bb4767bb46271f326dd574/index.m3u8
 #EXTINF:-1 tvg-id="Aflam.sa" tvg-logo="https://upload.wikimedia.org/wikipedia/fr/0/0d/Logo_aflam_tv.png" group-title="Movies",Aflam (1080p)
 https://shls-live-enc.edgenextcdn.net/out/v1/0044dd4b001a466c941ad77b04a574a2/index.m3u8
-#EXTINF:-1 tvg-id="AghaniAghaniTV.lb@SD" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ71udLceuolkA09cpq4ingoSzGhexsqFyuw&s" group-title="Music",Aghani Aghani TV (720p)
-http://77.42.253.43:9090/stream5/AGHANITV.m3u8
+#EXTINF:-1 tvg-id="AghaniAghaniTV.lb@SD" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ71udLceuolkA09cpq4ingoSzGhexsqFyuw&s" group-title="Music",Aghani Aghani TV (1080p)
+https://cdn.streamlane.tv/hls/aghanitv/index.m3u8
 #EXTINF:-1 tvg-id="Ajman.TV.HD.ae" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPWdCD-DTXie1W-PLmqFHdlqe-R6mmF8CpCw&s" group-title="General",Ajman TV (1080p)
 https://cdn1.logichost.in/ajmantv/live/playlist.m3u8
 #EXTINF:-1 tvg-id="AjyalTV.ps@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/2/23/AjyalTVLogo2014.png" group-title="General",Ajyal TV (720p)
