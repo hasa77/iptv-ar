@@ -8,7 +8,7 @@ https://cdn.streamlane.tv/hls/aghanitv/index.m3u8
 #EXTINF:-1 tvg-id="Ajman.TV.HD.ae" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPWdCD-DTXie1W-PLmqFHdlqe-R6mmF8CpCw&s" group-title="General",Ajman TV (1080p)
 https://cdn1.logichost.in/ajmantv/live/playlist.m3u8
 #EXTINF:-1 tvg-id="AjyalTV.ps@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/2/23/AjyalTVLogo2014.png" group-title="General",Ajyal TV (720p)
-http://htvmada.mada.ps:8888/ajyal/index.m3u8
+http://htvajyal.mada.ps:8888/ajyal/index.m3u8
 #EXTINF:-1 tvg-id="AlAlamiya2.sd@SD" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwm9FyadHjXRWGV_nxGactaVFJCsXapFNOYQ&s" group-title="Education",Al Alamiya 2
 http://82.212.74.98:8000/live/7815.m3u8
 #EXTINF:-1 tvg-id="AlAoula.ma@Inter" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1eESBk1mwI-bRWsQyGVXJ3x4kHFH8Ii61yg&s" group-title="General",Al Aoula Inter (576p)
@@ -263,7 +263,7 @@ https://live.i-news.tv/hls/stream.m3u8
 https://playlist.fasttvcdn.com/pl/dlkqw1ftuvuuzkcb4pxdcg/Iqraafasttv3/playlist.m3u8
 #EXTINF:-1 tvg-id="IqraaQuran.sa@SD" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTELjgTUuTy3_Ws_9Q_F5bHXy3lXLwIZ3ORGQ&s" group-title="Religious",Iqraa Quran (1080p)
 https://playlist.fasttvcdn.com/pl/dlkqw1ftuvuuzkcb4pxdcg/Iqraafasttv2/playlist.m3u8
-#EXTINF:-1 tvg-id="Iraq.Future.TV.ae" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBIJR2f3buhd-IbO9num-iCNbc0LDAaVzrVQ&s" group-title="General",Iraq Future
+#EXTINF:-1 tvg-id="Iraq.Future.TV.ae" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBIJR2f3buhd-IbO9num-iCNbc0LDAaVzrVQ&s" group-title="General",Iraq Future (480p)
 https://viewmedia7219.bozztv.com/wmedia/viewmedia100/web_040/Stream/playlist.m3u8
 #EXTINF:-1 tvg-id="JawharaTV.tn@SD" tvg-logo="https://m.jawharafm.net/ar/img/logo_jfmtv_fini.png" group-title="Music",Jawhara TV (720p) [Not 24/7]
 http://streaming.toutech.net:1935/live/mp4:jawharafm.sdp/playlist.m3u8
