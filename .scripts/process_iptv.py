@@ -140,7 +140,9 @@ def main():
             if is_excluded(tid, tname): continue
             
             n = norm(tid)
-            epg_id = id_map_norm.get(n) or (tid if tid in epg_exact else epg_norm.get(n))
+            epg_id = id_map_norm.get(n)
+            if not epg_id:
+                epg_id = tid if tid in epg_exact else epg_norm.get(n)
             
             if epg_id:
                 epg_needed.add(epg_id)
