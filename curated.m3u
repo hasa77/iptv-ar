@@ -61,7 +61,7 @@ https://starmenajo.com/hls/almasar/index.m3u8
 https://live.cdnbridge.tv/Almasirah/Almasirah_all/playlist.m3u8
 #EXTINF:-1 tvg-id="Almasirah.TV.Mubasher.ae" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-FaZGR1XnW6-E7RaPcKpryOqnWDazjHD4UA&s" group-title="News",Al Masirah Mubacher (642p) [Not 24/7]
 https://live2.cdnbridge.tv/AlmasirahMubasher/Mubasher_All/playlist.m3u8
-#EXTINF:-1 tvg-id="AlMasriyah.eg@SD" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXAB5vVli45kSFwupdFwe8z57RsAJICcR8Vw&s" group-title="General",Al Masriyah (720p) [Geo-Blocked]
+#EXTINF:-1 tvg-id="AlMasriyah.eg@SD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/3/31/Esc_2017.png/revision/latest?cb=20250912145228" group-title="General",Al Masriyah (720p) [Geo-Blocked]
 https://viamotionhsi.netplus.ch/live/eds/almasriyah/browser-HLS8/almasriyah.m3u8
 #EXTINF:-1 tvg-id="AlMayadeenTV.lb@SD" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT644DfqhaDaD1HTN4KjAtpw68dXlewp8_sQ&s" group-title="News",Al Mayadeen (576p)
 https://mdnlv.cdn.octivid.com/almdn/smil:mpegts.stream.smil/playlist.m3u8
@@ -393,13 +393,13 @@ https://live.kwikmotion.com/redtvlive/redtv.smil/playlist.m3u8
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0
 #EXTINF:-1 tvg-id="RotanaCinemaEgypt.eg@SD" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6jaSCMm6sBf_Z0rVqMvK3-rEGf7nhGinPmQ&s" http-referrer="https://rotana.net/" group-title="Movies",Rotana Cinema Egypt (1080p) [Geo-blocked]
 #EXTVLCOPT:http-referrer=https://rotana.net/
-#EXTINF:-1 tvg-id="RotanaCinemaKSA.sa" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/6/6e/Royatv.png" http-referrer="https://rotana.net/" group-title="Movies",Rotana Cinema KSA (1080p) [Geo-blocked]
+#EXTINF:-1 tvg-id="RotanaCinemaKSA.sa" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/9/92/Rotana_Cinema_Egy.png" http-referrer="https://rotana.net/" group-title="Movies",Rotana Cinema KSA (1080p) [Geo-blocked]
 #EXTVLCOPT:http-referrer=https://rotana.net/
 #EXTINF:-1 tvg-id="RotanaClassic.sa" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxR-8nF_WhVEhObGP74CRmFZhZpamRXZ1dvA&s" http-referrer="https://rotana.net/" group-title="Classic",Rotana Classic (1080p) [Geo-blocked]
 #EXTVLCOPT:http-referrer=https://rotana.net/
 #EXTINF:-1 tvg-id="RotanaClip.sa@SD" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxR-8nF_WhVEhObGP74CRmFZhZpamRXZ1dvA&s" http-referrer="https://rotana.net/" group-title="Undefined",Rotana Clip (1080p) [Geo-blocked]
 #EXTVLCOPT:http-referrer=https://rotana.net/
-#EXTINF:-1 tvg-id="RotanaComedy.sa@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/6/6e/Royatv.png" http-referrer="https://rotana.net/" group-title="Comedy",Rotana Comedy (1080p) [Geo-blocked]
+#EXTINF:-1 tvg-id="RotanaComedy.sa@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/1/14/Rotana_Comedy.png" http-referrer="https://rotana.net/" group-title="Comedy",Rotana Comedy (1080p) [Geo-blocked]
 #EXTVLCOPT:http-referrer=https://rotana.net/
 #EXTINF:-1 tvg-id="RotanaDrama.sa@SD" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjN3o-_sgZPf47KEMnW6eNHxYIekXRr5T-cQ&s" http-referrer="https://rotana.net/" group-title="Series",Rotana Drama (1080p) [Geo-blocked]
 #EXTVLCOPT:http-referrer=https://rotana.net/
@@ -479,7 +479,7 @@ https://svs.itworkscdn.net/vdltvlive/vdltv.smil/playlist.m3u8
 https://shd-gcp-live.edgenextcdn.net/live/bitmovin-wanasah/13e82ea6232fa647c43b26e8a41f173d/index.m3u8
 #EXTINF:-1 tvg-id="Watan.TV.ae" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/6/68/Watan_tv_logo.jpg" group-title="General",Watan TV (1080p)
 https://rp.tactivemedia.com/watantv_source/live/playlist.m3u8
-#EXTINF:-1 tvg-id="WatarTV.ps@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/8/88/Qatar_TV_logo.png" group-title="General",Watar TV (720p) [Not 24/7]
+#EXTINF:-1 tvg-id="WatarTV.ps@SD" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9bb_6ZSM63X5mzVl76wQrL-OxEBFjUDwGEA&s" group-title="General",Watar TV (720p) [Not 24/7]
 http://htvint.mada.ps:8889/orient/index.m3u8
 #EXTINF:-1 tvg-id="YemenShababChannel.ye@SD" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVhlRwOZ2yMbyL0N-awHPGUVWvpsZIXibUAw&s" group-title="Culture",Yemen Shabab Channel (1080p)
 https://starmenajo.com/hls/yemenshabab/index.m3u8
