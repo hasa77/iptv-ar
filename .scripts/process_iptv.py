@@ -68,15 +68,13 @@ def is_excluded(tvg_id, name=''):
         if word in c_id or word in c_name or word in n_id or word in n_name: return True
     return False
 
-def apply_logo(extinf, tid, tname):
-    # This turns "AjyalTV.ps@SD" into "ajyaltvps" so it matches the map
-    logo_url = logo_map.get(norm(tid)) or logo_map.get(norm(tname))
-    if logo_url:
-        if 'tvg-logo="' in extinf:
-            return re.sub(r'tvg-logo="[^"]*"', f'tvg-logo="{logo_url}"', extinf)
-        else:
-            return extinf.replace('tvg-id="', f'tvg-logo="{logo_url}" tvg-id="')
-    return extinf
+def apply_logo(line, tvg_id, tvg_name):
+    n_id, n_name = norm(tvg_id), norm(tvg_name)
+    logo = LOGO_MAP.get(n_id) or LOGO_MAP.get(n_name)
+    if logo:
+        if 'tvg-logo=' in line: return re.sub(r'tvg-logo="[^"]*"', f'tvg-logo="{logo}"', line)
+        else: return re.sub(r'(#EXTINF:[^,]*)', rf'\1 tvg-logo="{logo}"', line, count=1)
+    return line
     
 def load_epg_channels():
     """
@@ -149,9 +147,7 @@ def main():
                 extinf = re.sub(r'tvg-id="[^"]*"', f'tvg-id="{epg_id}"', extinf)
                 matched_count += 1
             
-            # Apply logo using the ORIGINAL 'tid' from the M3U before it was changed
-            extinf_with_logo = apply_logo(extinf, tid, tname) 
-            kept.append((extinf_with_logo, url))
+            kept.append((apply_logo(extinf, tid, tname), url))
         else: i += 1
 
     with open(M3U_OUTPUT, 'w', encoding='utf-8') as f:
