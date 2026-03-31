@@ -147,7 +147,9 @@ def main():
                 extinf = re.sub(r'tvg-id="[^"]*"', f'tvg-id="{epg_id}"', extinf)
                 matched_count += 1
             
-            kept.append((apply_logo(extinf, tid, tname), url))
+            # Apply logo using the ORIGINAL 'tid' from the M3U before it was changed
+            extinf_with_logo = apply_logo(extinf, tid, tname) 
+            kept.append((extinf_with_logo, url))
         else: i += 1
 
     with open(M3U_OUTPUT, 'w', encoding='utf-8') as f:
