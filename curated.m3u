@@ -139,7 +139,7 @@ https://liveeu-gcp.alkassdigital.net/alkass6-p/main.m3u8
 https://liveeu-gcp.alkassdigital.net/alkass3-p/main.m3u8
 #EXTINF:-1 tvg-id="Alkass_2_AR.bein" tvg-logo="https://www.cne-eg.com/uploads/logos/20183142948397.png" group-title="Sports",Alkass Two (1080p)
 https://liveeu-gcp.alkassdigital.net/alkass2-p/main.m3u8
-#EXTINF:-1 tvg-id="AlmagdTVMiddleEast.us@SD" tvg-logo="https://i.imgur.com/3pUik3b.png" group-title="Religious",Almagd TV Middle East (1080p) [Not 24/7]
+#EXTINF:-1 tvg-id="AlmagdTVMiddleEast.us@SD" tvg-logo="https://yt3.googleusercontent.com/Mi0Mjv9vyMF-hLtlerKXnA1UysxcckDInTfmDp4kMcaDYqTGF47zv3CcQnlwsgSALTRo_tC7VA=s900-c-k-c0x00ffffff-no-rj" group-title="Religious",Almagd TV Middle East (1080p) [Not 24/7]
 https://597f64b67707a.streamlock.net/almagd.tv/almagd.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="AlmahriahTV.tr@SD" tvg-logo="https://i.imgur.com/GgEeTNr.png" group-title="News",Almahriah TV (576p)
 https://starmenajo.com/hls/almahriah/index.m3u8
