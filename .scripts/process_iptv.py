@@ -110,7 +110,7 @@ def apply_logo(extinf, tid, tname):
     
     # Check if we already have it
     if os.path.exists(local_logo):
-        logo_url = f"https://raw.githubusercontent.com/{GITHUB_REPO}/main/{local_logo.replace(os.sep, '/')}"
+        logo_url = f"https://raw.githubusercontent.com/hasa77/iptv-ar/main/{local_logo.replace(os.sep, '/')}"
         return re.sub(r'tvg-logo=\"[^\"]*\"', f'tvg-logo=\"{logo_url}\"', extinf)
     
     # If not, try to download from map
@@ -120,7 +120,7 @@ def apply_logo(extinf, tid, tname):
         success = download_logo(ext_url, local_logo)
         if success:
             print(f"DEBUG: Successfully downloaded {n}.png")
-            logo_url = f"https://raw.githubusercontent.com/{GITHUB_REPO}/main/{local_logo.replace(os.sep, '/')}"
+            logo_url = f"https://raw.githubusercontent.com/hasa77/iptv-ar/main/{local_logo.replace(os.sep, '/')}"
             return re.sub(r'tvg-logo=\"[^\"]*\"', f'tvg-logo=\"{logo_url}\"', extinf)
         else:
             print(f"DEBUG: DOWNLOAD FAILED for '{n}'")
