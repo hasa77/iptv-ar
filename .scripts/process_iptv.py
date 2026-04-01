@@ -23,9 +23,9 @@ EPG_SOURCES = [
 # Paths
 ID_MAP_PATH = os.path.join('resources', 'id_map.json')
 LOGO_MAP_PATH = os.path.join('resources', 'logo_map.json')
+LOGOS_DIR = os.path.join('resources', 'logos')
 EXCLUDE_WORDS_PATH = os.path.join('resources', 'exclude_words.txt')
 
-#Helper functions
 def strip_quality(s):
     return re.sub(r'(@\S+)|(\s*\(.*\))', '', s or '').strip()
     
@@ -45,7 +45,6 @@ def load_id_map():
         return {}
 
 def load_logo_map():
-    print(f"Checking for logo map at: {os.path.abspath(LOGO_MAP_PATH)}")
     if not os.path.exists(LOGO_MAP_PATH):
         print("⚠️ LOGO MAP NOT FOUND!")
         return {}
@@ -56,11 +55,35 @@ def load_logo_map():
         print(f"⚠️ Error loading LOGO_MAP: {e}")
         return {}
 
+def download_logos(logo_map):
+    """Downloads logos from the map if they don't exist locally."""
+    if not os.path.exists(LOGOS_DIR):
+        os.makedirs(LOGOS_DIR)
+        
+    for n_id, url in logo_map.items():
+        # Determine extension
+        ext = '.png'
+        if '.svg' in url.lower(): ext = '.svg'
+        elif '.jpg' in url.lower() or '.jpeg' in url.lower(): ext = '.jpg'
+        
+        local_file = os.path.join(LOGOS_DIR, f"{n_id}{ext}")
+        
+        if not os.path.exists(local_file):
+            print(f"📥 Downloading logo: {n_id}{ext}")
+            try:
+                r = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'}, timeout=10)
+                if r.status_code == 200:
+                    with open(local_file, 'wb') as f:
+                        f.write(r.content)
+            except Exception as e:
+                print(f"⚠️ Failed to download {n_id}: {e}")
+
 def load_exclude_words():
     if not os.path.exists(EXCLUDE_WORDS_PATH): return []
     with open(EXCLUDE_WORDS_PATH, 'r', encoding='utf-8') as f:
         return [line.strip().lower() for line in f if line.strip() and not line.startswith('#')]
 
+# Initialize Data
 LOGO_MAP = load_logo_map()
 EXCLUDE_WORDS = load_exclude_words()
 ID_MAP = load_id_map()
@@ -75,35 +98,39 @@ def is_excluded(tvg_id, name=''):
     return False
 
 def apply_logo(line, tvg_id, tvg_name):
-    # Normalize the IDs/Names
     n_id = norm(tvg_id)
     n_name = norm(tvg_name)
     
-    # Try to find a logo match
-    logo = LOGO_MAP.get(n_id) or LOGO_MAP.get(n_name)
+    # Change 'hasa77' to your actual GitHub username
+    BASE_RAW_URL = "https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/"
     
-    # DEBUG: Track specifically requested channels
-    debug_keywords = [
-        "almagd", "almahriah", "oman", "rasd", 
-        "redtv", "rtarabic", "utviq", "watan"
-    ]
+    logo_url = None
     
-    if any(word in n_id or word in n_name for word in debug_keywords):
-        print(f"DEBUG {n_id}: LogoFound={logo is not None}")
+    # Check for local file match first
+    for ext in ['.png', '.jpg', '.svg']:
+        if os.path.exists(os.path.join(LOGOS_DIR, f"{n_id}{ext}")):
+            logo_url = f"{BASE_RAW_URL}{n_id}{ext}"
+            break
+            
+    # Fallback to JSON map
+    if not logo_url:
+        logo_url = LOGO_MAP.get(n_id) or LOGO_MAP.get(n_name)
+    
+    # Debug specifically requested channels
+    debug_list = ["almagd", "almahriah", "oman", "rasd", "redtv", "rtarabic", "utviq", "watan"]
+    if any(word in n_id or word in n_name for word in debug_list):
+        print(f"DEBUG {n_id}: LogoFound={logo_url is not None}")
 
-    if logo:
-        if 'tvg-logo="' in line:
-            return re.sub(r'tvg-logo="[^"]*"', f'tvg-logo="{logo}"', line)
+    if logo_url:
+        if 'tvg-logo=' in line:
+            # Replaces logo regardless of single or double quotes
+            return re.sub(r'tvg-logo=["\'][^"\']*["\']', f'tvg-logo="{logo_url}"', line)
         else:
-            return re.sub(r'(#EXTINF:[^,]*)', rf'\1 tvg-logo="{logo}"', line, count=1)
+            return re.sub(r'(#EXTINF:[^,]*)', rf'\1 tvg-logo="{logo_url}"', line, count=1)
     
     return line
-    
+
 def load_epg_channels():
-    """
-    THE REAL FIX: Don't use elem.clear() at all during parsing.
-    Store the raw XML string directly without modifying the tree.
-    """
     epg_exact, epg_norm = set(), {}
     epg_programmes = defaultdict(list)
     
@@ -112,35 +139,31 @@ def load_epg_channels():
         try:
             r = requests.get(url, timeout=60)
             content = gzip.decompress(r.content) if r.content[:2] == b'\x1f\x8b' else r.content
-            
-            # Parse content as string to extract raw XML
             content_str = content.decode('utf-8')
             
-            # Use regex to extract channel IDs and programmes
-            # Extract channels
             for match in re.finditer(r'<channel id="([^"]+)"', content_str):
                 cid = match.group(1)
                 epg_exact.add(cid)
                 epg_norm[norm(cid)] = cid
             
-            # Extract complete programme tags (preserving all content)
             for match in re.finditer(r'<programme[^>]*>.*?</programme>', content_str, re.DOTALL):
                 prog_xml = match.group(0)
-                # Extract channel ID from this programme
                 cid_match = re.search(r'channel="([^"]+)"', prog_xml)
                 if cid_match:
                     cid = cid_match.group(1)
                     epg_programmes[cid].append(prog_xml)
             
-            print(f"    ✅ Found {len([c for c in epg_exact if c not in epg_programmes])} channels")
-            print(f"    ✅ Found {sum(len(v) for k, v in epg_programmes.items() if k in epg_exact)} programmes")
-            
+            print(f"    ✅ Found {len(epg_exact)} channels")
         except Exception as e:
-            print(f"    ⚠️  Error: {e}")
+            print(f"    ⚠️ Error: {e}")
             
     return epg_exact, epg_norm, epg_programmes
 
 def main():
+    # 1. Download missing logos
+    download_logos(LOGO_MAP)
+    
+    # 2. Process EPG
     epg_exact, epg_norm, epg_progs = load_epg_channels()
     id_map_norm = {norm(k): v for k, v in ID_MAP.items()}
     
@@ -148,7 +171,6 @@ def main():
     r = requests.get(M3U_URL, timeout=30)
     lines = r.text.splitlines()
     kept, epg_needed = [], set()
-
     matched_count = 0
     
     i = 0
@@ -157,6 +179,7 @@ def main():
         if line.startswith('#EXTINF'):
             extinf, url = line, lines[i+1] if i+1 < len(lines) else ''
             i += 2
+            
             tid = re.search(r'tvg-id="([^"]*)"', extinf).group(1) if 'tvg-id="' in extinf else ''
             tname = re.search(r'tvg-name="([^"]*)"', extinf).group(1) if 'tvg-name="' in extinf else ''
             
@@ -170,9 +193,12 @@ def main():
                 extinf = re.sub(r'tvg-id="[^"]*"', f'tvg-id="{epg_id}"', extinf)
                 matched_count += 1
             
-            kept.append((apply_logo(extinf, tid, tname), url))
+            # Apply logo (Local first, then Map)
+            extinf = apply_logo(extinf, tid, tname)
+            kept.append((extinf, url))
         else: i += 1
 
+    # Save Output
     with open(M3U_OUTPUT, 'w', encoding='utf-8') as f:
         f.write('#EXTM3U\n')
         for extinf, url in kept: f.write(f"{extinf}\n{url}\n")
