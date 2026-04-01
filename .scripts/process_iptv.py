@@ -5,6 +5,7 @@ import xml.etree.ElementTree as ET
 import io
 import os
 import json
+import unicodedata
 from collections import defaultdict
 
 M3U_URL = "https://iptv-org.github.io/iptv/languages/ara.m3u"
@@ -29,9 +30,59 @@ EXCLUDE_WORDS_PATH = os.path.join('resources', 'exclude_words.txt')
 def strip_quality(s):
     return re.sub(r'(@\S+)|(\s*\(.*\))', '', s or '').strip()
 
+import unicodedata
+
+def arabic_normalize(text):
+    if not text:
+        return ""
+
+    # Normalize Unicode form
+    text = unicodedata.normalize("NFKC", text)
+
+    # Remove Arabic diacritics (tashkeel)
+    diacritics = re.compile(r'[\u0610-\u061A\u064B-\u065F\u0670\u06D6-\u06ED]')
+    text = diacritics.sub('', text)
+
+    # Remove Tatweel (ـ)
+    text = text.replace("ـ", "")
+
+    # Normalize Hamza forms to bare alif
+    text = re.sub(r'[أإآٱ]', 'ا', text)
+
+    # Normalize taa marbuta → haa
+    text = text.replace("ة", "ه")
+
+    # Normalize yaa forms
+    text = text.replace("ى", "ي")
+
+    # Convert Arabic numerals → Western numerals
+    arabic_nums = "٠١٢٣٤٥٦٧٨٩"
+    western_nums = "0123456789"
+    trans = str.maketrans(arabic_nums, western_nums)
+    text = text.translate(trans)
+
+    # Remove Arabic definite article "ال"
+    text = re.sub(r'^ال', '', text)
+
+    return text
+
+
 def norm(s):
+    if not s:
+        return ""
+
+    # Strip quality tags first
     s = strip_quality(s)
-    return re.sub(r'[^a-z0-9]', '', s.lower())
+
+    # Apply Arabic normalization
+    s = arabic_normalize(s)
+
+    # Remove non-alphanumeric (Arabic letters allowed)
+    s = re.sub(r'[^a-zA-Z0-9\u0600-\u06FF]', '', s)
+
+    # Lowercase Latin, keep Arabic as-is
+    return s.lower()
+
 
 def load_id_map():
     if not os.path.exists(ID_MAP_PATH):
