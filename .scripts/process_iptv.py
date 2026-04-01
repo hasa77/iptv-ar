@@ -106,34 +106,31 @@ def download_logo(url, local_path):
 def apply_logo(extinf, tid, tname):
     n = norm(tid)
     
-    # Check for existing local file (.png first, then .jpg)
-    found_local = None
-    for ext in ['.png', '.jpg', '.jpeg']:
-        potential_path = os.path.join(LOGOS_DIR, f"{n}{ext}")
-        if os.path.exists(potential_path):
-            found_local = potential_path
-            break
-
-    # 1. Use local file if found
-    if found_local:
-        logo_url = f"https://raw.githubusercontent.com/hasa77/iptv-ar/main/{found_local.replace(os.sep, '/')}"
-        return re.sub(r'tvg-logo=\"[^\"]*\"', f'tvg-logo=\"{logo_url}\"', extinf)
+    # Define potential extensions to check
+    valid_extensions = ['.png', '.jpg', '.jpeg']
     
-    # 2. Try downloading from map
+    # 1. Check if ANY valid local file already exists
+    for ext in valid_extensions:
+        local_path = os.path.join(LOGOS_DIR, f"{n}{ext}")
+        if os.path.exists(local_path):
+            logo_url = f"https://raw.githubusercontent.com/hasa77/iptv-ar/main/{local_path.replace(os.sep, '/')}"
+            return re.sub(r'tvg-logo=\"[^\"]*\"', f'tvg-logo=\"{logo_url}\"', extinf)
+
+    # 2. If not found locally, try downloading from map
     ext_url = LOGO_MAP.get(n)
     if ext_url:
-        # Skip if it's an SVG as requested
-        if '.svg' in ext_url.lower():
-            return extinf
+        # Determine correct extension from the URL
+        if '.jpg' in ext_url.lower() or '.jpeg' in ext_url.lower():
+            target_ext = '.jpg'
+        else:
+            target_ext = '.png'
             
-        # Determine extension (.jpg for Watan, .png for others)
-        ext = '.jpg' if ('.jpg' in ext_url.lower() or '.jpeg' in ext_url.lower()) else '.png'
-        local_path = os.path.join(LOGOS_DIR, f"{n}{ext}")
+        local_path = os.path.join(LOGOS_DIR, f"{n}{target_ext}")
         
         if download_logo(ext_url, local_path):
             logo_url = f"https://raw.githubusercontent.com/hasa77/iptv-ar/main/{local_path.replace(os.sep, '/')}"
             return re.sub(r'tvg-logo=\"[^\"]*\"', f'tvg-logo=\"{logo_url}\"', extinf)
-            
+
     return extinf
 
 def load_epg_channels():
