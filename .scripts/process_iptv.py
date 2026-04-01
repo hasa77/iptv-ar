@@ -42,13 +42,13 @@ def load_id_map():
         print(f"⚠️ Error loading ID_MAP: {e}")
         return {}
 
-def load_logo_map():
-    if not os.path.exists(LOGO_MAP_PATH): return {}
-    try:
-        with open(LOGO_MAP_PATH, 'r', encoding='utf-8') as f:
-            data = json.load(f)
-            return {norm(k): v for k, v in data.items()}
-    except: return {}
+def load_maps():
+    print(f"Checking for logo map at: {os.path.abspath(LOGO_MAP_PATH)}") # DEBUG LINE
+    if not os.path.exists(LOGO_MAP_PATH):
+        print("⚠️ LOGO MAP NOT FOUND!") # DEBUG LINE
+        return {}
+    with open(LOGO_MAP_PATH, 'r', encoding='utf-8') as f:
+        return json.load(f)
 
 def load_exclude_words():
     if not os.path.exists(EXCLUDE_WORDS_PATH): return []
