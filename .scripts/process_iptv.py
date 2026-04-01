@@ -105,6 +105,20 @@ def download_logo(url, local_path):
 
 def apply_logo(extinf, tid, tname):
     n = norm(tid)
+
+    ###debug####
+    
+     # DEBUG
+    print(f"[DEBUG] tid='{tid}'  norm='{n}'  has_local=",
+          any(os.path.exists(os.path.join(LOGOS_DIR, f"{n}{ext}"))
+              for ext in [".png", ".jpg", ".jpeg"]),
+          "in_logo_map=", n in LOGO_MAP)
+
+    print("BEFORE:", extinf)
+    extinf2 = re.sub(r'tvg-logo=\"[^\"]*\"', f'tvg-logo=\"{logo_url}\"', extinf)
+    print("AFTER:", extinf2)
+    
+    ############
     
     # Check for both png and jpg extensions
     found_path = None
