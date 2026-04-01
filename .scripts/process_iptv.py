@@ -82,8 +82,13 @@ def apply_logo(line, tvg_id, tvg_name):
     # Try to find a logo match
     logo = LOGO_MAP.get(n_id) or LOGO_MAP.get(n_name)
     
-    # DEBUG: Only print for the channel we are troubleshooting
-    if any(word in n_id or word in n_name for word in ["almagd", "almahriah"]):
+    # DEBUG: Track specifically requested channels
+    debug_keywords = [
+        "almagd", "almahriah", "oman", "rasd", 
+        "redtv", "rtarabic", "utviq", "watan"
+    ]
+    
+    if any(word in n_id or word in n_name for word in debug_keywords):
         print(f"DEBUG {n_id}: LogoFound={logo is not None}")
 
     if logo:
