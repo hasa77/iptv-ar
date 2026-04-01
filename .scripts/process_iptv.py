@@ -100,30 +100,27 @@ def is_excluded(tvg_id, name=''):
 def apply_logo(line, tvg_id, tvg_name):
     n_id = norm(tvg_id)
     n_name = norm(tvg_name)
-    
-    # Change 'hasa77' to your actual GitHub username
     BASE_RAW_URL = "https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/"
     
     logo_url = None
+    is_local = False
     
-    # Check for local file match first
+    # Check for local file
     for ext in ['.png', '.jpg', '.svg']:
         if os.path.exists(os.path.join(LOGOS_DIR, f"{n_id}{ext}")):
             logo_url = f"{BASE_RAW_URL}{n_id}{ext}"
+            is_local = True
             break
             
-    # Fallback to JSON map
+    # Fallback to Internet link
     if not logo_url:
         logo_url = LOGO_MAP.get(n_id) or LOGO_MAP.get(n_name)
-    
-    # Debug specifically requested channels
-    debug_list = ["almagd", "almahriah", "oman", "rasd", "redtv", "rtarabic", "utviq", "watan"]
-    if any(word in n_id or word in n_name for word in debug_list):
-        print(f"DEBUG {n_id}: LogoFound={logo_url is not None}")
+        if logo_url:
+            # Track that this channel is using an external link
+            EXTERNAL_LOGOS_TRACKER.append(f"{tvg_id or tvg_name} -> {logo_url}")
 
     if logo_url:
         if 'tvg-logo=' in line:
-            # Replaces logo regardless of single or double quotes
             return re.sub(r'tvg-logo=["\'][^"\']*["\']', f'tvg-logo="{logo_url}"', line)
         else:
             return re.sub(r'(#EXTINF:[^,]*)', rf'\1 tvg-logo="{logo_url}"', line, count=1)
