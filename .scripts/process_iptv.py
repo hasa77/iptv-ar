@@ -232,7 +232,58 @@ def main():
                 continue
             
             n = norm(tid)
-            epg_id = id_map_norm.get(n) or (tid if tid in epg_exact else epg_norm.get(n))
+            
+            # --- EPG MATCHING IMPROVED ---
+
+            epg_id = None
+            
+            # 1. Exact tvg-id match
+            if tid in epg_exact:
+                epg_id = tid
+            
+            # 2. Normalized tvg-id match
+            if not epg_id:
+                epg_id = epg_norm.get(n)
+            
+            # 3. ID map override
+            if not epg_id:
+                epg_id = id_map_norm.get(n)
+            
+            # 4. Match by tvg-name
+            if not epg_id and tname:
+                n_name = norm(tname)
+                epg_id = epg_norm.get(n_name)
+            
+            # 5. Cleaned name match (remove HD, TV, Channel, etc.)
+            if not epg_id and tname:
+                cleaned = re.sub(r'\b(hd|fhd|uhd|sd|tv|channel|live|arabic|ar)\b', '', tname, flags=re.I)
+                cleaned = norm(cleaned)
+                epg_id = epg_norm.get(cleaned)
+            
+            # 6. Fuzzy match (safe cutoff 0.85)
+            if not epg_id:
+                import difflib
+                best = difflib.get_close_matches(n, epg_norm.keys(), n=1, cutoff=0.85)
+                if best:
+                    epg_id = epg_norm[best[0]]
+            
+            # 7. Match by logo filename
+            if not epg_id:
+                logo_match = re.search(r'tvg-logo="([^"]+)"', extinf)
+                if logo_match:
+                    base = os.path.splitext(os.path.basename(logo_match.group(1)))[0]
+                    base = norm(base)
+                    epg_id = epg_norm.get(base)
+            
+            # 8. Match by stream URL hostname
+            if not epg_id and url:
+                parts = url.split('/')
+                if len(parts) > 3:
+                    host_guess = norm(parts[3])
+                    epg_id = epg_norm.get(host_guess)
+            
+            # --- END OF MATCHING ---
+
 
             if epg_id:
                 epg_needed.add(epg_id)
