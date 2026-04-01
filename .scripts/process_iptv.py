@@ -106,21 +106,13 @@ def download_logo(url, local_path):
 def apply_logo(extinf, tid, tname):
     n = norm(tid)
 
-    ###debug####
-    
-     # DEBUG
+    # DEBUG: show normalization + local file presence + map presence
     print(f"[DEBUG] tid='{tid}'  norm='{n}'  has_local=",
           any(os.path.exists(os.path.join(LOGOS_DIR, f"{n}{ext}"))
               for ext in [".png", ".jpg", ".jpeg"]),
           "in_logo_map=", n in LOGO_MAP)
 
-    print("BEFORE:", extinf)
-    extinf2 = re.sub(r'tvg-logo=\"[^\"]*\"', f'tvg-logo=\"{logo_url}\"', extinf)
-    print("AFTER:", extinf2)
-    
-    ############
-    
-    # Check for both png and jpg extensions
+    # --- LOCAL LOGO CHECK ---
     found_path = None
     for ext in [".png", ".jpg", ".jpeg"]:
         potential_path = os.path.join(LOGOS_DIR, f"{n}{ext}")
@@ -128,26 +120,36 @@ def apply_logo(extinf, tid, tname):
             found_path = potential_path
             break
 
-    # 1. If we found a file (of any extension), use it
     if found_path:
-        # Convert path to URL format (replace backslashes with forward slashes)
         github_path = found_path.replace(os.sep, '/')
         logo_url = f"https://raw.githubusercontent.com/hasa77/iptv-ar/main/{github_path}"
-        return re.sub(r'tvg-logo=\"[^\"]*\"', f'tvg-logo=\"{logo_url}\"', extinf)
-    
-    # 2. If no local file exists, check the map to download it
+
+        # DEBUG: show replacement
+        print("BEFORE:", extinf)
+        new_extinf = re.sub(r'tvg-logo=\"[^\"]*\"', f'tvg-logo=\"{logo_url}\"', extinf)
+        print("AFTER:", new_extinf)
+
+        return new_extinf
+
+    # --- LOGO MAP CHECK ---
     ext_url = LOGO_MAP.get(n)
     if ext_url:
-        # Logic to decide extension based on URL
         target_ext = ".jpg" if (".jpg" in ext_url.lower() or ".jpeg" in ext_url.lower()) else ".png"
         local_path = os.path.join(LOGOS_DIR, f"{n}{target_ext}")
-        
+
         if download_logo(ext_url, local_path):
             github_path = local_path.replace(os.sep, '/')
             logo_url = f"https://raw.githubusercontent.com/hasa77/iptv-ar/main/{github_path}"
-            return re.sub(r'tvg-logo=\"[^\"]*\"', f'tvg-logo=\"{logo_url}\"', extinf)
-            
+
+            # DEBUG: show replacement
+            print("BEFORE:", extinf)
+            new_extinf = re.sub(r'tvg-logo=\"[^\"]*\"', f'tvg-logo=\"{logo_url}\"', extinf)
+            print("AFTER:", new_extinf)
+
+            return new_extinf
+
     return extinf
+
 
 def load_epg_channels():
     epg_exact, epg_norm = set(), {}
