@@ -477,7 +477,7 @@ https://mn-nl.mncdn.com/utviraqi2/64c80359/index.m3u8
 https://svs.itworkscdn.net/vdltvlive/vdltv.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="Wanasah.ae@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/wanasahae.png" group-title="Music",Wanasah (1080p)
 https://shd-gcp-live.edgenextcdn.net/live/bitmovin-wanasah/13e82ea6232fa647c43b26e8a41f173d/index.m3u8
-#EXTINF:-1 tvg-id="Watan.TV.ae" tvg-logo="https://i.imgur.com/pZyKaUH.png" group-title="General",Watan TV (1080p)
+#EXTINF:-1 tvg-id="Watan.TV.ae" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/watantveg.jpg" group-title="General",Watan TV (1080p)
 https://rp.tactivemedia.com/watantv_source/live/playlist.m3u8
 #EXTINF:-1 tvg-id="WatarTV.ps@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/watartvps.png" group-title="General",Watar TV (720p) [Not 24/7]
 http://htvint.mada.ps:8889/orient/index.m3u8
