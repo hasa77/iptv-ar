@@ -43,6 +43,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          git add resources/logos/*.png resources/logos/*.jpg resources/logos/*.svg # Add the images
           git add arabic-epg.xml curated.m3u
-          git commit -m "Update Arabic EPG: $(date -u +'%Y-%m-%d %H:%M:%S') UTC" || echo "No changes to commit"
+          git commit -m "Update logos and EPG: $(date -u +'%Y-%m-%d %H:%M:%S') UTC" || echo "No changes"
           git push origin main
