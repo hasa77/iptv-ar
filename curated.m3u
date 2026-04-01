@@ -345,13 +345,13 @@ https://shls-live-enc.edgenextcdn.net/out/v1/45ad6fbe1f7149ad9f05f8aefc38f6c0/in
 http://31.14.40.237:1935/live/Nabaa/playlist.m3u8
 #EXTINF:-1 tvg-id="NablusTV.ps@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/7/7f/Palestine_Satellite_Channel_Logo.png" group-title="News",Nablus TV (1080p)
 https://htvint.mada.ps/nabluslive/index.m3u8
-#EXTINF:-1 tvg-id="OmanTVCultural.om@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/4/4a/Saghhjjdegh.jpg" group-title="Culture",Oman Althakafia (1080p)
+#EXTINF:-1 tvg-id="OmanTVCultural.om@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/c/c4/Sultanate_of_Oman_Television_logo.jpg" group-title="Culture",Oman Althakafia (1080p)
 https://partwota.cdn.mgmlcdn.com/omcultural/smil:omcultural.stream.smil/chunklist.m3u8
 #EXTINF:-1 tvg-id="OmanTVMubashir.om@SD" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1GbBi5TPDKlOExqlxYwTR9x1xgeRcvXYvEQ&s" group-title="News",Oman Mubashir (1080p)
 https://partwota.cdn.mgmlcdn.com/omlive/smil:omlive.stream.smil/chunklist.m3u8
 #EXTINF:-1 tvg-id="OmanSportsTV.om@SD" tvg-logo="https://flix.bdtype.com/uploads/tv_image/oman-tv-sport.png" group-title="Sports",Oman Sports TV (1080p) [Not 24/7]
 https://partneta.cdn.mgmlcdn.com/omsport/smil:omsport.stream.smil/chunklist.m3u8
-#EXTINF:-1 tvg-id="OmanTV.om@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/4/4a/Saghhjjdegh.jpg" group-title="General",Oman TV (1080p)
+#EXTINF:-1 tvg-id="OmanTV.om@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/c/c4/Sultanate_of_Oman_Television_logo.jpg" group-title="General",Oman TV (1080p)
 https://partneta.cdn.mgmlcdn.com/omantv/smil:omantv.stream.smil/chunklist.m3u8
 #EXTINF:-1 tvg-id="OneTV.lb@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/One_TV_Logo.svg/960px-One_TV_Logo.svg.png" group-title="Music",One TV (720p) [Not 24/7]
 https://hms.pfs.gdn/v1/broadcast/one/playlist.m3u8
