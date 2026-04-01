@@ -9,6 +9,7 @@ on:
       - '.scripts/process_iptv.py'             # Triggers build when code changes
       - 'resources/logo_map.json'              # Triggers build when code changes
       - 'resources/id_map.json'                # Triggers build when code changes
+      - 'resources/logos/**'                   # Triggers build when code changes
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
