@@ -106,12 +106,6 @@ def download_logo(url, local_path):
 def apply_logo(extinf, tid, tname):
     n = norm(tid)
 
-    # DEBUG: show normalization + local file presence + map presence
-    print(f"[DEBUG] tid='{tid}'  norm='{n}'  has_local=",
-          any(os.path.exists(os.path.join(LOGOS_DIR, f"{n}{ext}"))
-              for ext in [".png", ".jpg", ".jpeg"]),
-          "in_logo_map=", n in LOGO_MAP)
-
     # --- LOCAL LOGO CHECK ---
     found_path = None
     for ext in [".png", ".jpg", ".jpeg"]:
@@ -123,13 +117,7 @@ def apply_logo(extinf, tid, tname):
     if found_path:
         github_path = found_path.replace(os.sep, '/')
         logo_url = f"https://raw.githubusercontent.com/hasa77/iptv-ar/main/{github_path}"
-
-        # DEBUG: show replacement
-        print("BEFORE:", extinf)
-        new_extinf = re.sub(r'tvg-logo=\"[^\"]*\"', f'tvg-logo=\"{logo_url}\"', extinf)
-        print("AFTER:", new_extinf)
-
-        return new_extinf
+        return re.sub(r'tvg-logo=\"[^\"]*\"', f'tvg-logo=\"{logo_url}\"', extinf)
 
     # --- LOGO MAP CHECK ---
     ext_url = LOGO_MAP.get(n)
@@ -140,14 +128,12 @@ def apply_logo(extinf, tid, tname):
         if download_logo(ext_url, local_path):
             github_path = local_path.replace(os.sep, '/')
             logo_url = f"https://raw.githubusercontent.com/hasa77/iptv-ar/main/{github_path}"
+            return re.sub(r'tvg-logo=\"[^\"]*\"', f'tvg-logo=\"{logo_url}\"', extinf)
+        else:
+            print(f"[LOGO ERROR] Failed to download logo for '{n}' from {ext_url}")
 
-            # DEBUG: show replacement
-            print("BEFORE:", extinf)
-            new_extinf = re.sub(r'tvg-logo=\"[^\"]*\"', f'tvg-logo=\"{logo_url}\"', extinf)
-            print("AFTER:", new_extinf)
-
-            return new_extinf
-
+    # --- NO LOGO FOUND ---
+    print(f"[LOGO WARNING] No logo found for '{n}'")
     return extinf
 
 
