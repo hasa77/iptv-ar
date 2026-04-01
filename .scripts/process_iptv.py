@@ -26,6 +26,9 @@ LOGO_MAP_PATH = os.path.join('resources', 'logo_map.json')
 LOGOS_DIR = os.path.join('resources', 'logos')
 EXCLUDE_WORDS_PATH = os.path.join('resources', 'exclude_words.txt')
 
+# Global list to track external links
+EXTERNAL_LOGOS_TRACKER = []
+
 def strip_quality(s):
     return re.sub(r'(@\S+)|(\s*\(.*\))', '', s or '').strip()
     
