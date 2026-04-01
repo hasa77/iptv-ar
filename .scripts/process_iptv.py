@@ -100,35 +100,31 @@ def is_excluded(tvg_id, name=''):
         if word in c_id or word in c_name or word in n_id or word in n_name: return True
     return False
 
-def apply_logo(line, tvg_id, tvg_name):
-    n_id = norm(tvg_id)
-    n_name = norm(tvg_name)
-    BASE_RAW_URL = "https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/"
-    
-    logo_url = None
-    is_local = False
-    
-    # Check for local file
-    for ext in ['.png', '.jpg', '.svg']:
-        if os.path.exists(os.path.join(LOGOS_DIR, f"{n_id}{ext}")):
-            logo_url = f"{BASE_RAW_URL}{n_id}{ext}"
-            is_local = True
-            break
-            
-    # Fallback to Internet link
-    if not logo_url:
-        logo_url = LOGO_MAP.get(n_id) or LOGO_MAP.get(n_name)
-        if logo_url:
-            # Track that this channel is using an external link
-            EXTERNAL_LOGOS_TRACKER.append(f"{tvg_id or tvg_name} -> {logo_url}")
+def apply_logo(extinf, tid, tname):
+    n = norm(tid)
+    # DEBUG: See what the script is looking for
+    if n in ["cnbcarabiyasa", "cnbcarabiyaae", "enfairuzsa", "majidalmohandissa", "majidalmohandisssa", "rashidalmajedsa", "unewslb", "watantvae"]:
+        print(f"DEBUG: Processing {tid} -> Normalized as: '{n}'")
 
-    if logo_url:
-        if 'tvg-logo=' in line:
-            return re.sub(r'tvg-logo=["\'][^"\']*["\']', f'tvg-logo="{logo_url}"', line)
-        else:
-            return re.sub(r'(#EXTINF:[^,]*)', rf'\1 tvg-logo="{logo_url}"', line, count=1)
+    local_logo = os.path.join(LOGOS_DIR, f"{n}.png")
     
-    return line
+    # Check if we already have it
+    if os.path.exists(local_logo):
+        logo_url = f"https://raw.githubusercontent.com/{GITHUB_REPO}/main/{local_logo.replace(os.sep, '/')}"
+        return re.sub(r'tvg-logo=\"[^\"]*\"', f'tvg-logo=\"{logo_url}\"', extinf)
+    
+    # If not, try to download from map
+    ext_url = logo_map.get(n)
+    if ext_url:
+        print(f"DEBUG: Found URL in map for '{n}': {ext_url}")
+        success = download_logo(ext_url, local_logo)
+        if success:
+            print(f"DEBUG: Successfully downloaded {n}.png")
+            logo_url = f"https://raw.githubusercontent.com/{GITHUB_REPO}/main/{local_logo.replace(os.sep, '/')}"
+            return re.sub(r'tvg-logo=\"[^\"]*\"', f'tvg-logo=\"{logo_url}\"', extinf)
+        else:
+            print(f"DEBUG: DOWNLOAD FAILED for '{n}'")
+    return extinf
 
 def load_epg_channels():
     epg_exact, epg_norm = set(), {}
