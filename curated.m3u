@@ -211,7 +211,7 @@ https://dwamdstream103.akamaized.net/hls/live/2015526/dwstream103/master.m3u8
 https://dvrfl06.bozztv.com/astv-elousra/index.m3u8
 #EXTINF:-1 tvg-id="ElsharqTV.tr@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/elsharqtvtr.png" group-title="General",Elsharq TV (1080p) [Not 24/7]
 https://mn-nl.mncdn.com/elsharq_live/live/playlist.m3u8
-#EXTINF:-1 tvg-id="EN:.Fairuz.sa" tvg-logo="https://shahid.mbc.net/mediaObject/f809d51c-e83d-43c9-8236-78731c2216ad?type=png" group-title="Music",Fairuz (1080p)
+#EXTINF:-1 tvg-id="EN:.Fairuz.sa" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/fairuzsa.png" group-title="Music",Fairuz (1080p)
 https://shls-live-enc.edgenextcdn.net/out/v1/bba3ef00b71b470fa955d93a9ca8c277/index.m3u8
 #EXTINF:-1 tvg-id="FalastiniTV.ps@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/falastinitvps.png" group-title="Music",Falastini TV (1080p)
 https://rp.tactivemedia.com/palestiniantv_source/live/playlist.m3u8
