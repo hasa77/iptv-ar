@@ -75,11 +75,23 @@ def is_excluded(tvg_id, name=''):
     return False
 
 def apply_logo(line, tvg_id, tvg_name):
-    n_id, n_name = norm(tvg_id), norm(tvg_name)
+    # Normalize the IDs/Names
+    n_id = norm(tvg_id)
+    n_name = norm(tvg_name)
+    
+    # Try to find a logo match
     logo = LOGO_MAP.get(n_id) or LOGO_MAP.get(n_name)
+    
+    # DEBUG: Only print for the channel we are troubleshooting
+    if "almagd" in n_id or "almagd" in n_name:
+        print(f"DEBUG Almagd: ID={n_id}, Name={n_name}, LogoFound={logo is not None}")
+
     if logo:
-        if 'tvg-logo=' in line: return re.sub(r'tvg-logo="[^"]*"', f'tvg-logo="{logo}"', line)
-        else: return re.sub(r'(#EXTINF:[^,]*)', rf'\1 tvg-logo="{logo}"', line, count=1)
+        if 'tvg-logo="' in line:
+            return re.sub(r'tvg-logo="[^"]*"', f'tvg-logo="{logo}"', line)
+        else:
+            return re.sub(r'(#EXTINF:[^,]*)', rf'\1 tvg-logo="{logo}"', line, count=1)
+    
     return line
     
 def load_epg_channels():
