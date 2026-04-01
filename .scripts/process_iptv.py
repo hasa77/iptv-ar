@@ -26,23 +26,23 @@ LOGO_MAP_PATH = os.path.join('resources', 'logo_map.json')
 LOGOS_DIR = os.path.join('resources', 'logos')
 EXCLUDE_WORDS_PATH = os.path.join('resources', 'exclude_words.txt')
 
-# Global list to track external links
-EXTERNAL_LOGOS_TRACKER = []
-
 def strip_quality(s):
     return re.sub(r'(@\S+)|(\s*\(.*\))', '', s or '').strip()
-    
+
 def norm(s):
     s = strip_quality(s)
     return re.sub(r'[^a-z0-9]', '', s.lower())
-    
+
 def load_id_map():
-    if not os.path.exists(ID_MAP_PATH): 
+    if not os.path.exists(ID_MAP_PATH):
         print(f"⚠️ ID MAP NOT FOUND at {ID_MAP_PATH}")
         return {}
     try:
         with open(ID_MAP_PATH, 'r', encoding='utf-8') as f:
             return json.load(f)
+    except json.JSONDecodeError:
+        print(f"[ERROR] JSON decode failed for {ID_MAP_PATH}")
+        return {}
     except Exception as e:
         print(f"⚠️ Error loading ID_MAP: {e}")
         return {}
@@ -54,6 +54,9 @@ def load_logo_map():
     try:
         with open(LOGO_MAP_PATH, 'r', encoding='utf-8') as f:
             return json.load(f)
+    except json.JSONDecodeError:
+        print(f"[ERROR] JSON decode failed for {LOGO_MAP_PATH}")
+        return {}
     except Exception as e:
         print(f"⚠️ Error loading LOGO_MAP: {e}")
         return {}
@@ -95,16 +98,28 @@ def download_logo(url, local_path):
     """Downloads a single logo file."""
     try:
         r = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'}, timeout=10)
-        if r.status_code == 200:
-            with open(local_path, 'wb') as f:
-                f.write(r.content)
-            return True
+        if r.status_code != 200:
+            print(f"⚠️ Download failed ({r.status_code}) for {url}")
+            return False
+            
+        with open(local_path, 'wb') as f:
+            f.write(r.content)
+        return True
     except Exception as e:
-        print(f"      ⚠️ Download Error: {e}")
+        print(f"⚠️ Download Error: {e}")
     return False
 
 def apply_logo(extinf, tid, tname):
+    # --- Validate tvg-id ---
+    if not tid.strip():
+        print("[LOGO WARNING] Channel missing tvg-id, cannot assign logo")
+        return extinf
+
     n = norm(tid)
+
+    if not n:
+        print(f"[LOGO WARNING] Normalized ID empty for raw id '{tid}'")
+        return extinf
 
     # --- LOCAL LOGO CHECK ---
     found_path = None
@@ -115,6 +130,10 @@ def apply_logo(extinf, tid, tname):
             break
 
     if found_path:
+        if os.path.getsize(found_path) == 0:
+            print(f"[LOGO ERROR] Local logo file is empty or corrupted: {found_path}")
+            return extinf
+
         github_path = found_path.replace(os.sep, '/')
         logo_url = f"https://raw.githubusercontent.com/hasa77/iptv-ar/main/{github_path}"
         return re.sub(r'tvg-logo=\"[^\"]*\"', f'tvg-logo=\"{logo_url}\"', extinf)
@@ -139,75 +158,98 @@ def apply_logo(extinf, tid, tname):
 def load_epg_channels():
     epg_exact, epg_norm = set(), {}
     epg_programmes = defaultdict(list)
-    
+
     for url in EPG_SOURCES:
         print(f"📥 Loading EPG: {url.split('/')[-1]}")
         try:
             r = requests.get(url, timeout=60)
             content = gzip.decompress(r.content) if r.content[:2] == b'\x1f\x8b' else r.content
             content_str = content.decode('utf-8')
-            
+
+            # Detect malformed XML
+            try:
+                ET.fromstring(content_str)
+            except Exception:
+                print(f"[EPG ERROR] Malformed XML in {url}")
+                continue
+
             for match in re.finditer(r'<channel id="([^"]+)"', content_str):
                 cid = match.group(1)
                 epg_exact.add(cid)
                 epg_norm[norm(cid)] = cid
-            
+
             for match in re.finditer(r'<programme[^>]*>.*?</programme>', content_str, re.DOTALL):
                 prog_xml = match.group(0)
                 cid_match = re.search(r'channel="([^"]+)"', prog_xml)
                 if cid_match:
                     cid = cid_match.group(1)
                     epg_programmes[cid].append(prog_xml)
-            
+
             print(f"    ✅ Found {len(epg_exact)} channels")
         except Exception as e:
-            print(f"    ⚠️ Error: {e}")
-            
+            print(f"[EPG ERROR] Failed to load {url}: {e}")
+
     return epg_exact, epg_norm, epg_programmes
 
 def main():
     # 1. Download missing logos
     download_logos(LOGO_MAP)
-    
+
     # 2. Process EPG
     epg_exact, epg_norm, epg_progs = load_epg_channels()
     id_map_norm = {norm(k): v for k, v in ID_MAP.items()}
-    
+
     print(f"\n📡 Fetching M3U...")
-    r = requests.get(M3U_URL, timeout=30)
+
+    # --- M3U FETCH ERROR HANDLING ---
+    try:
+        r = requests.get(M3U_URL, timeout=30)
+        r.raise_for_status()
+    except Exception as e:
+        print(f"[ERROR] Failed to fetch M3U playlist: {e}")
+        return
+
     lines = r.text.splitlines()
     kept, epg_needed = [], set()
     matched_count = 0
-    
+
     i = 0
     while i < len(lines):
         line = lines[i]
         if line.startswith('#EXTINF'):
             extinf, url = line, lines[i+1] if i+1 < len(lines) else ''
             i += 2
-            
+
+            # Detect malformed EXTINF
+            if 'tvg-id="' not in extinf:
+                print(f"[M3U WARNING] EXTINF missing tvg-id: {extinf}")
+                continue
+
             tid = re.search(r'tvg-id="([^"]*)"', extinf).group(1) if 'tvg-id="' in extinf else ''
             tname = re.search(r'tvg-name="([^"]*)"', extinf).group(1) if 'tvg-name="' in extinf else ''
-            
-            if is_excluded(tid, tname): continue
+
+            if is_excluded(tid, tname):
+                continue
             
             n = norm(tid)
             epg_id = id_map_norm.get(n) or (tid if tid in epg_exact else epg_norm.get(n))
-            
+
             if epg_id:
                 epg_needed.add(epg_id)
                 extinf = re.sub(r'tvg-id="[^"]*"', f'tvg-id="{epg_id}"', extinf)
                 matched_count += 1
-            
+
             # Apply logo (Local first, then Map)
             extinf = apply_logo(extinf, tid, tname)
             kept.append((extinf, url))
-        else: i += 1
+        else:
+            i += 1
 
     # Save Output
     with open(M3U_OUTPUT, 'w', encoding='utf-8') as f:
         f.write('#EXTM3U\n')
-        for extinf, url in kept: f.write(f"{extinf}\n{url}\n")
+        for extinf, url in kept:
+            f.write(f"{extinf}\n{url}\n")
 
     with open(EPG_OUTPUT, 'w', encoding='utf-8') as f:
         f.write('<?xml version="1.0" encoding="utf-8"?>\n<tv>\n')
@@ -217,7 +259,7 @@ def main():
             for prog in epg_progs.get(eid, []):
                 f.write(f'  {prog}\n')
         f.write('</tv>\n')
-    
+
     print(f"\n✅ Created {M3U_OUTPUT} ({len(kept)} channels)")
     print(f"✅ Created {EPG_OUTPUT} ({matched_count} channels with EPG data)")
 
