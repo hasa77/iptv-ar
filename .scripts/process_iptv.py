@@ -83,8 +83,8 @@ def apply_logo(line, tvg_id, tvg_name):
     logo = LOGO_MAP.get(n_id) or LOGO_MAP.get(n_name)
     
     # DEBUG: Only print for the channel we are troubleshooting
-    if "almagd" in n_id or "almagd" in n_name:
-        print(f"DEBUG Almagd: ID={n_id}, Name={n_name}, LogoFound={logo is not None}")
+    if any(word in n_id or word in n_name for word in ["almagd", "almahriah"]):
+        print(f"DEBUG {n_id}: LogoFound={logo is not None}")
 
     if logo:
         if 'tvg-logo="' in line:
