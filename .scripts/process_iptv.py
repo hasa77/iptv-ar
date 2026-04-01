@@ -100,30 +100,47 @@ def is_excluded(tvg_id, name=''):
         if word in c_id or word in c_name or word in n_id or word in n_name: return True
     return False
 
+def download_logo(url, local_path):
+    """Downloads a single logo file."""
+    try:
+        r = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'}, timeout=10)
+        if r.status_code == 200:
+            with open(local_path, 'wb') as f:
+                f.write(r.content)
+            return True
+    except Exception as e:
+        print(f"      ⚠️ Download Error: {e}")
+    return False
+
 def apply_logo(extinf, tid, tname):
     n = norm(tid)
-    # DEBUG: See what the script is looking for
-    if n in ["cnbcarabiyasa", "cnbcarabiyaae", "enfairuzsa", "majidalmohandissa", "majidalmohandisssa", "rashidalmajedsa", "unewslb", "watantvae"]:
-        print(f"DEBUG: Processing {tid} -> Normalized as: '{n}'")
+    
+    # DEBUG: Tracking the 6 problematic channels
+    targets = ["cnbcarabiyaae", "enfairuzsa", "majidalmohandissa", "rashidalmajedsa", "unewslb", "watantvae"]
+    
+    if n in targets:
+        print(f"DEBUG: Processing '{tid}' -> Looking for key: '{n}'")
 
     local_logo = os.path.join(LOGOS_DIR, f"{n}.png")
     
-    # Check if we already have it
+    # 1. Check if file already exists locally
     if os.path.exists(local_logo):
-        logo_url = f"https://raw.githubusercontent.com/hasa77/iptv-ar/main/{local_logo.replace(os.sep, '/')}"
+        logo_url = f"https://raw.githubusercontent.com/{GITHUB_REPO}/main/{local_logo.replace(os.sep, '/')}"
         return re.sub(r'tvg-logo=\"[^\"]*\"', f'tvg-logo=\"{logo_url}\"', extinf)
     
-    # If not, try to download from map
-    ext_url = logo_map.get(n)
+    # 2. Try to download from LOGO_MAP (Fixed variable name to LOGO_MAP)
+    ext_url = LOGO_MAP.get(n)
     if ext_url:
-        print(f"DEBUG: Found URL in map for '{n}': {ext_url}")
-        success = download_logo(ext_url, local_logo)
-        if success:
-            print(f"DEBUG: Successfully downloaded {n}.png")
-            logo_url = f"https://raw.githubusercontent.com/hasa77/iptv-ar/main/{local_logo.replace(os.sep, '/')}"
+        if n in targets: print(f"      -> Match found in map! Attempting download...")
+        if download_logo(ext_url, local_logo):
+            if n in targets: print(f"      -> SUCCESS: Saved {n}.png")
+            logo_url = f"https://raw.githubusercontent.com/{GITHUB_REPO}/main/{local_logo.replace(os.sep, '/')}"
             return re.sub(r'tvg-logo=\"[^\"]*\"', f'tvg-logo=\"{logo_url}\"', extinf)
         else:
-            print(f"DEBUG: DOWNLOAD FAILED for '{n}'")
+            if n in targets: print(f"      -> FAILURE: Link in map did not download.")
+    else:
+        if n in targets: print(f"      -> FAILURE: Key '{n}' NOT found in logo_map.json")
+            
     return extinf
 
 def load_epg_channels():
