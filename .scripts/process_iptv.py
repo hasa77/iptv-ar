@@ -59,27 +59,18 @@ def load_logo_map():
         return {}
 
 def download_logos(logo_map):
-    """Downloads logos from the map if they don't exist locally."""
     if not os.path.exists(LOGOS_DIR):
         os.makedirs(LOGOS_DIR)
         
     for n_id, url in logo_map.items():
-        # Determine extension
-        ext = '.png'
-        if '.svg' in url.lower(): ext = '.svg'
-        elif '.jpg' in url.lower() or '.jpeg' in url.lower(): ext = '.jpg'
+        if '.svg' in url.lower(): continue  # Skip SVG files
         
+        ext = '.jpg' if ('.jpg' in url.lower() or '.jpeg' in url.lower()) else '.png'
         local_file = os.path.join(LOGOS_DIR, f"{n_id}{ext}")
         
         if not os.path.exists(local_file):
             print(f"📥 Downloading logo: {n_id}{ext}")
-            try:
-                r = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'}, timeout=10)
-                if r.status_code == 200:
-                    with open(local_file, 'wb') as f:
-                        f.write(r.content)
-            except Exception as e:
-                print(f"⚠️ Failed to download {n_id}: {e}")
+            download_logo(url, local_file)
 
 def load_exclude_words():
     if not os.path.exists(EXCLUDE_WORDS_PATH): return []
@@ -115,31 +106,33 @@ def download_logo(url, local_path):
 def apply_logo(extinf, tid, tname):
     n = norm(tid)
     
-    # DEBUG: Tracking the 6 problematic channels
-    targets = ["cnbcarabiyaae", "enfairuzsa", "majidalmohandissa", "rashidalmajedsa", "unewslb", "watantvae"]
-    
-    if n in targets:
-        print(f"DEBUG: Processing '{tid}' -> Looking for key: '{n}'")
+    # Check for existing local file (.png first, then .jpg)
+    found_local = None
+    for ext in ['.png', '.jpg', '.jpeg']:
+        potential_path = os.path.join(LOGOS_DIR, f"{n}{ext}")
+        if os.path.exists(potential_path):
+            found_local = potential_path
+            break
 
-    local_logo = os.path.join(LOGOS_DIR, f"{n}.png")
-    
-    # 1. Check if file already exists locally
-    if os.path.exists(local_logo):
-        logo_url = f"https://raw.githubusercontent.com/hasa77/iptv-ar/main/{local_logo.replace(os.sep, '/')}"
+    # 1. Use local file if found
+    if found_local:
+        logo_url = f"https://raw.githubusercontent.com/hasa77/iptv-ar/main/{found_local.replace(os.sep, '/')}"
         return re.sub(r'tvg-logo=\"[^\"]*\"', f'tvg-logo=\"{logo_url}\"', extinf)
     
-    # 2. Try to download from LOGO_MAP (Fixed variable name to LOGO_MAP)
+    # 2. Try downloading from map
     ext_url = LOGO_MAP.get(n)
     if ext_url:
-        if n in targets: print(f"      -> Match found in map! Attempting download...")
-        if download_logo(ext_url, local_logo):
-            if n in targets: print(f"      -> SUCCESS: Saved {n}.png")
-            logo_url = f"https://raw.githubusercontent.com/hasa77/iptv-ar/main/{local_logo.replace(os.sep, '/')}"
+        # Skip if it's an SVG as requested
+        if '.svg' in ext_url.lower():
+            return extinf
+            
+        # Determine extension (.jpg for Watan, .png for others)
+        ext = '.jpg' if ('.jpg' in ext_url.lower() or '.jpeg' in ext_url.lower()) else '.png'
+        local_path = os.path.join(LOGOS_DIR, f"{n}{ext}")
+        
+        if download_logo(ext_url, local_path):
+            logo_url = f"https://raw.githubusercontent.com/hasa77/iptv-ar/main/{local_path.replace(os.sep, '/')}"
             return re.sub(r'tvg-logo=\"[^\"]*\"', f'tvg-logo=\"{logo_url}\"', extinf)
-        else:
-            if n in targets: print(f"      -> FAILURE: Link in map did not download.")
-    else:
-        if n in targets: print(f"      -> FAILURE: Key '{n}' NOT found in logo_map.json")
             
     return extinf
 
