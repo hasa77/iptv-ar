@@ -107,7 +107,7 @@ https://5d94523502c2d.streamlock.net/home/mystream/playlist.m3u8
 https://5d94523502c2d.streamlock.net/alsharqiyalive/mystream/playlist.m3u8
 #EXTINF:-1 tvg-id="AlalamSyria.ir" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/alalamnewschannelsyriasy.png" group-title="News",Alalam News Channel Syria (1080p)
 https://live2.alalam.ir/live/Alalam/index.m3u8
-#EXTINF:-1 tvg-id="AlerthAlnabawi.jo" tvg-logo="https://i.imgur.com/iYibJxK.png" group-title="Religious",Alerth Alnabawi Channel (576p)
+#EXTINF:-1 tvg-id="AlerthAlnabawi.jo" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/alerthalnabawichanneljo.png" group-title="Religious",Alerth Alnabawi Channel (576p)
 http://82.212.74.2:8000/live/7307.m3u8
 #EXTINF:-1 tvg-id="AlhaqeqaAldawlia.jo@SD" tvg-logo="https://www.lyngsat.com/logo/tv/aa/alhaqeqa-aldawlia-jo.png" group-title="News",Alhaqeqa Aldawlia (1080p) [Not 24/7]
 https://ghaasiflu.online/alhqeqa/index.m3u8
@@ -293,19 +293,19 @@ https://kancdn.medonecdn.net/livehls/oil/kancdn-live/live/makan/live.livx/playli
 https://media2.streambrothers.com:1936/8122/8122/playlist.m3u8
 #EXTINF:-1 tvg-id="Maraya.sa" tvg-logo="https://shahid.mbc.net/mediaObject/d089a559-4f41-4def-a786-f98fcfbf0464?height=auto&width=288&croppingPoint=&version=1&type=png" group-title="Series",Maraya (1080p)
 https://shls-live-enc.edgenextcdn.net/out/v1/a4a39d8e92e34b0780ca602270a59512/index.m3u8
-#EXTINF:-1 tvg-id="MarinaTV.kw@SD" tvg-logo="https://i.imgur.com/F2PzEaw.png" group-title="Music",Marina TV (1080p)
+#EXTINF:-1 tvg-id="MarinaTV.kw@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/0d/MarinaTV-Logo-2023.jpg" group-title="Music",Marina TV (1080p)
 https://ffs.gulfsat.com/Marina-TV-HD/index.m3u8
 #EXTINF:-1 tvg-id="MBC.1.ae" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/mbc1ae.png" group-title="General",MBC 1 (1080p)
 https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-1/15cf99af5de54063fdabfefe66adc075/index.m3u8
 #EXTINF:-1 tvg-id="EN:.MBC1.Masr.sa" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/mbc1egypteg.png" group-title="General",MBC 1 Egypt (1080p)
 https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-1-na/eec141533c90dd34722c503a296dd0d8/index.m3u8
-#EXTINF:-1 tvg-id="MBC3USA.us@SD" tvg-logo="https://i.imgur.com/PVt8OPN.png" group-title="Kids",MBC 3 USA (1080p) [Geo-blocked]
+#EXTINF:-1 tvg-id="MBC3USA.us@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/MBC_3_Logo.svg/1280px-MBC_3_Logo.svg.png" group-title="Kids",MBC 3 USA (1080p) [Geo-blocked]
 https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-3-usa/5d58265a862a476dc7f97694addb5ded/index.m3u8
 #EXTINF:-1 tvg-id="MBC.4.ae" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/mbc4ae.png" group-title="Entertainment",MBC 4 (1080p)
 https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-4/24f134f1cd63db9346439e96b86ca6ed/index.m3u8
 #EXTINF:-1 tvg-id="MBC5.ae@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/mbc5ae.png" group-title="Family",MBC 5 (1080p)
 https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-5/ee6b000cee0629411b666ab26cb13e9b/index.m3u8
-#EXTINF:-1 tvg-id="MBC.Bollywood.ae" tvg-logo="https://i.imgur.com/TTAGFHG.png" group-title="Movies",MBC Bollywood (1080p) [Geo-blocked]
+#EXTINF:-1 tvg-id="MBC.Bollywood.ae" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/MBC_Bollywood_Logo.svg/1280px-MBC_Bollywood_Logo.svg.png" group-title="Movies",MBC Bollywood (1080p) [Geo-blocked]
 https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-bollywood/546eb40d7dcf9a209255dd2496903764/index.m3u8
 #EXTINF:-1 tvg-id="MBC.Drama.ae" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/mbcdramaae.png" group-title="Entertainment",MBC Drama (1080p)
 https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-drama/2c28a458e2f3253e678b07ac7d13fe71/index.m3u8
@@ -315,7 +315,7 @@ https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-drama-usa/ea2f5db904aff22
 https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-iraq/e38c44b1b43474e1c39cb5b90203691e/index.m3u8
 #EXTINF:-1 tvg-id="MBC.Masr.HD.ae" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/mbcmasreg.png" group-title="General",MBC Masr (1080p)
 https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-masr/956eac069c78a35d47245db6cdbb1575/index.m3u8
-#EXTINF:-1 tvg-id="MBCMasr2.eg" tvg-logo="https://i.imgur.com/KHo7Gtn.png" group-title="General",MBC Masr 2 (1080p)
+#EXTINF:-1 tvg-id="MBCMasr2.eg" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/MBC_Masr_2_Logo.svg/960px-MBC_Masr_2_Logo.svg.png" group-title="General",MBC Masr 2 (1080p)
 https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-masr-2/754931856515075b0aabf0e583495c68/index.m3u8
 #EXTINF:-1 tvg-id="MBCMasrDrama.sa@SD" tvg-logo="https://media0070.elcinema.com/tvguide/1399_1.png" group-title="Series",MBC Masr Drama (1080p)
 https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-masr-drama/567b703c19ede6598222de81b0e4508b/index.m3u8
@@ -323,11 +323,11 @@ https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-masr-drama/567b703c19ede6
 https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-masr-usa/cd8d40acdab28aac0582faa3bd3983f1/index.m3u8
 #EXTINF:-1 tvg-id="EN:.MBCPlus.Drama.sa" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/mbcplusdramasa.png" group-title="Movies",MBC+ Drama (1080p)
 https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-plus-drama/e37251ec2aac8f6c98f75cd0fa37cd28/index.m3u8
-#EXTINF:-1 tvg-id="Medi1TVArabic.ma@SD" tvg-logo="https://i.imgur.com/3YsZPY6.jpeg" group-title="News",Medi 1 TV Arabic (720p)
+#EXTINF:-1 tvg-id="Medi1TVArabic.ma@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/c/ca/Medi_1_TV_logo.png" group-title="News",Medi 1 TV Arabic (720p)
 https://streaming2.medi1tv.com/live/smil:medi1ar.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="MekameleenTV.tr@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/mekameleentvtr.png" group-title="News",Mekameleen TV (1080p)
 https://mn-nl.mncdn.com/mekameleen/smil:mekameleentv.smil/playlist.m3u8
-#EXTINF:-1 tvg-id="MelodyHits.ca@SD" tvg-logo="https://i.imgur.com/OOMkVrU.png" group-title="Music",Melody Hits (576p)
+#EXTINF:-1 tvg-id="MelodyHits.ca@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/c/c1/Melody_Hits.png" group-title="Music",Melody Hits (576p)
 https://mumt03.tangotv.in/MELODYHITS/index.m3u8
 #EXTINF:-1 tvg-id="MixHollywood.eg@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/mixhollywoodeg.png" group-title="Movies",Mix Hollywood (1080p)
 https://ml-pull-hwc.myco.io/MixTV/hls/index.m3u8
@@ -345,17 +345,17 @@ https://shls-live-enc.edgenextcdn.net/out/v1/45ad6fbe1f7149ad9f05f8aefc38f6c0/in
 http://31.14.40.237:1935/live/Nabaa/playlist.m3u8
 #EXTINF:-1 tvg-id="NablusTV.ps@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/nablustvps.png" group-title="News",Nablus TV (1080p)
 https://htvint.mada.ps/nabluslive/index.m3u8
-#EXTINF:-1 tvg-id="OmanTVCultural.om@SD" tvg-logo="https://i.imgur.com/b38wNPK.png" group-title="Culture",Oman Althakafia (1080p)
+#EXTINF:-1 tvg-id="OmanTVCultural.om@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/c/c4/Sultanate_of_Oman_Television_logo.jpg" group-title="Culture",Oman Althakafia (1080p)
 https://partwota.cdn.mgmlcdn.com/omcultural/smil:omcultural.stream.smil/chunklist.m3u8
 #EXTINF:-1 tvg-id="OmanTVMubashir.om@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/omantvmubashirom.png" group-title="News",Oman Mubashir (1080p)
 https://partwota.cdn.mgmlcdn.com/omlive/smil:omlive.stream.smil/chunklist.m3u8
 #EXTINF:-1 tvg-id="OmanSportsTV.om@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/omansportstvom.png" group-title="Sports",Oman Sports TV (1080p) [Not 24/7]
 https://partneta.cdn.mgmlcdn.com/omsport/smil:omsport.stream.smil/chunklist.m3u8
-#EXTINF:-1 tvg-id="OmanTV.om@SD" tvg-logo="https://i.imgur.com/rBftT9x.png" group-title="General",Oman TV (1080p)
+#EXTINF:-1 tvg-id="OmanTV.om@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/c/c4/Sultanate_of_Oman_Television_logo.jpg" group-title="General",Oman TV (1080p)
 https://partneta.cdn.mgmlcdn.com/omantv/smil:omantv.stream.smil/chunklist.m3u8
-#EXTINF:-1 tvg-id="OneTV.lb@SD" tvg-logo="https://i.imgur.com/O4DuR9G.png" group-title="Music",One TV (720p) [Not 24/7]
+#EXTINF:-1 tvg-id="OneTV.lb@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/One_TV_Logo.svg/960px-One_TV_Logo.svg.png" group-title="Music",One TV (720p) [Not 24/7]
 https://hms.pfs.gdn/v1/broadcast/one/playlist.m3u8
-#EXTINF:-1 tvg-id="OTV.lb@SD" tvg-logo="https://i.imgur.com/toxFMeY.png" group-title="General",OTV (1080p)
+#EXTINF:-1 tvg-id="OTV.lb@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/OTV_%28logo%29.svg/1280px-OTV_%28logo%29.svg.png" group-title="General",OTV (1080p)
 https://otv.hibridcdn.net/otv/tv_abr/playlist.m3u8
 #EXTINF:-1 tvg-id="Palestinetv.ir@SD" tvg-logo="https://i.ibb.co/svrZNZTX/Palestine.png" group-title="General",Palestine
 https://ncdn.telewebion.ir/palestine/live/playlist.m3u8
@@ -381,13 +381,13 @@ https://live.kwikmotion.com/qtv2live/qtv2.smil/playlist.m3u8
 https://shls-live-enc.edgenextcdn.net/out/v1/ea4275b6dc0840c198c17f6dc6f1ec49/index.m3u8
 #EXTINF:-1 tvg-id="RajeenTV.ps@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/rajeentvps.png" group-title="Undefined",Rajeen TV (1080p) [Not 24/7]
 https://mn-nl.mncdn.com/palabroad/live/playlist.m3u8
-#EXTINF:-1 tvg-id="RASDTV.eh@SD" tvg-logo="https://i.imgur.com/9Pb8806.png" group-title="General",RASD TV (1080i)
+#EXTINF:-1 tvg-id="RASDTV.eh@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/rasdtveh.jpg" group-title="General",RASD TV (1080i)
 https://cloud.streamingconnect.tv/hls/rasdtv2/rasdtv.m3u8
 #EXTINF:-1 tvg-id="RashidAlMajed.sa@SD" tvg-logo="https://assets.mbcmood.com/channels/1720177618Rashid%20AlMajed.webp" group-title="Music",Rashid AlMajed (1080p)
 https://dphwv2ufgnfsq.cloudfront.net/out/v1/59cd80dfe93a479eb8b4d79bc6f225ca/index.m3u8
 #EXTINF:-1 tvg-id="Raya1.ps@SD" tvg-logo="https://www.rayatv.ps/images/logo_tv.png" group-title="Undefined",Raya 1 (1080p)
 https://htvmada.mada.ps:4443/raya/index.m3u8
-#EXTINF:-1 tvg-id="RedTVLebanon.lb@HD" tvg-logo="https://i.imgur.com/bWwY885.png" group-title="News",Red TV Lebanon (1080p)
+#EXTINF:-1 tvg-id="RedTVLebanon.lb@HD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/1f/REDTV_Logo.jpg/250px-REDTV_Logo.jpg" group-title="News",Red TV Lebanon (1080p)
 https://live.kwikmotion.com/redtvlive/redtv.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="RotanaAflamPlus.sa@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/rotanaaflamplussa.png" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0" group-title="Undefined",Rotana Aflam+ (1080p)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0
@@ -399,13 +399,13 @@ https://live.kwikmotion.com/redtvlive/redtv.smil/playlist.m3u8
 #EXTVLCOPT:http-referrer=https://rotana.net/
 #EXTINF:-1 tvg-id="RotanaClip.sa@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/rotanaclipsa.png" http-referrer="https://rotana.net/" group-title="Undefined",Rotana Clip (1080p) [Geo-blocked]
 #EXTVLCOPT:http-referrer=https://rotana.net/
-#EXTINF:-1 tvg-id="RotanaComedy.sa@SD" tvg-logo="https://i.imgur.com/IlT8U6S.png" http-referrer="https://rotana.net/" group-title="Comedy",Rotana Comedy (1080p) [Geo-blocked]
+#EXTINF:-1 tvg-id="RotanaComedy.sa@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/1/14/Rotana_Comedy.png" http-referrer="https://rotana.net/" group-title="Comedy",Rotana Comedy (1080p) [Geo-blocked]
 #EXTVLCOPT:http-referrer=https://rotana.net/
 #EXTINF:-1 tvg-id="RotanaDrama.sa@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/rotanadramasa.png" http-referrer="https://rotana.net/" group-title="Series",Rotana Drama (1080p) [Geo-blocked]
 #EXTVLCOPT:http-referrer=https://rotana.net/
 #EXTINF:-1 tvg-id="RotanaKhalijia.sa" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/rotanakhalijiasa.png" http-referrer="https://rotana.net/" group-title="Music",Rotana Khalijia (1080p) [Geo-blocked]
 #EXTVLCOPT:http-referrer=https://rotana.net/
-#EXTINF:-1 tvg-id="RotanaMusic.sa@SD" tvg-logo="https://i.imgur.com/2zFQbQi.png" http-referrer="https://rotana.net/" group-title="Music",Rotana Music (1080p) [Geo-blocked]
+#EXTINF:-1 tvg-id="RotanaMusic.sa@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/8/89/Rotana_Mousica.png" http-referrer="https://rotana.net/" group-title="Music",Rotana Music (1080p) [Geo-blocked]
 #EXTVLCOPT:http-referrer=https://rotana.net/
 #EXTINF:-1 tvg-id="RoyaComedy.jo@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/royacomedyjo.png" group-title="Comedy",Roya Comedy (1080p)
 https://playlist.fasttvcdn.com/pl/toa2uuhhygheuly7xtuqrg/roya-comedy/playlist.m3u8
@@ -477,7 +477,7 @@ https://mn-nl.mncdn.com/utviraqi2/64c80359/index.m3u8
 https://svs.itworkscdn.net/vdltvlive/vdltv.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="Wanasah.ae@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/wanasahae.png" group-title="Music",Wanasah (1080p)
 https://shd-gcp-live.edgenextcdn.net/live/bitmovin-wanasah/13e82ea6232fa647c43b26e8a41f173d/index.m3u8
-#EXTINF:-1 tvg-id="Watan.TV.ae" tvg-logo="https://i.imgur.com/pZyKaUH.png" group-title="General",Watan TV (1080p)
+#EXTINF:-1 tvg-id="Watan.TV.ae" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/6/68/Watan_tv_logo.jpg" group-title="General",Watan TV (1080p)
 https://rp.tactivemedia.com/watantv_source/live/playlist.m3u8
 #EXTINF:-1 tvg-id="WatarTV.ps@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/watartvps.png" group-title="General",Watar TV (720p) [Not 24/7]
 http://htvint.mada.ps:8889/orient/index.m3u8
