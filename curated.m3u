@@ -17,7 +17,7 @@ http://167.172.161.13/hls/feedspare/6udfi7v8a3eof6nlps6e9ovfrs65c7l7.m3u8
 https://live.alarabiya.net/alarabiapublish/alarabiya.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="Al.Arabiya.Business.ae" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/alarabiyabusinessae.png" group-title="Business",Al Arabiya Business (1080p)
 https://live.alarabiya.net/alarabiapublish/aswaaq.smil/playlist.m3u8
-#EXTINF:-1 tvg-id="Al.Arabiya.HD.ae" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/8/8b/Al_Arabiya_-Logo_%281%29.png" group-title="Documentary;News",Al Arabiya Programs (1280p)
+#EXTINF:-1 tvg-id="Al.Arabiya.HD.ae" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/alarabiyaprogramsae.png" group-title="Documentary;News",Al Arabiya Programs (1280p)
 https://live.alarabiya.net/alarabiapublish/aaprograms.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="AlAraby.qa" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/9/96/ALARABY_ARABIC.png" group-title="News",Al Araby TV (1080p)
 https://live.kwikmotion.com/alaraby1live/alaraby_abr/playlist.m3u8
@@ -35,9 +35,9 @@ https://cdn.catiacast.video/abr/8d2ffb0aba244e8d9101a9488a7daa05/playlist.m3u8
 https://cdn.catiacast.video/abr/78054972db7708422595bc96c6e024ac/playlist.m3u8
 #EXTINF:-1 tvg-id="AlIttihadTV.lb@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/alittihadtvlb.png" group-title="General",Al Ittihad (552p) [Not 24/7]
 http://185.105.4.151:8080/_defapp_/ittihad/index.m3u8
-#EXTINF:-1 tvg-id="AlJadeed.lb@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/1/17/Al_Jadeed.PNG" group-title="General",Al Jadeed (1080p)
+#EXTINF:-1 tvg-id="AlJadeed.lb@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/aljadeedlb.png" group-title="General",Al Jadeed (1080p)
 http://185.9.2.18/chid_391/mono.m3u8
-#EXTINF:-1 tvg-id="Al.Jazeera.HD.ae" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/8/8f/Al_Jazeera_Media_Network_Logo.svg/1280px-Al_Jazeera_Media_Network_Logo.svg.png" group-title="News",Al Jazeera (1080p)
+#EXTINF:-1 tvg-id="Al.Jazeera.HD.ae" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/aljazeeraqa.svg" group-title="News",Al Jazeera (1080p)
 https://live-hls-apps-aja-fa.getaj.net/AJA/01.m3u8
 #EXTINF:-1 tvg-id="Al.Jazeera.Documentary.HD.ae" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/aljazeeradocumentaryqa.png" group-title="Documentary",Al Jazeera Documentary (1080p) [Geo-blocked]
 https://live-hls-apps-ajd-fa.getaj.net/AJD/index.m3u8
@@ -51,9 +51,9 @@ https://live-hls-apps-ajm2-fa.getaj.net/AJM2/index.m3u8
 https://bucharest.zeuscdn724.com/lb0/CH-AL-MA/index.m3u8
 #EXTINF:-1 tvg-id="AlMadina.ps@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/almadinaps.png" group-title="Undefined",Al Madina (720p)
 https://streaming.zaytonatube.com:8081/AlMadinatv/almadina21/index.m3u8
-#EXTINF:-1 tvg-id="Al.Mamlaka.TV.HD.ae" tvg-logo="https://upload.wikimedia.org/wikipedia/en/8/8a/Al-Mamlaka_TV_logo.png" group-title="News",Al Mamlaka TV (1080p)
+#EXTINF:-1 tvg-id="Al.Mamlaka.TV.HD.ae" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/almamlakatvjo.png" group-title="News",Al Mamlaka TV (1080p)
 https://bcovlive-a.akamaihd.net/4109c7ba30fd4a44ad9afe917c67a8c8/eu-central-1/6415809151001/playlist_dvr.m3u8
-#EXTINF:-1 tvg-id="AlManar.lb@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/8/81/New_Al-Manar_logo.PNG" group-title="News",Al Manar (576p) [Not 24/7]
+#EXTINF:-1 tvg-id="AlManar.lb@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/almanarlb.png" group-title="News",Al Manar (576p) [Not 24/7]
 https://edge.fastpublish.me/live/index.m3u8
 #EXTINF:-1 tvg-id="AlMasarTV.ly@SD" tvg-logo="https://play-lh.googleusercontent.com/FHPrsr391mPFqKfTq6ZdvWPZNVfsZeTAVQ8rjQF-NosnRdNipUy5xa43RWkiF4tGcQU" group-title="News",Al Masar TV (576p)
 https://starmenajo.com/hls/almasar/index.m3u8
@@ -119,7 +119,7 @@ https://mbn-ingest-worldsafe.akamaized.net/hls/live/2038900/MBN_Alhurra_Worldsaf
 https://mbn-ingest-worldsafe.akamaized.net/hls/live/2038899/MBN_Iraq_Worldsafe_HLS/master.m3u8
 #EXTINF:-1 tvg-id="AlImanTV.lb@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/alimantvlb.png" group-title="Religious",Aliman TV (240p) [Not 24/7]
 https://svs.itworkscdn.net/alimanlive/imantv.smil/playlist.m3u8
-#EXTINF:-1 tvg-id="AlistiqamaTV.om@SD" tvg-logo="https://www.istiqama.tv/wp-content/uploads/2024/04/channel_logo-1024x557.png" group-title="Religious",Alistiqama TV (576p)
+#EXTINF:-1 tvg-id="AlistiqamaTV.om@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/alistiqamatvom.png" group-title="Religious",Alistiqama TV (576p)
 https://jmc-live.ercdn.net/alistiqama/alistiqama.m3u8
 #EXTINF:-1 tvg-id="Alkass_5_AR.bein" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/alkassfiveqa.png" group-title="Sports",Alkass Five (1080p)
 https://liveeu-gcp.alkassdigital.net/alkass5-p/main.m3u8
@@ -141,7 +141,7 @@ https://liveeu-gcp.alkassdigital.net/alkass3-p/main.m3u8
 https://liveeu-gcp.alkassdigital.net/alkass2-p/main.m3u8
 #EXTINF:-1 tvg-id="AlmagdTVMiddleEast.us@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/almagdtvmiddleeastus.png" group-title="Religious",Almagd TV Middle East (1080p) [Not 24/7]
 https://597f64b67707a.streamlock.net/almagd.tv/almagd.smil/playlist.m3u8
-#EXTINF:-1 tvg-id="AlmahriahTV.tr@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/ar/0/04/%D9%82%D9%86%D8%A7%D8%A9_%D8%A7%D9%84%D9%85%D9%87%D8%B1%D9%8A%D8%A9.png" group-title="News",Almahriah TV (576p)
+#EXTINF:-1 tvg-id="AlmahriahTV.tr@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/almahriahtvtr.png" group-title="News",Almahriah TV (576p)
 https://starmenajo.com/hls/almahriah/index.m3u8
 #EXTINF:-1 tvg-id="AlQanat9.tr@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/alqanat9tr.png" group-title="News",Alqanat9 TV (1080p)
 https://cdn.bestream.io:19360/alqanat9/alqanat9.m3u8
@@ -389,7 +389,7 @@ https://dphwv2ufgnfsq.cloudfront.net/out/v1/59cd80dfe93a479eb8b4d79bc6f225ca/ind
 https://htvmada.mada.ps:4443/raya/index.m3u8
 #EXTINF:-1 tvg-id="RedTVLebanon.lb@HD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/1f/REDTV_Logo.jpg/250px-REDTV_Logo.jpg" group-title="News",Red TV Lebanon (1080p)
 https://live.kwikmotion.com/redtvlive/redtv.smil/playlist.m3u8
-#EXTINF:-1 tvg-id="RotanaAflamPlus.sa@SD" tvg-logo="https://www.ethnicchannels.com/images/channeldetail/rotana-aflam/rotana-aflam.png" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0" group-title="Undefined",Rotana Aflam+ (1080p)
+#EXTINF:-1 tvg-id="RotanaAflamPlus.sa@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/rotanaaflamplussa.png" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0" group-title="Undefined",Rotana Aflam+ (1080p)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0
 #EXTINF:-1 tvg-id="RotanaCinemaEgypt.eg@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/rotanacinemaegypteg.png" http-referrer="https://rotana.net/" group-title="Movies",Rotana Cinema Egypt (1080p) [Geo-blocked]
 #EXTVLCOPT:http-referrer=https://rotana.net/
