@@ -311,12 +311,22 @@ def main():
                 cleaned = norm(cleaned)
                 epg_id = epg_norm.get(cleaned)
             
-            # 6. Fuzzy match (safe cutoff 0.85)
+            # 6. Fuzzy match
             if not epg_id:
                 import difflib
-                best = difflib.get_close_matches(n, epg_norm.keys(), n=1, cutoff=0.85)
-                if best:
-                    epg_id = epg_norm[best[0]]
+            
+                # Normalized ID must be long enough (avoid "ajm", "wst", "hqq")
+                if len(n) >= 4 and tname:
+                    best = difflib.get_close_matches(n, epg_norm.keys(), n=1, cutoff=0.93)
+            
+                    if best:
+                        # Calculate similarity ratio
+                        ratio = difflib.SequenceMatcher(None, n, best[0]).ratio()
+            
+                        # Only accept if similarity is truly high
+                        if ratio >= 0.93:
+                            epg_id = epg_norm[best[0]]
+
             
             # 7. Match by logo filename
             if not epg_id:
