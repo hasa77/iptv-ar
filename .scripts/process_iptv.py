@@ -233,7 +233,7 @@ def main():
             lower_tid = (tid or "").lower()
             lower_tname = (tname or "").lower()
             
-            if any(x in lower_tid or x in lower_tname for x in ["mbc 1", "mbc1", "mbc 1 egypt", "mbc1 egypt", "otv"]):
+            if any(x in lower_tid or x in lower_tname for x in ["mbc 1", "mbc1", "mbc 1 egypt", "mbc1 egypt"]):
                 print("DEBUG CHANNEL:")
                 print("  RAW tid  :", tid)
                 print("  RAW tname:", tname)
@@ -303,7 +303,7 @@ def main():
                 epg_needed.add(epg_id)
 
             #######debugging#########
-            if any(x in lower_tid or x in lower_tname for x in ["mbc 1", "mbc1", "mbc 1 egypt", "mbc1 egypt", "otv"]):
+            if any(x in lower_tid or x in lower_tname for x in ["mbc 1", "mbc1", "mbc 1 egypt", "mbc1 egypt"]):
                 print("  -> FINAL epg_id:", epg_id)
                 print("-" * 40)
             ##########################
