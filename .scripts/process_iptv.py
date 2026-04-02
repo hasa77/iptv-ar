@@ -304,8 +304,8 @@ def main():
 
             #######debugging#########
             if any(x in lower_tid or x in lower_tname for x in ["mbc 1", "mbc1", "mbc 1 egypt", "mbc1 egypt", "otv"]):
-            print("  -> FINAL epg_id:", epg_id)
-            print("-" * 40)
+                print("  -> FINAL epg_id:", epg_id)
+                print("-" * 40)
             ##########################
                 
                 extinf = re.sub(r'tvg-id="[^"]*"', f'tvg-id="{epg_id}"', extinf)
