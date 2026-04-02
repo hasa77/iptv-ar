@@ -228,6 +228,29 @@ def main():
             tid = re.search(r'tvg-id="([^"]*)"', extinf).group(1) if 'tvg-id="' in extinf else ''
             tname = re.search(r'tvg-name="([^"]*)"', extinf).group(1) if 'tvg-name="' in extinf else ''
 
+            ##########debug#############
+            # Extract display name from EXTINF
+            name_match = re.search(r',(.+)$', extinf)
+            display_name = name_match.group(1).strip() if name_match else ""
+            
+            # Channels you want to debug
+            DEBUG_CHANNELS = {
+                "ajman", "maaref", "qamar", "wousta", "haqeqa", "imam hussein", "watan"
+            }
+            
+            # Check if display name contains any of the debug keywords
+            if any(key in display_name.lower() for key in DEBUG_CHANNELS):
+                print("🔍 DEBUG TARGET CHANNEL:")
+                print(f"  CHANNEL  : {display_name}")
+                print(f"  RAW tid  : {tid}")
+                print(f"  RAW tname: {tname}")
+                print(f"  norm(tid): {norm(tid)}")
+                print(f"  norm(name): {norm(tname)}")
+                # epg_id will be printed later after matching
+
+
+            ###########################
+
             if is_excluded(tid, tname):
                 continue
             
