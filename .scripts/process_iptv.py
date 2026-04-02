@@ -173,6 +173,9 @@ def main():
         tname = re.search(r'tvg-name="([^"]*)"', extinf).group(1) if 'tvg-name="' in extinf else ''
         n = norm(tid)
 
+        if is_excluded(tid, tname):
+            continue
+        
         # BLOCKED CHANNEL → NO EPG
         if n in EPG_BLOCKED:
             blocked_count += 1
