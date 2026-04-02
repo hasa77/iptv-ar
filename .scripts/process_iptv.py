@@ -228,20 +228,6 @@ def main():
             tid = re.search(r'tvg-id="([^"]*)"', extinf).group(1) if 'tvg-id="' in extinf else ''
             tname = re.search(r'tvg-name="([^"]*)"', extinf).group(1) if 'tvg-name="' in extinf else ''
 
-            ########debug#######
-            # Debug specific channels
-            lower_tid = (tid or "").lower()
-            lower_tname = (tname or "").lower()
-            
-            if any(x in lower_tid or x in lower_tname for x in ["mbc 1", "mbc1", "mbc 1 egypt", "mbc1 egypt"]):
-                print("DEBUG CHANNEL:")
-                print("  RAW tid  :", tid)
-                print("  RAW tname:", tname)
-                print("  norm(tid):", norm(tid))
-                print("  norm(name):", norm(tname))
-
-            ####################
-
             if is_excluded(tid, tname):
                 continue
             
@@ -294,20 +280,13 @@ def main():
                 parts = url.split('/')
                 if len(parts) > 3:
                     host_guess = norm(parts[3])
-                    epg_id = epg_norm.get(host_guess)
-            
+                    epg_id = epg_norm.get(host_guess)     
             # --- END OF MATCHING ---
 
 
             if epg_id:
                 epg_needed.add(epg_id)
 
-            #######debugging#########
-            if any(x in lower_tid or x in lower_tname for x in ["mbc 1", "mbc1", "mbc 1 egypt", "mbc1 egypt"]):
-                print("  -> FINAL epg_id:", epg_id)
-                print("-" * 40)
-            ##########################
-                
                 extinf = re.sub(r'tvg-id="[^"]*"', f'tvg-id="{epg_id}"', extinf)
                 matched_count += 1
 
