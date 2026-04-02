@@ -39629,6 +39629,26 @@ Ep 37: VivaTech 2025 Karen Tso presents highlights from CNBC�s coverage at Viv
     <title lang="en">Tareeq Al Moaalemat</title>
     <desc lang="en">Tareeq Al Moaalemat</desc>
   </programme>
+  <programme start="20260404140000 +0000" stop="20260404150000 +0000" channel="MBCDrama.us">
+    <title lang="en">7Aq Mayit</title>
+    <desc lang="en">7Aq Mayit</desc>
+  </programme>
+  <programme start="20260404150000 +0000" stop="20260404160000 +0000" channel="MBCDrama.us">
+    <title lang="en">Turkish</title>
+    <desc lang="en">Turkish</desc>
+  </programme>
+  <programme start="20260404160000 +0000" stop="20260404170000 +0000" channel="MBCDrama.us">
+    <title lang="en">Otr Al Ams</title>
+    <desc lang="en">Otr Al Ams</desc>
+  </programme>
+  <programme start="20260404170000 +0000" stop="20260404180000 +0000" channel="MBCDrama.us">
+    <title lang="en">Endama Yozher al Khareef</title>
+    <desc lang="en">Endama Yozher al Khareef</desc>
+  </programme>
+  <programme start="20260404180000 +0000" stop="20260404190000 +0000" channel="MBCDrama.us">
+    <title lang="en">Tareeq Al Moaalemat</title>
+    <desc lang="en">Tareeq Al Moaalemat</desc>
+  </programme>
   <programme start="20250721003600 +0000" stop="20250721013600 +0000" channel="MBCMasr.eg">
     <title lang="ar">حرب الجبالي  موس</title>
     <desc lang="ar">S1 E40 يقف حرب إلى جانب ثريا في محنتها. يواصل راشد تجاهل شوشو، ثم يقدم على خطوة جريئة من دون علم سعيد. تفجر زهرة خبرا صادما في وجه أنهار.\r.</desc>
@@ -47960,6 +47980,18 @@ Ep 37: VivaTech 2025 Karen Tso presents highlights from CNBC�s coverage at Viv
   <programme start="20260404130000 +0000" stop="20260404140000 +0000" channel="RotanaMusic.us">
     <title lang="en">Music Videos</title>
     <desc lang="en">The words and sounds of music's brightest stars mesh with flashy images in a block of videos.</desc>
+  </programme>
+  <programme start="20260404140000 +0000" stop="20260404150000 +0000" channel="RotanaMusic.us">
+    <title lang="en">Music</title>
+    <desc lang="en">Latest Arabic songs and video clips of your favorite celebrities</desc>
+  </programme>
+  <programme start="20260404150000 +0000" stop="20260404180000 +0000" channel="RotanaMusic.us">
+    <title lang="en">Top Ten</title>
+    <desc lang="en">The best 10 songs in the latest period.</desc>
+  </programme>
+  <programme start="20260404180000 +0000" stop="20260404210000 +0000" channel="RotanaMusic.us">
+    <title lang="en">Top Ten</title>
+    <desc lang="en">The best 10 songs in the latest period.</desc>
   </programme>
   <programme start="20260401000000 +0100" stop="20260401001500 +0100" channel="Sharjah.HD.ae">
     <title lang="en">God Worshipers</title>
