@@ -311,22 +311,24 @@ def main():
                 cleaned = norm(cleaned)
                 epg_id = epg_norm.get(cleaned)
             
-            # 6. Fuzzy match
+            # 6. Fuzzy match (safe)
             if not epg_id:
                 import difflib
             
-                # Normalized ID must be long enough (avoid "ajm", "wst", "hqq")
+                # Normalized ID must be long enough
                 if len(n) >= 4 and tname:
                     best = difflib.get_close_matches(n, epg_norm.keys(), n=1, cutoff=0.93)
             
                     if best:
-                        # Calculate similarity ratio
                         ratio = difflib.SequenceMatcher(None, n, best[0]).ratio()
             
-                        # Only accept if similarity is truly high
+                        # Only accept strong matches
                         if ratio >= 0.93:
-                            epg_id = epg_norm[best[0]]
-
+            
+                            # Prevent reusing an EPG ID already assigned to another channel
+                            candidate = epg_norm[best[0]]
+                            if candidate not in epg_needed:
+                                epg_id = candidate
             
             # 7. Match by logo filename
             if not epg_id:
