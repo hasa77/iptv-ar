@@ -6521,131 +6521,6 @@
     <title lang="ar">أخبار الحدث</title>
     <desc lang="ar">كن في الطليعة مع آخر الأخبار العاجلة وأهم الأحداث الجارية، بالإضافة إلى معرفة كل ما يدور حولك من أحداث سواء كانت في المنطقة العربية أو حول العالم.</desc>
   </programme>
-  <programme start="20260401000000 +0100" stop="20260401003000 +0100" channel="Alkass_1_AR.bein">
-    <title lang="ar">نيوز</title>
-    <sub-title lang="ar">نيوز</sub-title>
-    <category lang="ar">أخبار</category>
-  </programme>
-  <programme start="20260401003000 +0100" stop="20260401013000 +0100" channel="Alkass_1_AR.bein">
-    <title lang="ar">بريفيو</title>
-    <sub-title lang="ar">بريفيو</sub-title>
-    <category lang="ar">ترفيه</category>
-  </programme>
-  <programme start="20260401013000 +0100" stop="20260401032500 +0100" channel="Alkass_1_AR.bein">
-    <title lang="ar">الدوري القطري لكرة الطائرة</title>
-    <sub-title lang="ar">الدوري القطري لكرة الطائرة</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401032500 +0100" stop="20260401040000 +0100" channel="Alkass_1_AR.bein">
-    <title lang="ar">فيبا وورلد باسكت بول</title>
-    <sub-title lang="ar">فيبا وورلد باسكت بول</sub-title>
-    <category lang="ar">ترفيه</category>
-  </programme>
-  <programme start="20260401040000 +0100" stop="20260401060000 +0100" channel="Alkass_1_AR.bein">
-    <title lang="ar">كيو إس إل كاب</title>
-    <sub-title lang="ar">كيو إس إل كاب</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401060000 +0100" stop="20260401063000 +0100" channel="Alkass_1_AR.bein">
-    <title lang="ar">نيوز</title>
-    <sub-title lang="ar">نيوز</sub-title>
-    <category lang="ar">أخبار</category>
-  </programme>
-  <programme start="20260401063000 +0100" stop="20260401070000 +0100" channel="Alkass_1_AR.bein">
-    <title lang="ar">ذي إنسايد لاين</title>
-    <sub-title lang="ar">ذي إنسايد لاين</sub-title>
-    <category lang="ar">ترفيه</category>
-  </programme>
-  <programme start="20260401070000 +0100" stop="20260401090000 +0100" channel="Alkass_1_AR.bein">
-    <title lang="ar">دوري كرة السلة القطري</title>
-    <sub-title lang="ar">دوري كرة السلة القطري</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401090000 +0100" stop="20260401093000 +0100" channel="Alkass_1_AR.bein">
-    <title lang="ar">سبورت كونفدينشيال</title>
-    <sub-title lang="ar">سبورت كونفدينشيال</sub-title>
-    <category lang="ar">ترفيه</category>
-  </programme>
-  <programme start="20260401093000 +0100" stop="20260401100000 +0100" channel="Alkass_1_AR.bein">
-    <title lang="ar">ذا جريتس أوف أول تايم</title>
-    <sub-title lang="ar">ذا جريتس أوف أول تايم</sub-title>
-    <category lang="ar">ترفيه</category>
-  </programme>
-  <programme start="20260401100000 +0100" stop="20260401110000 +0100" channel="Alkass_1_AR.bein">
-    <title lang="ar">مربط الفرس</title>
-    <sub-title lang="ar">مربط الفرس</sub-title>
-    <category lang="ar">ترفيه</category>
-  </programme>
-  <programme start="20260401110000 +0100" stop="20260401120000 +0100" channel="Alkass_1_AR.bein">
-    <title lang="ar">مربط الفرس</title>
-    <sub-title lang="ar">مربط الفرس</sub-title>
-    <category lang="ar">ترفيه</category>
-  </programme>
-  <programme start="20260401120000 +0100" stop="20260401123000 +0100" channel="Alkass_1_AR.bein">
-    <title lang="ar">نيوز</title>
-    <sub-title lang="ar">نيوز</sub-title>
-    <category lang="ar">أخبار</category>
-  </programme>
-  <programme start="20260401123000 +0100" stop="20260401130000 +0100" channel="Alkass_1_AR.bein">
-    <title lang="ar">نيوز بيبر</title>
-    <sub-title lang="ar">نيوز بيبر</sub-title>
-    <category lang="ar">ترفيه</category>
-  </programme>
-  <programme start="20260401130000 +0100" stop="20260401140000 +0100" channel="Alkass_1_AR.bein">
-    <title lang="ar">كميونيكيشن</title>
-    <sub-title lang="ar">كميونيكيشن</sub-title>
-    <category lang="ar">ترفيه</category>
-  </programme>
-  <programme start="20260401140000 +0100" stop="20260401143000 +0100" channel="Alkass_1_AR.bein">
-    <title lang="ar">ذي كونتندرز</title>
-    <sub-title lang="ar">ذي كونتندرز</sub-title>
-    <category lang="ar">ترفيه</category>
-  </programme>
-  <programme start="20260401143000 +0100" stop="20260401153000 +0100" channel="Alkass_1_AR.bein">
-    <title lang="ar">تو أند هاف</title>
-    <sub-title lang="ar">تو أند هاف</sub-title>
-    <category lang="ar">ترفيه</category>
-  </programme>
-  <programme start="20260401153000 +0100" stop="20260401160000 +0100" channel="Alkass_1_AR.bein">
-    <title lang="ar">ذا فوتبول ريفيو</title>
-    <sub-title lang="ar">ذا فوتبول ريفيو</sub-title>
-    <category lang="ar">ترفيه</category>
-  </programme>
-  <programme start="20260401160000 +0100" stop="20260401161500 +0100" channel="Alkass_1_AR.bein">
-    <title lang="ar">نيوز</title>
-    <sub-title lang="ar">نيوز</sub-title>
-    <category lang="ar">أخبار</category>
-  </programme>
-  <programme start="20260401161500 +0100" stop="20260401181500 +0100" channel="Alkass_1_AR.bein">
-    <title lang="ar">كيو إس إل كاب</title>
-    <sub-title lang="ar">كيو إس إل كاب</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401181500 +0100" stop="20260401210000 +0100" channel="Alkass_1_AR.bein">
-    <title lang="ar">كاتاري أوليمبيك ليج</title>
-    <sub-title lang="ar">كاتاري أوليمبيك ليج</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401210000 +0100" stop="20260401213000 +0100" channel="Alkass_1_AR.bein">
-    <title lang="ar">نيوز</title>
-    <sub-title lang="ar">نيوز</sub-title>
-    <category lang="ar">أخبار</category>
-  </programme>
-  <programme start="20260401213000 +0100" stop="20260401224500 +0100" channel="Alkass_1_AR.bein">
-    <title lang="ar">فولورز</title>
-    <sub-title lang="ar">فولورز</sub-title>
-    <category lang="ar">ترفيه</category>
-  </programme>
-  <programme start="20260401224500 +0100" stop="20260401230000 +0100" channel="Alkass_1_AR.bein">
-    <title lang="ar">الدوري القطري لكرة اليد</title>
-    <sub-title lang="ar">الدوري القطري لكرة اليد</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401230000 +0100" stop="20260402051500 +0100" channel="Alkass_1_AR.bein">
-    <title lang="ar">جس</title>
-    <sub-title lang="ar">جس</sub-title>
-    <category lang="ar">ترفيه</category>
-  </programme>
   <programme start="20260402051500 +0100" stop="20260402060000 +0100" channel="Alkass_1_AR.bein">
     <title lang="ar">جولمانيا</title>
     <sub-title lang="ar">جولمانيا</sub-title>
@@ -6666,39 +6541,64 @@
     <sub-title lang="ar">سبورت كونفدينشيال</sub-title>
     <category lang="ar">ترفيه</category>
   </programme>
-  <programme start="20260402084500 +0100" stop="20260402181500 +0100" channel="Alkass_1_AR.bein">
+  <programme start="20260402084500 +0100" stop="20260402120000 +0100" channel="Alkass_1_AR.bein">
     <title lang="ar">جولات الدوحة الدولية للفروسية</title>
     <sub-title lang="ar">جولات الدوحة الدولية للفروسية</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260402181500 +0100" stop="20260402210000 +0100" channel="Alkass_1_AR.bein">
-    <title lang="ar">كاتاري أوليمبيك ليج</title>
-    <sub-title lang="ar">كاتاري أوليمبيك ليج</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260402210000 +0100" stop="20260402213000 +0100" channel="Alkass_1_AR.bein">
+  <programme start="20260402120000 +0100" stop="20260402123000 +0100" channel="Alkass_1_AR.bein">
     <title lang="ar">نيوز</title>
     <sub-title lang="ar">نيوز</sub-title>
     <category lang="ar">أخبار</category>
   </programme>
-  <programme start="20260402213000 +0100" stop="20260402223000 +0100" channel="Alkass_1_AR.bein">
-    <title lang="ar">بريفيو</title>
-    <sub-title lang="ar">بريفيو</sub-title>
+  <programme start="20260402123000 +0100" stop="20260402130000 +0100" channel="Alkass_1_AR.bein">
+    <title lang="ar">نيوز بيبر</title>
+    <sub-title lang="ar">نيوز بيبر</sub-title>
     <category lang="ar">ترفيه</category>
   </programme>
-  <programme start="20260402223000 +0100" stop="20260402230000 +0100" channel="Alkass_1_AR.bein">
+  <programme start="20260402130000 +0100" stop="20260402140000 +0100" channel="Alkass_1_AR.bein">
+    <title lang="ar">فولورز</title>
+    <sub-title lang="ar">فولورز</sub-title>
+    <category lang="ar">ترفيه</category>
+  </programme>
+  <programme start="20260402140000 +0100" stop="20260402143000 +0100" channel="Alkass_1_AR.bein">
+    <title lang="ar">عيالنا</title>
+    <sub-title lang="ar">عيالنا</sub-title>
+    <category lang="ar">ترفيه</category>
+  </programme>
+  <programme start="20260402143000 +0100" stop="20260402153000 +0100" channel="Alkass_1_AR.bein">
+    <title lang="ar">تو أند هاف</title>
+    <sub-title lang="ar">تو أند هاف</sub-title>
+    <category lang="ar">ترفيه</category>
+  </programme>
+  <programme start="20260402153000 +0100" stop="20260402160000 +0100" channel="Alkass_1_AR.bein">
     <title lang="ar">سبورت كونفدينشيال</title>
     <sub-title lang="ar">سبورت كونفدينشيال</sub-title>
     <category lang="ar">ترفيه</category>
   </programme>
-  <programme start="20260402230000 +0100" stop="20260402233000 +0100" channel="Alkass_1_AR.bein">
+  <programme start="20260402160000 +0100" stop="20260402161500 +0100" channel="Alkass_1_AR.bein">
+    <title lang="ar">نيوز</title>
+    <sub-title lang="ar">نيوز</sub-title>
+    <category lang="ar">أخبار</category>
+  </programme>
+  <programme start="20260402161500 +0100" stop="20260402213000 +0100" channel="Alkass_1_AR.bein">
+    <title lang="ar">سباق الخيل</title>
+    <sub-title lang="ar">سباق الخيل</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260402213000 +0100" stop="20260402223000 +0100" channel="Alkass_1_AR.bein">
+    <title lang="ar">قبل الجولة</title>
+    <sub-title lang="ar">قبل الجولة</sub-title>
+    <category lang="ar">ترفيه</category>
+  </programme>
+  <programme start="20260402223000 +0100" stop="20260402230000 +0100" channel="Alkass_1_AR.bein">
     <title lang="ar">كميونيكيشن</title>
     <sub-title lang="ar">كميونيكيشن</sub-title>
     <category lang="ar">ترفيه</category>
   </programme>
-  <programme start="20260402233000 +0100" stop="20260403051500 +0100" channel="Alkass_1_AR.bein">
-    <title lang="ar">جولمانيا</title>
-    <sub-title lang="ar">جولمانيا</sub-title>
+  <programme start="20260402230000 +0100" stop="20260403051500 +0100" channel="Alkass_1_AR.bein">
+    <title lang="ar">فولورز</title>
+    <sub-title lang="ar">فولورز</sub-title>
     <category lang="ar">ترفيه</category>
   </programme>
   <programme start="20260403051500 +0100" stop="20260403053000 +0100" channel="Alkass_1_AR.bein">
@@ -6806,105 +6706,115 @@
     <sub-title lang="ar">ناينتي مينتس</sub-title>
     <category lang="ar">ترفيه</category>
   </programme>
-  <programme start="20260401000000 +0100" stop="20260401003000 +0100" channel="Alkass_2_AR.bein">
+  <programme start="20260404000000 +0100" stop="20260404050000 +0100" channel="Alkass_1_AR.bein">
     <title lang="ar">نيوز</title>
     <sub-title lang="ar">نيوز</sub-title>
     <category lang="ar">أخبار</category>
   </programme>
-  <programme start="20260401003000 +0100" stop="20260401023000 +0100" channel="Alkass_2_AR.bein">
-    <title lang="ar">مربط الفرس</title>
-    <sub-title lang="ar">مربط الفرس</sub-title>
+  <programme start="20260404050000 +0100" stop="20260404053000 +0100" channel="Alkass_1_AR.bein">
+    <title lang="ar">سبورت كونفدينشيال</title>
+    <sub-title lang="ar">سبورت كونفدينشيال</sub-title>
     <category lang="ar">ترفيه</category>
   </programme>
-  <programme start="20260401023000 +0100" stop="20260401043000 +0100" channel="Alkass_2_AR.bein">
-    <title lang="ar">جلوبال تشامبيونز آرابيان تور</title>
-    <sub-title lang="ar">جلوبال تشامبيونز آرابيان تور</sub-title>
+  <programme start="20260404053000 +0100" stop="20260404071500 +0100" channel="Alkass_1_AR.bein">
+    <title lang="ar">ديربي تونس</title>
+    <sub-title lang="ar">ديربي تونس</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260401043000 +0100" stop="20260401050000 +0100" channel="Alkass_2_AR.bein">
+  <programme start="20260404071500 +0100" stop="20260404073000 +0100" channel="Alkass_1_AR.bein">
+    <title lang="ar">أوتو مونديال</title>
+    <sub-title lang="ar">أوتو مونديال</sub-title>
+    <category lang="ar">ترفيه</category>
+  </programme>
+  <programme start="20260404073000 +0100" stop="20260404080000 +0100" channel="Alkass_1_AR.bein">
+    <title lang="ar">كينج أوف ذا كورت بيتش فوليبول تشامبيونشيب</title>
+    <sub-title lang="ar">كينج أوف ذا كورت بيتش فوليبول تشامبيونشيب</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404080000 +0100" stop="20260404083000 +0100" channel="Alkass_1_AR.bein">
+    <title lang="ar">بطولة العالم لجمال الخيل العربية الأصيلة</title>
+    <sub-title lang="ar">بطولة العالم لجمال الخيل العربية الأصيلة</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404083000 +0100" stop="20260404090000 +0100" channel="Alkass_1_AR.bein">
     <title lang="ar">جولمانيا</title>
     <sub-title lang="ar">جولمانيا</sub-title>
     <category lang="ar">ترفيه</category>
   </programme>
-  <programme start="20260401050000 +0100" stop="20260401063000 +0100" channel="Alkass_2_AR.bein">
-    <title lang="ar">وست إيجا سوبر ليج</title>
-    <sub-title lang="ar">وست إيجا سوبر ليج</sub-title>
+  <programme start="20260404090000 +0100" stop="20260404113000 +0100" channel="Alkass_1_AR.bein">
+    <title lang="ar">دوري الدرجة الثانية القطري</title>
+    <sub-title lang="ar">دوري الدرجة الثانية القطري</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260401063000 +0100" stop="20260401070000 +0100" channel="Alkass_2_AR.bein">
-    <title lang="ar">ذا تراك</title>
-    <sub-title lang="ar">ذا تراك</sub-title>
+  <programme start="20260404113000 +0100" stop="20260404120000 +0100" channel="Alkass_1_AR.bein">
+    <title lang="ar">فيبا وورلد باسكت بول</title>
+    <sub-title lang="ar">فيبا وورلد باسكت بول</sub-title>
     <category lang="ar">ترفيه</category>
   </programme>
-  <programme start="20260401070000 +0100" stop="20260401073000 +0100" channel="Alkass_2_AR.bein">
-    <title lang="ar">إنفينسبل</title>
-    <sub-title lang="ar">إنفينسبل</sub-title>
-    <category lang="ar">ترفيه</category>
-  </programme>
-  <programme start="20260401073000 +0100" stop="20260401090000 +0100" channel="Alkass_2_AR.bein">
-    <title lang="ar">بطولة الكأس الرمضانية</title>
-    <sub-title lang="ar">بطولة الكأس الرمضانية</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401090000 +0100" stop="20260401103000 +0100" channel="Alkass_2_AR.bein">
-    <title lang="ar">الدوري القطري لكرة اليد</title>
-    <sub-title lang="ar">الدوري القطري لكرة اليد</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401103000 +0100" stop="20260401120000 +0100" channel="Alkass_2_AR.bein">
-    <title lang="ar">آريبيا فوتبول</title>
-    <sub-title lang="ar">آريبيا فوتبول</sub-title>
-    <category lang="ar">ترفيه</category>
-  </programme>
-  <programme start="20260401120000 +0100" stop="20260401123000 +0100" channel="Alkass_2_AR.bein">
+  <programme start="20260404120000 +0100" stop="20260404123000 +0100" channel="Alkass_1_AR.bein">
     <title lang="ar">نيوز</title>
     <sub-title lang="ar">نيوز</sub-title>
     <category lang="ar">أخبار</category>
   </programme>
-  <programme start="20260401123000 +0100" stop="20260401130000 +0100" channel="Alkass_2_AR.bein">
+  <programme start="20260404123000 +0100" stop="20260404130000 +0100" channel="Alkass_1_AR.bein">
     <title lang="ar">نيوز بيبر</title>
     <sub-title lang="ar">نيوز بيبر</sub-title>
     <category lang="ar">ترفيه</category>
   </programme>
-  <programme start="20260401130000 +0100" stop="20260401141500 +0100" channel="Alkass_2_AR.bein">
-    <title lang="ar">الدوري القطري لكرة اليد</title>
-    <sub-title lang="ar">الدوري القطري لكرة اليد</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401141500 +0100" stop="20260401160000 +0100" channel="Alkass_2_AR.bein">
-    <title lang="ar">الدوري القطري لكرة الطائرة</title>
-    <sub-title lang="ar">الدوري القطري لكرة الطائرة</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401160000 +0100" stop="20260401161500 +0100" channel="Alkass_2_AR.bein">
-    <title lang="ar">نيوز</title>
-    <sub-title lang="ar">نيوز</sub-title>
-    <category lang="ar">أخبار</category>
-  </programme>
-  <programme start="20260401161500 +0100" stop="20260401181500 +0100" channel="Alkass_2_AR.bein">
-    <title lang="ar">دوري كرة السلة القطري</title>
-    <sub-title lang="ar">دوري كرة السلة القطري</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401181500 +0100" stop="20260401210000 +0100" channel="Alkass_2_AR.bein">
-    <title lang="ar">كاتاري أوليمبيك ليج</title>
-    <sub-title lang="ar">كاتاري أوليمبيك ليج</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401210000 +0100" stop="20260401213000 +0100" channel="Alkass_2_AR.bein">
-    <title lang="ar">نيوز</title>
-    <sub-title lang="ar">نيوز</sub-title>
-    <category lang="ar">أخبار</category>
-  </programme>
-  <programme start="20260401213000 +0100" stop="20260401220000 +0100" channel="Alkass_2_AR.bein">
-    <title lang="ar">ذي كونتندرز</title>
-    <sub-title lang="ar">ذي كونتندرز</sub-title>
+  <programme start="20260404130000 +0100" stop="20260404133000 +0100" channel="Alkass_1_AR.bein">
+    <title lang="ar">كميونيكيشن</title>
+    <sub-title lang="ar">كميونيكيشن</sub-title>
     <category lang="ar">ترفيه</category>
   </programme>
-  <programme start="20260401220000 +0100" stop="20260402030000 +0100" channel="Alkass_2_AR.bein">
-    <title lang="ar">كيو إس إل كاب</title>
-    <sub-title lang="ar">كيو إس إل كاب</sub-title>
+  <programme start="20260404133000 +0100" stop="20260404140000 +0100" channel="Alkass_1_AR.bein">
+    <title lang="ar">كينج أوف ذا كورت بيتش فوليبول تشامبيونشيب</title>
+    <sub-title lang="ar">كينج أوف ذا كورت بيتش فوليبول تشامبيونشيب</sub-title>
     <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404140000 +0100" stop="20260404143000 +0100" channel="Alkass_1_AR.bein">
+    <title lang="ar">جولمانيا</title>
+    <sub-title lang="ar">جولمانيا</sub-title>
+    <category lang="ar">ترفيه</category>
+  </programme>
+  <programme start="20260404143000 +0100" stop="20260404153000 +0100" channel="Alkass_1_AR.bein">
+    <title lang="ar">تو أند هاف</title>
+    <sub-title lang="ar">تو أند هاف</sub-title>
+    <category lang="ar">ترفيه</category>
+  </programme>
+  <programme start="20260404153000 +0100" stop="20260404160000 +0100" channel="Alkass_1_AR.bein">
+    <title lang="ar">ذي إنسايد لاين</title>
+    <sub-title lang="ar">ذي إنسايد لاين</sub-title>
+    <category lang="ar">ترفيه</category>
+  </programme>
+  <programme start="20260404160000 +0100" stop="20260404161500 +0100" channel="Alkass_1_AR.bein">
+    <title lang="ar">نيوز</title>
+    <sub-title lang="ar">نيوز</sub-title>
+    <category lang="ar">أخبار</category>
+  </programme>
+  <programme start="20260404161500 +0100" stop="20260404163000 +0100" channel="Alkass_1_AR.bein">
+    <title lang="ar">فوتبول آناليسيس إستوديو</title>
+    <sub-title lang="ar">فوتبول آناليسيس إستوديو</sub-title>
+    <category lang="ar">ترفيه</category>
+  </programme>
+  <programme start="20260404163000 +0100" stop="20260404190000 +0100" channel="Alkass_1_AR.bein">
+    <title lang="ar">كاتار ستارز ليج</title>
+    <sub-title lang="ar">كاتار ستارز ليج</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404190000 +0100" stop="20260404220000 +0100" channel="Alkass_1_AR.bein">
+    <title lang="ar">كاتار ستارز ليج</title>
+    <sub-title lang="ar">كاتار ستارز ليج</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404220000 +0100" stop="20260404233000 +0100" channel="Alkass_1_AR.bein">
+    <title lang="ar">ذا كاونسل</title>
+    <sub-title lang="ar">ذا كاونسل</sub-title>
+    <category lang="ar">ترفيه</category>
+  </programme>
+  <programme start="20260404233000 +0100" stop="20260405040000 +0100" channel="Alkass_1_AR.bein">
+    <title lang="ar">كميونيكيشن</title>
+    <sub-title lang="ar">كميونيكيشن</sub-title>
+    <category lang="ar">ترفيه</category>
   </programme>
   <programme start="20260402030000 +0100" stop="20260402033000 +0100" channel="Alkass_2_AR.bein">
     <title lang="ar">فيبا وورلد باسكت بول</title>
@@ -6947,9 +6857,9 @@
     <category lang="ar">ترفيه</category>
   </programme>
   <programme start="20260402130000 +0100" stop="20260402133000 +0100" channel="Alkass_2_AR.bein">
-    <title lang="ar">ذا فوتبول ريفيو</title>
-    <sub-title lang="ar">ذا فوتبول ريفيو</sub-title>
-    <category lang="ar">ترفيه</category>
+    <title lang="ar">سي إتش أي الشقب إنترناشيونال إكويستريان كومبيتيشن</title>
+    <sub-title lang="ar">سي إتش أي الشقب إنترناشيونال إكويستريان كومبيتيشن</sub-title>
+    <category lang="ar">الرياضة العام</category>
   </programme>
   <programme start="20260402133000 +0100" stop="20260402153000 +0100" channel="Alkass_2_AR.bein">
     <title lang="ar">كيو إس إل كاب</title>
@@ -6987,8 +6897,8 @@
     <category lang="ar">الرياضة العام</category>
   </programme>
   <programme start="20260402220000 +0100" stop="20260403043000 +0100" channel="Alkass_2_AR.bein">
-    <title lang="ar">كيو إس إل كاب</title>
-    <sub-title lang="ar">كيو إس إل كاب</sub-title>
+    <title lang="ar">كاتاري أوليمبيك ليج</title>
+    <sub-title lang="ar">كاتاري أوليمبيك ليج</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
   <programme start="20260403043000 +0100" stop="20260403050000 +0100" channel="Alkass_2_AR.bein">
@@ -7096,95 +7006,120 @@
     <sub-title lang="ar">لايفز</sub-title>
     <category lang="ar">ترفيه</category>
   </programme>
-  <programme start="20260401000000 +0100" stop="20260401003000 +0100" channel="Alkass_3_AR.bein">
+  <programme start="20260404000000 +0100" stop="20260404030000 +0100" channel="Alkass_2_AR.bein">
     <title lang="ar">نيوز</title>
     <sub-title lang="ar">نيوز</sub-title>
     <category lang="ar">أخبار</category>
   </programme>
-  <programme start="20260401003000 +0100" stop="20260401023000 +0100" channel="Alkass_3_AR.bein">
-    <title lang="ar">دوري كرة السلة القطري</title>
-    <sub-title lang="ar">دوري كرة السلة القطري</sub-title>
+  <programme start="20260404030000 +0100" stop="20260404033000 +0100" channel="Alkass_2_AR.bein">
+    <title lang="ar">كينج أوف ذا كورت بيتش فوليبول تشامبيونشيب</title>
+    <sub-title lang="ar">كينج أوف ذا كورت بيتش فوليبول تشامبيونشيب</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260401023000 +0100" stop="20260401030000 +0100" channel="Alkass_3_AR.bein">
-    <title lang="ar">ذا جريتس أوف أول تايم</title>
-    <sub-title lang="ar">ذا جريتس أوف أول تايم</sub-title>
-    <category lang="ar">ترفيه</category>
-  </programme>
-  <programme start="20260401030000 +0100" stop="20260401043000 +0100" channel="Alkass_3_AR.bein">
-    <title lang="ar">الدوري القطري لكرة اليد</title>
-    <sub-title lang="ar">الدوري القطري لكرة اليد</sub-title>
+  <programme start="20260404033000 +0100" stop="20260404053000 +0100" channel="Alkass_2_AR.bein">
+    <title lang="ar">كاتار ستارز ليج</title>
+    <sub-title lang="ar">كاتار ستارز ليج</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260401043000 +0100" stop="20260401060000 +0100" channel="Alkass_3_AR.bein">
-    <title lang="ar">آريبيا فوتبول</title>
-    <sub-title lang="ar">آريبيا فوتبول</sub-title>
-    <category lang="ar">ترفيه</category>
-  </programme>
-  <programme start="20260401060000 +0100" stop="20260401063000 +0100" channel="Alkass_3_AR.bein">
-    <title lang="ar">نيوز</title>
-    <sub-title lang="ar">نيوز</sub-title>
-    <category lang="ar">أخبار</category>
-  </programme>
-  <programme start="20260401063000 +0100" stop="20260401081500 +0100" channel="Alkass_3_AR.bein">
-    <title lang="ar">دوري كرة السلة القطري</title>
-    <sub-title lang="ar">دوري كرة السلة القطري</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401081500 +0100" stop="20260401100500 +0100" channel="Alkass_3_AR.bein">
-    <title lang="ar">الدوري القطري لكرة اليد</title>
-    <sub-title lang="ar">الدوري القطري لكرة اليد</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401100500 +0100" stop="20260401120000 +0100" channel="Alkass_3_AR.bein">
-    <title lang="ar">الدوري القطري لكرة الطائرة</title>
-    <sub-title lang="ar">الدوري القطري لكرة الطائرة</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401120000 +0100" stop="20260401123000 +0100" channel="Alkass_3_AR.bein">
-    <title lang="ar">نيوز</title>
-    <sub-title lang="ar">نيوز</sub-title>
-    <category lang="ar">أخبار</category>
-  </programme>
-  <programme start="20260401123000 +0100" stop="20260401131500 +0100" channel="Alkass_3_AR.bein">
-    <title lang="ar">نيوز بيبر</title>
-    <sub-title lang="ar">نيوز بيبر</sub-title>
-    <category lang="ar">ترفيه</category>
-  </programme>
-  <programme start="20260401131500 +0100" stop="20260401134500 +0100" channel="Alkass_3_AR.bein">
+  <programme start="20260404053000 +0100" stop="20260404060000 +0100" channel="Alkass_2_AR.bein">
     <title lang="ar">فيبا وورلد باسكت بول</title>
     <sub-title lang="ar">فيبا وورلد باسكت بول</sub-title>
     <category lang="ar">ترفيه</category>
   </programme>
-  <programme start="20260401134500 +0100" stop="20260401184500 +0100" channel="Alkass_3_AR.bein">
-    <title lang="ar">جلوبال تشامبيونز آرابيان تور</title>
-    <sub-title lang="ar">جلوبال تشامبيونز آرابيان تور</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401184500 +0100" stop="20260401203000 +0100" channel="Alkass_3_AR.bein">
-    <title lang="ar">سبورت كونفدينشيال</title>
-    <sub-title lang="ar">سبورت كونفدينشيال</sub-title>
-    <category lang="ar">ترفيه</category>
-  </programme>
-  <programme start="20260401203000 +0100" stop="20260401210000 +0100" channel="Alkass_3_AR.bein">
-    <title lang="ar">كميونيكيشن</title>
-    <sub-title lang="ar">كميونيكيشن</sub-title>
-    <category lang="ar">ترفيه</category>
-  </programme>
-  <programme start="20260401210000 +0100" stop="20260401213000 +0100" channel="Alkass_3_AR.bein">
+  <programme start="20260404060000 +0100" stop="20260404063000 +0100" channel="Alkass_2_AR.bein">
     <title lang="ar">نيوز</title>
     <sub-title lang="ar">نيوز</sub-title>
     <category lang="ar">أخبار</category>
   </programme>
-  <programme start="20260401213000 +0100" stop="20260401233000 +0100" channel="Alkass_3_AR.bein">
-    <title lang="ar">مربط الفرس</title>
-    <sub-title lang="ar">مربط الفرس</sub-title>
+  <programme start="20260404063000 +0100" stop="20260404080000 +0100" channel="Alkass_2_AR.bein">
+    <title lang="ar">دوري الدرجة الثانية القطري</title>
+    <sub-title lang="ar">دوري الدرجة الثانية القطري</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404080000 +0100" stop="20260404083000 +0100" channel="Alkass_2_AR.bein">
+    <title lang="ar">سبورت كونفدينشيال</title>
+    <sub-title lang="ar">سبورت كونفدينشيال</sub-title>
     <category lang="ar">ترفيه</category>
   </programme>
-  <programme start="20260401233000 +0100" stop="20260402000000 +0100" channel="Alkass_3_AR.bein">
-    <title lang="ar">كميونيكيشن</title>
-    <sub-title lang="ar">كميونيكيشن</sub-title>
+  <programme start="20260404083000 +0100" stop="20260404084500 +0100" channel="Alkass_2_AR.bein">
+    <title lang="ar">جولز</title>
+    <sub-title lang="ar">جولز</sub-title>
     <category lang="ar">ترفيه</category>
+  </programme>
+  <programme start="20260404084500 +0100" stop="20260404113000 +0100" channel="Alkass_2_AR.bein">
+    <title lang="ar">هورسيس إستوديو</title>
+    <sub-title lang="ar">هورسيس إستوديو</sub-title>
+    <category lang="ar">ترفيه</category>
+  </programme>
+  <programme start="20260404113000 +0100" stop="20260404120000 +0100" channel="Alkass_2_AR.bein">
+    <title lang="ar">كينج أوف ذا كورت بيتش فوليبول تشامبيونشيب</title>
+    <sub-title lang="ar">كينج أوف ذا كورت بيتش فوليبول تشامبيونشيب</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404120000 +0100" stop="20260404123000 +0100" channel="Alkass_2_AR.bein">
+    <title lang="ar">نيوز</title>
+    <sub-title lang="ar">نيوز</sub-title>
+    <category lang="ar">أخبار</category>
+  </programme>
+  <programme start="20260404123000 +0100" stop="20260404130000 +0100" channel="Alkass_2_AR.bein">
+    <title lang="ar">نيوز بيبر</title>
+    <sub-title lang="ar">نيوز بيبر</sub-title>
+    <category lang="ar">ترفيه</category>
+  </programme>
+  <programme start="20260404130000 +0100" stop="20260404133000 +0100" channel="Alkass_2_AR.bein">
+    <title lang="ar">كينج أوف ذا كورت بيتش فوليبول تشامبيونشيب</title>
+    <sub-title lang="ar">كينج أوف ذا كورت بيتش فوليبول تشامبيونشيب</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404133000 +0100" stop="20260404140000 +0100" channel="Alkass_2_AR.bein">
+    <title lang="ar">ذا فوتبول ريفيو</title>
+    <sub-title lang="ar">ذا فوتبول ريفيو</sub-title>
+    <category lang="ar">ترفيه</category>
+  </programme>
+  <programme start="20260404140000 +0100" stop="20260404160000 +0100" channel="Alkass_2_AR.bein">
+    <title lang="ar">دوري الدرجة الثانية القطري</title>
+    <sub-title lang="ar">دوري الدرجة الثانية القطري</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404160000 +0100" stop="20260404161500 +0100" channel="Alkass_2_AR.bein">
+    <title lang="ar">نيوز</title>
+    <sub-title lang="ar">نيوز</sub-title>
+    <category lang="ar">أخبار</category>
+  </programme>
+  <programme start="20260404161500 +0100" stop="20260404164500 +0100" channel="Alkass_2_AR.bein">
+    <title lang="ar">كينج أوف ذا كورت بيتش فوليبول تشامبيونشيب</title>
+    <sub-title lang="ar">كينج أوف ذا كورت بيتش فوليبول تشامبيونشيب</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404164500 +0100" stop="20260404171500 +0100" channel="Alkass_2_AR.bein">
+    <title lang="ar">سبورت كونفدينشيال</title>
+    <sub-title lang="ar">سبورت كونفدينشيال</sub-title>
+    <category lang="ar">ترفيه</category>
+  </programme>
+  <programme start="20260404171500 +0100" stop="20260404190000 +0100" channel="Alkass_2_AR.bein">
+    <title lang="ar">ديربي تونس</title>
+    <sub-title lang="ar">ديربي تونس</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404190000 +0100" stop="20260404220000 +0100" channel="Alkass_2_AR.bein">
+    <title lang="ar">كاتار ستارز ليج</title>
+    <sub-title lang="ar">كاتار ستارز ليج</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404220000 +0100" stop="20260404223000 +0100" channel="Alkass_2_AR.bein">
+    <title lang="ar">مارين ماجازين</title>
+    <sub-title lang="ar">مارين ماجازين</sub-title>
+    <category lang="ar">ترفيه</category>
+  </programme>
+  <programme start="20260404223000 +0100" stop="20260404233000 +0100" channel="Alkass_2_AR.bein">
+    <title lang="ar">سمري</title>
+    <sub-title lang="ar">سمري</sub-title>
+    <category lang="ar">ترفيه</category>
+  </programme>
+  <programme start="20260404233000 +0100" stop="20260405031500 +0100" channel="Alkass_2_AR.bein">
+    <title lang="ar">كينج أوف ذا كورت بيتش فوليبول تشامبيونشيب</title>
+    <sub-title lang="ar">كينج أوف ذا كورت بيتش فوليبول تشامبيونشيب</sub-title>
+    <category lang="ar">الرياضة العام</category>
   </programme>
   <programme start="20260402000000 +0100" stop="20260402003000 +0100" channel="Alkass_3_AR.bein">
     <title lang="ar">نيوز</title>
@@ -7251,45 +7186,55 @@
     <sub-title lang="ar">نيوز بيبر</sub-title>
     <category lang="ar">ترفيه</category>
   </programme>
-  <programme start="20260402130000 +0100" stop="20260402140000 +0100" channel="Alkass_3_AR.bein">
-    <title lang="ar">بطولة الكأس الرمضانية للبادل</title>
-    <sub-title lang="ar">بطولة الكأس الرمضانية للبادل</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260402140000 +0100" stop="20260402151500 +0100" channel="Alkass_3_AR.bein">
-    <title lang="ar">بطولة الكأس الرمضانية</title>
-    <sub-title lang="ar">بطولة الكأس الرمضانية</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260402151500 +0100" stop="20260402173000 +0100" channel="Alkass_3_AR.bein">
-    <title lang="ar">سباق الخيل</title>
-    <sub-title lang="ar">سباق الخيل</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260402173000 +0100" stop="20260402184500 +0100" channel="Alkass_3_AR.bein">
-    <title lang="ar">بطولة الكأس الرمضانية للبادل</title>
-    <sub-title lang="ar">بطولة الكأس الرمضانية للبادل</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260402184500 +0100" stop="20260402191500 +0100" channel="Alkass_3_AR.bein">
-    <title lang="ar">سبورت كونفدينشيال</title>
-    <sub-title lang="ar">سبورت كونفدينشيال</sub-title>
-    <category lang="ar">ترفيه</category>
-  </programme>
-  <programme start="20260402191500 +0100" stop="20260402203000 +0100" channel="Alkass_3_AR.bein">
-    <title lang="ar">بطولة الكأس الرمضانية</title>
-    <sub-title lang="ar">بطولة الكأس الرمضانية</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260402203000 +0100" stop="20260402211500 +0100" channel="Alkass_3_AR.bein">
+  <programme start="20260402130000 +0100" stop="20260402134500 +0100" channel="Alkass_3_AR.bein">
     <title lang="ar">كميونيكيشن</title>
     <sub-title lang="ar">كميونيكيشن</sub-title>
     <category lang="ar">ترفيه</category>
   </programme>
-  <programme start="20260402211500 +0100" stop="20260403030000 +0100" channel="Alkass_3_AR.bein">
+  <programme start="20260402134500 +0100" stop="20260402151500 +0100" channel="Alkass_3_AR.bein">
+    <title lang="ar">جلوبال تشامبيونز آرابيان تور</title>
+    <sub-title lang="ar">جلوبال تشامبيونز آرابيان تور</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260402151500 +0100" stop="20260402184500 +0100" channel="Alkass_3_AR.bein">
+    <title lang="ar">سباق الخيل</title>
+    <sub-title lang="ar">سباق الخيل</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260402184500 +0100" stop="20260402193000 +0100" channel="Alkass_3_AR.bein">
+    <title lang="ar">سبورت كونفدينشيال</title>
+    <sub-title lang="ar">سبورت كونفدينشيال</sub-title>
+    <category lang="ar">ترفيه</category>
+  </programme>
+  <programme start="20260402193000 +0100" stop="20260402203000 +0100" channel="Alkass_3_AR.bein">
+    <title lang="ar">تو أند هاف</title>
+    <sub-title lang="ar">تو أند هاف</sub-title>
+    <category lang="ar">ترفيه</category>
+  </programme>
+  <programme start="20260402203000 +0100" stop="20260402210000 +0100" channel="Alkass_3_AR.bein">
+    <title lang="ar">بريفيو</title>
+    <sub-title lang="ar">بريفيو</sub-title>
+    <category lang="ar">ترفيه</category>
+  </programme>
+  <programme start="20260402210000 +0100" stop="20260402211500 +0100" channel="Alkass_3_AR.bein">
+    <title lang="ar">نيوز</title>
+    <sub-title lang="ar">نيوز</sub-title>
+    <category lang="ar">أخبار</category>
+  </programme>
+  <programme start="20260402211500 +0100" stop="20260402213000 +0100" channel="Alkass_3_AR.bein">
     <title lang="ar">ديربي العراق</title>
     <sub-title lang="ar">ديربي العراق</sub-title>
     <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260402213000 +0100" stop="20260402233000 +0100" channel="Alkass_3_AR.bein">
+    <title lang="ar">مربط الفرس</title>
+    <sub-title lang="ar">مربط الفرس</sub-title>
+    <category lang="ar">ترفيه</category>
+  </programme>
+  <programme start="20260402233000 +0100" stop="20260403030000 +0100" channel="Alkass_3_AR.bein">
+    <title lang="ar">ذا فوتبول ريفيو</title>
+    <sub-title lang="ar">ذا فوتبول ريفيو</sub-title>
+    <category lang="ar">ترفيه</category>
   </programme>
   <programme start="20260403030000 +0100" stop="20260403040000 +0100" channel="Alkass_3_AR.bein">
     <title lang="ar">آريبيا فوتبول</title>
@@ -7371,124 +7316,84 @@
     <sub-title lang="ar">تو أند هاف</sub-title>
     <category lang="ar">ترفيه</category>
   </programme>
-  <programme start="20260401000000 +0100" stop="20260401003000 +0100" channel="Alkass_4_AR.bein">
-    <title lang="ar">نيوز</title>
-    <sub-title lang="ar">نيوز</sub-title>
-    <category lang="ar">أخبار</category>
-  </programme>
-  <programme start="20260401003000 +0100" stop="20260401013000 +0100" channel="Alkass_4_AR.bein">
-    <title lang="ar">تو أند هاف</title>
-    <sub-title lang="ar">تو أند هاف</sub-title>
-    <category lang="ar">ترفيه</category>
-  </programme>
-  <programme start="20260401013000 +0100" stop="20260401033000 +0100" channel="Alkass_4_AR.bein">
-    <title lang="ar">الدوري القطري لكرة الطائرة</title>
-    <sub-title lang="ar">الدوري القطري لكرة الطائرة</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401033000 +0100" stop="20260401040000 +0100" channel="Alkass_4_AR.bein">
-    <title lang="ar">إنفينسبل</title>
-    <sub-title lang="ar">إنفينسبل</sub-title>
-    <category lang="ar">ترفيه</category>
-  </programme>
-  <programme start="20260401040000 +0100" stop="20260401043000 +0100" channel="Alkass_4_AR.bein">
-    <title lang="ar">فيبا وورلد باسكت بول</title>
-    <sub-title lang="ar">فيبا وورلد باسكت بول</sub-title>
-    <category lang="ar">ترفيه</category>
-  </programme>
-  <programme start="20260401043000 +0100" stop="20260401053000 +0100" channel="Alkass_4_AR.bein">
-    <title lang="ar">جولمانيا</title>
-    <sub-title lang="ar">جولمانيا</sub-title>
-    <category lang="ar">ترفيه</category>
-  </programme>
-  <programme start="20260401053000 +0100" stop="20260401060000 +0100" channel="Alkass_4_AR.bein">
-    <title lang="ar">مهرجان المرموم التراثي</title>
-    <sub-title lang="ar">مهرجان المرموم التراثي</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401060000 +0100" stop="20260401090000 +0100" channel="Alkass_4_AR.bein">
-    <title lang="ar">نيوز</title>
-    <sub-title lang="ar">نيوز</sub-title>
-    <category lang="ar">أخبار</category>
-  </programme>
-  <programme start="20260401090000 +0100" stop="20260401093000 +0100" channel="Alkass_4_AR.bein">
+  <programme start="20260404033000 +0100" stop="20260404040000 +0100" channel="Alkass_3_AR.bein">
     <title lang="ar">سبورت كونفدينشيال</title>
     <sub-title lang="ar">سبورت كونفدينشيال</sub-title>
     <category lang="ar">ترفيه</category>
   </programme>
-  <programme start="20260401093000 +0100" stop="20260401100000 +0100" channel="Alkass_4_AR.bein">
+  <programme start="20260404040000 +0100" stop="20260404060000 +0100" channel="Alkass_3_AR.bein">
+    <title lang="ar">كاتاري أوليمبيك ليج</title>
+    <sub-title lang="ar">كاتاري أوليمبيك ليج</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404060000 +0100" stop="20260404084500 +0100" channel="Alkass_3_AR.bein">
+    <title lang="ar">سباق الهجن</title>
+    <sub-title lang="ar">سباق الهجن</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404084500 +0100" stop="20260404091500 +0100" channel="Alkass_3_AR.bein">
+    <title lang="ar">فيبا وورلد باسكت بول</title>
+    <sub-title lang="ar">فيبا وورلد باسكت بول</sub-title>
+    <category lang="ar">ترفيه</category>
+  </programme>
+  <programme start="20260404091500 +0100" stop="20260404093000 +0100" channel="Alkass_3_AR.bein">
+    <title lang="ar">أوتو مونديال</title>
+    <sub-title lang="ar">أوتو مونديال</sub-title>
+    <category lang="ar">ترفيه</category>
+  </programme>
+  <programme start="20260404093000 +0100" stop="20260404100000 +0100" channel="Alkass_3_AR.bein">
     <title lang="ar">ذا جريتس أوف أول تايم</title>
     <sub-title lang="ar">ذا جريتس أوف أول تايم</sub-title>
     <category lang="ar">ترفيه</category>
   </programme>
-  <programme start="20260401100000 +0100" stop="20260401103000 +0100" channel="Alkass_4_AR.bein">
-    <title lang="ar">مربط الفرس</title>
-    <sub-title lang="ar">مربط الفرس</sub-title>
+  <programme start="20260404100000 +0100" stop="20260404103000 +0100" channel="Alkass_3_AR.bein">
+    <title lang="ar">ذي إنسايد لاين</title>
+    <sub-title lang="ar">ذي إنسايد لاين</sub-title>
     <category lang="ar">ترفيه</category>
   </programme>
-  <programme start="20260401103000 +0100" stop="20260401120000 +0100" channel="Alkass_4_AR.bein">
-    <title lang="ar">جولمانيا</title>
-    <sub-title lang="ar">جولمانيا</sub-title>
-    <category lang="ar">ترفيه</category>
+  <programme start="20260404103000 +0100" stop="20260404120000 +0100" channel="Alkass_3_AR.bein">
+    <title lang="ar">مباراة كرة سلة</title>
+    <sub-title lang="ar">مباراة كرة سلة</sub-title>
+    <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260401120000 +0100" stop="20260401123000 +0100" channel="Alkass_4_AR.bein">
+  <programme start="20260404120000 +0100" stop="20260404130000 +0100" channel="Alkass_3_AR.bein">
     <title lang="ar">نيوز</title>
     <sub-title lang="ar">نيوز</sub-title>
     <category lang="ar">أخبار</category>
   </programme>
-  <programme start="20260401123000 +0100" stop="20260401130000 +0100" channel="Alkass_4_AR.bein">
-    <title lang="ar">نيوز بيبر</title>
-    <sub-title lang="ar">نيوز بيبر</sub-title>
-    <category lang="ar">ترفيه</category>
-  </programme>
-  <programme start="20260401130000 +0100" stop="20260401133000 +0100" channel="Alkass_4_AR.bein">
-    <title lang="ar">جولمانيا</title>
-    <sub-title lang="ar">جولمانيا</sub-title>
-    <category lang="ar">ترفيه</category>
-  </programme>
-  <programme start="20260401133000 +0100" stop="20260401160000 +0100" channel="Alkass_4_AR.bein">
-    <title lang="ar">مهرجان المرموم التراثي</title>
-    <sub-title lang="ar">مهرجان المرموم التراثي</sub-title>
+  <programme start="20260404130000 +0100" stop="20260404190000 +0100" channel="Alkass_3_AR.bein">
+    <title lang="ar">بطولة الوصل لكرة السلة</title>
+    <sub-title lang="ar">بطولة الوصل لكرة السلة</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260401160000 +0100" stop="20260401161500 +0100" channel="Alkass_4_AR.bein">
-    <title lang="ar">نيوز</title>
-    <sub-title lang="ar">نيوز</sub-title>
-    <category lang="ar">أخبار</category>
-  </programme>
-  <programme start="20260401161500 +0100" stop="20260401180000 +0100" channel="Alkass_4_AR.bein">
-    <title lang="ar">آريبيا فوتبول</title>
-    <sub-title lang="ar">آريبيا فوتبول</sub-title>
+  <programme start="20260404190000 +0100" stop="20260404193000 +0100" channel="Alkass_3_AR.bein">
+    <title lang="ar">ذا جريتس أوف أول تايم</title>
+    <sub-title lang="ar">ذا جريتس أوف أول تايم</sub-title>
     <category lang="ar">ترفيه</category>
   </programme>
-  <programme start="20260401180000 +0100" stop="20260401194500 +0100" channel="Alkass_4_AR.bein">
-    <title lang="ar">سباق الخيل</title>
-    <sub-title lang="ar">سباق الخيل</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401194500 +0100" stop="20260401203000 +0100" channel="Alkass_4_AR.bein">
-    <title lang="ar">جولمانيا</title>
-    <sub-title lang="ar">جولمانيا</sub-title>
+  <programme start="20260404193000 +0100" stop="20260404200000 +0100" channel="Alkass_3_AR.bein">
+    <title lang="ar">ذا فوتبول ريفيو</title>
+    <sub-title lang="ar">ذا فوتبول ريفيو</sub-title>
     <category lang="ar">ترفيه</category>
   </programme>
-  <programme start="20260401203000 +0100" stop="20260401210000 +0100" channel="Alkass_4_AR.bein">
+  <programme start="20260404200000 +0100" stop="20260404203000 +0100" channel="Alkass_3_AR.bein">
+    <title lang="ar">ذي إنسايد لاين</title>
+    <sub-title lang="ar">ذي إنسايد لاين</sub-title>
+    <category lang="ar">ترفيه</category>
+  </programme>
+  <programme start="20260404203000 +0100" stop="20260404210000 +0100" channel="Alkass_3_AR.bein">
     <title lang="ar">كميونيكيشن</title>
     <sub-title lang="ar">كميونيكيشن</sub-title>
     <category lang="ar">ترفيه</category>
   </programme>
-  <programme start="20260401210000 +0100" stop="20260401213000 +0100" channel="Alkass_4_AR.bein">
+  <programme start="20260404210000 +0100" stop="20260404213000 +0100" channel="Alkass_3_AR.bein">
     <title lang="ar">نيوز</title>
     <sub-title lang="ar">نيوز</sub-title>
     <category lang="ar">أخبار</category>
   </programme>
-  <programme start="20260401213000 +0100" stop="20260401224500 +0100" channel="Alkass_4_AR.bein">
-    <title lang="ar">بريفيو</title>
-    <sub-title lang="ar">بريفيو</sub-title>
-    <category lang="ar">ترفيه</category>
-  </programme>
-  <programme start="20260401224500 +0100" stop="20260402051500 +0100" channel="Alkass_4_AR.bein">
-    <title lang="ar">الدوري القطري لكرة اليد</title>
-    <sub-title lang="ar">الدوري القطري لكرة اليد</sub-title>
+  <programme start="20260404213000 +0100" stop="20260405000000 +0100" channel="Alkass_3_AR.bein">
+    <title lang="ar">دوري أبطال الخليج للأندية</title>
+    <sub-title lang="ar">دوري أبطال الخليج للأندية</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
   <programme start="20260402051500 +0100" stop="20260402060000 +0100" channel="Alkass_4_AR.bein">
@@ -7526,39 +7431,69 @@
     <sub-title lang="ar">نيوز</sub-title>
     <category lang="ar">أخبار</category>
   </programme>
-  <programme start="20260402123000 +0100" stop="20260402140000 +0100" channel="Alkass_4_AR.bein">
+  <programme start="20260402123000 +0100" stop="20260402130000 +0100" channel="Alkass_4_AR.bein">
     <title lang="ar">نيوز بيبر</title>
     <sub-title lang="ar">نيوز بيبر</sub-title>
     <category lang="ar">ترفيه</category>
   </programme>
-  <programme start="20260402140000 +0100" stop="20260402160000 +0100" channel="Alkass_4_AR.bein">
-    <title lang="ar">سباق الهجن</title>
-    <sub-title lang="ar">سباق الهجن</sub-title>
+  <programme start="20260402130000 +0100" stop="20260402150000 +0100" channel="Alkass_4_AR.bein">
+    <title lang="ar">مهرجان المرموم التراثي</title>
+    <sub-title lang="ar">مهرجان المرموم التراثي</sub-title>
     <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260402150000 +0100" stop="20260402153000 +0100" channel="Alkass_4_AR.bein">
+    <title lang="ar">جولمانيا</title>
+    <sub-title lang="ar">جولمانيا</sub-title>
+    <category lang="ar">ترفيه</category>
+  </programme>
+  <programme start="20260402153000 +0100" stop="20260402160000 +0100" channel="Alkass_4_AR.bein">
+    <title lang="ar">ذي كونتندرز</title>
+    <sub-title lang="ar">ذي كونتندرز</sub-title>
+    <category lang="ar">ترفيه</category>
   </programme>
   <programme start="20260402160000 +0100" stop="20260402161500 +0100" channel="Alkass_4_AR.bein">
     <title lang="ar">نيوز</title>
     <sub-title lang="ar">نيوز</sub-title>
     <category lang="ar">أخبار</category>
   </programme>
-  <programme start="20260402161500 +0100" stop="20260402174500 +0100" channel="Alkass_4_AR.bein">
-    <title lang="ar">تمرين</title>
-    <sub-title lang="ar">تمرين</sub-title>
+  <programme start="20260402161500 +0100" stop="20260402164500 +0100" channel="Alkass_4_AR.bein">
+    <title lang="ar">فيبا وورلد باسكت بول</title>
+    <sub-title lang="ar">فيبا وورلد باسكت بول</sub-title>
     <category lang="ar">ترفيه</category>
   </programme>
-  <programme start="20260402174500 +0100" stop="20260402184500 +0100" channel="Alkass_4_AR.bein">
+  <programme start="20260402164500 +0100" stop="20260402171500 +0100" channel="Alkass_4_AR.bein">
+    <title lang="ar">ذا فوتبول ريفيو</title>
+    <sub-title lang="ar">ذا فوتبول ريفيو</sub-title>
+    <category lang="ar">ترفيه</category>
+  </programme>
+  <programme start="20260402171500 +0100" stop="20260402181500 +0100" channel="Alkass_4_AR.bein">
     <title lang="ar">فولورز</title>
     <sub-title lang="ar">فولورز</sub-title>
     <category lang="ar">ترفيه</category>
   </programme>
-  <programme start="20260402184500 +0100" stop="20260402194500 +0100" channel="Alkass_4_AR.bein">
-    <title lang="ar">جس</title>
-    <sub-title lang="ar">جس</sub-title>
+  <programme start="20260402181500 +0100" stop="20260402210000 +0100" channel="Alkass_4_AR.bein">
+    <title lang="ar">كأس قطر للكرة الطائرة</title>
+    <sub-title lang="ar">كأس قطر للكرة الطائرة</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260402210000 +0100" stop="20260402213000 +0100" channel="Alkass_4_AR.bein">
+    <title lang="ar">نيوز</title>
+    <sub-title lang="ar">نيوز</sub-title>
+    <category lang="ar">أخبار</category>
+  </programme>
+  <programme start="20260402213000 +0100" stop="20260402223000 +0100" channel="Alkass_4_AR.bein">
+    <title lang="ar">بريفيو</title>
+    <sub-title lang="ar">بريفيو</sub-title>
     <category lang="ar">ترفيه</category>
   </programme>
-  <programme start="20260402194500 +0100" stop="20260403031500 +0100" channel="Alkass_4_AR.bein">
-    <title lang="ar">كيو إس إل ماجازين</title>
-    <sub-title lang="ar">كيو إس إل ماجازين</sub-title>
+  <programme start="20260402223000 +0100" stop="20260402230000 +0100" channel="Alkass_4_AR.bein">
+    <title lang="ar">كميونيكيشن</title>
+    <sub-title lang="ar">كميونيكيشن</sub-title>
+    <category lang="ar">ترفيه</category>
+  </programme>
+  <programme start="20260402230000 +0100" stop="20260403031500 +0100" channel="Alkass_4_AR.bein">
+    <title lang="ar">فولورز</title>
+    <sub-title lang="ar">فولورز</sub-title>
     <category lang="ar">ترفيه</category>
   </programme>
   <programme start="20260403031500 +0100" stop="20260403060000 +0100" channel="Alkass_4_AR.bein">
@@ -7651,114 +7586,94 @@
     <sub-title lang="ar">لايفز</sub-title>
     <category lang="ar">ترفيه</category>
   </programme>
-  <programme start="20260401000000 +0100" stop="20260401003000 +0100" channel="Alkass_5_AR.bein">
-    <title lang="ar">الأخبار</title>
-    <sub-title lang="ar">الأخبار</sub-title>
+  <programme start="20260404000000 +0100" stop="20260404050000 +0100" channel="Alkass_4_AR.bein">
+    <title lang="ar">مهرجان قطر للإبل</title>
+    <sub-title lang="ar">مهرجان قطر للإبل</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260401003000 +0100" stop="20260401023000 +0100" channel="Alkass_5_AR.bein">
-    <title lang="ar">مربط الفرس</title>
-    <sub-title lang="ar">مربط الفرس</sub-title>
-    <category lang="ar">الرياضة العام</category>
+  <programme start="20260404050000 +0100" stop="20260404053000 +0100" channel="Alkass_4_AR.bein">
+    <title lang="ar">سبورت كونفدينشيال</title>
+    <sub-title lang="ar">سبورت كونفدينشيال</sub-title>
+    <category lang="ar">ترفيه</category>
   </programme>
-  <programme start="20260401023000 +0100" stop="20260401090000 +0100" channel="Alkass_5_AR.bein">
-    <title lang="ar">جولة الجياد العربية</title>
-    <sub-title lang="ar">جولة الجياد العربية</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401090000 +0100" stop="20260401103000 +0100" channel="Alkass_5_AR.bein">
-    <title lang="ar">الدوري القطري لكرة اليد</title>
-    <sub-title lang="ar">الدوري القطري لكرة اليد</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401103000 +0100" stop="20260401120000 +0100" channel="Alkass_5_AR.bein">
-    <title lang="ar">الكرة العربية</title>
-    <sub-title lang="ar">الكرة العربية</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401120000 +0100" stop="20260401123000 +0100" channel="Alkass_5_AR.bein">
-    <title lang="ar">الأخبار</title>
-    <sub-title lang="ar">الأخبار</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401123000 +0100" stop="20260401130000 +0100" channel="Alkass_5_AR.bein">
-    <title lang="ar">جرايد</title>
-    <sub-title lang="ar">جرايد</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401130000 +0100" stop="20260401141500 +0100" channel="Alkass_5_AR.bein">
-    <title lang="ar">الدوري القطري لكرة اليد</title>
-    <sub-title lang="ar">الدوري القطري لكرة اليد</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401141500 +0100" stop="20260401160000 +0100" channel="Alkass_5_AR.bein">
-    <title lang="ar">الدوري القطري لكرة الطائرة</title>
-    <sub-title lang="ar">الدوري القطري لكرة الطائرة</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401160000 +0100" stop="20260401161500 +0100" channel="Alkass_5_AR.bein">
-    <title lang="ar">الأخبار</title>
-    <sub-title lang="ar">الأخبار</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401161500 +0100" stop="20260401181500 +0100" channel="Alkass_5_AR.bein">
-    <title lang="ar">دوري كرة السلة القطري</title>
-    <sub-title lang="ar">دوري كرة السلة القطري</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401181500 +0100" stop="20260401210000 +0100" channel="Alkass_5_AR.bein">
-    <title lang="ar">الدوري الأوليمبي القطري</title>
-    <sub-title lang="ar">الدوري الأوليمبي القطري</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401210000 +0100" stop="20260401213000 +0100" channel="Alkass_5_AR.bein">
-    <title lang="ar">الأخبار</title>
-    <sub-title lang="ar">الأخبار</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401213000 +0100" stop="20260401220000 +0100" channel="Alkass_5_AR.bein">
-    <title lang="ar">المتنافسون</title>
-    <sub-title lang="ar">المتنافسون</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401220000 +0100" stop="20260402030000 +0100" channel="Alkass_5_AR.bein">
-    <title lang="ar">كأس نجوم قطر</title>
-    <sub-title lang="ar">كأس نجوم قطر</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260402030000 +0100" stop="20260402033000 +0100" channel="Alkass_5_AR.bein">
-    <title lang="ar">كرة السلة العالمية</title>
-    <sub-title lang="ar">كرة السلة العالمية</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260402033000 +0100" stop="20260402053000 +0100" channel="Alkass_5_AR.bein">
+  <programme start="20260404053000 +0100" stop="20260404071500 +0100" channel="Alkass_4_AR.bein">
     <title lang="ar">ديربي تونس</title>
     <sub-title lang="ar">ديربي تونس</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260402053000 +0100" stop="20260402070000 +0100" channel="Alkass_5_AR.bein">
-    <title lang="ar">دوري نجوم قطر</title>
-    <sub-title lang="ar">دوري نجوم قطر</sub-title>
+  <programme start="20260404071500 +0100" stop="20260404073000 +0100" channel="Alkass_4_AR.bein">
+    <title lang="ar">أوتو مونديال</title>
+    <sub-title lang="ar">أوتو مونديال</sub-title>
+    <category lang="ar">ترفيه</category>
+  </programme>
+  <programme start="20260404073000 +0100" stop="20260404080000 +0100" channel="Alkass_4_AR.bein">
+    <title lang="ar">كينج أوف ذا كورت بيتش فوليبول تشامبيونشيب</title>
+    <sub-title lang="ar">كينج أوف ذا كورت بيتش فوليبول تشامبيونشيب</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260402070000 +0100" stop="20260402071500 +0100" channel="Alkass_5_AR.bein">
-    <title lang="ar">عالم المحركات</title>
-    <sub-title lang="ar">عالم المحركات</sub-title>
+  <programme start="20260404080000 +0100" stop="20260404083000 +0100" channel="Alkass_4_AR.bein">
+    <title lang="ar">بطولة العالم لجمال الخيل العربية الأصيلة</title>
+    <sub-title lang="ar">بطولة العالم لجمال الخيل العربية الأصيلة</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260402071500 +0100" stop="20260402093000 +0100" channel="Alkass_5_AR.bein">
-    <title lang="ar">كأس نجوم قطر</title>
-    <sub-title lang="ar">كأس نجوم قطر</sub-title>
+  <programme start="20260404083000 +0100" stop="20260404090000 +0100" channel="Alkass_4_AR.bein">
+    <title lang="ar">جولمانيا</title>
+    <sub-title lang="ar">جولمانيا</sub-title>
+    <category lang="ar">ترفيه</category>
+  </programme>
+  <programme start="20260404090000 +0100" stop="20260404113000 +0100" channel="Alkass_4_AR.bein">
+    <title lang="ar">دوري الدرجة الثانية القطري</title>
+    <sub-title lang="ar">دوري الدرجة الثانية القطري</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260402093000 +0100" stop="20260402120000 +0100" channel="Alkass_5_AR.bein">
-    <title lang="ar">كأس نجوم قطر</title>
-    <sub-title lang="ar">كأس نجوم قطر</sub-title>
+  <programme start="20260404113000 +0100" stop="20260404120000 +0100" channel="Alkass_4_AR.bein">
+    <title lang="ar">فيبا وورلد باسكت بول</title>
+    <sub-title lang="ar">فيبا وورلد باسكت بول</sub-title>
+    <category lang="ar">ترفيه</category>
+  </programme>
+  <programme start="20260404120000 +0100" stop="20260404123000 +0100" channel="Alkass_4_AR.bein">
+    <title lang="ar">نيوز</title>
+    <sub-title lang="ar">نيوز</sub-title>
+    <category lang="ar">أخبار</category>
+  </programme>
+  <programme start="20260404123000 +0100" stop="20260404130000 +0100" channel="Alkass_4_AR.bein">
+    <title lang="ar">نيوز بيبر</title>
+    <sub-title lang="ar">نيوز بيبر</sub-title>
+    <category lang="ar">ترفيه</category>
+  </programme>
+  <programme start="20260404130000 +0100" stop="20260404133000 +0100" channel="Alkass_4_AR.bein">
+    <title lang="ar">كميونيكيشن</title>
+    <sub-title lang="ar">كميونيكيشن</sub-title>
+    <category lang="ar">ترفيه</category>
+  </programme>
+  <programme start="20260404133000 +0100" stop="20260404140000 +0100" channel="Alkass_4_AR.bein">
+    <title lang="ar">كينج أوف ذا كورت بيتش فوليبول تشامبيونشيب</title>
+    <sub-title lang="ar">كينج أوف ذا كورت بيتش فوليبول تشامبيونشيب</sub-title>
     <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404140000 +0100" stop="20260404160000 +0100" channel="Alkass_4_AR.bein">
+    <title lang="ar">كينج أبدول أزيز كاميل فيستيفال</title>
+    <sub-title lang="ar">كينج أبدول أزيز كاميل فيستيفال</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404160000 +0100" stop="20260404162000 +0100" channel="Alkass_4_AR.bein">
+    <title lang="ar">نيوز</title>
+    <sub-title lang="ar">نيوز</sub-title>
+    <category lang="ar">أخبار</category>
+  </programme>
+  <programme start="20260404162000 +0100" stop="20260404234500 +0100" channel="Alkass_4_AR.bein">
+    <title lang="ar">بطولة قطر الدولية للخيل العربية الأصيلة</title>
+    <sub-title lang="ar">بطولة قطر الدولية للخيل العربية الأصيلة</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404234500 +0100" stop="20260405040000 +0100" channel="Alkass_4_AR.bein">
+    <title lang="ar">أوتو مونديال</title>
+    <sub-title lang="ar">أوتو مونديال</sub-title>
+    <category lang="ar">ترفيه</category>
   </programme>
   <programme start="20260402120000 +0100" stop="20260402123000 +0100" channel="Alkass_5_AR.bein">
-    <title lang="ar">الأخبار</title>
-    <sub-title lang="ar">الأخبار</sub-title>
+    <title lang="ar">أخبار</title>
+    <sub-title lang="ar">أخبار</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
   <programme start="20260402123000 +0100" stop="20260402130000 +0100" channel="Alkass_5_AR.bein">
@@ -7766,59 +7681,54 @@
     <sub-title lang="ar">جرايد</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260402130000 +0100" stop="20260402140000 +0100" channel="Alkass_5_AR.bein">
-    <title lang="ar">الحكم</title>
-    <sub-title lang="ar">الحكم</sub-title>
+  <programme start="20260402130000 +0100" stop="20260402150000 +0100" channel="Alkass_5_AR.bein">
+    <title lang="ar">الدوري الأوليمبي القطري</title>
+    <sub-title lang="ar">الدوري الأوليمبي القطري</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260402140000 +0100" stop="20260402143000 +0100" channel="Alkass_5_AR.bein">
-    <title lang="ar">كرة السلة العالمية</title>
-    <sub-title lang="ar">كرة السلة العالمية</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260402143000 +0100" stop="20260402151500 +0100" channel="Alkass_5_AR.bein">
-    <title lang="ar">لا يقهر</title>
-    <sub-title lang="ar">لا يقهر</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260402151500 +0100" stop="20260402171500 +0100" channel="Alkass_5_AR.bein">
-    <title lang="ar">القلايل</title>
-    <sub-title lang="ar">القلايل</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260402171500 +0100" stop="20260402174500 +0100" channel="Alkass_5_AR.bein">
-    <title lang="ar">عيالنا</title>
-    <sub-title lang="ar">عيالنا</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260402174500 +0100" stop="20260402181500 +0100" channel="Alkass_5_AR.bein">
-    <title lang="ar">أسرار الرياضة</title>
-    <sub-title lang="ar">أسرار الرياضة</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260402181500 +0100" stop="20260402184500 +0100" channel="Alkass_5_AR.bein">
-    <title lang="ar">حصيلة كرة القدم</title>
-    <sub-title lang="ar">حصيلة كرة القدم</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260402184500 +0100" stop="20260402210000 +0100" channel="Alkass_5_AR.bein">
-    <title lang="ar">دوري سوبر غرب آسيا لكرة السلة</title>
-    <sub-title lang="ar">دوري سوبر غرب آسيا لكرة السلة</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260402210000 +0100" stop="20260402230000 +0100" channel="Alkass_5_AR.bein">
-    <title lang="ar">القلايل</title>
-    <sub-title lang="ar">القلايل</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260402230000 +0100" stop="20260402233000 +0100" channel="Alkass_5_AR.bein">
-    <title lang="ar">أساطير الرياضة</title>
-    <sub-title lang="ar">أساطير الرياضة</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260402233000 +0100" stop="20260403073000 +0100" channel="Alkass_5_AR.bein">
+  <programme start="20260402150000 +0100" stop="20260402153000 +0100" channel="Alkass_5_AR.bein">
     <title lang="ar">جولمانيا</title>
     <sub-title lang="ar">جولمانيا</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260402153000 +0100" stop="20260402160000 +0100" channel="Alkass_5_AR.bein">
+    <title lang="ar">المتنافسون</title>
+    <sub-title lang="ar">المتنافسون</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260402160000 +0100" stop="20260402161500 +0100" channel="Alkass_5_AR.bein">
+    <title lang="ar">أخبار</title>
+    <sub-title lang="ar">أخبار</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260402161500 +0100" stop="20260402181500 +0100" channel="Alkass_5_AR.bein">
+    <title lang="ar">كأس قطر لكرة اليد</title>
+    <sub-title lang="ar">كأس قطر لكرة اليد</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260402181500 +0100" stop="20260402203000 +0100" channel="Alkass_5_AR.bein">
+    <title lang="ar">كأس قطر لكرة اليد</title>
+    <sub-title lang="ar">كأس قطر لكرة اليد</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260402203000 +0100" stop="20260402210000 +0100" channel="Alkass_5_AR.bein">
+    <title lang="ar">تواصل</title>
+    <sub-title lang="ar">تواصل</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260402210000 +0100" stop="20260402213000 +0100" channel="Alkass_5_AR.bein">
+    <title lang="ar">أخبار</title>
+    <sub-title lang="ar">أخبار</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260402213000 +0100" stop="20260402220000 +0100" channel="Alkass_5_AR.bein">
+    <title lang="ar">الإصرار</title>
+    <sub-title lang="ar">الإصرار</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260402220000 +0100" stop="20260403073000 +0100" channel="Alkass_5_AR.bein">
+    <title lang="ar">الدوري الأوليمبي القطري</title>
+    <sub-title lang="ar">الدوري الأوليمبي القطري</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
   <programme start="20260403073000 +0100" stop="20260403091500 +0100" channel="Alkass_5_AR.bein">
@@ -7901,139 +7811,119 @@
     <sub-title lang="ar">Gharafa</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260401000000 +0100" stop="20260401003000 +0100" channel="Alkass_6_AR.bein">
-    <title lang="ar">الأخبار</title>
-    <sub-title lang="ar">الأخبار</sub-title>
+  <programme start="20260404030000 +0100" stop="20260404033000 +0100" channel="Alkass_5_AR.bein">
+    <title lang="ar">بطولة ملك الملعب لكرة الطائرة الشاطئية</title>
+    <sub-title lang="ar">بطولة ملك الملعب لكرة الطائرة الشاطئية</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260401003000 +0100" stop="20260401023000 +0100" channel="Alkass_6_AR.bein">
-    <title lang="ar">دوري كرة السلة القطري</title>
-    <sub-title lang="ar">دوري كرة السلة القطري</sub-title>
+  <programme start="20260404033000 +0100" stop="20260404053000 +0100" channel="Alkass_5_AR.bein">
+    <title lang="ar">دوري نجوم قطر</title>
+    <sub-title lang="ar">دوري نجوم قطر</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260401023000 +0100" stop="20260401030000 +0100" channel="Alkass_6_AR.bein">
-    <title lang="ar">أساطير الرياضة</title>
-    <sub-title lang="ar">أساطير الرياضة</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401030000 +0100" stop="20260401043000 +0100" channel="Alkass_6_AR.bein">
-    <title lang="ar">الدوري القطري لكرة اليد</title>
-    <sub-title lang="ar">الدوري القطري لكرة اليد</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401043000 +0100" stop="20260401060000 +0100" channel="Alkass_6_AR.bein">
-    <title lang="ar">الكرة العربية</title>
-    <sub-title lang="ar">الكرة العربية</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401060000 +0100" stop="20260401063000 +0100" channel="Alkass_6_AR.bein">
-    <title lang="ar">الأخبار</title>
-    <sub-title lang="ar">الأخبار</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401063000 +0100" stop="20260401081500 +0100" channel="Alkass_6_AR.bein">
-    <title lang="ar">دوري كرة السلة القطري</title>
-    <sub-title lang="ar">دوري كرة السلة القطري</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401081500 +0100" stop="20260401100500 +0100" channel="Alkass_6_AR.bein">
-    <title lang="ar">الدوري القطري لكرة اليد</title>
-    <sub-title lang="ar">الدوري القطري لكرة اليد</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401100500 +0100" stop="20260401120000 +0100" channel="Alkass_6_AR.bein">
-    <title lang="ar">الدوري القطري لكرة الطائرة</title>
-    <sub-title lang="ar">الدوري القطري لكرة الطائرة</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401120000 +0100" stop="20260401123000 +0100" channel="Alkass_6_AR.bein">
-    <title lang="ar">الأخبار</title>
-    <sub-title lang="ar">الأخبار</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401123000 +0100" stop="20260401131500 +0100" channel="Alkass_6_AR.bein">
-    <title lang="ar">جرايد</title>
-    <sub-title lang="ar">جرايد</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401131500 +0100" stop="20260401134500 +0100" channel="Alkass_6_AR.bein">
+  <programme start="20260404053000 +0100" stop="20260404060000 +0100" channel="Alkass_5_AR.bein">
     <title lang="ar">كرة السلة العالمية</title>
     <sub-title lang="ar">كرة السلة العالمية</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260401134500 +0100" stop="20260401200000 +0100" channel="Alkass_6_AR.bein">
-    <title lang="ar">جولة الجياد العربية</title>
-    <sub-title lang="ar">جولة الجياد العربية</sub-title>
+  <programme start="20260404060000 +0100" stop="20260404063000 +0100" channel="Alkass_5_AR.bein">
+    <title lang="ar">أخبار</title>
+    <sub-title lang="ar">أخبار</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260401200000 +0100" stop="20260401203000 +0100" channel="Alkass_6_AR.bein">
-    <title lang="ar">جولمانيا</title>
-    <sub-title lang="ar">جولمانيا</sub-title>
+  <programme start="20260404063000 +0100" stop="20260404080000 +0100" channel="Alkass_5_AR.bein">
+    <title lang="ar">دوري الدرجة الثانية القطري</title>
+    <sub-title lang="ar">دوري الدرجة الثانية القطري</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260401203000 +0100" stop="20260401210000 +0100" channel="Alkass_6_AR.bein">
-    <title lang="ar">تواصل</title>
-    <sub-title lang="ar">تواصل</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401210000 +0100" stop="20260401213000 +0100" channel="Alkass_6_AR.bein">
-    <title lang="ar">الأخبار</title>
-    <sub-title lang="ar">الأخبار</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401213000 +0100" stop="20260401233000 +0100" channel="Alkass_6_AR.bein">
-    <title lang="ar">مربط الفرس</title>
-    <sub-title lang="ar">مربط الفرس</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401233000 +0100" stop="20260402030000 +0100" channel="Alkass_6_AR.bein">
-    <title lang="ar">تواصل</title>
-    <sub-title lang="ar">تواصل</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260402030000 +0100" stop="20260402050000 +0100" channel="Alkass_6_AR.bein">
-    <title lang="ar">كأس نجوم قطر</title>
-    <sub-title lang="ar">كأس نجوم قطر</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260402050000 +0100" stop="20260402053000 +0100" channel="Alkass_6_AR.bein">
-    <title lang="ar">لا يقهر</title>
-    <sub-title lang="ar">لا يقهر</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260402053000 +0100" stop="20260402060000 +0100" channel="Alkass_6_AR.bein">
+  <programme start="20260404080000 +0100" stop="20260404083000 +0100" channel="Alkass_5_AR.bein">
     <title lang="ar">أسرار الرياضة</title>
     <sub-title lang="ar">أسرار الرياضة</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260402060000 +0100" stop="20260402080000 +0100" channel="Alkass_6_AR.bein">
-    <title lang="ar">سباق الهجن</title>
-    <sub-title lang="ar">سباق الهجن</sub-title>
+  <programme start="20260404083000 +0100" stop="20260404084500 +0100" channel="Alkass_5_AR.bein">
+    <title lang="ar">أهداف</title>
+    <sub-title lang="ar">أهداف</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260402080000 +0100" stop="20260402083000 +0100" channel="Alkass_6_AR.bein">
-    <title lang="ar">أساطير الرياضة</title>
-    <sub-title lang="ar">أساطير الرياضة</sub-title>
+  <programme start="20260404084500 +0100" stop="20260404113000 +0100" channel="Alkass_5_AR.bein">
+    <title lang="ar">إستوديو الخيل</title>
+    <sub-title lang="ar">إستوديو الخيل</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260402083000 +0100" stop="20260402084500 +0100" channel="Alkass_6_AR.bein">
-    <title lang="ar">عالم المحركات</title>
-    <sub-title lang="ar">عالم المحركات</sub-title>
+  <programme start="20260404113000 +0100" stop="20260404120000 +0100" channel="Alkass_5_AR.bein">
+    <title lang="ar">بطولة ملك الملعب لكرة الطائرة الشاطئية</title>
+    <sub-title lang="ar">بطولة ملك الملعب لكرة الطائرة الشاطئية</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260402084500 +0100" stop="20260402100000 +0100" channel="Alkass_6_AR.bein">
-    <title lang="ar">جولات الدوحة الدولية للفروسية</title>
-    <sub-title lang="ar">جولات الدوحة الدولية للفروسية</sub-title>
+  <programme start="20260404120000 +0100" stop="20260404123000 +0100" channel="Alkass_5_AR.bein">
+    <title lang="ar">أخبار</title>
+    <sub-title lang="ar">أخبار</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260402100000 +0100" stop="20260402120000 +0100" channel="Alkass_6_AR.bein">
-    <title lang="ar">دوري أبطال الخليج للأندية</title>
-    <sub-title lang="ar">دوري أبطال الخليج للأندية</sub-title>
+  <programme start="20260404123000 +0100" stop="20260404130000 +0100" channel="Alkass_5_AR.bein">
+    <title lang="ar">جرايد</title>
+    <sub-title lang="ar">جرايد</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404130000 +0100" stop="20260404133000 +0100" channel="Alkass_5_AR.bein">
+    <title lang="ar">بطولة ملك الملعب لكرة الطائرة الشاطئية</title>
+    <sub-title lang="ar">بطولة ملك الملعب لكرة الطائرة الشاطئية</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404133000 +0100" stop="20260404140000 +0100" channel="Alkass_5_AR.bein">
+    <title lang="ar">حصيلة كرة القدم</title>
+    <sub-title lang="ar">حصيلة كرة القدم</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404140000 +0100" stop="20260404160000 +0100" channel="Alkass_5_AR.bein">
+    <title lang="ar">دوري الدرجة الثانية القطري</title>
+    <sub-title lang="ar">دوري الدرجة الثانية القطري</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404160000 +0100" stop="20260404162000 +0100" channel="Alkass_5_AR.bein">
+    <title lang="ar">أخبار</title>
+    <sub-title lang="ar">أخبار</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404162000 +0100" stop="20260404165000 +0100" channel="Alkass_5_AR.bein">
+    <title lang="ar">بطولة ملك الملعب لكرة الطائرة الشاطئية</title>
+    <sub-title lang="ar">بطولة ملك الملعب لكرة الطائرة الشاطئية</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404165000 +0100" stop="20260404172000 +0100" channel="Alkass_5_AR.bein">
+    <title lang="ar">أسرار الرياضة</title>
+    <sub-title lang="ar">أسرار الرياضة</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404172000 +0100" stop="20260404190000 +0100" channel="Alkass_5_AR.bein">
+    <title lang="ar">ديربي تونس</title>
+    <sub-title lang="ar">ديربي تونس</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404190000 +0100" stop="20260404220000 +0100" channel="Alkass_5_AR.bein">
+    <title lang="ar">دوري نجوم قطر</title>
+    <sub-title lang="ar">دوري نجوم قطر</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404220000 +0100" stop="20260404223000 +0100" channel="Alkass_5_AR.bein">
+    <title lang="ar">المجلة البحرية</title>
+    <sub-title lang="ar">المجلة البحرية</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404223000 +0100" stop="20260404233000 +0100" channel="Alkass_5_AR.bein">
+    <title lang="ar">الحصاد</title>
+    <sub-title lang="ar">الحصاد</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404233000 +0100" stop="20260405031500 +0100" channel="Alkass_5_AR.bein">
+    <title lang="ar">بطولة ملك الملعب لكرة الطائرة الشاطئية</title>
+    <sub-title lang="ar">بطولة ملك الملعب لكرة الطائرة الشاطئية</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
   <programme start="20260402120000 +0100" stop="20260402123000 +0100" channel="Alkass_6_AR.bein">
-    <title lang="ar">الأخبار</title>
-    <sub-title lang="ar">الأخبار</sub-title>
+    <title lang="ar">أخبار</title>
+    <sub-title lang="ar">أخبار</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
   <programme start="20260402123000 +0100" stop="20260402130000 +0100" channel="Alkass_6_AR.bein">
@@ -8041,59 +7931,49 @@
     <sub-title lang="ar">جرايد</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260402130000 +0100" stop="20260402133000 +0100" channel="Alkass_6_AR.bein">
-    <title lang="ar">حصيلة كرة القدم</title>
-    <sub-title lang="ar">حصيلة كرة القدم</sub-title>
+  <programme start="20260402130000 +0100" stop="20260402140000 +0100" channel="Alkass_6_AR.bein">
+    <title lang="ar">المتابعون</title>
+    <sub-title lang="ar">المتابعون</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260402133000 +0100" stop="20260402153000 +0100" channel="Alkass_6_AR.bein">
-    <title lang="ar">دوري أبطال الخليج للأندية</title>
-    <sub-title lang="ar">دوري أبطال الخليج للأندية</sub-title>
+  <programme start="20260402140000 +0100" stop="20260402143000 +0100" channel="Alkass_6_AR.bein">
+    <title lang="ar">عيالنا</title>
+    <sub-title lang="ar">عيالنا</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260402153000 +0100" stop="20260402160000 +0100" channel="Alkass_6_AR.bein">
-    <title lang="ar">عالم السرعة</title>
-    <sub-title lang="ar">عالم السرعة</sub-title>
+  <programme start="20260402143000 +0100" stop="20260402155500 +0100" channel="Alkass_6_AR.bein">
+    <title lang="ar">ثنتين ونص</title>
+    <sub-title lang="ar">ثنتين ونص</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260402160000 +0100" stop="20260402190000 +0100" channel="Alkass_6_AR.bein">
-    <title lang="ar">كأس سمو الأمير للرماية</title>
-    <sub-title lang="ar">كأس سمو الأمير للرماية</sub-title>
+  <programme start="20260402155500 +0100" stop="20260402183000 +0100" channel="Alkass_6_AR.bein">
+    <title lang="ar">كأس قطر للكرة الطائرة</title>
+    <sub-title lang="ar">كأس قطر للكرة الطائرة</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260402190000 +0100" stop="20260402193000 +0100" channel="Alkass_6_AR.bein">
-    <title lang="ar">لا يقهر</title>
-    <sub-title lang="ar">لا يقهر</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260402193000 +0100" stop="20260402200000 +0100" channel="Alkass_6_AR.bein">
-    <title lang="ar">كرة السلة العالمية</title>
-    <sub-title lang="ar">كرة السلة العالمية</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260402200000 +0100" stop="20260402203000 +0100" channel="Alkass_6_AR.bein">
-    <title lang="ar">أسرار الرياضة</title>
-    <sub-title lang="ar">أسرار الرياضة</sub-title>
+  <programme start="20260402183000 +0100" stop="20260402203000 +0100" channel="Alkass_6_AR.bein">
+    <title lang="ar">كأس قطر للكرة الطائرة</title>
+    <sub-title lang="ar">كأس قطر للكرة الطائرة</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
   <programme start="20260402203000 +0100" stop="20260402210000 +0100" channel="Alkass_6_AR.bein">
-    <title lang="ar">تواصل</title>
-    <sub-title lang="ar">تواصل</sub-title>
+    <title lang="ar">الحصيلة</title>
+    <sub-title lang="ar">الحصيلة</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
   <programme start="20260402210000 +0100" stop="20260402213000 +0100" channel="Alkass_6_AR.bein">
-    <title lang="ar">الأخبار</title>
-    <sub-title lang="ar">الأخبار</sub-title>
+    <title lang="ar">أخبار</title>
+    <sub-title lang="ar">أخبار</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
   <programme start="20260402213000 +0100" stop="20260402233000 +0100" channel="Alkass_6_AR.bein">
-    <title lang="ar">بطولة غرب آسيا للكرة الطائرة</title>
-    <sub-title lang="ar">بطولة غرب آسيا للكرة الطائرة</sub-title>
+    <title lang="ar">مربط الفرس</title>
+    <sub-title lang="ar">مربط الفرس</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
   <programme start="20260402233000 +0100" stop="20260403030000 +0100" channel="Alkass_6_AR.bein">
-    <title lang="ar">تواصل</title>
-    <sub-title lang="ar">تواصل</sub-title>
+    <title lang="ar">حصيلة كرة القدم</title>
+    <sub-title lang="ar">حصيلة كرة القدم</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
   <programme start="20260403030000 +0100" stop="20260403040000 +0100" channel="Alkass_6_AR.bein">
@@ -8191,119 +8071,84 @@
     <sub-title lang="ar">FIBA</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260401000000 +0100" stop="20260401003000 +0100" channel="Alkass_7_AR.bein">
-    <title lang="ar">الأخبار</title>
-    <sub-title lang="ar">الأخبار</sub-title>
+  <programme start="20260404030000 +0100" stop="20260404080000 +0100" channel="Alkass_6_AR.bein">
+    <title lang="ar">رالي قطر الدولي</title>
+    <sub-title lang="ar">رالي قطر الدولي</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260401003000 +0100" stop="20260401023000 +0100" channel="Alkass_7_AR.bein">
-    <title lang="ar">مربط الفرس</title>
-    <sub-title lang="ar">مربط الفرس</sub-title>
+  <programme start="20260404080000 +0100" stop="20260404100000 +0100" channel="Alkass_6_AR.bein">
+    <title lang="ar">بطولة غرب آسيا للكرة الطائرة</title>
+    <sub-title lang="ar">بطولة غرب آسيا للكرة الطائرة</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260401023000 +0100" stop="20260401090000 +0100" channel="Alkass_7_AR.bein">
-    <title lang="ar">جولة الجياد العربية</title>
-    <sub-title lang="ar">جولة الجياد العربية</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401090000 +0100" stop="20260401103000 +0100" channel="Alkass_7_AR.bein">
-    <title lang="ar">الدوري القطري لكرة اليد</title>
-    <sub-title lang="ar">الدوري القطري لكرة اليد</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401103000 +0100" stop="20260401120000 +0100" channel="Alkass_7_AR.bein">
-    <title lang="ar">الكرة العربية</title>
-    <sub-title lang="ar">الكرة العربية</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401120000 +0100" stop="20260401123000 +0100" channel="Alkass_7_AR.bein">
-    <title lang="ar">الأخبار</title>
-    <sub-title lang="ar">الأخبار</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401123000 +0100" stop="20260401130000 +0100" channel="Alkass_7_AR.bein">
-    <title lang="ar">جرايد</title>
-    <sub-title lang="ar">جرايد</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401130000 +0100" stop="20260401141500 +0100" channel="Alkass_7_AR.bein">
-    <title lang="ar">الدوري القطري لكرة اليد</title>
-    <sub-title lang="ar">الدوري القطري لكرة اليد</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401141500 +0100" stop="20260401160000 +0100" channel="Alkass_7_AR.bein">
-    <title lang="ar">الدوري القطري لكرة الطائرة</title>
-    <sub-title lang="ar">الدوري القطري لكرة الطائرة</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401160000 +0100" stop="20260401161500 +0100" channel="Alkass_7_AR.bein">
-    <title lang="ar">الأخبار</title>
-    <sub-title lang="ar">الأخبار</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401161500 +0100" stop="20260401181500 +0100" channel="Alkass_7_AR.bein">
-    <title lang="ar">دوري كرة السلة القطري</title>
-    <sub-title lang="ar">دوري كرة السلة القطري</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401181500 +0100" stop="20260401210000 +0100" channel="Alkass_7_AR.bein">
-    <title lang="ar">الدوري الأوليمبي القطري</title>
-    <sub-title lang="ar">الدوري الأوليمبي القطري</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401210000 +0100" stop="20260401213000 +0100" channel="Alkass_7_AR.bein">
-    <title lang="ar">الأخبار</title>
-    <sub-title lang="ar">الأخبار</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401213000 +0100" stop="20260401220000 +0100" channel="Alkass_7_AR.bein">
-    <title lang="ar">المتنافسون</title>
-    <sub-title lang="ar">المتنافسون</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260401220000 +0100" stop="20260402030000 +0100" channel="Alkass_7_AR.bein">
-    <title lang="ar">كأس نجوم قطر</title>
-    <sub-title lang="ar">كأس نجوم قطر</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260402030000 +0100" stop="20260402033000 +0100" channel="Alkass_7_AR.bein">
-    <title lang="ar">كرة السلة العالمية</title>
-    <sub-title lang="ar">كرة السلة العالمية</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260402033000 +0100" stop="20260402053000 +0100" channel="Alkass_7_AR.bein">
-    <title lang="ar">ديربي تونس</title>
-    <sub-title lang="ar">ديربي تونس</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260402053000 +0100" stop="20260402070000 +0100" channel="Alkass_7_AR.bein">
+  <programme start="20260404100000 +0100" stop="20260404120000 +0100" channel="Alkass_6_AR.bein">
     <title lang="ar">دوري نجوم قطر</title>
     <sub-title lang="ar">دوري نجوم قطر</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260402070000 +0100" stop="20260402071500 +0100" channel="Alkass_7_AR.bein">
-    <title lang="ar">عالم المحركات</title>
-    <sub-title lang="ar">عالم المحركات</sub-title>
+  <programme start="20260404120000 +0100" stop="20260404123000 +0100" channel="Alkass_6_AR.bein">
+    <title lang="ar">أخبار</title>
+    <sub-title lang="ar">أخبار</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260402071500 +0100" stop="20260402093000 +0100" channel="Alkass_7_AR.bein">
-    <title lang="ar">كأس نجوم قطر</title>
-    <sub-title lang="ar">كأس نجوم قطر</sub-title>
+  <programme start="20260404123000 +0100" stop="20260404130000 +0100" channel="Alkass_6_AR.bein">
+    <title lang="ar">جرايد</title>
+    <sub-title lang="ar">جرايد</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260402093000 +0100" stop="20260402100000 +0100" channel="Alkass_7_AR.bein">
-    <title lang="ar">كأس نجوم قطر</title>
-    <sub-title lang="ar">كأس نجوم قطر</sub-title>
+  <programme start="20260404130000 +0100" stop="20260404150000 +0100" channel="Alkass_6_AR.bein">
+    <title lang="ar">بطولة غرب آسيا للكرة الطائرة</title>
+    <sub-title lang="ar">بطولة غرب آسيا للكرة الطائرة</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260402100000 +0100" stop="20260402120000 +0100" channel="Alkass_7_AR.bein">
-    <title lang="ar">القلايل</title>
-    <sub-title lang="ar">القلايل</sub-title>
+  <programme start="20260404150000 +0100" stop="20260404153000 +0100" channel="Alkass_6_AR.bein">
+    <title lang="ar">أساطير الرياضة</title>
+    <sub-title lang="ar">أساطير الرياضة</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404153000 +0100" stop="20260404173000 +0100" channel="Alkass_6_AR.bein">
+    <title lang="ar">بطولة غرب آسيا للكرة الطائرة</title>
+    <sub-title lang="ar">بطولة غرب آسيا للكرة الطائرة</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404173000 +0100" stop="20260404180000 +0100" channel="Alkass_6_AR.bein">
+    <title lang="ar">لا يقهر</title>
+    <sub-title lang="ar">لا يقهر</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404180000 +0100" stop="20260404200000 +0100" channel="Alkass_6_AR.bein">
+    <title lang="ar">بطولة غرب آسيا للكرة الطائرة</title>
+    <sub-title lang="ar">بطولة غرب آسيا للكرة الطائرة</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404200000 +0100" stop="20260404203000 +0100" channel="Alkass_6_AR.bein">
+    <title lang="ar">حصيلة كرة القدم</title>
+    <sub-title lang="ar">حصيلة كرة القدم</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404203000 +0100" stop="20260404210000 +0100" channel="Alkass_6_AR.bein">
+    <title lang="ar">تواصل</title>
+    <sub-title lang="ar">تواصل</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404210000 +0100" stop="20260404213000 +0100" channel="Alkass_6_AR.bein">
+    <title lang="ar">أخبار</title>
+    <sub-title lang="ar">أخبار</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404213000 +0100" stop="20260404233000 +0100" channel="Alkass_6_AR.bein">
+    <title lang="ar">ديربي العراق</title>
+    <sub-title lang="ar">ديربي العراق</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404233000 +0100" stop="20260405000000 +0100" channel="Alkass_6_AR.bein">
+    <title lang="ar">أساطير الرياضة</title>
+    <sub-title lang="ar">أساطير الرياضة</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
   <programme start="20260402120000 +0100" stop="20260402123000 +0100" channel="Alkass_7_AR.bein">
-    <title lang="ar">الأخبار</title>
-    <sub-title lang="ar">الأخبار</sub-title>
+    <title lang="ar">أخبار</title>
+    <sub-title lang="ar">أخبار</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
   <programme start="20260402123000 +0100" stop="20260402130000 +0100" channel="Alkass_7_AR.bein">
@@ -8311,64 +8156,59 @@
     <sub-title lang="ar">جرايد</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260402130000 +0100" stop="20260402140000 +0100" channel="Alkass_7_AR.bein">
-    <title lang="ar">الحكم</title>
-    <sub-title lang="ar">الحكم</sub-title>
+  <programme start="20260402130000 +0100" stop="20260402150000 +0100" channel="Alkass_7_AR.bein">
+    <title lang="ar">الدوري الأوليمبي القطري</title>
+    <sub-title lang="ar">الدوري الأوليمبي القطري</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260402140000 +0100" stop="20260402143000 +0100" channel="Alkass_7_AR.bein">
+  <programme start="20260402150000 +0100" stop="20260402153000 +0100" channel="Alkass_7_AR.bein">
+    <title lang="ar">جولمانيا</title>
+    <sub-title lang="ar">جولمانيا</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260402153000 +0100" stop="20260402160000 +0100" channel="Alkass_7_AR.bein">
+    <title lang="ar">المتنافسون</title>
+    <sub-title lang="ar">المتنافسون</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260402160000 +0100" stop="20260402161500 +0100" channel="Alkass_7_AR.bein">
+    <title lang="ar">أخبار</title>
+    <sub-title lang="ar">أخبار</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260402161500 +0100" stop="20260402164500 +0100" channel="Alkass_7_AR.bein">
     <title lang="ar">كرة السلة العالمية</title>
     <sub-title lang="ar">كرة السلة العالمية</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260402143000 +0100" stop="20260402150000 +0100" channel="Alkass_7_AR.bein">
-    <title lang="ar">لا يقهر</title>
-    <sub-title lang="ar">لا يقهر</sub-title>
+  <programme start="20260402164500 +0100" stop="20260402171500 +0100" channel="Alkass_7_AR.bein">
+    <title lang="ar">حصيلة كرة القدم</title>
+    <sub-title lang="ar">حصيلة كرة القدم</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260402150000 +0100" stop="20260402170000 +0100" channel="Alkass_7_AR.bein">
-    <title lang="ar">بطولة الكويت الدولية لسباق الهجن</title>
-    <sub-title lang="ar">بطولة الكويت الدولية لسباق الهجن</sub-title>
+  <programme start="20260402171500 +0100" stop="20260402181500 +0100" channel="Alkass_7_AR.bein">
+    <title lang="ar">المتابعون</title>
+    <sub-title lang="ar">المتابعون</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260402170000 +0100" stop="20260402173000 +0100" channel="Alkass_7_AR.bein">
-    <title lang="ar">جولمانيا</title>
-    <sub-title lang="ar">جولمانيا</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260402173000 +0100" stop="20260402180000 +0100" channel="Alkass_7_AR.bein">
-    <title lang="ar">أساطير الرياضة</title>
-    <sub-title lang="ar">أساطير الرياضة</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260402180000 +0100" stop="20260402200000 +0100" channel="Alkass_7_AR.bein">
-    <title lang="ar">بطولة غرب آسيا للكرة الطائرة</title>
-    <sub-title lang="ar">بطولة غرب آسيا للكرة الطائرة</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260402200000 +0100" stop="20260402203000 +0100" channel="Alkass_7_AR.bein">
-    <title lang="ar">عيالنا</title>
-    <sub-title lang="ar">عيالنا</sub-title>
-    <category lang="ar">الرياضة العام</category>
-  </programme>
-  <programme start="20260402203000 +0100" stop="20260402210000 +0100" channel="Alkass_7_AR.bein">
-    <title lang="ar">تواصل</title>
-    <sub-title lang="ar">تواصل</sub-title>
+  <programme start="20260402181500 +0100" stop="20260402210000 +0100" channel="Alkass_7_AR.bein">
+    <title lang="ar">الدوري الأوليمبي القطري</title>
+    <sub-title lang="ar">الدوري الأوليمبي القطري</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
   <programme start="20260402210000 +0100" stop="20260402213000 +0100" channel="Alkass_7_AR.bein">
-    <title lang="ar">الأخبار</title>
-    <sub-title lang="ar">الأخبار</sub-title>
+    <title lang="ar">أخبار</title>
+    <sub-title lang="ar">أخبار</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260402213000 +0100" stop="20260402233000 +0100" channel="Alkass_7_AR.bein">
-    <title lang="ar">مربط الفرس</title>
-    <sub-title lang="ar">مربط الفرس</sub-title>
+  <programme start="20260402213000 +0100" stop="20260402220000 +0100" channel="Alkass_7_AR.bein">
+    <title lang="ar">الإصرار</title>
+    <sub-title lang="ar">الإصرار</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
-  <programme start="20260402233000 +0100" stop="20260403030000 +0100" channel="Alkass_7_AR.bein">
-    <title lang="ar">جولمانيا</title>
-    <sub-title lang="ar">جولمانيا</sub-title>
+  <programme start="20260402220000 +0100" stop="20260403030000 +0100" channel="Alkass_7_AR.bein">
+    <title lang="ar">الدوري الأوليمبي القطري</title>
+    <sub-title lang="ar">الدوري الأوليمبي القطري</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
   <programme start="20260403030000 +0100" stop="20260403050000 +0100" channel="Alkass_7_AR.bein">
@@ -8444,6 +8284,86 @@
   <programme start="20260403233000 +0100" stop="20260404050000 +0100" channel="Alkass_7_AR.bein">
     <title lang="ar">Beach Volleyball Championship</title>
     <sub-title lang="ar">Beach Volleyball Championship</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404050000 +0100" stop="20260404053000 +0100" channel="Alkass_7_AR.bein">
+    <title lang="ar">المرأة</title>
+    <sub-title lang="ar">المرأة</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404053000 +0100" stop="20260404080000 +0100" channel="Alkass_7_AR.bein">
+    <title lang="ar">بطولة غرب آسيا للكرة الطائرة</title>
+    <sub-title lang="ar">بطولة غرب آسيا للكرة الطائرة</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404080000 +0100" stop="20260404090000 +0100" channel="Alkass_7_AR.bein">
+    <title lang="ar">ثنتين ونص</title>
+    <sub-title lang="ar">ثنتين ونص</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404090000 +0100" stop="20260404100000 +0100" channel="Alkass_7_AR.bein">
+    <title lang="ar">الحكم</title>
+    <sub-title lang="ar">الحكم</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404100000 +0100" stop="20260404120000 +0100" channel="Alkass_7_AR.bein">
+    <title lang="ar">القلايل</title>
+    <sub-title lang="ar">القلايل</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404120000 +0100" stop="20260404123000 +0100" channel="Alkass_7_AR.bein">
+    <title lang="ar">أخبار</title>
+    <sub-title lang="ar">أخبار</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404123000 +0100" stop="20260404130000 +0100" channel="Alkass_7_AR.bein">
+    <title lang="ar">جرايد</title>
+    <sub-title lang="ar">جرايد</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404130000 +0100" stop="20260404133000 +0100" channel="Alkass_7_AR.bein">
+    <title lang="ar">حصيلة كرة القدم</title>
+    <sub-title lang="ar">حصيلة كرة القدم</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404133000 +0100" stop="20260404140000 +0100" channel="Alkass_7_AR.bein">
+    <title lang="ar">عالم السرعة</title>
+    <sub-title lang="ar">عالم السرعة</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404140000 +0100" stop="20260404170000 +0100" channel="Alkass_7_AR.bein">
+    <title lang="ar">بطولة الكويت الدولية لسباق الهجن</title>
+    <sub-title lang="ar">بطولة الكويت الدولية لسباق الهجن</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404170000 +0100" stop="20260404173000 +0100" channel="Alkass_7_AR.bein">
+    <title lang="ar">المرأة</title>
+    <sub-title lang="ar">المرأة</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404173000 +0100" stop="20260404203000 +0100" channel="Alkass_7_AR.bein">
+    <title lang="ar">دوري الدرجة الثانية القطري</title>
+    <sub-title lang="ar">دوري الدرجة الثانية القطري</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404203000 +0100" stop="20260404210000 +0100" channel="Alkass_7_AR.bein">
+    <title lang="ar">تواصل</title>
+    <sub-title lang="ar">تواصل</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404210000 +0100" stop="20260404230000 +0100" channel="Alkass_7_AR.bein">
+    <title lang="ar">القلايل</title>
+    <sub-title lang="ar">القلايل</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404230000 +0100" stop="20260404233000 +0100" channel="Alkass_7_AR.bein">
+    <title lang="ar">الإصرار</title>
+    <sub-title lang="ar">الإصرار</sub-title>
+    <category lang="ar">الرياضة العام</category>
+  </programme>
+  <programme start="20260404233000 +0100" stop="20260405000000 +0100" channel="Alkass_7_AR.bein">
+    <title lang="ar">مجلة دوري نجوم قطر</title>
+    <sub-title lang="ar">مجلة دوري نجوم قطر</sub-title>
     <category lang="ar">الرياضة العام</category>
   </programme>
   <programme start="20260402140000 +0100" stop="20260402150000 +0100" channel="Almasirah.TV.Mubasher.ae">
@@ -17000,6 +16920,46 @@
   <programme start="20260405090000 +0000" stop="20260405100000 +0000" channel="MBCDrama.us">
     <title lang="en">Ishq</title>
     <desc lang="en">Ishq</desc>
+  </programme>
+  <programme start="20260405100000 +0000" stop="20260405110000 +0000" channel="MBCDrama.us">
+    <title lang="en">Otr Al Ams</title>
+    <desc lang="en">Otr Al Ams</desc>
+  </programme>
+  <programme start="20260405110000 +0000" stop="20260405120000 +0000" channel="MBCDrama.us">
+    <title lang="en">Endama Yozher al Khareef</title>
+    <desc lang="en">Endama Yozher al Khareef</desc>
+  </programme>
+  <programme start="20260405120000 +0000" stop="20260405130000 +0000" channel="MBCDrama.us">
+    <title lang="en">Fouq Mostawa Al Shobohat</title>
+    <desc lang="en">Fouq Mostawa Al Shobohat</desc>
+  </programme>
+  <programme start="20260405130000 +0000" stop="20260405140000 +0000" channel="MBCDrama.us">
+    <title lang="en">Tareeq Al Moaalemat</title>
+    <desc lang="en">Tareeq Al Moaalemat</desc>
+  </programme>
+  <programme start="20260405140000 +0000" stop="20260405150000 +0000" channel="MBCDrama.us">
+    <title lang="en">Sadeeq al Omor</title>
+    <desc lang="en">Sadeeq al Omor</desc>
+  </programme>
+  <programme start="20260405150000 +0000" stop="20260405160000 +0000" channel="MBCDrama.us">
+    <title lang="en">Ishq</title>
+    <desc lang="en">Ishq</desc>
+  </programme>
+  <programme start="20260405160000 +0000" stop="20260405170000 +0000" channel="MBCDrama.us">
+    <title lang="en">Otr Al Ams</title>
+    <desc lang="en">Otr Al Ams</desc>
+  </programme>
+  <programme start="20260405170000 +0000" stop="20260405180000 +0000" channel="MBCDrama.us">
+    <title lang="en">Endama Yozher al Khareef</title>
+    <desc lang="en">Endama Yozher al Khareef</desc>
+  </programme>
+  <programme start="20260405180000 +0000" stop="20260405190000 +0000" channel="MBCDrama.us">
+    <title lang="en">Tareeq Al Moaalemat</title>
+    <desc lang="en">Tareeq Al Moaalemat</desc>
+  </programme>
+  <programme start="20260405190000 +0000" stop="20260405200000 +0000" channel="MBCDrama.us">
+    <title lang="en">Tareeq Al Moaalemat</title>
+    <desc lang="en">Tareeq Al Moaalemat</desc>
   </programme>
   <programme start="20250721003600 +0000" stop="20250721013600 +0000" channel="MBCMasr.eg">
     <title lang="ar">حرب الجبالي  موس</title>
