@@ -14806,80 +14806,6 @@
     <category lang="en">Comedy</category>
     <icon src="https://sat.tvhttps://www.sat.tv/wp-content/themes/twentytwenty-child/assets/img/prog-6199.svg" />
   </programme>
-  <programme start="20260512180000 +0000" stop="20260512190000 +0000" channel="MBCDrama.us">
-    <category lang="en">Comedy</category>
-    <category lang="en">Series</category>
-    <desc lang="en">S01 E05
-Ashghal Sha'a</desc>
-    <episode-num>S01 E05</episode-num>
-    <icon src="https://iptv-epg.org/logos/Posters/000142186.jpg"/>
-    <previously-shown/>
-    <title lang="en">Ashghal Sha'a</title>
-  </programme>
-  <programme start="20260512190000 +0000" stop="20260512200000 +0000" channel="MBCDrama.us">
-    <category lang="en">Crime</category>
-    <category lang="en">Drama</category>
-    <category lang="en">Series</category>
-    <credits>
-      <director>Mohammad Mohammad</director>
-      <actor>Abdul El Aqel</actor>
-      <actor>Hussien Mahdi</actor>
-      <actor>Buthaina Raisi</actor>
-      <actor>Ahmed Iraj</actor>
-      <actor>Abdullah Bahman</actor>
-      <actor>Ghadir El Sabti</actor>
-    </credits>
-    <desc lang="en">S01 E09
-Sadaf</desc>
-    <episode-num>S01 E09</episode-num>
-    <icon src="https://iptv-epg.org/logos/Posters/000139509.jpg"/>
-    <previously-shown/>
-    <title lang="en">Sadaf</title>
-  </programme>
-  <programme start="20260512200000 +0000" stop="20260512210000 +0000" channel="MBCDrama.us">
-    <category lang="en">Action</category>
-    <category lang="en">Drama</category>
-    <category lang="en">Thriller</category>
-    <category lang="en">Series</category>
-    <desc lang="en">S02 E11
-Al Hofra</desc>
-    <episode-num>S02 E11</episode-num>
-    <icon src="https://iptv-epg.org/logos/Posters/000137998.jpg"/>
-    <previously-shown/>
-    <title lang="en">Al Hofra</title>
-  </programme>
-  <programme start="20260512210000 +0000" stop="20260512220000 +0000" channel="MBCDrama.us">
-    <category lang="en">Action</category>
-    <category lang="en">Crime</category>
-    <category lang="en">Drama</category>
-    <category lang="en">Series</category>
-    <desc lang="en">S01 E31
-The interwoven stories of five families living in a high-end residential complex in Riyadh, highlighting the challenges, dreams, and values of Saudi youth.</desc>
-    <episode-num>S01 E31</episode-num>
-    <icon src="https://iptv-epg.org/logos/Posters/000124363.jpg"/>
-    <previously-shown/>
-    <title lang="en">Mojamma' 75</title>
-  </programme>
-  <programme start="20260512220000 +0000" stop="20260512230000 +0000" channel="MBCDrama.us">
-    <category lang="en">Drama</category>
-    <category lang="en">Series</category>
-    <credits>
-      <director>Mohammad Sami</director>
-      <producer>Sadiq Sabah</producer>
-      <actor>Amr Saad</actor>
-      <actor>Ahmad Zaher</actor>
-      <actor>Khaled El-Sawi</actor>
-      <actor>Ingy Mokadem</actor>
-      <actor>Ilham Shaheen</actor>
-      <actor>Emad Zeyada</actor>
-    </credits>
-    <desc lang="en">S01 E19
-After his father's death, Gary faces a new reality: a mysterious key, a vast fortune, a dark past and enemies; he must fight for his legacy and his family's survival.</desc>
-    <episode-num>S01 E19</episode-num>
-    <icon src="https://iptv-epg.org/logos/Posters/000130606.jpg"/>
-    <previously-shown/>
-    <title lang="en">Seed Elnass</title>
-  </programme>
   <programme start="20260512230000 +0000" stop="20260513000000 +0000" channel="MBCDrama.us">
     <category lang="en">Crime</category>
     <category lang="en">Drama</category>
@@ -16979,42 +16905,6 @@ A woman's past catches up with her.</desc>
     <desc lang="en">Endama Yozher al Khareef</desc>
     <icon src="https://iptv-epg.org/logos/Posters/000057320.jpg"/>
     <title lang="en">Endama Yozher al Khareef</title>
-  </programme>
-  <programme start="20260512182600 +0000" stop="20260512191900 +0000" channel="MBCMasr.eg">
-    <category lang="ar">دراما</category>
-    <date>2024</date>
-    <desc lang="ar">S1 E5
-تبلغ الأمور حدها بين أمال وعلي بعد شجار كبير بينهما. تتلقى العائلة خبرا مفجعا. يحث فوكس ونسمة شيماء على القيام بمزيد من الإعلانات.</desc>
-    <episode-num>S1 E5</episode-num>
-    <title lang="ar">أعلى نسبة مشاهدة الموس</title>
-  </programme>
-  <programme start="20260512191900 +0000" stop="20260512211000 +0000" channel="MBCMasr.eg">
-    <category lang="ar">أسلوب حياة</category>
-    <category lang="ar">برنامج حواري</category>
-    <category lang="ar">منوعات</category>
-    <date>2026</date>
-    <desc lang="ar">S2026 E94
-يطل عليكم مقدمو البرنامج لمناقشة كل ما يخص المرأة العصرية بينما يحاولون إيجاد جواب للسؤال العظيم: الستات عايزة إيه؟.</desc>
-    <episode-num>S2026 E94</episode-num>
-    <title lang="ar">أهلاً بالستات</title>
-  </programme>
-  <programme start="20260512211000 +0000" stop="20260512220000 +0000" channel="MBCMasr.eg">
-    <category lang="ar">عائلي</category>
-    <category lang="ar">دراما</category>
-    <date>2018</date>
-    <desc lang="ar">S2 E6
-يخبر حازم هناء عن رفض سهام عرض حلقتها التلفزيونية الخاصة، فيما يستمر كمال في ملاحقة ريم ويشاهدها وهي تغادر النادي برفقة أحد الأشخاص.</desc>
-    <episode-num>S2 E6</episode-num>
-    <title lang="ar">عائلة الحاج نعمان الموس</title>
-  </programme>
-  <programme start="20260512220000 +0000" stop="20260512230400 +0000" channel="MBCMasr.eg">
-    <category lang="ar">رومانسي</category>
-    <category lang="ar">دراما</category>
-    <date>2015</date>
-    <desc lang="ar">S1 E6
-بعد قيام خالد بتنفيذ وصية والده، تنقلب جميع شقيقاته ضده، فيما ينجح عزيز في طبع المفتاح الخاص بخزانة خالد، غير أن وقوع حدث صاعق يخلط الأوراق مجدداً.</desc>
-    <episode-num>S1 E6</episode-num>
-    <title lang="ar">ولي العهد الموس</title>
   </programme>
   <programme start="20260512230400 +0000" stop="20260513000000 +0000" channel="MBCMasr.eg">
     <category lang="ar">اجتماعي</category>
