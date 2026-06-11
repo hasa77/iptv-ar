@@ -345,6 +345,8 @@ https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-plus-drama/e37251ec2aac8f
 https://cdn.live.easybroadcast.io/abr_corp/83_medi1tv-arabic_g90v4ec/playlist.m3u8
 #EXTINF:-1 tvg-id="MekameleenTV.tr@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/mekameleentvtr.png" group-title="News",Mekameleen TV (1080p)
 https://mn-nl.mncdn.com/mekameleen/smil:mekameleentv.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="MiracleChannel.se@SD" tvg-logo="https://i.imgur.com/yrt7Rw9.png" group-title="News",Miracle TV (1080p)
+https://live.miracleonline.org/hls/miracle1.m3u8
 #EXTINF:-1 tvg-id="MixHollywood.eg@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/mixhollywoodeg.png" group-title="Movies",Mix Hollywood (1080p)
 https://ml-pull-hwc.myco.io/MixTV/hls/index.m3u8
 #EXTINF:-1 tvg-id="MohammedAbdo.sa@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/mohammedabdosa.png" group-title="Music",Mohammed Abdo (1080p)
