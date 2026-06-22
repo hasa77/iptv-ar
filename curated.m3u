@@ -221,6 +221,8 @@ https://chadatv.vedge.infomaniak.com/livecast/chadatv/playlist.m3u8
 https://cnbc-live.akamaized.net/cnbc/master.m3u8
 #EXTINF:-1 tvg-id="DijlahTV.iq@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/dijlahtviq.png" group-title="News",Dijlah TV (1080p)
 https://ghaasiflu.online/Dijlah/index.m3u8
+#EXTINF:-1 tvg-id="DisneyJuniorMENA.uk@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/e/e3/2024_Disney_Jr._Logo.svg" group-title="Kids",Disney Junior MENA (576p)
+http://116.90.120.157:8000/play/a0qo/index.m3u8
 #EXTINF:-1 tvg-id="DW.de@Arabic" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/dwde.png" group-title="News",DW Arabic (1080p)
 https://dwamdstream103.akamaized.net/hls/live/2015526/dwstream103/master.m3u8
 #EXTINF:-1 tvg-id="ElWatania1.tn@SD" tvg-logo="https://i.imgur.com/gNr2V14.png" group-title="General",El Watania 1 (1080i)
