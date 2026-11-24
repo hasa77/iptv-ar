@@ -219,6 +219,8 @@ https://livesstream.work.gd:5443/WebRTCApp/streams/stream.m3u8
 https://tv.elyssatv.com/live/master.m3u8
 #EXTINF:-1 tvg-id="EN:.Fairuz.sa" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/fairuzsa.png" group-title="Music",Fairuz (1080p)
 https://shd-amg-fast.edgenextcdn.net/tx029/playlist.m3u8
+#EXTINF:-1 tvg-id="FajerTV1.ps@SD" tvg-logo="https://i.imgur.com/1xERxmB.png" group-title="General",Fajer TV 1 (1080p)
+https://e.siar.us/live/ozfest.m3u8
 #EXTINF:-1 tvg-id="FalastiniTV.ps@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/falastinitvps.png" group-title="Music",Falastini TV (1080p)
 https://rp.tactivemedia.com/palestiniantv_source/live/playlist.m3u8
 #EXTINF:-1 tvg-id="FujairahTV.ae@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/fujairahtvae.png" group-title="Entertainment",Fujairah TV (720p)
@@ -419,20 +421,20 @@ https://live.kwikmotion.com/redtvlive/redtv.smil/playlist.m3u8
 https://659605a54e9a6.streamlock.net:8443/live/livestream/playlist.m3u8
 #EXTINF:-1 tvg-id="RotanaCinemaEgypt.eg@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/rotanacinemaegypteg.png" http-referrer="https://rotana.net/" group-title="Movies",Rotana Cinema Egypt (1080p) [Geo-blocked]
 #EXTVLCOPT:http-referrer=https://rotana.net/
-#EXTINF:-1 tvg-id="RotanaCinemaKSA.sa" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/rotanacinemaksasa.png" http-referrer="https://rotana.net/" group-title="Movies",Rotana Cinema KSA (1080p) [Geo-blocked]
-#EXTVLCOPT:http-referrer=https://rotana.net/
-#EXTINF:-1 tvg-id="RotanaClassic.sa" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/rotanaclassicsa.png" http-referrer="https://rotana.net/" group-title="Classic",Rotana Classic (1080p) [Geo-blocked]
-#EXTVLCOPT:http-referrer=https://rotana.net/
-#EXTINF:-1 tvg-id="RotanaClip.sa@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/rotanaclipsa.png" http-referrer="https://rotana.net/" group-title="Undefined",Rotana Clip (1080p) [Geo-blocked]
-#EXTVLCOPT:http-referrer=https://rotana.net/
+#EXTINF:-1 tvg-id="RotanaCinemaKSA.sa" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/rotanacinemaksasa.png" group-title="Movies",Rotana Cinema KSA (540p)
+https://r.eu.cdn-redge.media/livehls/oeu/mt/live/rotana_cinema/live.livx/playlist.m3u8
+#EXTINF:-1 tvg-id="RotanaClassic.sa" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/rotanaclassicsa.png" group-title="Classic",Rotana Classic (540p)
+https://r.eu.cdn-redge.media/livehls/oeu/mt/live/rotana_classic/live.livx/playlist.m3u8
+#EXTINF:-1 tvg-id="RotanaClip.sa@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/rotanaclipsa.png" group-title="Undefined",Rotana Clip (540p)
+https://r.eu.cdn-redge.media/livehls/oeu/mt/live/rotana_clip/live.livx/playlist.m3u8
 #EXTINF:-1 tvg-id="RotanaComedy.sa@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/rotanacomedysa.png" http-referrer="https://rotana.net/" group-title="Comedy",Rotana Comedy (1080p) [Geo-blocked]
 #EXTVLCOPT:http-referrer=https://rotana.net/
 #EXTINF:-1 tvg-id="RotanaDrama.sa@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/rotanadramasa.png" http-referrer="https://rotana.net/" group-title="Series",Rotana Drama (1080p) [Geo-blocked]
 #EXTVLCOPT:http-referrer=https://rotana.net/
 #EXTINF:-1 tvg-id="RotanaKhalijia.sa" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/rotanakhalijiasa.png" http-referrer="https://rotana.net/" group-title="Music",Rotana Khalijia (1080p) [Geo-blocked]
 #EXTVLCOPT:http-referrer=https://rotana.net/
-#EXTINF:-1 tvg-id="RotanaMusic.sa@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/rotanamusicsa.png" http-referrer="https://rotana.net/" group-title="Music",Rotana Music (1080p) [Geo-blocked]
-#EXTVLCOPT:http-referrer=https://rotana.net/
+#EXTINF:-1 tvg-id="RotanaMusic.sa@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/rotanamusicsa.png" group-title="Music",Rotana Music
+https://r.eu.cdn-redge.media/livehls/oeu/mt/live/rotana_music/live.livx/playlist.m3u8
 #EXTINF:-1 tvg-id="RoyaTV.jo@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/royatvjo.png" group-title="General",Roya TV (Jordan) (1080p)
 https://live.kwikmotion.com/royatvpublic/royatv.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="RTArabic.ru@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/rtarabicru.png" group-title="News",RT Arabic (1080p) [Geo-blocked]
@@ -441,8 +443,8 @@ https://rt-arb.rttv.com/dvr/rtarab/playlist.m3u8
 https://cdn3.wowza.com/1/YStGZlJRdktzZkdK/VXROZWNW/hls/live/playlist.m3u8
 #EXTINF:-1 tvg-id="Sahara24.mr@HD" tvg-logo="https://i.imgur.com/pnzWYwT.png" group-title="News",Sahara 24 (1080p)
 https://live.saharamedias.net:3317/live/shara24live.m3u8
-#EXTINF:-1 tvg-id="SamarraTV.iq@SD" tvg-logo="https://i.imgur.com/7uQoIXi.png" group-title="Undefined",Samarra TV
-https://live.bradosti.net/live/samaraweb_playlist.m3u8
+#EXTINF:-1 tvg-id="SamarraTV.iq@SD" tvg-logo="https://i.imgur.com/7uQoIXi.png" group-title="Undefined",Samarra TV (720p)
+https://live.samarra.tv/samarra/ngrp:live_abr/playlist.m3u8
 #EXTINF:-1 tvg-id="Sat7Arabic.cy@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/sat7arabiccy.png" group-title="Undefined",Sat 7 Arabic (240p)
 https://svs.itworkscdn.net/sat7arabiclive/sat7arabic.smil/playlist_dvr.m3u8
 #EXTINF:-1 tvg-id="SaudiThaqafiyaTV.sa@SD" tvg-logo="https://raw.githubusercontent.com/hasa77/iptv-ar/main/resources/logos/saudithaqafiyatvsa.png" group-title="Culture",Saudi Thaqafiya TV (1080p)
